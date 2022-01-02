@@ -1,15 +1,37 @@
 <template>
-Hello!
+   <div class="homepage">
+      <section class="homepage__landing-mount">
+         <Landing />
+      </section>
+
+      <section class="homepage__projects-mount">
+         <!--<Projects />-->
+      </section>
+
+      <section class="homepage__footer-mount">
+         <!--<Footer />-->
+      </section>
+   </div>
 </template>
 
 <script>
-// import { defineComponent } from 'vue'
+   import Landing from '../components/Landing.vue'
+   import Projects from '../components/Projects.vue'
+   import Footer from '../components/Footer.vue'
 
-export default {
-   components: {
-
+   export default {
+      components: {
+         Landing,
+         Projects,
+         Footer,
+      }
    }
-}
 </script>
 
-<style></style>
+<style>
+   .homepage {
+      width: 100vw;
+      height: auto;
+      padding: 1rem 7% 1rem 7%;
+   }
+</style>
