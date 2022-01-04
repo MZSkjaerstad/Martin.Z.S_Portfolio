@@ -2,8 +2,10 @@
    <div class="landingpage">
       <figure class="landingpage__logowrapper">
          <img class="landingpage__logo" src="global/visual_identity/vector/Logo_w_text.svg" alt="Martin Z. S. logo">
+
          <figcaption class="landingpage__logo-fig">Martin Z. S. logo</figcaption>
       </figure>
+
       <div class="landingpage__ruler">
          <div class="ruler__increment-group">
             <img class="ruler__increment" src="global/visual_identity/vector/medium_increment.svg" alt="medium increment">
@@ -49,6 +51,7 @@
             <div class="ruler__increment ruler__increment--long">
                <div class="ruler__name">
                   <div class="ruler__name-spacing">By Martin</div>
+
                   <div class="ruler__name-spacing">Zupfer Skjærstad</div>
                </div>
             </div>
@@ -60,7 +63,14 @@
             <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
          </div>
       </div>
+       
       <div class="landingpage__motif">
+         <div class="landingpage__birds">
+            <img class="landingpage__bigbird" src="global/visual_identity/image/bird-big.png" alt="big bird">
+
+            <img class="landingpage__smallbird" src="global/visual_identity/image/bird-small.png" alt="small bird">
+         </div>
+
          <div class="landingpage__typography">
             <div class="landingpage__subtitle">a graphic design</div>
             
@@ -144,7 +154,7 @@
 
    .ruler__name {
       color: var(--foreground);
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-style: italic;
       text-align: end;
       text-transform: uppercase;
@@ -152,7 +162,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      margin-top: 0.2rem;
+      margin-top: 1vh;
    }
 
    .ruler__name-spacing {
@@ -167,9 +177,37 @@
       z-index: 10;
       left: 50%;
       transform: translateX(8%);
+      overflow: hidden;
    }
 
-   /* 4.2 Typograpfy */
+   /* 4.2 Birds */
+
+   .landingpage__birds {
+      position: absolute;
+      width: 70%;
+      z-index: 16;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   .landingpage__bigbird {
+      width: 55%;
+      width: 55%;
+      transform: translateY(-30%);
+   }
+
+   .landingpage__smallbird {
+      width: 13%;
+      height: 13%;
+      padding-top: 50%;
+   }
+
+   /* 4.3 Typograpfy */
 
    .landingpage__typography {
       position: absolute;
@@ -186,6 +224,7 @@
       font-weight: 600;
       text-transform: uppercase;
       color: var(--background);
+      padding-left: 7%;
    }
 
    .landingpage__title {
@@ -197,7 +236,7 @@
       color: var(--background);
    }
 
-   /* 4.3 Circles */
+   /* 4.4 Circles */
 
    .landingpage__circles {
       position: absolute;
@@ -210,16 +249,17 @@
    }
 
    .landingpage__big-circle {
-      width: 35%;
+      width: 33%;
+      rotate: 25%;
       margin-left: 8%;
    }
 
    .landingpage__small-circle {
-      width: 15%;
+      width: 12%;
       margin-bottom: 25%;
    }
 
-   /* 4.4 Background */
+   /* 4.5 Background */
 
    .landingpage__background  {
       position: absolute;
@@ -241,4 +281,23 @@
    .landingpage__figcaption {
       display: none;
    }
+
+   /******* 5.1 MEDIA QUERIES *******/
+
+   /* 5.2 Widescreen */
+
+   @media screen and (min-width: 1200px) {}
+
+   /* 5.3 Smaller screens, Pads */
+
+   @media screen and (max-width: 992px) {}
+
+   /* 5.4 Mobile Standing */
+
+   @media screen and (max-width: 576px) {}
+
+   /* 5.5 Mobile Laying */
+
+   @media screen and (max-width: none) {}
+
 </style>
