@@ -1,7 +1,7 @@
 <template>
    <div class="landingpage">
       <figure class="landingpage__logowrapper">
-         <img class="landingpage__logo" src="global/visual_identity/vector/logo_w_text.svg" alt="Martin Z. S. logo">
+         <img class="landingpage__logo" src="global/visual_identity/vector/logo.svg" alt="Martin.Z.S logo">
 
          <figcaption class="landingpage__logo-fig">Martin Z. S. logo</figcaption>
       </figure>
