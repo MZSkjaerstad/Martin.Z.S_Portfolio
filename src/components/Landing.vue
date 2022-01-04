@@ -1,50 +1,50 @@
 <template>
    <div class="landingpage">
       <figure class="landingpage__logowrapper">
-         <!--<img class="landingpage__logo" src="global/visual_identity/vector/logo_w_text.svg" alt="Martin.Z.S logo"> -->
+         <img class="landingpage__logo" src="/visual_identity/vector/logo_w_text.svg" alt="Martin.Z.S logo">
 
          <figcaption class="landingpage__logo-fig">Martin Z. S. logo</figcaption>
       </figure>
 
       <div class="landingpage__ruler">
          <div class="ruler__increment-group">
-            <img class="ruler__increment" src="global/visual_identity/vector/medium_increment.svg" alt="medium increment">
+            <img class="ruler__increment" src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
          </div>
 
          <div class="ruler__increment-group">
-            <img class="ruler__increment" src="global/visual_identity/vector/medium_increment.svg" alt="medium increment">
+            <img class="ruler__increment" src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
          </div>
 
          <div class="ruler__increment-group">
-            <img class="ruler__increment" src="global/visual_identity/vector/medium_increment.svg" alt="medium increment">
+            <img class="ruler__increment" src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
          </div>
 
          <div class="ruler__increment-group">
-            <img class="ruler__increment" src="global/visual_identity/vector/medium_increment.svg" alt="medium increment">
+            <img class="ruler__increment" src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
          </div>
 
          <div class="ruler__increment-group">
@@ -56,19 +56,19 @@
                </div>
             </div>
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
 
-            <img class="ruler__increment" src="global/visual_identity/vector/short_increment.svg" alt="short increment">
+            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
          </div>
       </div>
        
       <div class="landingpage__motif">
          <div class="landingpage__birds">
-            <img class="landingpage__bigbird" src="global/visual_identity/image/bird-big.png" alt="big bird">
+            <img class="landingpage__bigbird" src="/visual_identity/image/bird-big.png" alt="big bird">
 
-            <img class="landingpage__smallbird" src="global/visual_identity/image/bird-small.png" alt="small bird">
+            <img class="landingpage__smallbird" src="/visual_identity/image/bird-small.png" alt="small bird">
          </div>
 
          <div class="landingpage__typography">
@@ -78,13 +78,13 @@
          </div>
 
          <div class="landingpage__circles">
-            <img class="landingpage__big-circle" src="global/visual_identity/image/circle-big.png" alt="Stor sirkel">
+            <img class="landingpage__big-circle" src="/visual_identity/image/circle-big.png" alt="Stor sirkel">
 
-            <img class="landingpage__small-circle" src="global/visual_identity/image/circle-small.png" alt="Liten sirkel">
+            <img class="landingpage__small-circle" src="/visual_identity/image/circle-small.png" alt="Liten sirkel">
          </div>
 
          <figure class="landingpage__background">
-            <img class="landingpage__background-img" src="global/visual_identity/image/background-image.jpg" alt="Background-image">
+            <img class="landingpage__background-img" src="/visual_identity/image/background-image.jpg" alt="Background-image">
             <figcaption class="landingpage__figcaption">Background image</figcaption>
          </figure>
       </div>
