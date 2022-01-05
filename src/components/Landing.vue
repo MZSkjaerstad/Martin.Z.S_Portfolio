@@ -356,7 +356,7 @@
 
    /* 5.3 Smaller screens, Small pads, mobile, etc. */
 
-   @media screen and (max-width: 867px) {
+   @media screen and (max-width: 997px) {
       
       .landingpage__ruler{
          padding: 0% 2% 0% 2%;
