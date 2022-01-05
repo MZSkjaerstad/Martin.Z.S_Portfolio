@@ -39,7 +39,7 @@
 
    /* 5.5 Mobile standing */
 
-   @media screen and (max-width: 776px) {
+   @media screen and (max-width: 876px) {
       .homepage {
          padding: 3rem 0% 3rem 0%;
       }

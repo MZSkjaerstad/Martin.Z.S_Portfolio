@@ -356,7 +356,7 @@
 
    /* 5.3 Smaller screens, Small pads, mobile, etc. */
 
-   @media screen and (max-width: 767px) {
+   @media screen and (max-width: 867px) {
       
       .landingpage__ruler{
          padding: 0% 2% 0% 2%;
@@ -368,7 +368,7 @@
          padding: 0rem 2rem 1.4rem 2rem;
          border-radius: 0px 0px 18px 18px;
       }
-      
+
       .landingpage__motif {
          width: 100%;
          left: 50%;
