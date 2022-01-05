@@ -8,43 +8,80 @@
 
       <div class="landingpage__ruler">
          <div class="ruler__increment-group">
-            <img class="ruler__increment" src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
+            <div class="ruler__increment ruler__data">
+               <div>
+                  <img src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
+                  <div class="ruler__increment-info">001</div>
+               </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+               <div class="ruler__data-content">Heihei</div>
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
+
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
          </div>
 
          <div class="ruler__increment-group">
-            <img class="ruler__increment" src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
          </div>
 
          <div class="ruler__increment-group">
-            <img class="ruler__increment" src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
          </div>
 
          <div class="ruler__increment-group">
-            <img class="ruler__increment" src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
          </div>
 
          <div class="ruler__increment-group">
@@ -56,11 +93,18 @@
                </div>
             </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment ruler__scroll-icon">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+               <div></div>
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
 
-            <img class="ruler__increment" src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increment">
+               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            </div>
          </div>
       </div>
        
@@ -110,8 +154,8 @@
       width: 8rem;
       height: auto;
       background: var(--background);
-      padding: 0rem 1rem 0.8rem 1rem;
-      border-radius: 0px 0px 15px 15px;
+      padding: 0rem 1rem 0.7rem 1rem;
+      border-radius: 0px 0px 10px 10px;
       left: 50%;
       transform: translateX(-4rem);
       z-index: 14;
@@ -143,6 +187,7 @@
    }
 
    .ruler__increment {
+      width: 85vw;
       height: 2px;
       margin-bottom: 4.65vh;
    }
@@ -150,6 +195,22 @@
    .ruler__increment--long {
       width: 85vw;
       border-top: solid var(--foreground) 1px;
+   }
+
+   .ruler__increment-info {
+      color: var(--foreground);
+      font-size: 0.8rem;
+   }
+
+   .ruler__data {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   .ruler__data-content {
+      color: var(--foreground);
+      font-size: 0.9rem;
+      font-style: italic;
    }
 
    .ruler__name {
@@ -249,13 +310,15 @@
    }
 
    .landingpage__big-circle {
-      width: 33%;
-      rotate: 25%;
-      margin-left: 8%;
+      width: 28%;
+      transform: rotate(35deg);
+      margin-left: 9%;
    }
 
    .landingpage__small-circle {
-      width: 12%;
+      width: 8%;
+      transform: rotate(-60deg);
+      margin-left: 7%;
       margin-bottom: 25%;
    }
 
@@ -292,12 +355,15 @@
 
    @media screen and (max-width: 992px) {}
 
-   /* 5.4 Mobile Standing */
+   /* 5.4 Mobile laying */
 
    @media screen and (max-width: 576px) {}
 
-   /* 5.5 Mobile Laying */
+   /* 5.5 Mobile standing */
 
-   @media screen and (max-width: none) {}
-
+   @media screen and (max-width: 400px) {
+      .landingpage__ruler{
+         padding: 0% 2% 0% 2%;
+      }
+   }
 </style>

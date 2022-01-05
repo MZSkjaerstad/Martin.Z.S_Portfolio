@@ -34,4 +34,12 @@
       height: auto;
       padding: 1rem 7% 1rem 7%;
    }
+
+   /* 5.5 Mobile standing */
+
+   @media screen and (max-width: 400px) {
+      .homepage {
+         padding: 1rem 0% 1rem 0%;
+      }
+   }
 </style>
