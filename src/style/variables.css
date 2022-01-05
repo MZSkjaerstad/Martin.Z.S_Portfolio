@@ -6,3 +6,11 @@
    --font-family: "alverata";
    --font-size: 12pt;
 }
+
+/* Idea I'm testing */
+
+@media screen and (max-width: 992px) {
+   :root {
+      --font-size: 24pt;
+   }
+}

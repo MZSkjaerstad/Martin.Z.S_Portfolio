@@ -35,11 +35,13 @@
       padding: 1rem 7% 1rem 7%;
    }
 
+   /******* 5.1 MEDIA QUERIES *******/
+
    /* 5.5 Mobile standing */
 
-   @media screen and (max-width: 400px) {
+   @media screen and (max-width: 992px) {
       .homepage {
-         padding: 1rem 0% 1rem 0%;
+         padding: 3rem 0% 3rem 0%;
       }
    }
 </style>

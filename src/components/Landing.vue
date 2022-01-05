@@ -11,6 +11,7 @@
             <div class="ruler__increment ruler__data">
                <div>
                   <img src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
+
                   <div class="ruler__increment-info">001</div>
                </div>
 
@@ -95,6 +96,7 @@
 
             <div class="ruler__increment ruler__scroll-icon">
                <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+
                <div></div>
             </div>
 
@@ -129,6 +131,7 @@
 
          <figure class="landingpage__background">
             <img class="landingpage__background-img" src="/visual_identity/image/background-image.jpg" alt="Background-image">
+
             <figcaption class="landingpage__figcaption">Background image</figcaption>
          </figure>
       </div>
@@ -351,19 +354,36 @@
 
    @media screen and (min-width: 1200px) {}
 
-   /* 5.3 Smaller screens, Pads */
+   /* 5.3 Smaller screens, Small pads, mobile, etc. */
 
-   @media screen and (max-width: 992px) {}
-
-   /* 5.4 Mobile laying */
-
-   @media screen and (max-width: 576px) {}
-
-   /* 5.5 Mobile standing */
-
-   @media screen and (max-width: 400px) {
+   @media screen and (max-width: 800px) {
+      
       .landingpage__ruler{
          padding: 0% 2% 0% 2%;
       }
+
+      .landingpage__logowrapper {
+         width: 16rem;
+         transform: translateX(-8rem);
+         padding: 0rem 2rem 1.4rem 2rem;
+         border-radius: 0px 0px 18px 18px;
+      }
+
+
+
+      .landingpage__motif {
+         width: 100%;
+         left: 50%;
+         transform: translateX(0%);
+      }
+
+      .landingpage__subtitle {
+         font-size: 4vw;
+      }
+
+      .landingpage__title {
+         font-size: 14vw;
+      }
+
    }
 </style>
