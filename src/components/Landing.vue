@@ -383,8 +383,8 @@
          padding: 0vw 5vw 0vw 5vw;
       }
 
-      .ruler__increment {
-         width: 100%;
+      .ruler__increments {
+         width: 90vw;
       }
 
       .ruler__increment--small {
