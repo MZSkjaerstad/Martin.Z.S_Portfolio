@@ -41,7 +41,7 @@
 
    @media screen and (max-width: 996px) {
       .homepage {
-         padding: 3rem 0% 3rem 0%;
+         padding: 2rem 0% 2rem 0%;
       }
    }
 </style>

@@ -8,9 +8,9 @@
 
       <div class="landingpage__ruler">
          <div class="ruler__increment-group">
-            <div class="ruler__increment ruler__data">
+            <div class="ruler__increments ruler__data">
                <div>
-                  <img src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
+                  <div class="ruler__increment--medium"></div>
 
                   <div class="ruler__increment-info">001</div>
                </div>
@@ -18,75 +18,75 @@
                <div class="ruler__data-content">Heihei</div>
             </div>
 
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
             </div>
 
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
             </div>
 
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
-            </div>
-         </div>
-
-         <div class="ruler__increment-group">
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
-            </div>
-
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
-            </div>
-
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
-            </div>
-
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
             </div>
          </div>
 
          <div class="ruler__increment-group">
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
+            <div class="ruler__increments">
+               <div class="ruler__increment--medium"></div>
             </div>
 
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
             </div>
 
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
             </div>
 
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
-            </div>
-         </div>
-
-         <div class="ruler__increment-group">
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/medium_increment.svg" alt="medium increment">
-            </div>
-
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
-            </div>
-
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
-            </div>
-
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
             </div>
          </div>
 
          <div class="ruler__increment-group">
-            <div class="ruler__increment ruler__increment--long">
+            <div class="ruler__increments">
+               <div class="ruler__increment--medium"></div>
+            </div>
+
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
+            </div>
+
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
+            </div>
+
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
+            </div>
+         </div>
+
+         <div class="ruler__increment-group">
+            <div class="ruler__increments">
+               <div class="ruler__increment--medium"></div>
+            </div>
+
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
+            </div>
+
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
+            </div>
+
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
+            </div>
+         </div>
+
+         <div class="ruler__increment-group">
+            <div class="ruler__increments ruler__increment--long">
                <div class="ruler__name">
                   <div class="ruler__name-spacing">By Martin</div>
 
@@ -94,18 +94,18 @@
                </div>
             </div>
 
-            <div class="ruler__increment ruler__scroll-icon">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increments ruler__scroll-icon">
+               <div class="ruler__increment--small"></div>
 
                <div></div>
             </div>
 
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
             </div>
 
-            <div class="ruler__increment">
-               <img src="/visual_identity/vector/short_increment.svg" alt="short increment">
+            <div class="ruler__increments">
+               <div class="ruler__increment--small"></div>
             </div>
          </div>
       </div>
@@ -189,10 +189,20 @@
       align-items: flex-start;
    }
 
-   .ruler__increment {
+   .ruler__increments {
       width: 85vw;
       height: 2px;
       margin-bottom: 4.65vh;
+   }
+
+   .ruler__increment--small {
+      width: 0.6rem;
+      border-top: solid var(--foreground) 1px;
+   }
+
+   .ruler__increment--medium {
+      width: 2rem;
+      border-top: solid var(--foreground) 1px;
    }
 
    .ruler__increment--long {
@@ -357,10 +367,8 @@
    /* 5.3 Smaller screens, Small pads, mobile, etc. */
 
    @media screen and (max-width: 997px) {
-      
-      .landingpage__ruler{
-         padding: 0% 2% 0% 2%;
-      }
+
+      /******* X.1 LOGO *******/
 
       .landingpage__logowrapper {
          width: 16rem;
@@ -368,6 +376,45 @@
          padding: 0rem 2rem 1.4rem 2rem;
          border-radius: 0px 0px 18px 18px;
       }
+
+      /******* X.2 RULER *******/
+
+      .landingpage__ruler{
+         padding: 0vw 5vw 0vw 5vw;
+      }
+
+      .ruler__increment {
+         width: 100%;
+      }
+
+      .ruler__increment--small {
+         width: 1.2rem;
+         border-top: solid var(--foreground) 4px;
+      }
+
+      .ruler__increment--medium {
+         width: 4rem;
+         border-top: solid var(--foreground) 4px;
+      }
+
+      .ruler__increment--long {
+         width: 100%;
+         border-top: solid var(--foreground) 4px;
+      }
+
+      .ruler__increment-info {
+         font-size: 2rem;
+      }
+
+      .ruler__data-content {
+         font-size: 2.4rem;
+      }
+
+      .ruler__name {
+         font-size: 2.8rem;
+      }
+
+      /******* X.3 MOTIF *******/
 
       .landingpage__motif {
          width: 100%;
