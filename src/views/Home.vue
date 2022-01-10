@@ -5,11 +5,11 @@
       </section>
 
       <section class="homepage__projects-mount">
-         <!--<Projects />-->
+         <Projects />
       </section>
 
       <section class="homepage__footer-mount">
-         <!--<Footer />-->
+         <Footer />
       </section>
    </div>
 </template>
@@ -32,7 +32,7 @@
    .homepage {
       width: 100vw;
       height: auto;
-      padding: 1rem 7% 1rem 7%;
+      padding: 1rem 7% 0rem 7%;
    }
 
    /******* 5.1 MEDIA QUERIES *******/

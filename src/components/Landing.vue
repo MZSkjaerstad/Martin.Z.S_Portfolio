@@ -191,8 +191,8 @@
 
    .ruler__increments {
       width: 85vw;
-      height: 2px;
-      margin-bottom: 4.65vh;
+      height: 0px;
+      margin-bottom: 5vh;
    }
 
    .ruler__increment--small {
