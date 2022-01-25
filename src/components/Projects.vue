@@ -77,7 +77,24 @@
                   </div>
                </div>
 
-               <div class="thumbnail__content"></div>
+               <div class="thumbnail__content">
+                  <div class="thumbnail__info-container">
+                     <div class="thumbnail__info">
+                        <div class="">
+                           <div class="thumbnail__year"> {{ thumbnail.year }} </div>
+
+                           <div class="thumbnail__tags" v-for="tag in thumbnail.tags" >{{ thumbnail.tags.tag }} </div>
+                        </div>
+                        <div class="thumbnail__description"> {{ thumbnail.description }} </div>
+                     </div>
+                  </div>
+
+                  <div class="thumbnail__hook">
+                     <div :class="`thumbnail__title thumbnail__title-position--${thumbnail.position}`"> {{ thumbnail.title }} </div>
+
+                     <div class="thumbnail__image"></div>
+                  </div>
+               </div>
             </div>
          </div>
       </div>
@@ -130,40 +147,40 @@
          return {
             thumbnails: [
                {
-               name: 'name',
+               title: 'name project number.1',
                link: 'link',
                image: 'imagelink',
                year: '2014',
                tags: ['tag1', 'tag2', 'tag3'],
-               description: 'description',
+               description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
                position: '1',
                },
                {
-               name: 'name',
+               title: 'name project number.2',
                link: 'link',
                image: 'imagelink',
-               year: '2014',
+               year: '2016',
                tags: ['tag1', 'tag2', 'tag3'],
-               description: 'description',
+               description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
                position: '2',
                },
                {
-               name: 'name',
+               title: 'name project number.3',
                link: 'link',
                image: 'imagelink',
-               year: '2014',
+               year: '2012',
                tags: ['tag1', 'tag2', 'tag3'],
-               description: 'description',
-               position: '4',
+               description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+               position: '3',
                },
                {
-               name: 'name',
+               title: 'name project number.4',
                link: 'link',
                image: 'imagelink',
-               year: '2014',
+               year: '2020',
                tags: ['tag1', 'tag2', 'tag3'],
-               description: 'description',
-               position: '3',
+               description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+               position: '1',
                },
                
             ],
@@ -240,15 +257,14 @@
    }
 
    .decoration__logo {
+      padding-top: 1vh;
       height: 10vh;
       width: auto;
    }
 
    /******* 3.1 THUMBNAILS *******/
 
-   .thumbnail {
-      margin-bottom: 5vh;
-   }
+   .thumbnail {}
 
    /* 3.2 Increment */
 
@@ -262,15 +278,15 @@
    }
 
    .thumbnail__increment-position--2 {
-      width: 36rem;
+      width: 42vw;
    }
 
    .thumbnail__increment-position--3 {
-      width: 48rem;
+      width: 54vw;
    }
 
    .thumbnail__increment-position--4 {
-      width: 60rem;
+      width: 62vw;
    }
 
    .thumbnail__increment-position--5 {
@@ -294,8 +310,10 @@
    /* 3.3 Display */
 
    .thumbnail__display {
+      display: flex;
       padding-top: 5vh;
       width: 100%;
+      cursor: pointer;
    }
 
    /* 3.4 Ruler */
@@ -311,13 +329,94 @@
    }
 
    .thumbnail__ruler-object--medium {
-            width: 2rem;
+      width: 2rem;
       border-top: solid var(--foreground) 1px;
    }
 
    /* 3.5 Content */
 
-   /* 4.3 Smaller screens, Small pads, mobile, etc. */
+   .thumbnail__content {
+      display: flex;
+   }
+
+   /* 3.6 Info */
+
+   .thumbnail__info-container {
+      width: 14rem;
+      height: 100%;
+      padding: 0vh 0vh 5vh 0.8rem;
+   }
+
+   .thumbnail__info {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+
+   .thumbnail__year {
+      font-size: 4.2vh;
+      font-weight: bold;
+      font-style: italic;
+      color: var(--background);
+      -webkit-text-stroke: 1px var(--foreground);
+   }
+
+   /* 3.7 Hook */
+
+   .thumbnail__title {
+      width: 1rem;
+      font-size: 10vh;
+      font-weight: bold;
+      font-style: italic;
+      text-transform: uppercase;
+      transform: translateY(-2.5vh);
+      color: var(--background);
+      -webkit-text-stroke: 1px var(--foreground);
+   }
+
+   .thumbnail__title-position--1 {
+      margin-left: 1rem;
+   }
+
+   .thumbnail__title-position--2 {
+      margin-left: 17vw;
+   }
+
+   .thumbnail__title-position--3 {
+      margin-left: 29vw;
+   }
+
+   .thumbnail__title-position--4 {
+      margin-left: 43vw;
+   }
+
+   .thumbnail__title-position--5 {
+      margin-left: 26vw;
+   }
+
+   /* 3.6 Hover */
+
+   .thumbnail__display:hover .thumbnail__info {
+      transform: translateX(0.6vw);
+      opacity: 100;
+      transition: 0.8s;
+   }
+
+   .thumbnail__display:hover .thumbnail__hook {
+      transform: translateX(2.5vw);
+      transition: 0.8s;
+   }
+
+   .thumbnail__display:hover .thumbnail__title {
+      color: var(--foreground);
+      -webkit-text-stroke: 0px;
+      transition: 0.8s;
+   }
+
+   /* 4.1 Smaller screens, Small pads, mobile, etc. */
 
    @media screen and (max-width: 997px) {
 

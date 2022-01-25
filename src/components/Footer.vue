@@ -45,7 +45,7 @@
 
    .footer__link {
       color: var(--color);
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-style: italic;
       text-decoration: none;
       text-transform: uppercase;
@@ -54,7 +54,7 @@
 
    .footer__link-button:hover .footer__link {
       color: var(--foreground);
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 500;
       transition: ease-in-out 0.2s;
    }
