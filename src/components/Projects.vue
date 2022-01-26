@@ -360,15 +360,23 @@
       font-size: 4.2vh;
       font-weight: bold;
       font-style: italic;
+      transform: translateY(-0.7rem);
       color: var(--background);
       -webkit-text-stroke: 1px var(--foreground);
+   }
+
+   .thumbnail__description {
+      font-size: 0.9rem;
+      font-weight: lighter;
+      transform: translateY(0.3rem);
    }
 
    /* 3.7 Hook */
 
    .thumbnail__title {
       width: 1rem;
-      font-size: 10vh;
+      padding-top: 3vh;
+      font-size: 8vh;
       font-weight: bold;
       font-style: italic;
       text-transform: uppercase;
