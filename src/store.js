@@ -1,5 +1,7 @@
+import thumbnails from './modules/thumbnails.js'
+
 export default {
-	state() {
-		return {}
+	modules: {
+		thumbnails,
 	},
-};
+}
