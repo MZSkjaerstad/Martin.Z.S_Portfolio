@@ -156,7 +156,7 @@
       position: absolute;
       width: 8rem;
       height: auto;
-      background: var(--background);
+      background: var(--primary-color);
       padding: 0rem 1rem 0.7rem 1rem;
       border-radius: 0px 0px 10px 10px;
       left: 50%;
@@ -196,23 +196,23 @@
    }
 
    .ruler__increment--small {
-      width: 0.6rem;
-      border-top: solid var(--foreground) 1px;
+      width: var(--increment-small);
+      border-top: var(--increment-style);
    }
 
    .ruler__increment--medium {
-      width: 2rem;
-      border-top: solid var(--foreground) 1px;
+      width: var(--increment-medium);
+      border-top: var(--increment-style);
    }
 
    .ruler__increment--long {
-      width: 85vw;
-      border-top: solid var(--foreground) 1px;
+      width: var(--increment-large);
+      border-top: var(--increment-style);
    }
 
    .ruler__increment-info {
-      color: var(--foreground);
-      font-size: 0.8rem;
+      color: var(--highlight-color);
+      font-size: var(--font-size-data);
    }
 
    .ruler__data {
@@ -221,14 +221,14 @@
    }
 
    .ruler__data-content {
-      color: var(--foreground);
-      font-size: 0.9rem;
+      color: var(--highlight-color);
+      font-size: var(--font-size-data);
       font-style: italic;
    }
 
    .ruler__name {
-      color: var(--foreground);
-      font-size: 1.1rem;
+      color: var(--highlight-color);
+      font-size: 1.1em;
       font-style: italic;
       text-align: end;
       text-transform: uppercase;
@@ -247,7 +247,7 @@
 
    .landingpage__motif {
       width: 86%;
-      height: 88.4%;
+      height: 92%;
       z-index: 10;
       left: 50%;
       transform: translateX(8%);
@@ -297,7 +297,7 @@
       font-style: italic;
       font-weight: 600;
       text-transform: uppercase;
-      color: var(--background);
+      color: var(--primary-color);
       padding-left: 7%;
    }
 
@@ -307,7 +307,7 @@
       font-weight: 600;
       letter-spacing: 0.6rem;
       text-transform: uppercase;
-      color: var(--background);
+      color: var(--primary-color);
    }
 
    /* 4.4 Circles */
@@ -341,8 +341,8 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background: var(--background);
-      border: solid var(--background) 1px;
+      background: var(--primary-color);
+      border: solid var(--primary-color) 1px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -385,29 +385,6 @@
 
       .ruler__increments {
          width: 90vw;
-      }
-
-      .ruler__increment--small {
-         width: 1.2rem;
-         border-top: solid var(--foreground) 4px;
-      }
-
-      .ruler__increment--medium {
-         width: 4rem;
-         border-top: solid var(--foreground) 4px;
-      }
-
-      .ruler__increment--long {
-         width: 100%;
-         border-top: solid var(--foreground) 4px;
-      }
-
-      .ruler__increment-info {
-         font-size: 2rem;
-      }
-
-      .ruler__data-content {
-         font-size: 2.4rem;
       }
 
       .ruler__name {

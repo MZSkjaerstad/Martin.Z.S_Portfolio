@@ -1,16 +1,35 @@
 :root {
-   --background: #15233b;
-   --foreground: #e06339;
-   --color: white;
+   /* Colour palette*/
+   --primary-color: #15233b;
+   --secondary-color: white;
+   --highlight-color: #e06339;
 
+   /* Font styles */
    --font-family: "alverata";
-   --font-size: 12pt;
+   --font-size-body: 12pt;
+   --font-size-data: 0.8em;
+   --font-size-thumbnail: 0.9em;
+
+   /* Ruler styles */
+   --increment-style: solid var(--highlight-color) 1px;
+
+   --increment-small: 0.6rem;
+   --increment-medium: 2rem;
+   --increment-large: 85vw;
 }
 
-/* Idea I'm testing */
+/*** Breakpoints ***/
 
 @media screen and (max-width: 992px) {
    :root {
-      --font-size: 24pt;
+      /* Font styles mobile */
+      --font-size-body: 12pt;
+      --font-size-data: 2em;
+
+      /* Ruler styles mobile */
+      --increment-style: solid var(--highlight-color) 4px;
+
+      --increment-small: 1.2rem;
+      --increment-medium: 4rem;
    }
 }

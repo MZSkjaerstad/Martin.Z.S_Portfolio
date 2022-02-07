@@ -8,7 +8,7 @@
             link: 'link',
             image: 'imagelink',
             year: '2014',
-            tags: [ 'tag1', 'tag2', 'tag3' ],
+            tags: [ 'Konseptutvikling', 'Animasjon', 'UX | UI' ],
             description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
             position: '1',
             },
@@ -18,7 +18,7 @@
             link: 'link',
             image: 'imagelink',
             year: '2016',
-            tags: ['tag1', 'tag2', 'tag3'],
+            tags: ['Frontend', 'Prototype'],
             description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
             position: '2',
             },
@@ -28,7 +28,7 @@
             link: 'link',
             image: 'imagelink',
             year: '2012',
-            tags: ['tag1', 'tag2', 'tag3'],
+            tags: ['Illustrasjon', 'Konseptutvikling', 'Prototype'],
             description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
             position: '3',
             },
@@ -50,6 +50,5 @@
       getThumbnails(state) {
          return state.thumbnails;
       }
-
    }
 }
