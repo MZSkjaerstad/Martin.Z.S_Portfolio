@@ -16,20 +16,25 @@
    --increment-small: 0.6rem;
    --increment-medium: 2rem;
    --increment-large: 85vw;
+
+   /* Thumbnail title style */
+   --title-style: 1px var(--highlight-color);
 }
 
 /*** Breakpoints ***/
 
-@media screen and (max-width: 992px) {
+@media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
    :root {
       /* Font styles mobile */
-      --font-size-body: 12pt;
-      --font-size-data: 2em;
+      --font-size-body: 24pt;
 
       /* Ruler styles mobile */
       --increment-style: solid var(--highlight-color) 4px;
 
       --increment-small: 1.2rem;
       --increment-medium: 4rem;
+
+      /* Thumbnail title style */
+      --title-style: 4px var(--highlight-color);
    }
 }

@@ -366,7 +366,7 @@
 
    /* 5.3 Smaller screens, Small pads, mobile, etc. */
 
-   @media screen and (max-width: 997px) {
+   @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
 
       /******* X.1 LOGO *******/
 

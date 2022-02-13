@@ -43,7 +43,9 @@
                   <div class="thumbnail__essentials">
                      <div class="thumbnail__year"> {{ thumbnail.year }} </div>
 
-                     <div class="thumbnail__tags" v-for="tag in thumbnail.tags"> {{ tag }} </div>
+                     <div class="thumbnail__tags-container">
+                        <div class="thumbnail__tags" v-for="tag in thumbnail.tags"> {{ tag }} </div>
+                     </div>
                   </div>
                   <div class="thumbnail__description"> {{ thumbnail.description }} </div>
                </div>
@@ -163,7 +165,7 @@ export default {
       font-style: italic;
       transform: translateY(-0.7rem);
       color: var(--primary-color);
-      -webkit-text-stroke: 1px var(--highlight-color);
+      -webkit-text-stroke: var(--title-style);
    }
 
    .thumbnail__tags {
@@ -171,7 +173,7 @@ export default {
       display: inline-block;
       color: var(--highlight-color);
       font-size: var(--font-size-data);
-      border: solid var(--highlight-color) 1px;
+      border: var(--increment-style);
       border-radius: 15px;
       padding: 0.09em 0.4em 0.1em 0.4em;
       margin: 0.2em;
@@ -194,7 +196,7 @@ export default {
       text-transform: uppercase;
       transform: translateY(-2.5vh);
       color: var(--primary-color);
-      -webkit-text-stroke: 1px var(--highlight-color);
+      -webkit-text-stroke: var(--title-style);
    }
 
    .thumbnail__title-position--1 {
@@ -236,5 +238,80 @@ export default {
       transition: 0.8s;
    }
 
+   @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
 
+      /* Ruler */
+
+      .thumbnail__increment {
+         width: 94%;
+         flex-direction: column;
+      }
+
+      /* Content */
+
+      .thumbnail__content {
+         flex-direction: column-reverse;
+      }
+
+      .thumbnail__info {
+         opacity: 100;
+      }
+
+      .thumbnail__essentials {
+         display: flex;
+         align-items: flex-end;
+         width: 80vw;
+         padding: 0rem 4rem;
+         position: bottom;
+      }
+
+      .thumbnail__year {
+         height: 100%;
+         display: flex;
+         align-items: flex-end;
+         transform: translateY(1rem);
+      }
+
+      .thumbnail__tags-container {
+         padding-left: 2rem;
+         flex-direction: row-reverse;
+      }
+
+      .thumbnail__tags {
+         border: solid var(--highlight-color) 3px;
+      }
+
+      .thumbnail__description {
+         display: none;
+         position: bottom;
+      }
+
+      .thumbnail__title {
+         color: var(--highlight-color);
+         -webkit-text-stroke: 0;
+         transform: translateY(-5vh);
+         font-size: 6vh;
+         padding: 0 3rem;
+         margin-left: 0;
+      }
+
+      /* Mobile Hover Cancelation */
+
+      .thumbnail__display:hover .thumbnail__info {
+      transform: translateX(none);
+      opacity: none;
+      transition: none;
+      }
+
+      .thumbnail__display:hover .thumbnail__hook {
+         transform: translateX(none);
+         transition: none;
+      }
+
+      .thumbnail__display:hover .thumbnail__title {
+         color: none;
+         -webkit-text-stroke: none;
+         transition: none;
+      }
+   }
 </style>

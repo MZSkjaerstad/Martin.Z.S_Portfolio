@@ -2,17 +2,19 @@
    <div class="footer">
       <div class="footer__increment"></div>
 
-      <div class="footer__link-container">
-         <div class="footer__link-button">
-            <a class="footer__link" href="https://www.linkedin.com/in/martin-zupfer-skj%C3%A6rstad-6257681a3" target="_blank">LinkedIn</a>
-         </div>
+      <div class="footer__content">
+         <div class="footer__link-container">
+            <div class="footer__link-button">
+               <a class="footer__link" href="https://www.linkedin.com/in/martin-zupfer-skj%C3%A6rstad-6257681a3" target="_blank">LinkedIn</a>
+            </div>
 
-         <div class="footer__link-button">
-            <a class="footer__link" href="https://www.instagram.com/martin.z.s/" target="_blank">Instagram</a>
-         </div>
+            <div class="footer__link-button">
+               <a class="footer__link" href="https://www.instagram.com/martin.z.s/" target="_blank">Instagram</a>
+            </div>
 
-         <div class="footer__link-button">
-            <a class="footer__link" href="https://github.com/MZSkjaerstad" target="_blank">Github</a>
+            <div class="footer__link-button">
+               <a class="footer__link" href="https://github.com/MZSkjaerstad" target="_blank">Github</a>
+            </div>
          </div>
       </div>
    </div>
@@ -21,7 +23,7 @@
 <script></script>
 
 <style>
-   .footer {
+   .footer__content {
       width: 100%;
       height: 5rem;
       display: flex;
@@ -66,9 +68,13 @@
       transition: ease-in-out 0.2s;
    }
 
-   @media screen and (max-width: 992px) {
+   @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
       .footer {
          padding: 0vw 5vw 0vw 5vw;
+      }
+
+      .footer__link-container {
+         width: 40rem;
       }
    }
 </style>
