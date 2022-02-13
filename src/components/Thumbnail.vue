@@ -270,6 +270,7 @@ export default {
          display: flex;
          align-items: flex-end;
          transform: translateY(1rem);
+         -webkit-text-stroke: var(--highlight-color) 3px;
       }
 
       .thumbnail__tags-container {
@@ -279,6 +280,7 @@ export default {
 
       .thumbnail__tags {
          border: solid var(--highlight-color) 3px;
+         transform: translateY(0.6rem);
       }
 
       .thumbnail__description {
