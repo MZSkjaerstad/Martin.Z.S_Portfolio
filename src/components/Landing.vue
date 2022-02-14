@@ -380,7 +380,8 @@
       /******* X.2 RULER *******/
 
       .landingpage__ruler{
-         padding: 0vw 5vw 0vw 5vw;
+         padding: 0vw 5vw;
+         margin: 5vw 0vh;
       }
 
       .ruler__increments {

@@ -26,7 +26,7 @@
 @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
    :root {
       /* Font styles mobile */
-      --font-size-body: 24pt;
+      --font-size-body: 30pt;
 
       /* Ruler styles mobile */
       --increment-style: solid var(--highlight-color) 4px;

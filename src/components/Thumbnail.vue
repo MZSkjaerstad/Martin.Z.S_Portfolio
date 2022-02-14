@@ -200,7 +200,7 @@ export default {
    }
 
    .thumbnail__title-position--1 {
-      margin-left: 1rem;
+      margin-left: 2rem;
    }
 
    .thumbnail__title-position--2 {
@@ -236,6 +236,28 @@ export default {
       color: var(--highlight-color);
       -webkit-text-stroke: 0px;
       transition: 0.8s;
+   }
+
+   @media screen and (min-device-width: 768px) and (max-device-width: 1090px) and (-webkit-min-device-pixel-ratio: 2) {
+      .thumbnail__increment {
+         width: 24rem;
+      }
+
+      .thumbnail__title-position--2 {
+         margin-left: 2rem;
+      }
+
+      .thumbnail__title-position--3 {
+         margin-left: 2rem;
+      }
+
+      .thumbnail__title-position--4 {
+         margin-left: 2rem;
+      }
+
+      .thumbnail__title-position--5 {
+         margin-left: 2rem;
+      }
    }
 
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
