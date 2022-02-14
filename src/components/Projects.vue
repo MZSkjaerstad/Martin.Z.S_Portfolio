@@ -169,13 +169,13 @@ import Thumbnail from '../components/Thumbnail.vue'
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
 
       .projects {
-         margin-top: 5vw;
+         margin-top: 4vh;
       }
 
       /* Decoration */
 
       .decoration__object--1 {
-      width: 2.5vw;
+         width: 2.5vw;
       }
 
       .decoration__object--2 {

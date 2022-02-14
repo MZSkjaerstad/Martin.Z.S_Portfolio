@@ -381,7 +381,7 @@
 
       .landingpage__ruler{
          padding: 0vw 5vw;
-         margin: 5vw 0vh;
+         margin: 3vh 0vh;
       }
 
       .ruler__increments {
