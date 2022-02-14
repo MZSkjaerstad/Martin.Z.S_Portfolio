@@ -70,7 +70,7 @@
          <div class="decoration__increment decoration__logo-container">
             <div class="decoration__object decoration__object--3"></div>
             <img class="decoration__logo" src="/visual_identity/vector/logo_w_text.svg" alt="Martin.Z.S logo">
-            <div/>
+            <div class="decoration__buffer"/>
          </div>
 
          <div class="decoration__increment">
@@ -168,6 +168,10 @@ import Thumbnail from '../components/Thumbnail.vue'
    
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
 
+      .projects {
+         margin-top: 5vw;
+      }
+
       /* Decoration */
 
       .decoration__object--1 {
@@ -204,7 +208,11 @@ import Thumbnail from '../components/Thumbnail.vue'
 
       .decoration__object--9 {
          width: 70vw;
-      }      
+      }
+
+      .decoration__buffer {
+         width: 7vw;
+      }
       
       /* Projects */
 

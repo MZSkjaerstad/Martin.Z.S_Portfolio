@@ -73,8 +73,13 @@
          padding: 0vw 5vw 0vw 5vw;
       }
 
+      .footer__content {
+         height: 10rem;
+      }
+
       .footer__link-container {
          width: 40rem;
+         margin-top: 0.5rem;
       }
    }
 </style>

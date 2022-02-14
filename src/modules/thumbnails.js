@@ -28,7 +28,7 @@
             link: 'link',
             image: 'imagelink',
             year: '2012',
-            tags: ['Illustrasjon', 'Konseptutvikling', 'Prototype'],
+            tags: ['Illustrasjon', 'Konseptutvikling', 'Proto'],
             description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
             position: '3',
             },
