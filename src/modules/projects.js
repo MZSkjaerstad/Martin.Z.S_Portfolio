@@ -5,7 +5,7 @@ export default {
             {
                slug:'hardcore',
                introduction: {
-                  title: 'introduction title',
+                  title: 'introduction [ONLINE]',
                   subtitle: '',
                   description: '',
                   year: '',
@@ -16,7 +16,7 @@ export default {
                },
                exhibition: 'hardcore',
                prosess: {
-                  body: 'prosess body',
+                  body: 'prosess [ONLINE]',
                   images: []
                   },
             },
