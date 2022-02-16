@@ -281,6 +281,7 @@ export default {
 
       .thumbnail__essentials {
          display: flex;
+         justify-content: space-between;
          align-items: flex-end;
          width: 80vw;
          padding: 0rem 4rem;

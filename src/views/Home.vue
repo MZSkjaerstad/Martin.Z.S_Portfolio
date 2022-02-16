@@ -5,7 +5,7 @@
       </section>
 
       <section class="homepage__projects-mount">
-         <Projects />
+         <ProjectsOverview />
       </section>
 
       <section class="homepage__footer-mount">
@@ -16,13 +16,13 @@
 
 <script>
    import Landing from '../components/Landing.vue'
-   import Projects from '../components/Projects.vue'
+   import ProjectsOverview from '../components/ProjectsOverview.vue'
    import Footer from '../components/Footer.vue'
 
    export default {
       components: {
          Landing,
-         Projects,
+         ProjectsOverview,
          Footer,
       }
    }
