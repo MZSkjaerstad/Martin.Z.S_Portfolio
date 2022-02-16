@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import Thumbnail from '../components/Thumbnail.vue'
+import Thumbnail from './Thumbnail.vue'
    export default {
       components: {
          Thumbnail
@@ -169,7 +169,7 @@ import Thumbnail from '../components/Thumbnail.vue'
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
 
       .projects {
-         margin-top: 4vh;
+         margin-top: 3vh;
       }
 
       /* Decoration */
