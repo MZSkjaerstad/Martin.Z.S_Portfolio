@@ -23,6 +23,10 @@
 <script></script>
 
 <style>
+   .footer {
+      padding: 0% 7%;
+   }
+
    .footer__content {
       width: 100%;
       height: 5rem;

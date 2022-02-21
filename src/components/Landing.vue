@@ -1,11 +1,5 @@
 <template>
    <div class="landingpage">
-      <figure class="landingpage__logowrapper">
-         <img class="landingpage__logo" src="/visual_identity/vector/logo_w_text.svg" alt="Martin.Z.S logo">
-
-         <figcaption class="landingpage__logo-fig">Martin Z. S. logo</figcaption>
-      </figure>
-
       <div class="landingpage__ruler">
          <div class="ruler__increment-group">
             <div class="ruler__increments ruler__data">
@@ -148,33 +142,10 @@
       position: relative;       
       width: 100%;
       height: 100%;
-      overflow: hidden;
+      min-height: 100%;
    }
 
-   /******* 2.1 LOGO *******/
-
-   .landingpage__logowrapper {
-      position: absolute;
-      width: 8rem;
-      height: auto;
-      background: var(--primary-color);
-      padding: 0rem 1rem 0.7rem 1rem;
-      border-radius: 0px 0px 10px 10px;
-      left: 50%;
-      transform: translateX(-4rem);
-      z-index: 14;
-   }
-
-   .landingpage__logo {
-      width: 100%;
-      height: auto;
-   }
-
-   .landingpage__logo-fig {
-      display: none;
-   }
-
-   /******* 3.1 RULER *******/
+   /******* 2.1 RULER *******/
 
    .landingpage__ruler {
       position: absolute;
@@ -244,7 +215,7 @@
       margin-top: 0.4rem;
    }
 
-   /******* 4.1 MOTIF *******/
+   /******* 3.1 MOTIF *******/
 
    .landingpage__motif {
       width: 86%;
@@ -255,7 +226,7 @@
       overflow: hidden;
    }
 
-   /* 4.2 Birds */
+   /* 3.2 Birds */
 
    .landingpage__birds {
       position: absolute;
@@ -282,7 +253,7 @@
       padding-top: 50%;
    }
 
-   /* 4.3 Typograpfy */
+   /* 3.3 Typograpfy */
 
    .landingpage__typography {
       position: absolute;
@@ -311,7 +282,7 @@
       color: var(--primary-color);
    }
 
-   /* 4.4 Circles */
+   /* 3.4 Circles */
 
    .landingpage__circles {
       position: absolute;
@@ -336,7 +307,7 @@
       margin-bottom: 25%;
    }
 
-   /* 4.5 Background */
+   /* 3.5 Background */
 
    .landingpage__background  {
       position: absolute;
@@ -359,13 +330,13 @@
       display: none;
    }
 
-   /******* 5.1 MEDIA QUERIES *******/
+   /******* 4.1 MEDIA QUERIES *******/
 
-   /* 5.2 Widescreen */
+   /* 4.2 Widescreen */
 
    @media screen and (min-width: 1200px) {}
 
-   /* 5.3 Smaller screens, Small pads, mobile, etc. */
+   /* 4.3 Smaller screens, Small pads, mobile, etc. */
 
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
 
