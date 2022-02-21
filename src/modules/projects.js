@@ -6,6 +6,7 @@ export default {
                slug:'hardcore',
                introduction: {
                   title: 'introduction [ONLINE]',
+                  image: '',
                   subtitle: '',
                   description: '',
                   year: '',
