@@ -175,11 +175,13 @@ export default {
       font-size: var(--font-size-data);
       border: var(--increment-style);
       border-radius: 15px;
-      padding: 0.09em 0.4em 0.1em 0.4em;
+      padding: 0.09rem 0.4rem 0.1rem 0.4rem;
       margin: 0.2em;
    }
 
    .thumbnail__description {
+      max-height: 15vh;
+      overflow: hidden;
       font-size: var(--font-size-thumbnail);
       font-weight: lighter;
       transform: translateY(0.3rem);
@@ -238,6 +240,8 @@ export default {
       transition: 0.8s;
    }
 
+   /* Pad responsive */
+
    @media screen and (min-device-width: 768px) and (max-device-width: 1090px) and (-webkit-min-device-pixel-ratio: 2) {
       .thumbnail__increment {
          width: 24rem;
@@ -259,6 +263,8 @@ export default {
          margin-left: 2rem;
       }
    }
+
+   /* Mobile responsive */
 
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -297,8 +303,11 @@ export default {
       }
 
       .thumbnail__tags-container {
-         padding-left: 2rem;
-         flex-direction: row-reverse;
+         height: 8rem;
+         display: flex;
+         justify-content: flex-end;
+         align-items: flex-end;
+         flex-wrap: wrap;
       }
 
       .thumbnail__tags {

@@ -67,6 +67,11 @@ export default {
    }
 
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
-
+      .header__logowrapper {
+         width: 16rem;
+         transform: translateX(-8rem);
+         padding: 0rem 2rem 1.4rem 2rem;
+         border-radius: 0px 0px 12px 12px;
+      }
    }
 </style>
