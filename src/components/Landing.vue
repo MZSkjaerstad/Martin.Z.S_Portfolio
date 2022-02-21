@@ -1,133 +1,135 @@
 <template>
-   <div class="landingpage">
-      <div class="landingpage__ruler">
-         <div class="ruler__increment-group">
-            <div class="ruler__increments ruler__data">
-               <div>
+   <div>
+      <div class="landingpage">
+         <div class="landingpage__ruler">
+            <div class="ruler__increment-group">
+               <div class="ruler__increments ruler__data">
+                  <div>
+                     <div class="ruler__increment--medium"></div>
+
+                     <div class="ruler__increment-info">001</div>
+                  </div>
+
+                  <div class="ruler__data-content">Heihei</div>
+               </div>
+
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
+
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
+
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
+            </div>
+
+            <div class="ruler__increment-group">
+               <div class="ruler__increments">
                   <div class="ruler__increment--medium"></div>
-
-                  <div class="ruler__increment-info">001</div>
                </div>
 
-               <div class="ruler__data-content">Heihei</div>
-            </div>
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
 
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
-            </div>
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
 
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
-            </div>
-
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
-            </div>
-         </div>
-
-         <div class="ruler__increment-group">
-            <div class="ruler__increments">
-               <div class="ruler__increment--medium"></div>
-            </div>
-
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
-            </div>
-
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
-            </div>
-
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
-            </div>
-         </div>
-
-         <div class="ruler__increment-group">
-            <div class="ruler__increments">
-               <div class="ruler__increment--medium"></div>
-            </div>
-
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
-            </div>
-
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
-            </div>
-
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
-            </div>
-         </div>
-
-         <div class="ruler__increment-group">
-            <div class="ruler__increments">
-               <div class="ruler__increment--medium"></div>
-            </div>
-
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
-            </div>
-
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
-            </div>
-
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
-            </div>
-         </div>
-
-         <div class="ruler__increment-group">
-            <div class="ruler__increments ruler__increment--long">
-               <div class="ruler__name">
-                  <div class="ruler__name-spacing">By Martin</div>
-
-                  <div class="ruler__name-spacing">Zupfer Skjærstad</div>
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
                </div>
             </div>
 
-            <div class="ruler__increments ruler__scroll-icon">
-               <div class="ruler__increment--small"></div>
+            <div class="ruler__increment-group">
+               <div class="ruler__increments">
+                  <div class="ruler__increment--medium"></div>
+               </div>
 
-               <div></div>
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
+
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
+
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
             </div>
 
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
+            <div class="ruler__increment-group">
+               <div class="ruler__increments">
+                  <div class="ruler__increment--medium"></div>
+               </div>
+
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
+
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
+
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
             </div>
 
-            <div class="ruler__increments">
-               <div class="ruler__increment--small"></div>
+            <div class="ruler__increment-group">
+               <div class="ruler__increments ruler__increment--long">
+                  <div class="ruler__name">
+                     <div class="ruler__name-spacing">By Martin</div>
+
+                     <div class="ruler__name-spacing">Zupfer Skjærstad</div>
+                  </div>
+               </div>
+
+               <div class="ruler__increments ruler__scroll-icon">
+                  <div class="ruler__increment--small"></div>
+
+                  <div></div>
+               </div>
+
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
+
+               <div class="ruler__increments">
+                  <div class="ruler__increment--small"></div>
+               </div>
             </div>
          </div>
-      </div>
-       
-      <div class="landingpage__motif">
-         <div class="landingpage__birds">
-            <img class="landingpage__bigbird" src="/visual_identity/image/bird-big.png" alt="big bird">
+         
+         <div class="landingpage__motif">
+            <div class="landingpage__birds">
+               <img class="landingpage__bigbird" src="/visual_identity/image/bird-big.png" alt="big bird">
 
-            <img class="landingpage__smallbird" src="/visual_identity/image/bird-small.png" alt="small bird">
+               <img class="landingpage__smallbird" src="/visual_identity/image/bird-small.png" alt="small bird">
+            </div>
+
+            <div class="landingpage__typography">
+               <div class="landingpage__subtitle">a graphic design</div>
+               
+               <div class="landingpage__title">portfolio</div>
+            </div>
+
+            <div class="landingpage__circles">
+               <img class="landingpage__big-circle" src="/visual_identity/image/circle-big.png" alt="Stor sirkel">
+
+               <img class="landingpage__small-circle" src="/visual_identity/image/circle-small.png" alt="Liten sirkel">
+            </div>
+
+            <figure class="landingpage__background">
+               <img class="landingpage__background-img" src="/visual_identity/image/background-image.jpg" alt="Background-image">
+
+               <figcaption class="landingpage__figcaption">Background image</figcaption>
+            </figure>
          </div>
-
-         <div class="landingpage__typography">
-            <div class="landingpage__subtitle">a graphic design</div>
-            
-            <div class="landingpage__title">portfolio</div>
-         </div>
-
-         <div class="landingpage__circles">
-            <img class="landingpage__big-circle" src="/visual_identity/image/circle-big.png" alt="Stor sirkel">
-
-            <img class="landingpage__small-circle" src="/visual_identity/image/circle-small.png" alt="Liten sirkel">
-         </div>
-
-         <figure class="landingpage__background">
-            <img class="landingpage__background-img" src="/visual_identity/image/background-image.jpg" alt="Background-image">
-
-            <figcaption class="landingpage__figcaption">Background image</figcaption>
-         </figure>
       </div>
    </div>
 </template>
@@ -142,7 +144,6 @@
       position: relative;       
       width: 100%;
       height: 100%;
-      min-height: 100%;
    }
 
    /******* 2.1 RULER *******/
