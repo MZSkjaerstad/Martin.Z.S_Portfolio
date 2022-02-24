@@ -6,58 +6,60 @@
          <div class="thumbnail__counter">00{{ thumbnails.indexOf(thumbnail) + 1 }}</div>
       </div>
 
-      <div class="thumbnail__display" @click="">
-         <div class="thumbnail__ruler">
-            <div class="thumbnail__ruler-increment">
-               <div class="thumbnail__ruler-object--small"></div>
-            </div>
+      <router-link class="thumbnail__link" :to="`/${thumbnail.slug}`">
+         <div class="thumbnail__display">
+            <div class="thumbnail__ruler">
+               <div class="thumbnail__ruler-increment">
+                  <div class="thumbnail__ruler-object--small"></div>
+               </div>
 
-            <div class="thumbnail__ruler-increment">
-               <div class="thumbnail__ruler-object--small"></div>
-            </div>
+               <div class="thumbnail__ruler-increment">
+                  <div class="thumbnail__ruler-object--small"></div>
+               </div>
 
-            <div class="thumbnail__ruler-increment">
-               <div class="thumbnail__ruler-object--small"></div>
-            </div>
+               <div class="thumbnail__ruler-increment">
+                  <div class="thumbnail__ruler-object--small"></div>
+               </div>
 
-            <div class="thumbnail__ruler-increment">
-               <div class="thumbnail__ruler-object--medium"></div>
-            </div>
+               <div class="thumbnail__ruler-increment">
+                  <div class="thumbnail__ruler-object--medium"></div>
+               </div>
 
-            <div class="thumbnail__ruler-increment">
-               <div class="thumbnail__ruler-object--small"></div>
-            </div>
+               <div class="thumbnail__ruler-increment">
+                  <div class="thumbnail__ruler-object--small"></div>
+               </div>
 
-            <div class="thumbnail__ruler-increment">
-               <div class="thumbnail__ruler-object--small"></div>
-            </div>
+               <div class="thumbnail__ruler-increment">
+                  <div class="thumbnail__ruler-object--small"></div>
+               </div>
 
-            <div class="thumbnail__ruler-increment">
-               <div class="thumbnail__ruler-object--small"></div>
-            </div>
-         </div>
-
-         <div class="thumbnail__content">
-            <div class="thumbnail__info-container">
-               <div class="thumbnail__info">
-                  <div class="thumbnail__essentials">
-                     <div class="thumbnail__year"> {{ thumbnail.year }} </div>
-
-                     <div class="thumbnail__tags-container">
-                        <div class="thumbnail__tags" v-for="tag in thumbnail.tags"> {{ tag }} </div>
-                     </div>
-                  </div>
-                  <div class="thumbnail__description"> {{ thumbnail.description }} </div>
+               <div class="thumbnail__ruler-increment">
+                  <div class="thumbnail__ruler-object--small"></div>
                </div>
             </div>
 
-            <div class="thumbnail__hook">
-               <div :class="`thumbnail__title thumbnail__title-position--${thumbnail.position}`"> {{ thumbnail.title }} </div>
+            <div class="thumbnail__content">
+               <div class="thumbnail__info-container">
+                  <div class="thumbnail__info">
+                     <div class="thumbnail__essentials">
+                        <div class="thumbnail__year"> {{ thumbnail.year }} </div>
 
-               <div class="thumbnail__image"></div>
+                        <div class="thumbnail__tags-container">
+                           <div class="thumbnail__tags" v-for="tag in thumbnail.tags"> {{ tag }} </div>
+                        </div>
+                     </div>
+                     <div class="thumbnail__description"> {{ thumbnail.description }} </div>
+                  </div>
+               </div>
+
+               <div class="thumbnail__hook">
+                  <div :class="`thumbnail__title thumbnail__title-position--${thumbnail.position}`"> {{ thumbnail.title }} </div>
+
+                  <div class="thumbnail__image"></div>
+               </div>
             </div>
          </div>
-      </div>
+      </router-link>
    </div>
 </template>
 
@@ -112,7 +114,11 @@ export default {
       position: absolute;
    }
    
-   /* 3.3 Display */
+   /* 3.3 Link */
+
+   .thumbnail__link {
+      text-decoration: none !important;
+   }
 
    .thumbnail__display {
       display: flex;
@@ -163,6 +169,7 @@ export default {
       font-size: 4.2vh;
       font-weight: bold;
       font-style: italic;
+      text-decoration: none;
       transform: translateY(-0.7rem);
       color: var(--primary-color);
       -webkit-text-stroke: var(--title-style);
@@ -182,6 +189,7 @@ export default {
    .thumbnail__description {
       max-height: 15vh;
       overflow: hidden;
+      color: var(--secondary-color);
       font-size: var(--font-size-thumbnail);
       font-weight: lighter;
       transform: translateY(0.3rem);
@@ -289,7 +297,7 @@ export default {
          display: flex;
          justify-content: space-between;
          align-items: flex-end;
-         width: 80vw;
+         width: 86vw;
          padding: 0rem 4rem;
          position: bottom;
       }
@@ -303,11 +311,12 @@ export default {
       }
 
       .thumbnail__tags-container {
-         height: 8rem;
+         height: 8.5rem;
+         padding-left: 2rem;
          display: flex;
          justify-content: flex-end;
-         align-items: flex-end;
-         flex-wrap: wrap;
+         align-items: flex-start;
+         flex-wrap: wrap-reverse;
       }
 
       .thumbnail__tags {

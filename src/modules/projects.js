@@ -5,12 +5,12 @@ export default {
             {
                slug:'hardcore',
                introduction: {
-                  title: 'introduction [ONLINE]',
-                  image: '',
-                  subtitle: '',
-                  description: '',
-                  year: '',
-                  tags: [],
+                  title: 'Hardcore animation M.Video',
+                  image: 'hardcore_animation/image/banner_image.jpg',
+                  subtitle: 'A music visulization',
+                  description: 'Hardcore animation is a digital visualization of the music genre hardcore punk. Through the use of animation video the auditory and the visual aspects are merged together to create a holistic expression of the raw, violent, and aggressive energy behind the genre.',
+                  year: '2020',
+                  tags: ['Konseptutvikling', 'Animasjon', 'UX | UI'],
                   contentOverview: [
                      {image: '', pitch: ''}
                   ]

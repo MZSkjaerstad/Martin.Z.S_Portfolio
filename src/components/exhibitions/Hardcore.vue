@@ -20,8 +20,8 @@
    /* 1.2 Transition */
 
    .exhibition__transition {
-      height: 20rem;
-      background: linear-gradient(0deg, black 20%, var(--primary-color) 100%);
+      height: 25rem;
+      background: linear-gradient(0deg, black 0%, var(--primary-color) 95%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -34,6 +34,9 @@
    }
    
    /* 1.3 Content */
-   
 
+   .exhibition__content {
+      height: 100%;
+   }
+   
 </style>

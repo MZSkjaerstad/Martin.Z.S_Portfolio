@@ -1,5 +1,13 @@
 <template>
    <div class="landingpage">
+      <router-link to="/">
+         <figure class="header__logowrapper">
+            <img class="header__logo" src="/visual_identity/vector/logo_w_text.svg" alt="Martin.Z.S logo">
+
+            <figcaption class="header__logo-fig">Martin Z. S. logo</figcaption>
+         </figure>
+      </router-link>
+
       <div class="landingpage__ruler">
          <div class="ruler__increment-group">
             <div class="ruler__increments ruler__data">
@@ -136,12 +144,35 @@
 
 <style>
 
-   /******* 1.1 GENERAL *******/
+   /******* GENERAL *******/
 
    .landingpage {
       position: relative;       
       width: 100%;
       height: 100vh;
+   }
+
+   /* 1.1 logo */
+
+   .header__logowrapper {
+      position: absolute;
+      width: 8rem;
+      height: auto;
+      background: var(--primary-color);
+      padding: 0rem 1rem 0.7rem 1rem;
+      border-radius: 0px 0px 5px 5px;
+      left: 50%;
+      transform: translateX(-4rem);
+      z-index: 18;
+   }
+
+   .header__logo {
+      width: 100%;
+      height: auto;
+   }
+
+   .header__logo-fig {
+      display: none;
    }
 
    /******* 2.1 RULER *******/

@@ -1,5 +1,7 @@
 <template>
-   {{ prosessData.body }}
+   <div class="process">
+      {{ prosessData.body }}
+   </div>
 </template>
 
 <script>
@@ -11,3 +13,9 @@ export default {
    },
 }
 </script>
+
+<style>
+   .process {
+      height: 100%;
+   }
+</style>

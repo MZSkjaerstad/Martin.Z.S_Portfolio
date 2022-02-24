@@ -1,7 +1,7 @@
 <template>
    <Hardcore v-if="projectName === 'hardcore'" />
    <Software v-if="projectName === 'software'" />
-
+   
 </template>
 
 <script>
@@ -11,7 +11,7 @@ import Software from '../exhibitions/Software.vue'
 export default {
    components: {
       Hardcore,
-      Software
+      Software,
    },
 
    props: {
