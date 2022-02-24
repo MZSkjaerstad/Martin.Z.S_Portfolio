@@ -4,12 +4,12 @@
       return {
          thumbnails: [
             {
-            title: 'name project number.1',
-            link: 'link',
+            title: 'Hardcore animation M.Video',
+            slug: 'hardcore',
             image: 'imagelink',
-            year: '2014',
+            year: '2020',
             tags: [ 'Konseptutvikling', 'Animasjon', 'UX | UI' ],
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+            description: 'Hardcore Animation is an animated music video of the musical genre hardcore punk. An experimentation of music visulization, the purpose is transcribe the auditory atributes int a visual solution.',
             position: '1',
             },
 
@@ -19,7 +19,7 @@
             image: 'imagelink',
             year: '2016',
             tags: ['Frontend', 'Prototype'],
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+            description: 'Page is currently not ready.',
             position: '2',
             },
 
@@ -28,8 +28,8 @@
             link: 'link',
             image: 'imagelink',
             year: '2012',
-            tags: ['Illustrasjon', 'Konseptutvikling', 'Proto'],
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+            tags: ['Konseptutvikling', 'Illustrasjon', 'Prototype'],
+            description: 'Page is currently not ready.',
             position: '3',
             },
             
@@ -39,7 +39,7 @@
             image: 'imagelink',
             year: '2020',
             tags: ['tag1', 'tag2', 'tag3'],
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+            description: 'Page is currently not ready.',
             position: '1',
             },
          ],

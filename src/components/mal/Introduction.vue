@@ -2,9 +2,7 @@
    <div class="introduction">
       <div class="introduction__hook">
          <figure class="introduction__figure">
-            <img class="introduction__image" :src="introductionData.image" alt="">
-
-            <figcaption class="introduction__figcaption"></figcaption>
+            <img class="introduction__image" :src="`/project_assets/${introductionData.image}`">
          </figure>
 
          <div class="introduction__title">
@@ -13,9 +11,64 @@
       </div>
 
       <div class="introduction__content">
-         <div class="introduction__ruler"></div>
+         <div class="introduction__ruler">
+            <div class="introduction__increment">
+               <div class="introduction__increment--data">Project</div>
+               <div class="introduction__increment--1"></div>
+            </div>
 
-         <div class="introduction__information"></div>
+            <div class="introduction__increment">
+               <div class="introduction__increment--2"></div>
+            </div>
+
+            <div class="introduction__increment">
+               <div class="introduction__increment--3"></div>
+            </div>
+
+            <div class="introduction__increment">
+               <div class="introduction__increment--4"></div>
+            </div>
+
+            <div class="introduction__increment">
+               <div class="introduction__increment--5"></div>
+            </div>
+
+            <div class="introduction__increment">
+               <div class="introduction__increment--6"></div>
+            </div>
+
+            <div class="introduction__increment">
+               <div class="introduction__increment--7"></div>
+            </div>
+
+            <div class="introduction__increment">
+               <div class="introduction__increment--8"></div>
+            </div>
+         </div>
+
+         <div class="introduction__information">
+            <div class="introduction__text">
+               <div class="introduction__subtitle">
+                  {{ introductionData.subtitle }}
+               </div>
+
+               <div class="introduction__description">
+                  {{ introductionData.description }}
+               </div>
+            </div>
+
+            <div class="introduction__details">
+               <div class="introduction__year">
+                  {{ introductionData.year }}
+               </div>
+
+               <div class="introduction__tagscontainer">
+                  <div class="introduction__tags" v-for="tag in introductionData.tags">
+                     {{ tag }}
+                  </div>
+               </div>
+            </div>
+         </div>
 
          <div class="introduction__overview" v-for="content in introductionData.contentOverview"></div>
       </div>
@@ -34,8 +87,171 @@ export default {
 
 <style>
 
-@media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
-   
-}
+   .introduction {
+      width: 100%;
+      height: 100%;
+      padding: 0rem 7% 0rem 7%;
+   }
 
+   /***** 1.0 Hook *****/
+
+   .introduction__hook {
+      width: 100%;
+      height: 60%;
+      padding-bottom: 2rem;
+   }
+
+   .introduction__figure {
+      width: 54%;
+      height: 100%;
+   }
+
+   .introduction__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+   .introduction__title {
+      width: 16rem;
+      height: auto;
+      position: absolute;
+      font-size: 10vh;
+      font-weight: bold;
+      font-style: italic;
+      text-transform: uppercase;
+      color: #15233bbb;
+      -webkit-text-stroke: var(--title-style);
+      transform: translateX(30.5vw);
+      bottom: 42%;
+      left: 7%;
+   }
+
+   /***** 2.0 Content *****/
+
+   .introduction__content {
+      width: 100%;
+      display: flex;
+   }
+
+   /* 2.1 Ruler */
+
+   .introduction__ruler {
+      width: 33%;
+      height: 100%;
+   }
+
+   .introduction__increment {
+      width: 100%;
+      height: 0;
+      margin-bottom: 5vh;
+      display: flex;
+      justify-content: flex-end;
+   }
+
+   .introduction__increment--1 {
+      width: 85%;
+      border-top: var(--increment-style);
+   }
+
+   .introduction__increment--2 {
+      width: 55%;
+      border-top: var(--increment-style);
+   }
+
+   .introduction__increment--3 {
+      width: 35%;
+      border-top: var(--increment-style);
+   }
+
+   .introduction__increment--4 {
+      width: 22%;
+      border-top: var(--increment-style);
+   }
+
+   .introduction__increment--5 {
+      width: 14%;
+      border-top: var(--increment-style);
+   }
+
+   .introduction__increment--6 {
+      width: 10%;
+      border-top: var(--increment-style);
+   }
+
+   .introduction__increment--7 {
+      width: 7%;
+      border-top: var(--increment-style);
+   }
+
+   .introduction__increment--8 {
+      width: 4%;
+      border-top: var(--increment-style);
+   }
+
+   .introduction__increment--data {
+      color: var(--highlight-color);
+      font-size: var(--font-size-data);
+      margin-right: 0.8rem;
+      transform: translateY(-0.5rem);
+   }
+
+   /* 2.2 Information */
+
+   .introduction__information {
+      width: 33%;
+      height: 35vh;
+      min-width: 21rem;
+      padding: 0 2rem 0 2rem;
+      border-right: var(--increment-style);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+
+   .introduction__text {
+      transform: translateY(-0.5rem);
+   }
+
+   .introduction__subtitle {
+      font-size: 1.6rem;
+      font-style: italic;
+      margin-bottom: 0.8rem;
+   }
+
+   .introduction__description {
+      overflow-y: hidden;   
+   }
+
+   .introduction__year {
+      font-size: 2rem;
+      font-weight: bold;
+      font-style: italic;
+      text-decoration: none;
+      color: var(--primary-color);
+      -webkit-text-stroke: var(--title-style);
+   }
+
+   .introduction__tagscontainer {
+      transform: translateX(-0.5rem);
+   }
+
+   .introduction__tags {
+      width: auto;
+      display: inline-block;
+      color: var(--highlight-color);
+      font-size: var(--font-size-data);
+      border: var(--increment-style);
+      border-radius: 15px;
+      padding: 0.09rem 0.4rem 0.1rem 0.4rem;
+      margin: 0.2em;
+   }
+
+   /* 2.3 Overview */
+
+@media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+   .introduction {
+      padding: 0rem 0% 2rem 0%;
+   }
+}
 </style>
