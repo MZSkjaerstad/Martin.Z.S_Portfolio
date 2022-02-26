@@ -325,7 +325,7 @@ export default {
 
    .introduction__information {
       width: 100%;
-      height: 62%;
+      height: 70%;
       border-right: none;
    }
 
@@ -346,9 +346,13 @@ export default {
       font-size: 6rem;
    }
 
+   .introduction__tagscontainer {
+      margin-bottom: 1rem;
+   }
+
    .introduction__overviewcontainer {
       width: 100%;
-      height: 20%;
+      height: 30%;
       padding: 4rem 2rem;
       justify-content: space-between;
       align-items: center;
