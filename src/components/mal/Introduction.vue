@@ -70,7 +70,17 @@
             </div>
          </div>
 
-         <div class="introduction__overview" v-for="content in introductionData.contentOverview"></div>
+         <div class="introduction__overviewcontainer">
+            <div class="introduction__overview" v-for="content in introductionData.contentOverview">
+               <figure class="introduction__overview-figure">
+                  <img class="introduction__overview-image" :src="`/project_assets/${content.image}`">
+               </figure>
+               
+               <div class="introduction__pitch">
+                  "{{ content.pitch }}"
+               </div>
+            </div>
+         </div>
       </div>
    </div>
 </template>
@@ -233,7 +243,7 @@ export default {
    }
 
    .introduction__tagscontainer {
-      transform: translateX(-0.5rem);
+      transform: translateX(-0.5rem) translateY(0.5rem);
    }
 
    .introduction__tags {
@@ -249,9 +259,106 @@ export default {
 
    /* 2.3 Overview */
 
+   .introduction__overviewcontainer {
+      width: 33%;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0rem 1rem;
+   }
+
+   .introduction__overview {
+      margin-right: 1rem; 
+   }
+
+   .introduction__overview-figure {
+      width: 6rem;
+      height: 6rem;
+      border: var(--increment-style);
+   }
+
+   .introduction__overview-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+   .introduction__pitch {
+      padding: 0.4rem 0rem;
+      font-style: italic;
+   }
+
+
+
 @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+
    .introduction {
-      padding: 0rem 0% 2rem 0%;
+      padding: rem 7% 2rem 7%;
+   }
+
+   /* Hook */
+
+   .introduction__hook {
+      height: 40%;
+   }
+
+   .introduction__figure {
+      width: 100%;
+   }
+
+   .introduction__title {
+      font-size: 14vw;
+      transform: translateY(0);
+      bottom: 60%;
+      left: 11%;
+   }
+
+   /* Content */
+
+   .introduction__content {
+      height: 60%;
+      flex-direction: column;
+   }
+
+   .introduction__ruler {
+      display: none;
+   }
+
+   .introduction__information {
+      width: 100%;
+      height: 62%;
+      border-right: none;
+   }
+
+   .introduction__text {
+      transform: translateY(1rem);
+   }
+
+   .introduction__subtitle {
+      font-size: 3.4rem;
+      margin-bottom: 1.6rem;
+   }
+
+   .introduction__year {
+      font-size: 6rem;
+   }
+
+   .introduction__overviewcontainer {
+      width: 100%;
+      height: 20%;
+      padding: 4rem 2rem;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   .introduction__overview-figure {
+      width: 12rem;
+      height: 12rem;
+      margin-right: none;
+   }
+
+   .introduction__pitch {
+      padding: 1.6rem 0rem;
    }
 }
+
 </style>
