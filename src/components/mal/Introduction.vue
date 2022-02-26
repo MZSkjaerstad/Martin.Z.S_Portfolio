@@ -333,8 +333,12 @@ export default {
       transform: translateY(1rem);
    }
 
+   .introduction__description {
+      margin-bottom: 1rem;
+   }
+
    .introduction__subtitle {
-      font-size: 3.4rem;
+      font-size: 4rem;
       margin-bottom: 1.6rem;
    }
 
