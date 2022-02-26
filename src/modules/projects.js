@@ -12,7 +12,9 @@ export default {
                   year: '2020',
                   tags: ['Konseptutvikling', 'Animasjon', 'UX | UI'],
                   contentOverview: [
-                     {image: '', pitch: ''}
+                     {image: 'hardcore_animation/image/banner_image.jpg', pitch: 'pitch 1'},
+                     {image: 'hardcore_animation/image/banner_image.jpg', pitch: 'pitch 2'},
+                     {image: 'hardcore_animation/image/banner_image.jpg', pitch: 'pitch 3'},
                   ]
                },
                exhibition: 'hardcore',
