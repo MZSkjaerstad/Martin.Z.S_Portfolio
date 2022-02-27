@@ -118,6 +118,7 @@ export default {
       background: none;
       border: none;
       cursor: pointer;
+      z-index: 26;
    }
 
    .header__burger-button rect {
@@ -140,12 +141,13 @@ export default {
          display: none;
       }
 
-      .header__logowrapper {
-         width: 16rem;
-         transform: translateX(-8rem);
-         padding: 0rem 2rem 1.4rem 2rem;
-         border-radius: 0px 0px 12px 12px;
-         z-index: 22;
+      .header__burger-button {
+         top: 4.8vh;
+      }
+
+      .header__burger-button svg {
+         width:4rem;
+         height: 4rem;
       }
    }
 </style>

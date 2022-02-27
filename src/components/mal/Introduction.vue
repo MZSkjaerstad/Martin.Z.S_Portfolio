@@ -325,16 +325,12 @@ export default {
 
    .introduction__information {
       width: 100%;
-      height: 70%;
       border-right: none;
+      justify-content: flex-start;
    }
 
    .introduction__text {
       transform: translateY(1rem);
-   }
-
-   .introduction__description {
-      margin-bottom: 1rem;
    }
 
    .introduction__subtitle {
@@ -342,18 +338,17 @@ export default {
       margin-bottom: 1.6rem;
    }
 
+   .introduction__description {
+      margin-bottom: 2.4rem;
+   }
+
    .introduction__year {
       font-size: 6rem;
    }
 
-   .introduction__tagscontainer {
-      margin-bottom: 1rem;
-   }
-
    .introduction__overviewcontainer {
       width: 100%;
-      height: 30%;
-      padding: 4rem 2rem;
+      padding: 6rem 2rem 4rem 2rem;
       justify-content: space-between;
       align-items: center;
    }

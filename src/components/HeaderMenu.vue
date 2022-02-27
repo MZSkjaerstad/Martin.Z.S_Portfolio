@@ -31,7 +31,7 @@ export default {
       padding: 1rem 3.2rem;
       top: 0;
       right: 0;
-      z-index: 20;
+      z-index: 26;
    }
 
    .header__x-button {
@@ -58,6 +58,15 @@ export default {
       .header__menu {
          width: 100vw;
          border: none;
+      }
+
+      .header__x-button {
+         top: 4.8vh;
+      }
+
+      .header__x-button svg {
+         width: 4rem;
+         height: 4rem;
       }
    }
 </style>
