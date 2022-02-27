@@ -372,6 +372,14 @@
 
       /******* X.2 RULER *******/
 
+      .header__logowrapper {
+         width: 16rem;
+         transform: translateX(-8rem);
+         padding: 0rem 2rem 1.4rem 2rem;
+         border-radius: 0px 0px 12px 12px;
+         z-index: 20;
+      }
+
       .landingpage__ruler{
          padding: 0vw 5vw;
          margin: 3vh 0vh;
@@ -379,6 +387,10 @@
 
       .ruler__increments {
          width: 90vw;
+      }
+
+      .ruler__data-content {
+         display: none;
       }
 
       .ruler__name {

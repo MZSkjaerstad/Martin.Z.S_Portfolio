@@ -325,21 +325,21 @@ export default {
 
    .introduction__information {
       width: 100%;
-      height: 62%;
       border-right: none;
+      justify-content: flex-start;
    }
 
    .introduction__text {
       transform: translateY(1rem);
    }
 
-   .introduction__description {
-      margin-bottom: 1rem;
-   }
-
    .introduction__subtitle {
       font-size: 4rem;
       margin-bottom: 1.6rem;
+   }
+
+   .introduction__description {
+      margin-bottom: 2.4rem;
    }
 
    .introduction__year {
@@ -348,8 +348,7 @@ export default {
 
    .introduction__overviewcontainer {
       width: 100%;
-      height: 20%;
-      padding: 4rem 2rem;
+      padding: 6rem 2rem 4rem 2rem;
       justify-content: space-between;
       align-items: center;
    }
