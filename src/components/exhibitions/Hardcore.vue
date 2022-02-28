@@ -38,5 +38,10 @@
    .exhibition__content {
       height: 100%;
    }
-   
+
+   @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+      .exhibition__transition {
+         height: 40rem;
+      }
+   }
 </style>

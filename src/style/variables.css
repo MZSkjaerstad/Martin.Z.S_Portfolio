@@ -30,7 +30,7 @@
       --font-size-body: 30pt;
 
       /* Ruler styles mobile */
-      --increment-style: solid var(--highlight-color) 4px;
+      --increment-style: solid var(--highlight-color) 3px;
 
       --increment-small: 1.2rem;
       --increment-medium: 4rem;
