@@ -310,7 +310,7 @@ export default {
       font-size: 14vw;
       transform: translateY(0);
       bottom: 60%;
-      left: 11%;
+      left: 6%;
    }
 
    /* Content */
