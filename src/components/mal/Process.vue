@@ -145,13 +145,12 @@ export default {
 
    .process__figure {
       width: 100%;
-      height: 100%;
       margin-bottom: 2rem;
    }
 
    .process__image {
       width: 100%;
-      height: 100%;
+      height: aoutp;
       object-fit: cover;
       border-bottom: var(--increment-style);
    }
