@@ -113,6 +113,7 @@ export default {
 
    .introduction__figure {
       width: 54%;
+      min-width: 35rem;
       height: 100%;
    }
 
@@ -132,9 +133,9 @@ export default {
       text-transform: uppercase;
       color: #15233bbb;
       -webkit-text-stroke: var(--title-style);
-      transform: translateX(30.5vw);
+      padding: 0 7%;
       bottom: 42%;
-      left: 7%;
+      left: 30%;
    }
 
    /***** 2.0 Content *****/

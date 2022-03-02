@@ -1,33 +1,33 @@
 <template>
    <Introduction :introductionData="introduction" />
    <Exhibition :projectName="exhibition" />
-   <Prosess :prosessData="prosess" />
+   <Process :processData="process" />
 </template>
 
 <script>
 import Introduction from '../components/mal/Introduction.vue';
 import Exhibition from '../components/mal/Exhibition.vue';
-import Prosess from '../components/mal/Prosess.vue';
+import Process from '../components/mal/Process.vue';
 
 export default {
    components: {
       Introduction,
       Exhibition,
-      Prosess,
+      Process,
    },
 
    data() {
       return {
          introduction: {},
          exhibition: '',
-         prosess: {},
+         process: {},
       }
    },
 
    mounted() {
       this.introduction = this.project()[0].introduction;
-      this.exhibition = this.project()[0].exhibition;
-      this.prosess = this.project()[0].prosess;
+      this.exhibition = this.project()[0].slug;
+      this.process = this.project()[0].process;
       window.scrollTo(0, 0)
    },
 
