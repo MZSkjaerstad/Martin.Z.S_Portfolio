@@ -27,7 +27,7 @@
 
                <div class="process__images">
                   <figure class="process__figure" v-for="image in section.images">
-                     <img class="process__image" :src="`/project_assets/${image.url}`" alt="">
+                     <img class="process__image" :src="`/project_assets/${image.url}`">
 
                      <figcaption class="process__figcaption">
                         "{{ image.figcaption }}"
@@ -37,8 +37,6 @@
             </div>
          </div>
        </div>
-
-
    </div>
 </template>
 
@@ -97,6 +95,7 @@ export default {
    /**** 5.0 Process-content ****/
    .process__process-wrapper {
       width: 75%;
+      border-left: var(--increment-style);
    }
 
    .process__process-content {
@@ -150,7 +149,7 @@ export default {
 
    .process__image {
       width: 100%;
-      height: aoutp;
+      height: auto;
       object-fit: cover;
       border-bottom: var(--increment-style);
    }
@@ -211,7 +210,7 @@ export default {
       }
 
       .process__figure {
-         margin-bottom: 4rem
+         margin: 2rem 0;
       }
 
       .process__figcaption {
