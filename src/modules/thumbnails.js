@@ -5,6 +5,7 @@
          thumbnails: [
             {
             title: 'Hardcore animation M.Video',
+            navTitle: 'hardcore',
             slug: 'hardcore',
             image: 'imagelink',
             year: '2020',
@@ -15,6 +16,7 @@
 
             {
             title: 'name project number.2',
+            navTitle: 'project 2',
             link: 'link',
             image: 'imagelink',
             year: '2016',
@@ -25,6 +27,7 @@
 
             {
             title: 'name project number.3',
+            navTitle: 'project 3',
             link: 'link',
             image: 'imagelink',
             year: '2012',
@@ -35,6 +38,7 @@
             
             {
             title: 'name project number.4',
+            navTitle: 'project 4',
             link: 'link',
             image: 'imagelink',
             year: '2020',
