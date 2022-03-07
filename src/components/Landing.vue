@@ -17,7 +17,7 @@
                   <div class="ruler__increment-info">001</div>
                </div>
 
-               <div class="ruler__data-content">Heihei</div>
+               <div class="ruler__data-content">--- <br> Designed <br> and developed <br> by Martin.Z.S <br> ---</div>
             </div>
 
             <div class="ruler__increments">
@@ -226,11 +226,12 @@
       color: var(--highlight-color);
       font-size: var(--font-size-data);
       font-style: italic;
+      text-align: end;
    }
 
    .ruler__name {
       color: var(--highlight-color);
-      font-size: 1.1em;
+      font-size: 1.3em;
       font-style: italic;
       text-align: end;
       text-transform: uppercase;
@@ -238,7 +239,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      margin-top: 1vh;
+      transform: translateY(-4.5rem);
    }
 
    .ruler__name-spacing {
@@ -249,7 +250,7 @@
 
    .landingpage__motif {
       width: 86%;
-      height: 92%;
+      height: 90%;
       z-index: 10;
       left: 50%;
       transform: translateX(8%);
@@ -394,7 +395,8 @@
       }
 
       .ruler__name {
-         font-size: 2.8rem;
+         font-size: 3rem;
+         transform: translateY(-9.2rem);
       }
 
       /******* X.3 MOTIF *******/

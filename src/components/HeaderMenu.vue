@@ -25,6 +25,8 @@
                </div>
             </router-link>
          </div>
+
+         <div class="header__divider" />
          
          <div class="header__projects">
             <div class="header__title">
@@ -39,6 +41,8 @@
                </div>
             </router-link>
          </div>
+
+         <div class="header__divider" />
 
          <div class="header__about">
             <div class="header__title">
@@ -61,10 +65,6 @@
 
                  <a class="header__socials-link" href="https://github.com/MZSkjaerstad" target="_blank">Github</a>
               </div>
-
-              <div class="header__email">
-                 Work together? Let me know in an <a href="mailto:martskjae@hotmail.no" class="header__email-link">email</a>.
-               </div>
            </div>
          </div>
       </div>
@@ -131,6 +131,11 @@ export default {
       justify-content: space-between;
    }
 
+   .header__divider {
+      width: 5rem;
+      border-top: var(--increment-style);
+   }
+
    .header__title {
       color: var(--highlight-color);
       font-size: var(--font-size-data);
@@ -194,23 +199,6 @@ export default {
       color: var(--secondary-color);
    }
 
-   .header__email {
-      margin-top: 0.6rem;
-      font-size: var(--font-size-data);
-   }
-
-   .header__email-link {
-      color: var(--highlight-color);
-      font-style: italic;
-      text-decoration: none;
-   }
-
-   .header__email-link:hover {
-      color: var(--highlight-color);
-      font-style: italic;
-      text-decoration: underline;
-   }
-
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
       .header__menu {
          width: 100vw;
@@ -231,6 +219,11 @@ export default {
          align-items: center;
          padding: 0;
       }
+
+      .header__divider {
+      width: 75%;
+      border-top: var(--increment-style);
+   }
 
       .header__title {
          text-align: center;
@@ -257,10 +250,6 @@ export default {
       }
       .header__socials-link {
          margin: 0;
-      }
-
-      .header__email {
-         margin-top: 1.2rem;
       }
    }
 </style>
