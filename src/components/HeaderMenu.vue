@@ -13,7 +13,7 @@
                Navigation
             </div>
 
-            <router-link class="header__link" :to="'/'">
+            <router-link class="header__link" :to="'/'" @click="toggleMenu">
                <div class="header__item">
                   <div class="header__item-number">
                      000
@@ -31,7 +31,7 @@
                Projects
             </div>
 
-            <router-link class="header__link" :to="`/${thumbnail.slug}`"  v-for="thumbnail in thumbnails">
+            <router-link class="header__link" :to="`/${thumbnail.slug}`" @click="toggleMenu" v-for="thumbnail in thumbnails">
                <div class="Header__project-link  header__item">
                   <div class="header__item-number"> 00{{ thumbnails.indexOf(thumbnail) + 1 }} </div>
 
@@ -45,11 +45,13 @@
                About
             </div>
 
-           <div class="header__item">
-              <div class="header__item-number"> 00{{ thumbnails.length + 1 }}</div>
+           <router-link class="header__link" :to="'/about-me'" @click="toggleMenu">
+               <div class="header__item">
+                  <div class="header__item-number"> 00{{ thumbnails.length + 1 }}</div>
 
-               <div class="header__item-link">About me</div>
-           </div>
+                  <div class="header__item-link">About me</div>
+               </div>
+           </router-link>
 
            <div class="header__contact">
               <div class="header__socials">
