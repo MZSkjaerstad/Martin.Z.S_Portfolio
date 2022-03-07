@@ -217,7 +217,7 @@ export default {
       .header__menu {
          width: 100vw;
          border: none;
-         padding: 18rem 0rem 10rem 0rem;
+         padding: 12rem 0rem 16rem 0rem;
       }
 
       .header__x-button {
