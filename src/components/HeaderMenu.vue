@@ -146,13 +146,13 @@ export default {
    }
 
    .header__item-link {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: bold;
       font-style: italic;
       text-transform: uppercase;
       color: var(--primary-color);
       -webkit-text-stroke: var(--title-style);
-      padding: 0.3rem 0.9rem;
+      padding: 0.1rem 0.9rem;
    }
 
    .header__item-number {
@@ -163,19 +163,15 @@ export default {
 
    .header__item:hover .header__item-link {
       color: var(--highlight-color);
-      font-size: 2.44rem;
       -webkit-text-stroke: none;
-      border: var(--increment-style);
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
+      transform: translateX(1rem);
       transition: 0.2s;
    }
 
    /* Contact */
 
    .header__contact {
-      padding-top: 1.4rem;
+      padding-top: 3rem;
    }
 
    .header__socials {
@@ -217,7 +213,7 @@ export default {
       .header__menu {
          width: 100vw;
          border: none;
-         padding: 12rem 0rem 16rem 0rem;
+         padding: 8rem 0rem 20rem 0rem;
       }
 
       .header__x-button {
@@ -246,12 +242,11 @@ export default {
       color: var(--highlight-color);
       font-size: 6.5rem;
       -webkit-text-stroke: none;
-      border: none;
       transition: 0.2s;
       }
 
       .header__contact {
-         padding-top: 3rem;
+         padding-top: 10rem;
       }
 
       .header__socials {
