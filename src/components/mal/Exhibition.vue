@@ -48,13 +48,6 @@ export default {
       font-style: italic;
       font-weight: 600;
    }
-   
-   /* 1.3 Content */
-
-   .exhibition__content {
-      /* husk å fjerne når exhibitionmalene har content */
-      height: 100%;
-   }
 
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
       .exhibition__transition {
