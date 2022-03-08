@@ -5,18 +5,26 @@
       </div>
 
       <div class="process__content">
-         <div class="process__flavourtext-wrapper">
+         <div class="process__details">
             <div class="process__flavourtext">
                {{processData.flavourText}}
+            </div>
+            
+            <div class="process__linkwrapper">
+               <a class="process__link" v-for="link in processData.links" :href="link" target="_blank"> {{ link }} </a>
             </div>
          </div>
 
          <div class="process__process-wrapper">
+            <div class="process__title">
+               {{ processData.title }}
+            </div>
+
             <div class="process__process-content" v-for="section in processData.processSections">
                <div class="process__processtext">
                   <div class="process__subtitle-wrapper">
                      <div class="process__subtitle">
-                        00{{ processData.processSections.indexOf(section) + 1 }} - {{ section.subtitle }} = 
+                        00{{ processData.processSections.indexOf(section) + 1 }} - {{ section.subtitle }} 
                      </div>
                   </div>
 
@@ -78,9 +86,9 @@ export default {
       justify-content: space-between;
    }
 
-   /**** 4.0 Flavourtext ****/
+   /**** 4.0 Details ****/
 
-   .process__flavourtext-wrapper {
+   .process__details {
       width: 23%;
       height: auto;
       font-style: italic;
@@ -92,10 +100,40 @@ export default {
       padding-bottom: 2rem;
    }
 
+   .process__linkwrapper {
+      padding-top: 1.3rem;
+      display: flex;
+      justify-content: end;
+   }
+
+   .process__link {
+      color: var(--highlight-color);
+      font-size: var(--font-size-data);
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+   }
+
+   .process__link:hover {
+      color: var(--secondary-color);
+      text-decoration: underline;
+   }
+
    /**** 5.0 Process-content ****/
+
    .process__process-wrapper {
       width: 75%;
       border-left: var(--increment-style);
+   }
+
+   .process__title {
+      font-size: 2.6rem;
+      font-weight: bold;
+      font-style: italic;
+      text-transform: uppercase;
+      color: #15233bbb;
+      -webkit-text-stroke: var(--title-style);
+      transform: translateY(-0.5rem);
+      padding: 0 0 1rem 2rem;
    }
 
    .process__process-content {
@@ -111,7 +149,6 @@ export default {
       width: 65%;
       display: flex;
       height: 100%;
-      padding: 0 1rem;
    }
 
    .process__subtitle-wrapper {
@@ -125,7 +162,7 @@ export default {
       font-size: var(--font-size-data);
       font-style: italic;
       white-space: nowrap;
-      text-align: end;
+      text-align: center;
       padding: 0.1rem 1rem;
    }
 
@@ -151,7 +188,7 @@ export default {
       width: 100%;
       height: auto;
       object-fit: cover;
-      border-bottom: var(--increment-style);
+      border: var(--increment-style);
    }
 
    .process__figcaption {
@@ -171,12 +208,22 @@ export default {
          padding: 3rem 0;
       }
 
-      .process__flavourtext-wrapper {
+      .process__details {
          width: 100%;
       }
 
       .process__flavourtext {
+         font-size: 3.2rem;
          padding-bottom: 3rem;
+         margin-bottom: 3rem;
+      }
+
+      .process__linkwrapper {
+         justify-content: start;
+      }
+
+      .process__link {
+         font-size: var(--font-style-data);
          margin-bottom: 3rem;
       }
 
@@ -184,8 +231,13 @@ export default {
          flex-direction: column;
       }
 
+      .process__title {
+         display: none;
+      }
+
       .process__process-wrapper {
          width: 100%;
+         border-left: none;
       }
 
       .process__processtext {
