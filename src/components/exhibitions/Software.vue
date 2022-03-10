@@ -1,3 +1,0 @@
-<template>
-   software exhibition
-</template>

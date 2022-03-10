@@ -6,18 +6,22 @@
 
       <div class="exhibition__content">
          <Hardcore v-if="projectName === 'hardcore'" />
+         <Hallingdal v-if="projectName === 'hallingdal'" />
+         <Alan v-if="projectName === 'alan'" />
       </div>
    </div>
 </template>
 
 <script>
 import Hardcore from '../exhibitions/Hardcore.vue';
-import Software from '../exhibitions/Software.vue'
+import Hallingdal from '../exhibitions/Hallingdal.vue';
+import Alan from '../exhibitions/Alan.vue'
 
 export default {
    components: {
       Hardcore,
-      Software,
+      Hallingdal,
+      Alan,
    },
 
    props: {
@@ -51,7 +55,7 @@ export default {
 
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
       .exhibition__transition {
-         height: 40rem;
+         height: 50rem;
       }
    }
 </style>
