@@ -1,14 +1,23 @@
 <template>
-   <div class="about">
+   <main v-if="loading === true">
+      <Loading /> 
+   </main>
+
+   <main class="about" v-else>
       <div class="about__message"> Page currently not available due to </div>
-   </div>
+   </main>
 </template>
 
 <script>
+   import Loading from '../components/Loading.vue'
    import viewMixin from '../mixins/viewMixin.js'
    import query from '../groq/aboutMe.groq?raw'
 
    export default {
+      components: {
+         Loading
+      },
+
       mixins: [viewMixin],
 
       async created() {

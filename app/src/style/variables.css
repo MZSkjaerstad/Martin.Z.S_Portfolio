@@ -1,12 +1,12 @@
 :root {
    /* Colour palette*/
-   --primary-color: #15233b;
+   --primary-color: #0e1a2f;
    --secondary-color: white;
    --highlight-color: #ff551c;
 
    /* Colour palette invisible*/
 
-   --primary-color-tr: #15233b00;
+   --primary-color-tr: #0e1a2f00;
    --secondary-color-tr: #FFFFFF00;
    --highlight-color-tr: #ff551c00;
 
