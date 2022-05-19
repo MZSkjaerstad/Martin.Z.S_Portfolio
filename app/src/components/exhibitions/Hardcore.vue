@@ -9,7 +9,7 @@
 
       <div class="hardcore__depth">
          <div class="hardcore__depth-frame">
-            <img class="hardcore__depth-gif" src="/project_assets/hardcore_animation/gif/depth.gif">
+            <img class="hardcore__depth-gif" src="">
          </div>
 
          <div class="hardcore__juggle-data hardcore__data">
@@ -19,7 +19,7 @@
 
       <div class="hardcore__pop">
          <div class="hardcore__pop-frame">
-            <img class="hardcore__pop-gif" src="/project_assets/hardcore_animation/gif/pop.gif">
+            <img class="hardcore__pop-gif" src="">
          </div>
 
          <div class="hardcore__juggle-data hardcore__data">
@@ -29,7 +29,7 @@
 
       <div class="hardcore__twist">
          <div class="hardcore__twist-frame">
-            <img class="hardcore__twist-gif" src="/project_assets/hardcore_animation/gif/twist.gif">
+            <img class="hardcore__twist-gif" src="">
          </div>
 
          <div class="hardcore__juggle-data hardcore__data">
@@ -39,7 +39,7 @@
 
       <div class="hardcore__text">
          <div class="hardcore__text-frame">
-            <img class="hardcore__text-gif" src="/project_assets/hardcore_animation/gif/text.gif">
+            <img class="hardcore__text-gif" src="">
          </div>
 
          <div class="hardcore__juggle-data hardcore__data">
@@ -49,7 +49,7 @@
 
       <div class="hardcore__juggle">
          <div class="hardcore__juggle-frame">
-            <img class="hardcore__juggle-gif" src="/project_assets/hardcore_animation/gif/juggling_nodes.gif">
+            <img class="hardcore__juggle-gif" src="">
          </div>
 
          <div class="hardcore__juggle-text">
