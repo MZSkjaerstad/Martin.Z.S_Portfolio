@@ -1,5 +1,5 @@
 <template>
-   <main v-if="loading === true">Loading</main>
+   <main v-if="loading === true"> <Loading /> </main>
    <main v-else class="homepage">
       <section class="homepage__landing-mount">
          <Landing />
@@ -13,6 +13,7 @@
 
 <script>
    import Landing from '../components/Landing.vue'
+   import Loading from '../components/Loading.vue'
    import ProjectsOverview from '../components/ProjectsOverview.vue'
    import viewMixin from '../mixins/viewMixin.js'
    import query from '../groq/home.groq?raw'
@@ -20,6 +21,7 @@
    export default {
       components: {
          Landing,
+         Loading,
          ProjectsOverview,
       },
 
