@@ -2,7 +2,13 @@
    /* Colour palette*/
    --primary-color: #15233b;
    --secondary-color: white;
-   --highlight-color: #e06339;
+   --highlight-color: #ff551c;
+
+   /* Colour palette invisible*/
+
+   --primary-color-tr: #15233b00;
+   --secondary-color-tr: #FFFFFF00;
+   --highlight-color-tr: #ff551c00;
 
    /* Font styles */
    --font-family: "alverata";
@@ -23,6 +29,23 @@
 }
 
 /*** Breakpoints ***/
+
+@media screen and (min-device-width: 2881px) {
+   :root {
+      /* Font styles big desktop */
+      --font-size-body: 16pt;
+
+      /* Increment styles big desktop */
+      --increment-small: 1rem;
+      --increment-medium: 2.5rem;
+
+      /* Ruler styles big desktop */
+      --increment-style: solid var(--highlight-color) 2px;
+
+      /* Thumbnail title big desktop */
+      --title-style: 2px var(--highlight-color);
+   }
+}
 
 @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
    :root {

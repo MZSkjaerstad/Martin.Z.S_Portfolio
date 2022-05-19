@@ -1,13 +1,18 @@
 <template>
-   <Introduction :introductionData="introduction" />
-   <Exhibition :projectName="exhibition" />
-   <Process :processData="process" />
+   <main v-if="loading === true"> LOADNING </main>
+   <main v-else>
+      <Introduction :introductionData="content.introduction" />
+      <Exhibition :projectName="content.exhibition" />
+      <Process :processData="content.process" />
+   </main>
 </template>
 
 <script>
 import Introduction from '../components/mal/Introduction.vue';
 import Exhibition from '../components/mal/Exhibition.vue';
 import Process from '../components/mal/Process.vue';
+import viewMixin from '../mixins/viewMixin.js'
+import query from '../groq/project.groq?raw'
 
 export default {
    components: {
@@ -16,31 +21,14 @@ export default {
       Process,
    },
 
-   data() {
-      return {
-         introduction: {},
-         exhibition: '',
-         process: {},
+   mixins: [viewMixin],
+
+   async created() {
+      const params = {
+         projectSlug: this.$route.params.projectSlug
       }
-   },
 
-   mounted() {
-      this.introduction = this.project()[0].introduction;
-      this.exhibition = this.project()[0].slug;
-      this.process = this.project()[0].process;
-      window.scrollTo(0, 0)
-   },
-
-   methods: {
-      paramProjectSlug() {
-         return this.$route.params.projectSlug
-      },
-
-      project() {
-         return this.$store.getters["getProjects"].filter(project => {
-            return project.slug === this.paramProjectSlug()
-            })
-      },
+      this.sanityFetch(query, params)
    },
 }
 </script>

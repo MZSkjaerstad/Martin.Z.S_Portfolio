@@ -1,9 +1,9 @@
 <template>
-   <div class="thumbnail" v-for="thumbnail in thumbnails">
+   <div class="thumbnail">
       <div :class="`thumbnail__increment thumbnail__increment-position--${thumbnail.position}`">
          <div class="thumbnail__decoration"></div>
 
-         <div class="thumbnail__counter">00{{ thumbnails.indexOf(thumbnail) + 1 }}</div>
+         <div class="thumbnail__counter">00{{ index + 1 }}</div>
       </div>
 
       <router-link class="thumbnail__link" :to="`/${thumbnail.slug}`">
@@ -41,22 +41,21 @@
             <div class="thumbnail__content">
                <div class="thumbnail__info-container">
                   <div class="thumbnail__info">
-                     <div class="thumbnail__essentials">
-                        <div class="thumbnail__year"> {{ thumbnail.year }} </div>
+                     <div class="thumbnail__year"> {{ thumbnail.publishYear.slice(0, 4) }} </div>
 
-                        <div class="thumbnail__tags-container">
-                           <div class="thumbnail__tags" v-for="tag in thumbnail.tags"> {{ tag }} </div>
-                        </div>
+                     <div class="thumbnail__tags-container">
+                        <div class="thumbnail__tags" v-for="tag in thumbnail.tags"> {{ tag }} </div>
                      </div>
-                     <div class="thumbnail__description"> {{ thumbnail.description }} </div>
                   </div>
                </div>
 
                <div class="thumbnail__hook">
-                  <div :class="`thumbnail__title thumbnail__title-position--${thumbnail.position}`"> {{ thumbnail.title }} </div>
-
-                  <div class="thumbnail__image"></div>
+                  <div :class="`thumbnail__title thumbnail__title-position--${thumbnail.position}`"> {{ thumbnail.projectName }} </div>
                </div>
+            </div>
+
+            <div class="thumbnail__image">
+               <img :src="thumbnail.thumbnail" :alt="`go to ${thumbnail.projectName}`">
             </div>
          </div>
       </router-link>
@@ -65,11 +64,10 @@
 
 <script>
 export default {
-   computed: {
-      thumbnails() {
-         return this.$store.getters.getThumbnails;
-      }
-   },
+   props: {
+      thumbnail: Object,
+      index: Number
+   }
 }
 </script>
 
@@ -186,15 +184,6 @@ export default {
       margin: 0.2em;
    }
 
-   .thumbnail__description {
-      max-height: 15vh;
-      overflow: hidden;
-      color: var(--secondary-color);
-      font-size: var(--font-size-thumbnail);
-      font-weight: lighter;
-      transform: translateY(0.3rem);
-   }
-
    /* 3.7 Hook */
 
    .thumbnail__title {
@@ -205,7 +194,7 @@ export default {
       font-style: italic;
       text-transform: uppercase;
       transform: translateY(-2.5vh);
-      color: var(--primary-color);
+      color: var(--primary-color-tr);
       -webkit-text-stroke: var(--title-style);
    }
 
@@ -229,7 +218,27 @@ export default {
       margin-left: 26vw;
    }
 
-   /* 3.6 Hover */
+   /* 3.6 Image */
+
+   .thumbnail__image {
+      position: fixed;
+      opacity: 0%;
+      width: 55vw;
+      height: 70vh;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      transition: 0.5s;
+   }
+
+   .thumbnail__image img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+   }
+
+   /* 3.7 Hover */
 
    .thumbnail__display:hover .thumbnail__info {
       transform: translateX(0.6vw);
@@ -246,6 +255,11 @@ export default {
       color: var(--highlight-color);
       -webkit-text-stroke: 0px;
       transition: 0.8s;
+   }
+
+   .thumbnail__display:hover .thumbnail__image {
+      opacity: 100%;
+      transition: 1s;
    }
 
    /* Pad responsive */
@@ -290,16 +304,14 @@ export default {
       }
 
       .thumbnail__info {
+         width: 86vw;
          opacity: 100;
-      }
-
-      .thumbnail__essentials {
-         display: flex;
+         flex-direction: row;
          justify-content: space-between;
          align-items: flex-end;
-         width: 86vw;
          padding: 0rem 4rem;
          position: bottom;
+
       }
 
       .thumbnail__year {
@@ -330,12 +342,13 @@ export default {
       }
 
       .thumbnail__title {
-         color: var(--highlight-color);
-         -webkit-text-stroke: 0;
-         transform: translateY(-5vh);
          font-size: 6vh;
-         padding: 0 3rem;
+         padding: 0 5rem;
          margin-left: 0;
+      }
+
+      .thumbnail__image {
+         visibility: hidden;
       }
 
       /* Mobile Hover Cancelation */

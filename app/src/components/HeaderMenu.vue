@@ -8,11 +8,11 @@
       </button>
 
       <div class="header__content">
-         <div class="header__home">
-            <div class="header__title">
-               Navigation
-            </div>
+         <div class="header__title">
+            Navigation
+         </div>
 
+         <div class="header__home">
             <router-link class="header__link" :to="'/'" @click="toggleMenu">
                <div class="header__item">
                   <div class="header__item-number">
@@ -28,11 +28,11 @@
 
          <div class="header__divider" />
          
-         <div class="header__projects">
-            <div class="header__title">
+         <div class="header__title">
                Projects
-            </div>
-
+         </div>
+         
+         <div class="header__projects">
             <router-link class="header__link" :to="`/${thumbnail.slug}`" @click="toggleMenu" v-for="thumbnail in thumbnails">
                <div class="Header__project-link  header__item">
                   <div class="header__item-number"> 00{{ thumbnails.indexOf(thumbnail) + 1 }} </div>
@@ -44,11 +44,11 @@
 
          <div class="header__divider" />
 
-         <div class="header__about">
-            <div class="header__title">
-               About
-            </div>
+         <div class="header__title">
+            About
+         </div>
 
+         <div class="header__about">
            <router-link class="header__link" :to="'/about-me'" @click="toggleMenu">
                <div class="header__item">
                   <div class="header__item-number"> 00{{ thumbnails.length + 1 }}</div>
@@ -56,16 +56,6 @@
                   <div class="header__item-link">About me</div>
                </div>
            </router-link>
-
-           <div class="header__contact">
-              <div class="header__socials">
-                 <a class="header__socials-link" href="https://www.linkedin.com/in/martin-zupfer-skj%C3%A6rstad-6257681a3" target="_blank">LinkedIn</a>
-
-                 <a class="header__socials-link" href="https://www.instagram.com/martin.z.s/" target="_blank">Instagram</a>
-
-                 <a class="header__socials-link" href="https://github.com/MZSkjaerstad" target="_blank">Github</a>
-              </div>
-           </div>
          </div>
       </div>
    </div>
@@ -140,7 +130,7 @@ export default {
       color: var(--highlight-color);
       font-size: var(--font-size-data);
       font-style: italic;
-      margin-bottom: 0.8rem;
+      padding-top: 1rem;
    }
 
    .header__link {
@@ -173,30 +163,6 @@ export default {
       -webkit-text-stroke: none;
       transform: translateX(1rem);
       transition: 0.2s;
-   }
-
-   /* Contact */
-
-   .header__contact {
-      padding-top: 3rem;
-   }
-
-   .header__socials {
-      display: flex;
-   }
-
-   .header__socials-link {
-      color: var(--highlight-color);
-      font-size: var(--font-size-body);
-      font-style: italic;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.05rem;
-      margin-right: 1rem;
-   }
-
-   .header__socials-link:hover {
-      color: var(--secondary-color);
    }
 
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {

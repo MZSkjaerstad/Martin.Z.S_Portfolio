@@ -4,6 +4,19 @@
    </div>
 </template>
 
+<script>
+   import viewMixin from '../mixins/viewMixin.js'
+   import query from '../groq/aboutMe.groq?raw'
+
+   export default {
+      mixins: [viewMixin],
+
+      async created() {
+         this.sanityFetch(query)
+      }
+   }
+</script>
+
 <style>
    .about {
       width: 100%;
