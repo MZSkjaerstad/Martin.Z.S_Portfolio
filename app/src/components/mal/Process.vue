@@ -21,7 +21,7 @@
             </div>
 
             <div class="process__process-content" v-for="section in processData.sections">
-               <div class="process__processtext">
+               <div class="process__processtext" v-if="section._type === 'sectionText'">
                   <div class="process__subtitle-wrapper">
                      <div class="process__subtitle">
                         00{{ processData.sections.indexOf(section) + 1 }} - {{ section.title }} 
@@ -29,8 +29,11 @@
                   </div>
 
                   <div class="process__body">
-                     {{ section.content }}
+                     {{ section.sectionContent }}
                   </div>
+               </div>
+               <div v-else>
+                  <img :src="section.imageFile" :alt="imageCaption">
                </div>
             </div>
          </div>
@@ -115,11 +118,11 @@ export default {
    }
 
    .process__title {
-      font-size: 2.6rem;
+      font-size: 3.5rem;
       font-weight: bold;
       font-style: italic;
       text-transform: uppercase;
-      color: #15233bbb;
+      color: var(--primary-color);
       -webkit-text-stroke: var(--title-style);
       transform: translateY(-0.5rem);
       padding: 0 0 1rem 2rem;

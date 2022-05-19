@@ -2,7 +2,7 @@
    <div class="introduction">
       <div class="introduction__hook">
          <figure class="introduction__figure">
-            <img class="introduction__image" :src="`${introductionData.thumbnail}`">
+            <img class="introduction__image" :src="`${introductionData.thumbnail}`" alt="">
          </figure>
 
          <div class="introduction__title">
@@ -70,15 +70,19 @@
             </div>
          </div>
 
-         <div class="introduction__overviewcontainer">
-            <div class="introduction__overview" v-for="content in introductionData.contentOverview">
-               <figure class="introduction__overview-figure">
-                  <img class="introduction__overview-image" :src="`/project_assets/${content.image}`">
-               </figure>
-               
-               <div class="introduction__pitch">
-                  "{{ content.pitch }}"
-               </div>
+         <div class="introduction__credentials">
+            <div class="introduction__contributors--undefined" v-if="introductionData.contributors === null"></div>
+
+            <div class="introduction__contributors--defined" v-else>
+               <p>Contributors:</p>
+
+               <p class="introduction__contributor" v-for="contributor in introductionData.contributors"> {{contributor.name}} </p>
+            </div>
+
+            <div class="introduction__linkcontainer">
+               <a :href="link.url" class="introduction__link" v-for="link in introductionData.links" target="_blank">
+                  <img class="introduction__link-icon" :src="link.icon" :alt="`go to ${link.url}`">
+               </a>
             </div>
          </div>
       </div>
@@ -100,7 +104,7 @@ export default {
    .introduction {
       width: 100%;
       height: 100%;
-      padding: 0rem 7% 0rem 7%;
+      padding: 0rem 7% 2% 7%;
    }
 
    /***** 1.0 Hook *****/
@@ -131,7 +135,7 @@ export default {
       font-weight: bold;
       font-style: italic;
       text-transform: uppercase;
-      color: #15233bbb;
+      color: var(--primary-color-tr-semi);
       -webkit-text-stroke: var(--title-style);
       padding: 0 7%;
       bottom: 42%;
@@ -142,6 +146,7 @@ export default {
 
    .introduction__content {
       width: 100%;
+      height: 35vh;
       display: flex;
    }
 
@@ -258,41 +263,63 @@ export default {
       margin: 0.2em;
    }
 
-   /* 2.3 Overview */
+   /* 2.3 Credentials */
 
-   .introduction__overviewcontainer {
+   .introduction__credentials{
       width: 33%;
+      height: 100%;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: flex-end;
+   }
+
+   .introduction__contributors--defined {
+      width: 100%;
+      height: 50%;
+      color: var(--highlight-color);
+      font-size: var(--font-size-data);
+      font-style: italic;
+      padding: 0rem 2rem;
+   }
+
+   .introduction__contributor {
+      font-size: var(--font-size-body);
+      padding: 0.4rem 0 0 0;
+      font-style: normal;
+   }
+
+   .introduction__linkcontainer {
+      width: 100%;
+      height: 50%;
+      display: flex; 
+      flex-wrap: wrap-reverse;
+      align-items: flex-start;
       padding: 0rem 1rem;
    }
 
-   .introduction__overview {
-      margin-right: 1rem; 
+   .introduction__link {
+      width: 3rem;
+      height: 3rem;
+      margin-right: 1rem;
+      transition: 0.1s;
    }
 
-   .introduction__overview-figure {
-      width: 6rem;
-      height: 6rem;
-      border: var(--increment-style);
-   }
-
-   .introduction__overview-image {
+   .introduction__link-icon {
       width: 100%;
       height: 100%;
       object-fit: cover;
    }
 
-   .introduction__pitch {
-      padding: 0.4rem 0rem;
-      font-style: italic;
+   .introduction__link:hover {
+      border: var(--increment-style);
+      border-radius: 15%;
+      transition: 0.1s;
    }
-
-
 
 @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
 
    .introduction {
+      height: 110vh;
       padding: rem 7% 2rem 7%;
    }
 
@@ -347,22 +374,37 @@ export default {
       font-size: 6rem;
    }
 
-   .introduction__overviewcontainer {
+   /* Credentials */
+
+   .introduction__credentials {
+      flex-direction: column-reverse;
+      align-items: center;
       width: 100%;
-      padding: 6rem 2rem 4rem 2rem;
-      justify-content: space-between;
+   }
+
+   .introduction__contributors--defined {
+      display: flex;
+      flex-direction: column;
       align-items: center;
    }
 
-   .introduction__overview-figure {
-      width: 12rem;
-      height: 12rem;
+   .introduction__linkcontainer {
+      width: 100%;
+      padding: 6rem 4rem 4rem 4rem;
+      justify-content: center;
+      align-items: flex-end;
+   }
+
+   .introduction__link {
+      width: 10rem;
+      height: 10rem;
       margin-right: none;
    }
 
-   .introduction__pitch {
-      padding: 1.6rem 0rem;
+   .introduction__link-icon{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
    }
 }
-
 </style>

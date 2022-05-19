@@ -258,7 +258,7 @@ export default {
    }
 
    .thumbnail__display:hover .thumbnail__image {
-      opacity: 60%;
+      opacity: 50%;
       transition: 1s;
    }
 

@@ -4,6 +4,10 @@
    --secondary-color: white;
    --highlight-color: #ff551c;
 
+   /* Colour palette transparent */
+
+   --primary-color-tr-semi: #0e1a2f80;
+
    /* Colour palette invisible*/
 
    --primary-color-tr: #0e1a2f00;
@@ -33,17 +37,17 @@
 @media screen and (min-device-width: 2881px) {
    :root {
       /* Font styles big desktop */
-      --font-size-body: 16pt;
+      --font-size-body: 18pt;
 
       /* Increment styles big desktop */
       --increment-small: 1rem;
       --increment-medium: 2.5rem;
 
       /* Ruler styles big desktop */
-      --increment-style: solid var(--highlight-color) 2px;
+      --increment-style: solid var(--highlight-color) 20px;
 
       /* Thumbnail title big desktop */
-      --title-style: 2px var(--highlight-color);
+      --title-style: 20px var(--highlight-color);
    }
 }
 
