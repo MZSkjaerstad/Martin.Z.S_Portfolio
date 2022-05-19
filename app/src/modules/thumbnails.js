@@ -6,7 +6,7 @@
             {
             title: 'Hardcore animation M.Video',
             navTitle: 'hardcore',
-            slug: 'hardcore',
+            slug: 'hardcore-animation',
             image: 'imagelink',
             year: '2020',
             tags: [ 'Consept development', 'Animasjon', 'Music'],

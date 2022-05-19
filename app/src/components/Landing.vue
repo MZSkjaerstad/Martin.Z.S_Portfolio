@@ -1,5 +1,6 @@
 <template>
-   <div class="landingpage">
+   <main v-if="loading === true"> Loading </main>
+   <main class="landingpage" v-else>
       <router-link to="/">
          <figure class="header__logowrapper">
             <img class="header__logo" src="/visual_identity/vector/logo_w_text.svg" alt="Martin.Z.S logo">
@@ -137,7 +138,7 @@
             <figcaption class="landingpage__figcaption">Background image</figcaption>
          </figure>
       </div>
-   </div>
+   </main>
 </template>
 
 <script></script>

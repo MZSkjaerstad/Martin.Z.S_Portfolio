@@ -1,24 +1,34 @@
 <template>
-   <div class="homepage">
+   <main v-if="loading === true">Loading</main>
+   <main v-else class="homepage">
       <section class="homepage__landing-mount">
          <Landing />
       </section>
 
       <section class="homepage__projects-mount">
-         <ProjectsOverview />
+         <ProjectsOverview :overviewContent="content"/>
       </section>
-   </div>
+   </main >
 </template>
 
 <script>
    import Landing from '../components/Landing.vue'
    import ProjectsOverview from '../components/ProjectsOverview.vue'
+   import viewMixin from '../mixins/viewMixin.js'
+   import query from '../groq/home.groq?raw'
 
    export default {
       components: {
          Landing,
          ProjectsOverview,
+      },
+
+      mixins: [viewMixin],
+
+      async created() {
+         this.sanityFetch(query)
       }
+
    }
 </script>
 

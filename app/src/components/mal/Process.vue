@@ -7,7 +7,7 @@
       <div class="process__content">
          <div class="process__details">
             <div class="process__flavourtext">
-               {{processData.flavourText}}
+               {{processData.intro}}
             </div>
             
             <div class="process__linkwrapper">
@@ -17,30 +17,20 @@
 
          <div class="process__process-wrapper">
             <div class="process__title">
-               {{ processData.title }}
+               {{ processData.subtitle }}
             </div>
 
-            <div class="process__process-content" v-for="section in processData.processSections">
+            <div class="process__process-content" v-for="section in processData.sections">
                <div class="process__processtext">
                   <div class="process__subtitle-wrapper">
                      <div class="process__subtitle">
-                        00{{ processData.processSections.indexOf(section) + 1 }} - {{ section.subtitle }} 
+                        00{{ processData.sections.indexOf(section) + 1 }} - {{ section.title }} 
                      </div>
                   </div>
 
                   <div class="process__body">
-                     {{ section.body }}
+                     {{ section.content }}
                   </div>
-               </div>
-
-               <div class="process__images">
-                  <figure class="process__figure" v-for="image in section.images">
-                     <img class="process__image" :src="`/project_assets/${image.url}`">
-
-                     <figcaption class="process__figcaption">
-                        "{{ image.figcaption }}"
-                     </figcaption>
-                  </figure>
                </div>
             </div>
          </div>
@@ -122,7 +112,6 @@ export default {
 
    .process__process-wrapper {
       width: 75%;
-      border-left: var(--increment-style);
    }
 
    .process__title {
@@ -156,7 +145,6 @@ export default {
    }
 
    .process__subtitle {
-      position: sticky;
       top: 45%;
       color: var(--highlight-color);
       font-size: var(--font-size-data);

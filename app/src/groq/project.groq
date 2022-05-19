@@ -1,0 +1,35 @@
+{
+   "introduction": *[slug.current == $projectSlug && published == true][0] {
+      projectName,
+      "thumbnail": backgroundImage.asset->.url,
+      publishYear,
+      subtitle,
+      description,
+      "links": links[]{
+         "icon": linkType->.linkIcons.asset->.url,
+         url
+      },
+      "tags": tags[]->.tagName,
+      "contributors":contributors[]{
+         name,
+         title
+      }
+      
+   },
+
+   "exhibition": *[slug.current == $projectSlug && published == true][0] {
+      exhibitionAssets[]{
+        "caption": imageCaption,
+        "file": imageFile.asset->.url
+      }
+   },
+
+   "process": *[slug.current == $projectSlug && published == true][0] {
+      "subtitle": processSubtitle,
+      "intro": processflavour,
+      "sections": processSections[]{
+        ...,
+        "imageFile": imageFile.asset->url
+      }
+   }
+}

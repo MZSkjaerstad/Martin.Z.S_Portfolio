@@ -39,7 +39,7 @@
       </div>
 
       <div class="projects__thumbnails">
-         <Thumbnail />
+         <Thumbnail v-for="(thumbnail, index) in overviewContent" :thumbnail="thumbnail" :index="index" />
       </div>
 
       <div class="projects__decoration">
@@ -90,6 +90,10 @@ import Thumbnail from './Thumbnail.vue'
       components: {
          Thumbnail
       },
+
+      props: {
+         overviewContent: Array,
+      }
    }
 </script>
 

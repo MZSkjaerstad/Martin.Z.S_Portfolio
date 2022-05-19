@@ -2,11 +2,11 @@
    <div class="introduction">
       <div class="introduction__hook">
          <figure class="introduction__figure">
-            <img class="introduction__image" :src="`/project_assets/${introductionData.image}`">
+            <img class="introduction__image" :src="`${introductionData.thumbnail}`">
          </figure>
 
          <div class="introduction__title">
-            {{ introductionData.title }}
+            {{ introductionData.projectName }}
          </div>
       </div>
 
@@ -59,7 +59,7 @@
 
             <div class="introduction__details">
                <div class="introduction__year">
-                  {{ introductionData.year }}
+                  {{ introductionData.publishYear.slice(0,4) }}
                </div>
 
                <div class="introduction__tagscontainer">
