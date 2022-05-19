@@ -6,7 +6,7 @@
          <div class="thumbnail__counter">00{{ index + 1 }}</div>
       </div>
 
-      <router-link class="thumbnail__link" :to="`/${thumbnail.slug}`">
+      <router-link class="thumbnail__link" :to="`/${thumbnail.slug}`" :aria-label="`go to ${thumbnail.projectName} project article`">
          <div class="thumbnail__display">
             <div class="thumbnail__ruler">
                <div class="thumbnail__ruler-increment">
