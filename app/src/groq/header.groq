@@ -1,0 +1,4 @@
+*[_type == 'projects' && published == true] {
+   projectName,
+   "slug": slug.current,
+}

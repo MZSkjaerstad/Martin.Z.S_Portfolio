@@ -1,6 +1,6 @@
 <template>
    <div class="header__menu">
-      <button class="header__x-button" @click="toggleMenu">
+      <button class="header__x-button" @click="toggleMenu" aria-label="close header menu">
          <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="1.4895" y="0.575439" width="19" height="2" transform="rotate(45 1.4895 0.575439)" fill="#E06339"/>
             <rect x="14.9246" y="1.98962" width="19" height="2" transform="rotate(135 14.9246 1.98962)" fill="#E06339"/>
@@ -13,7 +13,7 @@
          </div>
 
          <div class="header__home">
-            <router-link class="header__link" :to="'/'" @click="toggleMenu">
+            <router-link class="header__link" :to="'/'" @click="toggleMenu" aria-label="Go back home">
                <div class="header__item">
                   <div class="header__item-number">
                      000
@@ -33,11 +33,13 @@
          </div>
          
          <div class="header__projects">
-            <router-link class="header__link" :to="`/${thumbnail.slug}`" @click="toggleMenu" v-for="thumbnail in thumbnails">
-               <div class="Header__project-link  header__item">
-                  <div class="header__item-number"> 00{{ thumbnails.indexOf(thumbnail) + 1 }} </div>
+            <div v-if="loading === true">Loading</div>
 
-                  <div class="header__item-link"> {{ thumbnail.navTitle }} </div>
+            <router-link v-else class="header__link" :to="`/${link.slug}`" @click="toggleMenu" v-for="(link, index) in projectLinks" :aria-label="`Go to ${link.projectName} project article.`">
+               <div class="Header__project-link  header__item">
+                  <div class="header__item-number"> 00{{ index + 1 }} </div>
+
+                  <div class="header__item-link"> {{ this.truncate(link.projectName, 1) }} </div>
                </div>
             </router-link>
          </div>
@@ -49,7 +51,7 @@
          </div>
 
          <div class="header__about">
-           <router-link class="header__link" :to="'/about-me'" @click="toggleMenu">
+           <router-link class="header__link" :to="'/about-me'" @click="toggleMenu" aria-label="Go to about me article.">
                <div class="header__item">
                   <div class="header__item-number"> 00{{ thumbnails.length + 1 }}</div>
 
@@ -64,14 +66,22 @@
 <script>
 export default {
    props: {
-      toggleMenu: Function
+      toggleMenu: Function,
+      projectLinks: Array
    },
 
    computed: {
       thumbnails() {
          return this.$store.getters.getThumbnails;
-      }
+      },
    },
+
+   methods: {
+      /* Funksjon funnet på https://www.w3resource.com/javascript-exercises/javascript-string-exercise-24.php */
+      truncate(str, no_words) {
+         return str.split(" ").splice(0,no_words).join(" ");
+      }
+   }
 }
 
 </script>

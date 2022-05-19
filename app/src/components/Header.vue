@@ -10,7 +10,7 @@
          </div>
       </div>
 
-      <button type="button" class="header__burger-button" @click="toggleMenu">
+      <button type="button" class="header__burger-button" @click="toggleMenu" aria-label="open header menu">
          <svg width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect y="12" width="19" height="2"/>
             <rect y="6" width="19" height="2"/>
@@ -19,7 +19,7 @@
       </button>
    </div>
 
-   <HeaderMenu v-if="menuToggled === true" :toggleMenu="toggleMenu" />
+   <HeaderMenu v-if="menuToggled === true" :toggleMenu="toggleMenu" :projectLinks="headerData"/>
 </template>
 
 <script>
@@ -34,6 +34,10 @@ export default {
       return {
          menuToggled: false,
       }
+   },
+
+   props: {
+      headerData: Array
    },
 
    methods: {
