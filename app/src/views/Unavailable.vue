@@ -1,6 +1,6 @@
 <template>
    <div class="unavailable">
-      <div class="unavailable__message"> Page currently not available due to </div>
+      <div class="unavailable__message"> Page currently not available due to ongoing development</div>
    </div>
 </template>
 

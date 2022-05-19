@@ -5,9 +5,10 @@
       </div>
 
       <div class="exhibition__content">
-         <Hardcore v-if="projectName === 'hardcore'" />
-         <Hallingdal v-if="projectName === 'hallingdal'" />
-         <Alan v-if="projectName === 'alan'" />
+         <Hardcore v-if="projectName === 'hardcore-animation-m-video'" />
+         <Hallingdal v-if="projectName === 'hallingdal-kraftnett-energi'" />
+         <Alan v-if="projectName === 'alan-webstore-analytics'" />
+         <SoleSolution v-if="projectName === 'sole-solution-webstore'" />
       </div>
    </div>
 </template>
@@ -16,12 +17,14 @@
 import Hardcore from '../exhibitions/Hardcore.vue';
 import Hallingdal from '../exhibitions/Hallingdal.vue';
 import Alan from '../exhibitions/Alan.vue'
+import SoleSolution from '../exhibitions/SoleSolution.vue'
 
 export default {
    components: {
       Hardcore,
       Hallingdal,
       Alan,
+      SoleSolution,
    },
 
    props: {

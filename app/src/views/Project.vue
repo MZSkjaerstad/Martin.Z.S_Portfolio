@@ -32,5 +32,8 @@ export default {
 
       this.sanityFetch(query, params)
    },
+   mounted () {
+      window.scrollTo(0, 0)
+   }
 }
 </script>

@@ -10,7 +10,7 @@
          </div>
       </div>
 
-      <button class="header__burger-button" @click="toggleMenu">
+      <button type="button" class="header__burger-button" @click="toggleMenu">
          <svg width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect y="12" width="19" height="2"/>
             <rect y="6" width="19" height="2"/>

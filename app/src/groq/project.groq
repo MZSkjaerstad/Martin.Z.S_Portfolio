@@ -21,7 +21,8 @@
       exhibitionAssets[]{
         "caption": imageCaption,
         "file": imageFile.asset->.url
-      }
+      },
+      "slug": slug.current
    },
 
    "process": *[slug.current == $projectSlug && published == true][0] {
