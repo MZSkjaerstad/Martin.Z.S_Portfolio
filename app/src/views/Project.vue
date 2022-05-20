@@ -1,39 +1,40 @@
 <template>
-   <main v-if="loading === true"> <Loading /> </main>
-   <main v-else>
-      <Introduction :introductionData="content.introduction" />
-      <Exhibition :projectName="content.exhibition" />
-      <Process :processData="content.process" />
-   </main>
+  <article v-if="loading === true"><Loading /></article>
+
+  <article v-else>
+    <Introduction :introductionData="content.introduction" />
+    <Exhibition :projectName="content.exhibition" />
+    <Process :processData="content.process" />
+  </article>
 </template>
 
 <script>
-import Introduction from '../components/mal/Introduction.vue';
-import Loading from '../components/Loading.vue';
-import Exhibition from '../components/mal/Exhibition.vue';
-import Process from '../components/mal/Process.vue';
-import viewMixin from '../mixins/viewMixin.js';
-import query from '../groq/project.groq?raw';
+import Introduction from "../components/mal/Introduction.vue";
+import Loading from "../components/Loading.vue";
+import Exhibition from "../components/mal/Exhibition.vue";
+import Process from "../components/mal/Process.vue";
+import viewMixin from "../mixins/viewMixin.js";
+import query from "../groq/project.groq?raw";
 
 export default {
-   components: {
-      Introduction,
-      Loading,
-      Exhibition,
-      Process,
-   },
+  components: {
+    Introduction,
+    Loading,
+    Exhibition,
+    Process,
+  },
 
-   mixins: [viewMixin],
+  mixins: [viewMixin],
 
-   async created() {
-      const params = {
-         projectSlug: this.$route.params.projectSlug
-      }
+  async created() {
+    const params = {
+      projectSlug: this.$route.params.projectSlug,
+    };
 
-      this.sanityFetch(query, params)
-   },
-   mounted () {
-      window.scrollTo(0, 0)
-   }
-}
+    this.sanityFetch(query, params);
+  },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
+};
 </script>
