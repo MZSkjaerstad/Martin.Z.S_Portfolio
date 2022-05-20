@@ -1,7 +1,32 @@
 body {
    background: var(--primary-color);
+
+   color: var(--secondary-color);
    font-size: var(--font-size-body);
    font-family: var(--font-family);
    line-height: 1.2;
+}
+
+h1 {
+   color: var(--primary-color-tr-semi);
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   -webkit-text-stroke: var(--title-style);
+   font-size: var(--font-size-title-large);
+}
+
+h2 {
+   color: var(--primary-color-tr);
+   font-weight: bold;
+   font-style: italic;
+   text-transform: uppercase;
+   -webkit-text-stroke: var(--title-style);
+   font-size: var(--font-size-title-small);
+}
+
+h3 {
    color: var(--secondary-color);
+   font-style: italic;
+   font-size: var(--font-size-subtitle);
 }

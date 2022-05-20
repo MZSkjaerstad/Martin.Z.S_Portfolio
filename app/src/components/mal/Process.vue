@@ -1,12 +1,12 @@
 <template>
-  <div class="process">
+  <section class="process">
     <div class="process__head">Process</div>
 
     <div class="process__content">
       <div class="process__details">
-        <div class="process__flavourtext">
+        <p class="process__flavourtext">
           {{ processData.intro }}
-        </div>
+        </p>
 
         <div class="process__linkwrapper">
           <a
@@ -21,9 +21,9 @@
       </div>
 
       <div class="process__process-wrapper">
-        <div class="process__title">
+        <h2 class="process__title">
           {{ processData.subtitle }}
-        </div>
+        </h2>
 
         <div
           class="process__process-content"
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

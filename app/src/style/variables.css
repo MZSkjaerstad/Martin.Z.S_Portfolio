@@ -1,40 +1,51 @@
 :root {
-   /* Colour palette*/
+
+   /* 1.1 Colour palette*/
    --primary-color: #0e1a2f;
    --secondary-color: white;
    --highlight-color: #ff551c;
 
-   /* Colour palette transparent */
-
-   --primary-color-tr-semi: #0e1a2f80;
-
-   /* Colour palette invisible*/
-
+   /* 1.2 Colour palette invisible*/
    --primary-color-tr: #0e1a2f00;
    --secondary-color-tr: #FFFFFF00;
    --highlight-color-tr: #ff551c00;
 
-   /* Font styles */
-   --font-family: "alverata";
-   --font-size-body: 12pt;
-   --font-size-data: 0.8em;
-   --font-size-subtitle: 2em;
-   --font-size-thumbnail: 0.9em;
+   /* 1.3 Colour palette transparent */
+   --primary-color-tr-semi: #0e1a2f80;
 
-   /* Ruler styles */
+   /* 2.1 Font styles */
+   /*---MUST BE IMPLEMENTED---*/
+   --font-family: "alverata";
+
+   --font-size-data: 0.8em;
+   --font-size-thumbnail: 0.9em;
+   --font-size-body: 12pt;
+
+   --font-size-subtitle: 1.6em;
+   --font-size-title-small: 8vh;
+   --font-size-title-large: 12vh;
+
+   --title-style: 1px var(--highlight-color);
+
+   /* 3.1  Spacing */
+   /*---MUST BE IMPLEMENTED---*/
+   --spacing-padding: 0.5rem;
+   --spacing-small: 20px;
+   --spacing-medium: 2.5rem;
+   --spacing-large: 5rem;
+
+   /* 4.1 Ruler styles */
    --increment-style: solid var(--highlight-color) 1px;
 
    --increment-small: 0.6rem;
    --increment-medium: 2rem;
    --increment-large: 85vw;
-
-   /* Thumbnail title style */
-   --title-style: 1px var(--highlight-color);
 }
 
-/*** Breakpoints ***/
+/****** BREAKPOINTS ******/
 
-@media screen and (min-device-width: 2881px) {
+/* Big Desktop */
+@media screen and (min-width: 2881px) {
    :root {
       /* Font styles big desktop */
       --font-size-body: 18pt;
@@ -51,6 +62,7 @@
    }
 }
 
+/* Mobile */
 @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
    :root {
       /* Font styles mobile */
