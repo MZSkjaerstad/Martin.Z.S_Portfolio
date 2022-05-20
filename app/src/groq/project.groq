@@ -20,8 +20,10 @@
 
    "exhibition": *[slug.current == $projectSlug && published == true][0] {
       exhibitionAssets[]{
-        "caption": imageCaption,
-        "file": imageFile.asset->.url
+        "imageCaption": imageCaption,
+        "imageFile": imageFile.asset->.url,
+        "videoUrl": videoUrl,
+        "videoCaption": videoCaption
       },
       "slug": slug.current
    },
