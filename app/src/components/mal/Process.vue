@@ -48,6 +48,7 @@ export default {
 
 .process__head {
   padding-bottom: var(--spacing-small);
+  text-align: center;
 }
 
 /**** 3.0 Content ****/
