@@ -406,7 +406,7 @@
    .introduction__linkcontainer {
       width: 100%;
       padding: 8rem 4rem 4rem 4rem;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: flex-end;
    }
 

@@ -172,6 +172,7 @@ export default {
                   {
                      title: "Video url",
                      name: "videoUrl",
+                     description: "Make sure to use embeded url",
                      type: "string"
                   },
                   {
