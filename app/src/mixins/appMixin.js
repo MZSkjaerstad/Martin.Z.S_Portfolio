@@ -10,7 +10,6 @@ export default {
    methods: {
       async sanityFetch(query, params) {
          this.headerData = await sanity.fetch(query, params);
-         console.log(this.headerData);
       },
    }
 }

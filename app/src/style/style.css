@@ -5,6 +5,8 @@ body {
    font-size: var(--font-size-body);
    font-family: var(--font-family);
    line-height: 1.2;
+
+   overflow-x: hidden;
 }
 
 h1 {
@@ -27,6 +29,23 @@ h2 {
 
 h3 {
    color: var(--secondary-color);
+   font-weight: 600;
    font-style: italic;
    font-size: var(--font-size-subtitle);
+}
+
+::-webkit-scrollbar {
+   width: 4px;
+   overflow: auto;
+   transition: 0.2s;
+}
+
+::-webkit-scrollbar-thumb {
+   background: var(--highlight-color);
+   border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: var(--secondary-color);
+   transition: 0.2s;
 }

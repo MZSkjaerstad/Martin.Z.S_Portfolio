@@ -41,7 +41,7 @@ export default {
 
 .exhibition {
   background: black;
-  padding-bottom: var(--spacing-large)
+  padding-bottom: var(--spacing-small)
 }
 
 /* 1.2 Transition */

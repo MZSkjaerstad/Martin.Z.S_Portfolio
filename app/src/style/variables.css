@@ -14,12 +14,12 @@
    --primary-color-tr-semi: #0e1a2fAA;
 
    /* 2.1 Font styles */
-   /*---MUST BE IMPLEMENTED---*/
    --font-family: "alverata";
 
    --font-size-data: 0.8em;
    --font-size-thumbnail: 0.9em;
    --font-size-body: 12pt;
+   --font-size-intro: 1.3em;
 
    --font-size-subtitle: 1.6em;
    --font-size-title-small: 8vh;
@@ -27,12 +27,12 @@
 
    --title-style: 1px var(--highlight-color);
 
-   /* 3.1  Spacing */
+   /* 3.1  Spacing styles */
    /*---MUST BE IMPLEMENTED---*/
-   --spacing-padding: 0.5rem;
+   --spacing-padding: 0.5em;
    --spacing-small: 20px;
-   --spacing-medium: 2.5rem;
-   --spacing-large: 5rem;
+   --spacing-medium: 2.5em;
+   --spacing-large: 5em;
 
    /* 4.1 Ruler styles */
    --increment-style: solid var(--highlight-color) 1px;
@@ -74,7 +74,10 @@
       --increment-small: 1.2rem;
       --increment-medium: 4rem;
 
-      /* Thumbnail title style */
+      /* Spacing styles mobile */
+      --spacing-small: 40px;
+
+      /* Thumbnail title style mobile */
       --title-style: 4px var(--highlight-color);
    }
 }

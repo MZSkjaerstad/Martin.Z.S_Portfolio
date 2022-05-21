@@ -1,57 +1,23 @@
 <template>
   <section class="process">
-    <div class="process__head">Process</div>
+    <h3 class="process__head">Process</h3>
 
     <div class="process__content">
-      <div class="process__details">
-        <p class="process__flavourtext">
-          {{ processData.intro }}
-        </p>
+      <h2 class="process__subtitle"> {{processData.subtitle}} </h2>
 
-        <div class="process__linkwrapper">
-          <a
-            class="process__link"
-            v-for="link in processData.links"
-            :href="link"
-            target="_blank"
-          >
-            {{ link }}
-          </a>
+      <p class="process__intro"> {{processData.intro}} </p>
+
+      <div class="process__divider"></div>
+
+      <div class="process__sections" v-for="section in processData.sections">
+        <div class="process__section--text" v-if="section._type === 'sectionText'">
+          <p class="process__section-title">00{{ processData.sections.indexOf(section) + 1 }} - {{section.sectionTitle}}</p>
+
+          <p class="process__section-content">{{section.sectionContent}}</p>
         </div>
-      </div>
 
-      <div class="process__process-wrapper">
-        <h2 class="process__title">
-          {{ processData.subtitle }}
-        </h2>
-
-        <div
-          class="process__process-content"
-          v-for="section in processData.sections"
-        >
-          <div
-            class="process__processtext"
-            v-if="section._type === 'sectionText'"
-          >
-            <div class="process__subtitle-wrapper">
-              <p class="process__subtitle">
-                00{{ processData.sections.indexOf(section) + 1 }} -
-                {{ section.sectionTitle }}
-              </p>
-            </div>
-
-            <div class="process__body">
-              {{ section.sectionContent }}
-            </div>
-          </div>
-
-          <div v-else class="process__processimage">
-            <img
-              class="process__imagefile"
-              :src="section.imageFile"
-              :alt="imageCaption"
-            />
-          </div>
+        <div class="process__section--image" v-if="section._type === 'sectionImage'">
+          <img class="process__image-file" :src="section.imageFile" :alt="section.imageCaption">
         </div>
       </div>
     </div>
@@ -73,196 +39,65 @@ export default {
   width: 100%;
   height: auto;
   padding: 3rem 7% 3rem 7%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /**** 2.0 Head ****/
 
 .process__head {
-  width: 100%;
-  font-size: var(--font-size-subtitle);
-  font-style: italic;
-  font-weight: 600;
-  border-bottom: var(--increment-style);
-  padding-bottom: 1rem;
+  padding-bottom: var(--spacing-small);
 }
 
 /**** 3.0 Content ****/
 
 .process__content {
-  width: 100%;
-  height: auto;
-  padding: 2rem 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-/**** 4.0 Details ****/
-
-.process__details {
-  width: 23%;
-  height: auto;
-  font-style: italic;
-  font-size: 1.3rem;
-}
-
-.process__flavourtext {
-  border-bottom: var(--increment-style);
-  padding-bottom: 2rem;
-}
-
-.process__linkwrapper {
-  padding-top: 1.3rem;
-  display: flex;
-  justify-content: end;
-}
-
-.process__link {
-  color: var(--highlight-color);
-  font-size: var(--font-size-data);
-  text-decoration: none;
-  margin-bottom: 0.5rem;
-}
-
-.process__link:hover {
-  color: var(--secondary-color);
-  text-decoration: underline;
-}
-
-/**** 5.0 Process-content ****/
-
-.process__process-wrapper {
-  width: 75%;
-}
-
-.process__title {
-  font-size: 3.5rem;
-  font-weight: bold;
-  font-style: italic;
-  text-transform: uppercase;
-  color: var(--primary-color);
-  -webkit-text-stroke: var(--title-style);
-  transform: translateY(-0.5rem);
-  padding: 0 0 1rem 2rem;
-}
-
-.process__process-content {
-  width: 100%;
-  height: auto;
-  display: flex;
-  margin-bottom: 4rem;
-}
-
-/* 5.1 text */
-
-.process__processtext {
-  width: 65%;
-  display: flex;
-  height: 100%;
-}
-
-.process__subtitle-wrapper {
-  width: 8rem;
-}
-
-.process__subtitle {
-  top: 45%;
-  color: var(--highlight-color);
-  font-size: var(--font-size-data);
-  font-style: italic;
-  white-space: nowrap;
-  text-align: center;
-  padding: 0.1rem 1rem;
-}
-
-.process__body {
   width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* 5.2 images */
+.process__intro {
+  font-size: var(--font-size-intro);
+  font-style: italic;
+  padding: var(--spacing-medium) 0;
+}
 
-.process__processimage {
+.process__divider {
   width: 100%;
+  border-top: var(--increment-style);
 }
 
-.process__imagefile {
+/**** 4.0 Sections ****/
+
+.process__sections {
+  padding: var(--spacing-medium) 0;
+}
+
+.process__section-title {
+  color: var(--highlight-color);
+  font-size: var(--font-size-data);
+  font-style: italic;
+  padding-bottom: var(--spacing-small);
+}
+
+.process__section-content {
+  line-height: 150%;
+}
+
+.process__image-file {
   width: 100%;
 }
 
 @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
-  .process__head {
-    padding-bottom: 2rem;
-  }
-
   .process__content {
-    flex-direction: column;
-    padding: 3rem 0;
-  }
-
-  .process__details {
     width: 100%;
   }
 
-  .process__flavourtext {
-    font-size: 3.2rem;
-    padding-bottom: 3rem;
-    margin-bottom: 3rem;
-  }
-
-  .process__linkwrapper {
-    justify-content: start;
-  }
-
-  .process__link {
-    font-size: var(--font-style-data);
-    margin-bottom: 3rem;
-  }
-
-  .process__process-content {
-    flex-direction: column;
-  }
-
-  .process__title {
-    display: none;
-  }
-
-  .process__process-wrapper {
-    width: 100%;
-    border-left: none;
-  }
-
-  .process__processtext {
-    width: 100%;
-    padding: 0 0;
-    margin-bottom: 5rem;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .process__subtitle-wrapper {
-    width: 100%;
-  }
-
-  .process__subtitle {
-    padding: 0rem 0.1rem 3rem 0.1rem;
-    white-space: normal;
-  }
-
-  .process__body {
-    width: 100%;
-  }
-
-  .process__images {
-    width: 100%;
-    padding-left: 0;
-  }
-
-  .process__figure {
-    margin: 2rem 0;
-  }
-
-  .process__figcaption {
-    padding-top: 1.6rem;
+  .process__subtitle{
+    font-size: 5vh;
   }
 }
 </style>
