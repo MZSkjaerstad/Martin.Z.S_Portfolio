@@ -41,7 +41,7 @@ export default {
    .alan__centerscreen {
       width: 100%;
       height: auto;
-      grid-column: 5 / span 3;
+      grid-column: 5 / span 4;
    }
    
 
@@ -59,10 +59,10 @@ export default {
       }
 
       .alan__centerscreen {
-      width: 100%;
-      height: auto;
-      grid-column: 1 / span 12;
-   }
+         width: 100%;
+         height: auto;
+         grid-column: 1 / span 12;
+      }
 
       .alan__video {
          height: 30vh;
