@@ -21,7 +21,7 @@
 
       <img class="hallingdal__fullscreen" :src="hallingdal[8].imageFile" :alt="hallingdal[8].imageCaption" style="grid-row:10;">
 
-      <img class="hallingdal__centerscreen" :src="hallingdal[9].imageFile" :alt="hallingdal[9].imageCaption" style="grid-row:11;">
+      <img class="hallingdal__fullscreen" :src="hallingdal[9].imageFile" :alt="hallingdal[9].imageCaption" style="grid-row:11;">
 
       <img class="hallingdal__fullscreen" :src="hallingdal[10].imageFile" :alt="hallingdal[10].imageCaption" style="grid-row:12;">
 
