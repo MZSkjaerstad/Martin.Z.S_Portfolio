@@ -139,9 +139,9 @@
       </div>
 
       <div class="landingpage__typography">
-        <div class="landingpage__subtitle">a graphic design</div>
+        <div class="landingpage__subtitle">Digital designer</div>
 
-        <div class="landingpage__title">portfolio</div>
+        <div class="landingpage__title">MARTIN.Z.S</div>
       </div>
 
       <div class="landingpage__circles">

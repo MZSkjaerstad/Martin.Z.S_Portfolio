@@ -3,9 +3,11 @@
     <h3 class="process__head">Process</h3>
 
     <div class="process__content">
-      <h2 class="process__subtitle"> {{processData.subtitle}} </h2>
+      <div class="process__initials">
+        <h2 class="process__subtitle"> {{processData.subtitle}} </h2>
 
-      <p class="process__intro"> {{processData.intro}} </p>
+        <p class="process__intro"> {{processData.intro}} </p>
+      </div>
 
       <div class="process__divider"></div>
 
@@ -54,6 +56,13 @@ export default {
 /**** 3.0 Content ****/
 
 .process__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.process__initials {
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -74,6 +83,7 @@ export default {
 /**** 4.0 Sections ****/
 
 .process__sections {
+  width: 70%;
   padding: var(--spacing-medium) 0;
 }
 
