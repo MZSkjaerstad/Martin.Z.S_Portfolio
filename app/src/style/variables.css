@@ -45,7 +45,7 @@
 /****** BREAKPOINTS ******/
 
 /* Big Desktop */
-@media screen and (min-width: 2881px) {
+@media screen and (min-width: 1900px) {
    :root {
       /* Font styles big desktop */
       --font-size-body: 18pt;
@@ -54,11 +54,15 @@
       --increment-small: 1rem;
       --increment-medium: 2.5rem;
 
+      /* Spacing style big desktop */
+
+      --spacing-small: 30px;
+
       /* Ruler styles big desktop */
-      --increment-style: solid var(--highlight-color) 20px;
+      --increment-style: solid var(--highlight-color) 3px;
 
       /* Thumbnail title big desktop */
-      --title-style: 20px var(--highlight-color);
+      --title-style: 3px var(--highlight-color);
    }
 }
 

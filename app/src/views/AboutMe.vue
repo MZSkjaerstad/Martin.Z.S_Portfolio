@@ -4,7 +4,7 @@
    </main>
 
    <main class="about" v-else>
-      <div class="about__message"> Page currently not available due to </div>
+      <div class="about__message"> Page currently not available due to development.</div>
    </main>
 </template>
 
