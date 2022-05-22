@@ -1,7 +1,6 @@
 <template>
-   <!-- Change block name to the same as component -->
    <div class="hallingdal">
-            <iframe class="hallingdal__video" :src="`${hallingdal[12].videoUrl}`" frameborder="0" style="grid-row:1;"></iframe>
+      <iframe class="hallingdal__video" :src="`${hallingdal[12].videoUrl}`" frameborder="0" style="grid-row:1;"></iframe>
 
       <img class="hallingdal__fullscreen" :src="hallingdal[0].imageFile" :alt="hallingdal[0].imageCaption" style="grid-row:2;">
 
@@ -38,7 +37,6 @@ export default {
 </script>
 
 <style>
-   /* Change block name to the same as component */
    .hallingdal {
       padding: 0 7%;
       display: grid;
