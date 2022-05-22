@@ -366,6 +366,7 @@
 
    .introduction__information {
       width: 100%;
+      height: auto;
       border-right: none;
       justify-content: flex-start;
    }

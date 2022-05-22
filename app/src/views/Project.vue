@@ -31,9 +31,29 @@ export default {
       }
 
       this.sanityFetch(query, params)
+      return params
    },
+
    mounted () {
       window.scrollTo(0, 0)
+   },
+
+   /*Routerlink between articles */
+   computed: {
+      getParam() {
+         return this.$route.params.projectSlug
+      }
+   },
+
+   watch: {
+      getParam(newParam, oldParam) {
+         if(newParam != oldParam) {
+            const params = {
+               projectSlug: this.$route.params.projectSlug
+            }
+            this.sanityFetch(query, params)
+         }
+      }
    }
 }
 </script>
