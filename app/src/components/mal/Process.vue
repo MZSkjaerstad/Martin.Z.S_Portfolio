@@ -110,5 +110,13 @@ export default {
   .process__subtitle{
     font-size: 5vh;
   }
+
+  .process__initials{
+    width: 95%;
+  }
+
+  .process__sections {
+    width: 95%;
+  }
 }
 </style>
