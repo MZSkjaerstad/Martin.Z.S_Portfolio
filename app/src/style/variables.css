@@ -68,7 +68,7 @@
 }
 
 /* Mobile */
-@media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (max-device-width: 767px) {
    :root {
       /* Font styles mobile */
       --font-size-body: 30pt;
