@@ -102,6 +102,16 @@ export default {
   width: 100%;
 }
 
+@media screen and (min-width: 1900px) {
+  .process__initials {
+    width: 50%;
+  }
+
+  .process__sections {
+    width: 50%;
+  }
+}
+
 @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
   .process__content {
     width: 100%;
