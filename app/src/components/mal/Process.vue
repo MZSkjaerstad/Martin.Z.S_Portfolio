@@ -6,7 +6,7 @@
       <div class="process__initials">
         <h2 class="process__subtitle"> {{processData.subtitle}} </h2>
 
-        <p class="process__intro"> {{processData.intro}} </p>
+        <p maxlength="60" class="process__intro"> {{processData.intro}} </p>
       </div>
 
       <div class="process__divider"></div>
@@ -63,13 +63,13 @@ export default {
 }
 
 .process__initials {
-  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .process__intro {
+  max-width: 60ch;
   font-size: var(--font-size-intro);
   font-style: italic;
   padding: var(--spacing-medium) 0;
@@ -83,7 +83,6 @@ export default {
 /**** 4.0 Sections ****/
 
 .process__sections {
-  width: 70%;
   padding: var(--spacing-medium) 0;
 }
 
@@ -95,21 +94,12 @@ export default {
 }
 
 .process__section-content {
+  max-width: 60ch;
   line-height: 150%;
 }
 
 .process__image-file {
   width: 100%;
-}
-
-@media screen and (min-width: 1900px) {
-  .process__initials {
-    width: 50%;
-  }
-
-  .process__sections {
-    width: 50%;
-  }
 }
 
 @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {

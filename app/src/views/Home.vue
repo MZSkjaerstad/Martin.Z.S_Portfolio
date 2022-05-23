@@ -45,7 +45,7 @@
 
    /* 5.5 Mobile standing */
 
-   @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+   @media screen and (max-device-width: 767px) {
       .homepage {
          padding: 0rem 0% 2rem 0%;
       }

@@ -127,7 +127,7 @@ export default {
   position: fixed;
   background: var(--primary-color);
   border-left: var(--increment-style);
-  padding: 1rem 3.2rem 1rem 0rem;
+  padding: var(--spacing-small) 3.2rem 1rem 0rem;
   top: 0;
   right: 0;
   z-index: 26;
@@ -207,6 +207,21 @@ export default {
   -webkit-text-stroke: none;
   transform: translateX(1rem);
   transition: 0.2s;
+}
+
+@media screen and (min-width: 1900px) {
+  .header__menu {
+    width: 35rem;
+  }
+
+  .header__x-button svg {
+    width: 28;
+    height: 21;
+  }
+
+  .header__item-link {
+    font-size: 3rem;
+  }
 }
 
 @media screen and (max-device-width: 767px) {
