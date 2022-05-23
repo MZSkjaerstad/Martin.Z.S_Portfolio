@@ -181,7 +181,7 @@ export default {
 }
 
 .thumbnail__year {
-  font-size: 4.2vh;
+  font-size: var(--font-size-year);
   font-weight: bold;
   font-style: italic;
   text-decoration: none;
