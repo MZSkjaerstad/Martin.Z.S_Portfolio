@@ -45,19 +45,18 @@
         </div>
 
         <div class="thumbnail__content">
-          <div class="thumbnail__info-container">
-            <div class="thumbnail__info">
-              <p class="thumbnail__year">
-                {{ thumbnail.publishYear.slice(0, 4) }}
-              </p>
+          <div class="thumbnail__info">
+            <p class="thumbnail__year">
+              {{ thumbnail.publishYear.slice(0, 4) }}
+            </p>
 
-              <div class="thumbnail__tags-container">
-                <p class="thumbnail__tags" v-for="tag in thumbnail.tags">
-                  {{ tag }}
-                </p>
-              </div>
+            <div class="thumbnail__tags-container">
+              <p class="thumbnail__tags" v-for="tag in thumbnail.tags">
+                {{ tag }}
+              </p>
             </div>
           </div>
+          
 
           <div class="thumbnail__hook">
             <h2
@@ -89,45 +88,6 @@ export default {
 </script>
 
 <style>
-/* Thumbnail ruler */
-.thumbnail__increment {
-  display: flex;
-  position: relative;
-}
-
-.thumbnail__increment-position--1 {
-  width: 24rem;
-}
-
-.thumbnail__increment-position--2 {
-  width: 42vw;
-}
-
-.thumbnail__increment-position--3 {
-  width: 54vw;
-}
-
-.thumbnail__increment-position--4 {
-  width: 62vw;
-}
-
-.thumbnail__increment-position--5 {
-  width: 75vw;
-}
-
-.thumbnail__decoration {
-  width: 100%;
-  border-top: var(--increment-style);
-}
-
-.thumbnail__counter {
-  color: var(--highlight-color);
-  font-size: var(--font-size-data);
-  transform: translateY(-50%);
-  left: 100%;
-  margin-left: 0.8rem;
-  position: absolute;
-}
 
 /* 3.3 Link */
 
@@ -142,23 +102,6 @@ export default {
   cursor: pointer;
 }
 
-/* 3.4 Ruler */
-
-.thumbnail__ruler-increment {
-  height: 0px;
-  margin-bottom: 5vh;
-}
-
-.thumbnail__ruler-object--small {
-  width: 0.6rem;
-  border-top: var(--increment-style);
-}
-
-.thumbnail__ruler-object--medium {
-  width: 2rem;
-  border-top: var(--increment-style);
-}
-
 /* 3.5 Content */
 
 .thumbnail__content {
@@ -167,14 +110,10 @@ export default {
 
 /* 3.6 Info */
 
-.thumbnail__info-container {
-  width: 14rem;
-  padding: 0vh 0vh 5vh 0.8rem;
-}
-
 .thumbnail__info {
   height: 100%;
   opacity: 0;
+  padding-bottom: 5vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -201,7 +140,7 @@ export default {
   margin: 0.2em;
 }
 
-/* 3.7 Hook */
+/* Hook */
 
 .thumbnail__title {
   width: 1rem;
@@ -276,6 +215,63 @@ export default {
   transition: 1s;
 }
 
+/* Thumbnail ruler */
+.thumbnail__increment {
+  display: flex;
+  position: relative;
+}
+
+.thumbnail__increment-position--1 {
+  width: 24rem;
+}
+
+.thumbnail__increment-position--2 {
+  width: 42vw;
+}
+
+.thumbnail__increment-position--3 {
+  width: 54vw;
+}
+
+.thumbnail__increment-position--4 {
+  width: 62vw;
+}
+
+.thumbnail__increment-position--5 {
+  width: 75vw;
+}
+
+.thumbnail__decoration {
+  width: 100%;
+  border-top: var(--increment-style);
+}
+
+.thumbnail__counter {
+  color: var(--highlight-color);
+  font-size: var(--font-size-data);
+  transform: translateY(-50%);
+  left: 100%;
+  margin-left: 0.8rem;
+  position: absolute;
+}
+
+/* Ruler */
+
+.thumbnail__ruler-increment {
+  height: 0px;
+  margin-bottom: 5vh;
+}
+
+.thumbnail__ruler-object--small {
+  width: 0.6rem;
+  border-top: var(--increment-style);
+}
+
+.thumbnail__ruler-object--medium {
+  width: 2rem;
+  border-top: var(--increment-style);
+}
+
 /* Pad responsive */
 
 @media screen and (min-device-width: 768px) and (max-device-width: 1090px) {
@@ -322,7 +318,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0rem 4rem;
+    padding: 0 4rem 5vh 4rem;
     position: bottom;
   }
 
