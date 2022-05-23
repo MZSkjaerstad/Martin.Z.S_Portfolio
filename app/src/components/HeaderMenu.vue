@@ -209,7 +209,7 @@ export default {
   transition: 0.2s;
 }
 
-@media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (max-device-width: 767px) {
   .header__menu {
     width: 100vw;
     border: none;

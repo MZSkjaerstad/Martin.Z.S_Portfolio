@@ -402,7 +402,7 @@
 
 /* 4.3 Smaller screens, Small pads, mobile, etc. */
 
-@media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (max-device-width: 767px) {
   /******* X.2 RULER *******/
 
   .header__logowrapper {
