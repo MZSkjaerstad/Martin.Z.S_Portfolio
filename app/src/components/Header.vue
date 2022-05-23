@@ -149,7 +149,14 @@ export default {
   transition: 0.2s;
 }
 
-@media screen and (max-device-width: 767px) {
+@media screen and (min-width: 1900px) {
+  .header__burger-button svg {
+    width: 26;
+    height: 20;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .header {
     padding: 2rem;
   }

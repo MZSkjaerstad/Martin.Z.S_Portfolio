@@ -1,9 +1,9 @@
 :root {
 
    /* 1.1 Colour palette*/
-   --primary-color: #0e1a2f;
+   --primary-color: #0a1425;
    --secondary-color: white;
-   --highlight-color: #ff551c;
+   --highlight-color: #ff5922;
 
    /* 1.2 Colour palette invisible*/
    --primary-color-tr: #0e1a2f00;
@@ -20,13 +20,13 @@
    --font-size-thumbnail: 0.9em;
    --font-size-body: 12pt;
    --font-size-intro: 1.3em;
-   --font-size-year: 2.6em;
+   --font-size-year: 2.2em;
 
    --font-size-subtitle: 1.6em;
    --font-size-title-small: 8vh;
    --font-size-title-large: 12vh;
 
-   --title-style: 1px var(--highlight-color);
+   --title-style: 1.6px var(--highlight-color);
 
    /* 3.1  Spacing styles */
    /*---MUST BE IMPLEMENTED---*/
@@ -36,7 +36,7 @@
    --spacing-large: 5em;
 
    /* 4.1 Ruler styles */
-   --increment-style: solid var(--highlight-color) 1px;
+   --increment-style: solid var(--highlight-color) 1.6px;
 
    --increment-small: 0.6rem;
    --increment-medium: 2rem;
@@ -49,7 +49,7 @@
 @media screen and (min-width: 1900px) {
    :root {
       /* Font styles big desktop */
-      --font-size-body: 20pt;
+      --font-size-body: 18pt;
 
       /* Increment styles big desktop */
       --increment-small: 1rem;
@@ -60,10 +60,10 @@
       --spacing-small: 30px;
 
       /* Ruler styles big desktop */
-      --increment-style: solid var(--highlight-color) 3px;
+      --increment-style: solid var(--highlight-color) 2.6px;
 
       /* Thumbnail title big desktop */
-      --title-style: 3px var(--highlight-color);
+      --title-style: 2.6px var(--highlight-color);
    }
 }
 

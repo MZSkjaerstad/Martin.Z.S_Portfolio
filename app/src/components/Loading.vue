@@ -1,8 +1,6 @@
 <template>
   <main class="loading">
     <Vue3Lottie class="loading__animation" :animationData="loadingJSON" :loop="true" :autoplay="true" :height="20" :width="20" />
-
-    <h2>loading</h2>
   </main>
 </template>
 

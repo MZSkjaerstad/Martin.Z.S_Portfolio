@@ -143,9 +143,10 @@
    }
 
    .introduction__image {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
+    opacity: 90%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
    }
 
    .introduction__title {
@@ -329,7 +330,15 @@
    transition: 0.1s;
    }
 
-   @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  @media screen and (min-width: 1900px) {
+    .introduction__link {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+  }
+
+
+   @media screen and (max-device-width: 767px) {
    .introduction {
       height: auto;
       padding: 0rem 7% 2rem 7%;
