@@ -1,6 +1,6 @@
 <template>
   <main class="loading">
-    <Vue3Lottie :animationData="loadingJSON" :loop="true" :autoplay="true" :height="50" :width="50" />
+    <Vue3Lottie class="loading__animation" :animationData="loadingJSON" :loop="true" :autoplay="true" :height="20" :width="20" />
 
     <h2>loading</h2>
   </main>
@@ -8,7 +8,7 @@
 
 <script>
   import { Vue3Lottie } from 'vue3-lottie'
-  import loadingJSON from '../lotties/loading.json'
+  import loadingJSON from '../lotties/loading.json?raw'
 
   export default {
     components: {
@@ -17,7 +17,7 @@
 
     data() {
       return {
-        loadingJSON
+        loadingJSON: JSON.parse(loadingJSON)
       }
     }
   }
@@ -31,5 +31,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.loading__animation {
+  width: 15%;
+  height: auto;
 }
 </style>

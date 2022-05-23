@@ -253,7 +253,7 @@
    }
 
    .introduction__year {
-   font-size: 2rem;
+   font-size: var(--font-size-year);
    font-weight: bold;
    font-style: italic;
    text-decoration: none;
@@ -376,7 +376,6 @@
    }
 
    .introduction__subtitle {
-      font-size: 4rem;
       margin-bottom: 1.6rem;
    }
 
@@ -386,7 +385,7 @@
 
    .introduction__year {
       padding-top: 2rem;
-      font-size: 6rem;
+      font-size: var(--font-size-year);
    }
 
    /* Credentials */
