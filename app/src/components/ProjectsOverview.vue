@@ -176,7 +176,7 @@ export default {
   width: auto;
 }
 
-@media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (max-device-width: 767px) {
   .projects {
     margin-top: 3vh;
   }

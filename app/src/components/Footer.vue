@@ -87,7 +87,7 @@
   transition: ease-in-out 0.2s;
 }
 
-@media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (max-device-width: 767px) {
   .footer {
     padding: 0vw 5vw 0vw 5vw;
   }

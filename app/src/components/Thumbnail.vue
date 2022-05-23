@@ -278,7 +278,7 @@ export default {
 
 /* Pad responsive */
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1090px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (min-device-width: 768px) and (max-device-width: 1090px) {
   .thumbnail__increment {
     width: 24rem;
   }
@@ -302,7 +302,7 @@ export default {
 
 /* Mobile responsive */
 
-@media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (max-device-width: 767px) {
   /* Ruler */
 
   .thumbnail__increment {
