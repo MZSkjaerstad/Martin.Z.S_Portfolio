@@ -72,7 +72,7 @@ export default {
 
 <style>
 .header {
-  padding: 1rem 3.3% 0.1rem 3.3%;
+  padding: var(--spacing-small) 3.3% 0.1rem 3.3%;
 }
 
 /* nav tool */
