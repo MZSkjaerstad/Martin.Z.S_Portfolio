@@ -129,6 +129,10 @@ export default {
   -webkit-text-stroke: var(--title-style);
 }
 
+.thumbnail__tags-container {
+  width: 75%;
+}
+
 .thumbnail__tags {
   width: auto;
   display: inline-block;
@@ -181,7 +185,7 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -1;
+  z-index: -10;
   transition: 0.5s;
 }
 

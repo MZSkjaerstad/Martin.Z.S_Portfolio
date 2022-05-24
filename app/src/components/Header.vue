@@ -156,7 +156,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-device-width: 767px ) {
   .header {
     padding: 2rem;
   }

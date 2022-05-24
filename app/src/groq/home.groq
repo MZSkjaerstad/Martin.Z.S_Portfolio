@@ -1,8 +1,15 @@
-*[_type == 'projects' && published == true] {
-   projectName,
-   "thumbnail": backgroundImage.asset->.url,
-   publishYear,
-   "tags": tags[]->.tagName,
-   "slug": slug.current,
-   position
+{
+   "thumbnails": *[_type == 'projects' && published == true] {
+      projectName,
+      "thumbnail": backgroundImage.asset->.url,
+      publishYear,
+      "tags": tags[]->.tagName,
+      "slug": slug.current,
+      position
+      },
+   'socials': *[_type == 'aboutMe'][0].socials[] {
+      "icon": linkType->.linkIcons.asset->.url,
+      "linktype": linkType->.linkName,
+      url
+      }
 }
