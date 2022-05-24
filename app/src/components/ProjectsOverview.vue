@@ -177,9 +177,6 @@ export default {
 }
 
 @media screen and (max-device-width: 767px) {
-  .projects {
-    margin-top: 3vh;
-  }
 
   /* Decoration */
 

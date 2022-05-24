@@ -110,7 +110,6 @@ export default {
 
 .ruler__header {
   padding-left: 10vw;
-  height: 60vh;
 }
 
 .ruler__header--upper {
@@ -271,9 +270,61 @@ export default {
 @media screen and (max-device-width: 767px) { 
    .landingpage__ruler {
     padding: 0vw 5vw;
-    margin: 3vh 0 0 0;
+    margin: 0;
   }
 
+  /* Header */
+  .ruler__header {
+    padding: 0;
+  }
+
+  .ruler__header--upper {
+    font-size: 10vh;
+    text-align: center;
+  }
+
+  .ruler__header--lower {
+    font-size: 10vh;
+    text-align: center;
+  }
+
+  /* About */
+  .ruler__about {
+    padding: 0;
+    width: 100%;
+  }
+
+  .ruler__imageframe {
+    position: relative;
+    height: 25vh;
+    z-index: -1;
+  }
+
+  .ruler__image {
+    display: none;
+  }
+
+  .ruler__logo {
+    display: none;
+  }
+
+  .ruler__intro {
+    text-align: center;
+    padding: 0;
+  }
+
+  .ruler__socials {
+    justify-content: center;
+  }
+
+.ruler__link {
+  height: 6vh;
+  margin-left: 0.2rem;
+  position: relative;
+  z-index: 10;
+}
+
+  /* increments */
   .ruler__increments {
     width: 90vw;
   }
