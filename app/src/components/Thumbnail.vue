@@ -117,6 +117,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: 0.4s;
 }
 
 .thumbnail__year {
@@ -127,10 +128,12 @@ export default {
   transform: translateY(-0.7rem);
   color: var(--primary-color);
   -webkit-text-stroke: var(--title-style);
+  transition: 0.4s;
 }
 
 .thumbnail__tags-container {
   width: 75%;
+  transition: 0.4s;
 }
 
 .thumbnail__tags {
@@ -142,9 +145,14 @@ export default {
   border-radius: 15px;
   padding: 0.09rem 0.4rem 0.1rem 0.4rem;
   margin: 0.2em;
+  transition: 0.4s;
 }
 
 /* Hook */
+
+.thumbnail__hook {
+  transition: 0.4s;
+}
 
 .thumbnail__title {
   width: 1rem;
@@ -153,6 +161,7 @@ export default {
   transform: translateY(-2.5vh);
   color: var(--primary-color-tr);
   -webkit-text-stroke: var(--title-style);
+  transition: 0.4s;
 }
 
 .thumbnail__title-position--1 {
