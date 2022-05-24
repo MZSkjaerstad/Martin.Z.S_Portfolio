@@ -1,6 +1,6 @@
 <template>
   <section class="projects">
-    <div class="projects__decoration">
+    <!-- <div class="projects__decoration">
       <div class="decoration__increment">
         <div class="decoration__object decoration__object--1"></div>
       </div>
@@ -36,7 +36,7 @@
       <div class="decoration__increment">
         <div class="decoration__object decoration__object--9"></div>
       </div>
-    </div>
+    </div> -->
 
     <div class="projects__thumbnails">
       <Thumbnail

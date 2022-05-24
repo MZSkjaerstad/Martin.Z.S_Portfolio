@@ -2,17 +2,17 @@
    <main v-if="loading === true"> <Loading /> </main>
    <main v-else class="homepage">
       <section class="homepage__landing-mount">
-         <Landing />
+         <LandingShort :socials="content.socials"/>
       </section>
 
       <section class="homepage__projects-mount">
-         <ProjectsOverview :overviewContent="content"/>
+         <ProjectsOverview :overviewContent="content.thumbnails"/>
       </section>
    </main >
 </template>
 
 <script>
-   import Landing from '../components/Landing.vue'
+   import LandingShort from '../components/LandingShort.vue'
    import Loading from '../components/Loading.vue'
    import ProjectsOverview from '../components/ProjectsOverview.vue'
    import viewMixin from '../mixins/viewMixin.js'
@@ -20,7 +20,7 @@
 
    export default {
       components: {
-         Landing,
+         LandingShort,
          Loading,
          ProjectsOverview,
       },
