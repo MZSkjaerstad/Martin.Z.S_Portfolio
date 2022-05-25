@@ -90,7 +90,6 @@ export default {
 <style>
 
 /* 3.3 Link */
-
 .thumbnail__link {
   text-decoration: none !important;
 }
@@ -103,13 +102,11 @@ export default {
 }
 
 /* 3.5 Content */
-
 .thumbnail__content {
   display: flex;
 }
 
 /* 3.6 Info */
-
 .thumbnail__info {
   height: 100%;
   opacity: 0;
@@ -149,7 +146,6 @@ export default {
 }
 
 /* Hook */
-
 .thumbnail__hook {
   transition: 0.4s;
 }
@@ -169,7 +165,7 @@ export default {
 }
 
 .thumbnail__title-position--2 {
-  margin-left: 17vw;
+  margin-left: 19vw;
 }
 
 .thumbnail__title-position--3 {
@@ -185,7 +181,6 @@ export default {
 }
 
 /* 3.6 Image */
-
 .thumbnail__image {
   position: fixed;
   opacity: 0%;
@@ -205,7 +200,6 @@ export default {
 }
 
 /* 3.7 Hover */
-
 .thumbnail__display:hover .thumbnail__info {
   transform: translateX(0.6vw);
   opacity: 100;
@@ -269,7 +263,6 @@ export default {
 }
 
 /* Ruler */
-
 .thumbnail__ruler-increment {
   height: 0px;
   margin-bottom: 5vh;
@@ -286,7 +279,6 @@ export default {
 }
 
 /* Pad responsive */
-
 @media screen and (min-device-width: 768px) and (max-device-width: 1090px) {
   .thumbnail__increment {
     width: 24rem;
@@ -312,15 +304,14 @@ export default {
 /* Mobile responsive */
 
 @media screen and (max-device-width: 767px) {
+  
   /* Ruler */
-
   .thumbnail__increment {
     width: 94%;
     flex-direction: column;
   }
 
   /* Content */
-
   .thumbnail__content {
     flex-direction: column-reverse;
   }
@@ -373,7 +364,6 @@ export default {
   }
 
   /* Mobile Hover Cancelation */
-
   .thumbnail__display:hover .thumbnail__info {
     transform: translateX(none);
     opacity: none;
