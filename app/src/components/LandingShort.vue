@@ -1,85 +1,85 @@
 <template>
    <section>
       <div class="landingpage__ruler">
-         <div class="ruler__increments ruler__data">
+         <div class="landingpage__increments ruler__data">
             <div>
-               <div class="ruler__increment--long"></div>
+               <div class="landingpage__increment--long"></div>
 
-               <div class="ruler__increment-info">000</div>
+               <div class="landingpage__increment-info">000</div>
             </div>
          </div>
 
-         <div class="ruler__increments">
-            <div class="ruler__increment--small"></div>
+         <div class="landingpage__increments">
+            <div class="landingpage__increment--small"></div>
 
-            <div class="ruler__landing">
-               <div class="ruler__header">
-                 <h1 class="ruler__header--upper">Digital</h1>
+            <div class="landingpage__landing">
+               <div class="landingpage__header">
+                 <h1 class="landingpage__header--upper">Digital</h1>
 
-                 <h1 class="ruler__header--lower">Designer</h1>
+                 <h1 class="landingpage__header--lower">Designer</h1>
                </div>
 
-               <div class="ruler__about">
-                  <div class="ruler__imageframe">
-                    <img class="ruler__logo" src="/visual_identity/vector/logo.svg" alt="MartinZ.S. logo.">
+               <div class="landingpage__about">
+                  <div class="landingpage__imageframe">
+                    <img class="landingpage__logo" src="/visual_identity/vector/logo.svg" alt="MartinZ.S. logo.">
 
-                    <img class="ruler__image" src="/visual_identity/image/landing_banner.png" alt="">
+                    <img class="landingpage__image" src="/visual_identity/image/landing_banner.png" alt="">
                   </div>
 
-                  <div class="ruler__intro">
+                  <div class="landingpage__intro">
                     Martin Zupfer Skjærstad
                   </div>
 
-                  <div class="ruler__socials">
-                    <a class="ruler__link" v-for="link in socials" :href="link.url" target="_blank" :aria-label="`Open ${link.linktype}`">
-                      <img class="ruler__link-icon" :src="link.icon" alt="">
+                  <div class="landingpage__socials">
+                    <a class="landingpage__link" v-for="link in socials" :href="link.url" target="_blank" :aria-label="`Open ${link.linktype}`">
+                      <img class="landingpage__link-icon" :src="link.icon" alt="">
                     </a>
                   </div>
                </div>
             </div>
          </div>
 
-         <div class="ruler__increments">
-            <div class="ruler__increment--small"></div>
+         <div class="landingpage__increments">
+            <div class="landingpage__increment--small"></div>
          </div>
 
-         <div class="ruler__increments">
-            <div class="ruler__increment--small"></div>
+         <div class="landingpage__increments">
+            <div class="landingpage__increment--small"></div>
          </div> 
 
-         <div class="ruler__increments">
+         <div class="landingpage__increments">
             <div class="decoration__object decoration__object--1"></div>
          </div>
 
-         <div class="ruler__increments">
+         <div class="landingpage__increments">
             <div class="decoration__object decoration__object--2"></div>
          </div>
 
-         <div class="ruler__increments">
+         <div class="landingpage__increments">
             <div class="decoration__object decoration__object--3"></div>
          </div>
 
-         <div class="ruler__increments">
+         <div class="landingpage__increments">
             <div class="decoration__object decoration__object--4"></div>
          </div>
 
-         <div class="ruler__increments">
+         <div class="landingpage__increments">
             <div class="decoration__object decoration__object--5"></div>
          </div>
 
-         <div class="ruler__increments">
+         <div class="landingpage__increments">
             <div class="decoration__object decoration__object--6"></div>
          </div>
 
-         <div class="ruler__increments">
+         <div class="landingpage__increments">
             <div class="decoration__object decoration__object--7"></div>
          </div>
 
-         <div class="ruler__increments">
+         <div class="landingpage__increments">
             <div class="decoration__object decoration__object--8"></div>
          </div>
 
-         <div class="ruler__increments">
+         <div class="landingpage__increments">
             <div class="decoration__object decoration__object--9"></div>
          </div>
       </div>
@@ -102,25 +102,25 @@ export default {
   align-items: flex-start;
 }
 
-.ruler__landing {
+.landingpage__landing {
   position: relative;
 }
 
-/* Header */
+/* 1.1 Header */
 
-.ruler__header {
+.landingpage__header {
   padding-left: 10vw;
 }
 
-.ruler__header--upper {
+.landingpage__header--upper {
   z-index: 20;
 }
 
-.ruler__header--lower {
+.laningpage__header--lower {
   z-index: 20;
 }
 
-.ruler__intro {
+.landingpage__intro {
   text-align: end;
   padding: 2vh 0 0 30%;
   font-size: 3.21vh;
@@ -129,9 +129,9 @@ export default {
   text-transform: uppercase;
 }
 
-/* About */
+/* 1.2 About */
 
-.ruler__about {
+.landingpage__about {
   position: absolute;
   top: 0;
   right: 0;
@@ -141,90 +141,90 @@ export default {
   height: 60vh;
 }
 
-.ruler__imageframe {
+.landingpage__imageframe {
   position: relative;
   height: 40vh;
   z-index: -1;
 }
 
-.ruler__logo {
+.landingpage__logo {
   position: absolute;
   height: 25%;
   top: 7%;
   right: 8%;
 }
 
-.ruler__image {
+.landingpage__image {
   height: 100%;
   z-index: -1;
 }
 
-.ruler__socials {
+.landingpage__socials {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap-reverse;
   padding: var(--spacing-padding) 0;
 }
 
-.ruler__link {
+.landingpage__link {
   height: 6vh;
   margin-left: var(--spacing-padding);
   position: relative;
   z-index: 10;
 }
 
-.ruler__link-icon {
+.landingpage__link-icon {
   height: 100%;
   z-index: 10;
 }
 
-.ruler__link:hover {
+.landingpage__link:hover {
   border: var(--increment-style);
   border-radius: 15%;
   transition: 0.1s;
 }
 
-/* Increments */
+/* 1.3 Increments */
 
-.ruler__increments {
+.landingpage__increments {
   width: 85vw;
   height: 0px;
   margin-bottom: 5vh;
 }
 
-.ruler__increment--small {
+.landingpage__increment--small {
   width: var(--increment-small);
   border-top: var(--increment-style);
 }
 
-.ruler__increment--medium {
+.landingpage__increment--medium {
   width: var(--increment-medium);
   border-top: var(--increment-style);
 }
 
-.ruler__increment--long {
+.landingpage__increment--long {
   width: var(--increment-large);
   border-top: var(--increment-style);
 }
 
-.ruler__increment-info {
+.landingpage__increment-info {
   color: var(--highlight-color);
   font-size: var(--font-size-data);
 }
 
-.ruler__data {
+.landingpage__data {
   display: flex;
   justify-content: space-between;
 }
 
-.ruler__data-content {
+.landingpage__data-content {
   color: var(--highlight-color);
   font-size: var(--font-size-data);
   font-style: italic;
   text-align: end;
 }
 
-/* decoration increments */
+/* 1.4 Decoration increments */
 
 .decoration__object {
   border-top: var(--increment-style);
@@ -266,77 +266,79 @@ export default {
   width: 19rem;
 }
 
-/* Media query */
+/* Mobile */
 @media screen and (max-device-width: 767px) { 
    .landingpage__ruler {
     padding: 0vw 5vw;
     margin: 0;
   }
 
-  /* Header */
-  .ruler__header {
+  /* 2.1 Mobile Header */
+  .landingpage__header {
     padding: 0;
   }
 
-  .ruler__header--upper {
+  .landingpage__header--upper {
     font-size: 10vh;
     text-align: center;
   }
 
-  .ruler__header--lower {
+  .landingpage__header--lower {
     font-size: 10vh;
     text-align: center;
   }
 
-  /* About */
-  .ruler__about {
+  /* 2.2 Mobile about */
+  .landingpage__about {
     padding: 0;
     width: 100%;
   }
 
-  .ruler__imageframe {
+  .landingpage__imageframe {
     position: relative;
     height: 25vh;
     z-index: -1;
   }
 
-  .ruler__image {
+  .landingpage__image {
     display: none;
   }
 
-  .ruler__logo {
+  .landingpage__logo {
     display: none;
   }
 
-  .ruler__intro {
+  .landingpage__intro {
     text-align: center;
     padding: 0;
   }
 
-  .ruler__socials {
+  .landingpage__socials {
     justify-content: center;
   }
 
-.ruler__link {
+.landingpage__link {
   height: 6vh;
   margin-left: 0.2rem;
   position: relative;
   z-index: 10;
 }
 
-  /* increments */
-  .ruler__increments {
+  /* 2.3 Mobile increments */
+  .landingpage__increments {
     width: 90vw;
   }
 
-  .ruler__data-content {
+  .landingpage__data-content {
     display: none;
   }
 
-  .ruler__name {
+  .landingpage__name {
     font-size: 3rem;
     transform: translateY(-9.2rem);
   }
+
+  /* 2.4 Mobile decorations */
 
     .decoration__object--1 {
     width: 2.5vw;

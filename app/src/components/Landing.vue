@@ -395,16 +395,11 @@
 
 /******* 4.1 MEDIA QUERIES *******/
 
-/* 4.2 Widescreen */
-
-@media screen and (min-width: 1200px) {
-}
-
 /* 4.3 Smaller screens, Small pads, mobile, etc. */
 
 @media screen and (max-device-width: 767px) {
+  
   /******* X.2 RULER *******/
-
   .header__logowrapper {
     width: 16rem;
     transform: translateX(-8rem);
