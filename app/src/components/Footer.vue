@@ -7,7 +7,7 @@
         <div class="footer__link-button">
           <a
             class="footer__link"
-            href="https://www.linkedin.com/in/martin-zupfer-skj%C3%A6rstad-6257681a3"
+            href="https://www.linkedin.com/in/martin-skj%C3%A6rstad-6257681a3/"
             target="_blank"
             >LinkedIn</a
           >
