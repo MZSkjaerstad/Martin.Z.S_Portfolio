@@ -1,8 +1,6 @@
 <template>
   <section class="exhibition">
-    <div class="exhibition__transition">
-      <h3 class="exhibition__title">Exhibition</h3>
-    </div>
+    <div class="exhibition__transition" />
 
     <div class="exhibition__content">
       <Hardcore v-if="projectName === 'hardcore-animation-m-video'" :hardcore="exhibitionData.exhibitionAssets"/>
@@ -47,7 +45,7 @@ export default {
 /* 1.2 Transition */
 
 .exhibition__transition {
-  height: 25rem;
+  height: 15rem;
   background: linear-gradient(0deg, black 0%, var(--primary-color) 95%);
   display: flex;
   justify-content: center;
