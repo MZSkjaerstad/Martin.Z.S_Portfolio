@@ -15,7 +15,6 @@
          name,
          title
       }
-      
    },
 
    "exhibition": *[slug.current == $projectSlug && published == true][0] {
