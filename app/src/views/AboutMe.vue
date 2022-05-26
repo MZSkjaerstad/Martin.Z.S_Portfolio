@@ -68,7 +68,7 @@
          </div>
 
          <div class="about__email">
-            <p>Work with me? <br> Send me an <a class="about__email-link" href="">email!</a></p>
+            <p>Work with me? <br> Send me an <a class="about__email-link" href="mailto:martskjae@hotmail.no">email!</a></p>
          </div>
       </section>
    </main>
