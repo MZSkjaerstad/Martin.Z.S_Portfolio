@@ -248,6 +248,10 @@
          height: 35vh;
       }
 
+      .about__skills {
+         max-width: none;
+      }
+
       .about__link {
          width: 6rem;
          height: 6rem;
