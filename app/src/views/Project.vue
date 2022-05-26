@@ -52,6 +52,7 @@ export default {
                projectSlug: this.$route.params.projectSlug
             }
             this.sanityFetch(query, params)
+            window.scrollTo(0, 0)
          }
       }
    }

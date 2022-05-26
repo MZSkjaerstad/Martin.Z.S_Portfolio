@@ -165,7 +165,7 @@
 
   /***** 2.0 Content *****/
 
-    .introduction__content {
+  .introduction__content {
     width: 100%;
     height: 35vh;
     display: flex;
@@ -327,22 +327,22 @@
   }
 
   .introduction__link {
-  width: 3rem;
-  height: 3rem;
-  margin-right: 1rem;
-  transition: 0.1s;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+    transition: 0.1s;
   }
 
   .introduction__link-icon {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .introduction__link:hover {
-  border: var(--increment-style);
-  border-radius: 15%;
-  transition: 0.1s;
+    border: var(--increment-style);
+    border-radius: 15%;
+    transition: 0.1s;
   }
 
   @media screen and (min-width: 1900px) {

@@ -1,16 +1,18 @@
-*[_type == 'aboutMe'] {
+*[_type == 'aboutMe'][0] {
    fullName,
    workingTitle,
    "profilePicture": profilePicture.asset->.url,
-   codeLanguages,
-   softwareSkill[],
+   codeLanguages[],
+   adobeSoftware,
+   webdesignTools,
    "socials": socials[] {
       "icon": linkType->.linkIcons.asset->.url,
       url
    },
-   "description": description[]{
-      children[] {
-         text
-      }
+   background[] {
+      "section": sectionContent
+   },
+   strengths[] {
+      "section": sectionContent
    },
 }
