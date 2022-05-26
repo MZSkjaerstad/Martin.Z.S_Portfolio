@@ -35,8 +35,8 @@ export default {
 </script>
 
 <style>
-/* 1.1 Exhibition */
 
+/* 1.1 Exhibition */
 .exhibition {
   background: black;
   padding-bottom: var(--spacing-small)

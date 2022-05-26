@@ -19,10 +19,54 @@ export default {
          type: "image"
       },
       {
-         title: "Description",
-         name: "description",
+         title: "Background",
+         name: "background",
+         description: "Add sections to the Background textblock.",
          type: "array",
-         of: [{type: "block"}]
+         of: [
+            {
+               title: "Section",
+               name: "section",
+               type: "object",
+               fields: [
+                  {
+                     title: "Section name",
+                     name: "sectionName",
+                     type: "string"
+                  },
+                  {
+                     title: "Section content",
+                     name: "sectionContent",
+                     type: "text"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         title: "Strengths",
+         description: "Add sections to the Strengths textblock.",
+         name: "strengths",
+         type: "array",
+         of: [
+            {
+               title: "Section",
+               name: "section",
+               type: "object",
+               fields: [
+                  {
+                     title: "Section name",
+                     name: "sectionName",
+                     type: "string"
+                  },
+                  {
+                     title: "Section content",
+                     name: "sectionContent",
+                     type: "text"
+                  }
+               ]
+            }
+         ]
       },
       {
          title: "Email address",
@@ -32,6 +76,7 @@ export default {
       {
          title: "Social links",
          name: "socials",
+         description: "Add a link icon to the socials display.",
          type: "array",
          of: [
             {
@@ -55,8 +100,9 @@ export default {
          ]
       },
       {
-         title: "Software Skills",
-         name: "softwareSkill",
+         title: "Adobe softwares",
+         name: "adobeSoftware",
+         description: "Add an item to the software display.",
          type: "array",
          of: [
             {
@@ -65,9 +111,23 @@ export default {
             }
          ]
       },
+
+      {
+         title: "Web-design tools",
+         name: "webdesignTools",
+         description: "Add an item to the webdesign display.",
+         type: "array",
+         of: [
+            {
+               name: "tool",
+               type: "string"
+            }
+         ]
+      },
       {
          title: "Code laguanges",
          name: "codeLanguages",
+         description: "Add an item to the language display.",
          type: "array",
          of: [
             {
