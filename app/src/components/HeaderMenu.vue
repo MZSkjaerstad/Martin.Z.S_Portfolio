@@ -194,6 +194,7 @@ export default {
   color: var(--primary-color);
   -webkit-text-stroke: var(--title-style);
   padding: 0.1rem 0.9rem;
+  transition: 0.2s;
 }
 
 .header__item-number {

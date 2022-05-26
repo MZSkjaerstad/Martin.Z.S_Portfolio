@@ -220,11 +220,13 @@
    .about__email-link {
       color: var(--highlight-color);
       text-decoration: none;
+      transition: 0.2s;
    }
 
    .about__email-link:hover {
       color: var(--secondary-color);
       text-decoration: underline;
+      transition: 0.2s;
    }
    
    @media screen and (max-device-width: 767px) {
