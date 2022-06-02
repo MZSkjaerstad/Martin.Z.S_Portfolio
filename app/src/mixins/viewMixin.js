@@ -10,9 +10,22 @@ export default {
 
    methods: {
       async sanityFetch(query, params) {
-         this.content = await sanity.fetch(query, params);
-         this.loading = false;
-         console.log(this.content);
+         const response = await sanity.fetch(query, params);
+         try {
+				this.handleSanityFetch(response);
+			} catch(error) {
+				this.error = error.message;
+				console.log(this.error);
+			}
+      },
+
+		async handleSanityFetch(response) {
+         if (response != undefined) {
+            this.content = response;
+				this.loading = false;
+         } else {
+            throw new Error('Her gikk noe galt med sanity.');
+         }
       },
 
       metaTags(meta) {

@@ -1,5 +1,6 @@
 <template>
    <article v-if="loading === true"> <Loading /> </article>
+   
    <article v-else>
       <Introduction :introductionData="content.introduction" />
       <Exhibition :exhibitionData="content.exhibition" :projectName="content.exhibition.slug" />

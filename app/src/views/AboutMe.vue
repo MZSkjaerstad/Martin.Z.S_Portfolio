@@ -57,11 +57,13 @@
       <section class="about__article">
          <div class="about__background">
             <p class="about__category">Background:</p>
+            
             <p class="about__section" v-for="section in content.background"> {{ section.section }} </p>
          </div>
 
          <div class="about__strengths">
             <p class="about__category">Strengths:</p>
+
             <p class="about__section" v-for="section in content.strengths">
                {{ section.section }}
             </p>

@@ -44,7 +44,6 @@ export default {
       grid-column: 5 / span 4;
    }
    
-
    .alan__video {
       width: 100%;
       height: 90vh;
