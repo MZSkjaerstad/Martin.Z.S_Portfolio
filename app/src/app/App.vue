@@ -15,6 +15,7 @@ export default {
         Header,
         Footer
     },
+    
     mixins: [appMixin],
 
     created () {

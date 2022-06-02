@@ -56,7 +56,6 @@ export default {
       grid-column: 3 / span 8;
    }
    
-
    .hallingdal__video {
       width: 100%;
       height: 90vh;

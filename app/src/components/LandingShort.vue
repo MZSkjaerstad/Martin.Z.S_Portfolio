@@ -95,289 +95,289 @@ export default {
 </script>
 
 <style>
-.landingpage__ruler {
-  z-index: 13;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.landingpage__landing {
-  position: relative;
-}
-
-/* 1.1 Header */
-
-.landingpage__header {
-  padding-left: 10vw;
-}
-
-.landingpage__header--upper {
-  z-index: 20;
-}
-
-.laningpage__header--lower {
-  z-index: 20;
-}
-
-.landingpage__intro {
-  text-align: end;
-  padding: 2vh 0 0 30%;
-  font-size: 3.21vh;
-  font-weight: 600;
-  font-style: italic;
-  text-transform: uppercase;
-}
-
-/* 1.2 About */
-
-.landingpage__about {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  padding-right: 2vw;
-  height: 60vh;
-}
-
-.landingpage__imageframe {
-  position: relative;
-  height: 40vh;
-  z-index: -1;
-}
-
-.landingpage__logo {
-  position: absolute;
-  height: 25%;
-  top: 7%;
-  right: 8%;
-}
-
-.landingpage__image {
-  height: 100%;
-  z-index: -1;
-}
-
-.landingpage__socials {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap-reverse;
-  padding: var(--spacing-padding) 0;
-}
-
-.landingpage__link {
-  height: 6vh;
-  margin-left: var(--spacing-padding);
-  position: relative;
-  z-index: 10;
-}
-
-.landingpage__link-icon {
-  height: 100%;
-  z-index: 10;
-}
-
-.landingpage__link:hover {
-  border: var(--increment-style);
-  border-radius: 15%;
-  transition: 0.1s;
-}
-
-/* 1.3 Increments */
-
-.landingpage__increments {
-  width: 85vw;
-  height: 0px;
-  margin-bottom: 5vh;
-}
-
-.landingpage__increment--small {
-  width: var(--increment-small);
-  border-top: var(--increment-style);
-}
-
-.landingpage__increment--medium {
-  width: var(--increment-medium);
-  border-top: var(--increment-style);
-}
-
-.landingpage__increment--long {
-  width: var(--increment-large);
-  border-top: var(--increment-style);
-}
-
-.landingpage__increment-info {
-  color: var(--highlight-color);
-  font-size: var(--font-size-data);
-}
-
-.landingpage__data {
-  display: flex;
-  justify-content: space-between;
-}
-
-.landingpage__data-content {
-  color: var(--highlight-color);
-  font-size: var(--font-size-data);
-  font-style: italic;
-  text-align: end;
-}
-
-/* 1.4 Decoration increments */
-
-.decoration__object {
-  border-top: var(--increment-style);
-}
-
-.decoration__object--1 {
-  width: 0.6rem;
-}
-
-.decoration__object--2 {
-  width: 0.8rem;
-}
-
-.decoration__object--3 {
-  width: 1.4rem;
-}
-
-.decoration__object--4 {
-  width: 2.2rem;
-}
-
-.decoration__object--5 {
-  width: 4rem;
-}
-
-.decoration__object--6 {
-  width: 6rem;
-}
-
-.decoration__object--7 {
-  width: 10rem;
-}
-
-.decoration__object--8 {
-  width: 14rem;
-}
-
-.decoration__object--9 {
-  width: 19rem;
-}
-
-/* Mobile */
-@media screen and (max-device-width: 767px) { 
-   .landingpage__ruler {
-    padding: 0vw 5vw;
-    margin: 0;
+  .landingpage__ruler {
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  /* 2.1 Mobile Header */
+  .landingpage__landing {
+    position: relative;
+  }
+
+  /* 1.1 Header */
+
   .landingpage__header {
-    padding: 0;
+    padding-left: 10vw;
   }
 
   .landingpage__header--upper {
-    font-size: 10vh;
-    text-align: center;
+    z-index: 20;
   }
 
-  .landingpage__header--lower {
-    font-size: 10vh;
-    text-align: center;
+  .laningpage__header--lower {
+    z-index: 20;
   }
 
-  /* 2.2 Mobile about */
+  .landingpage__intro {
+    text-align: end;
+    padding: 2vh 0 0 30%;
+    font-size: 3.21vh;
+    font-weight: 600;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+
+  /* 1.2 About */
+
   .landingpage__about {
-    padding: 0;
-    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding-right: 2vw;
+    height: 60vh;
   }
 
   .landingpage__imageframe {
     position: relative;
-    height: 25vh;
+    height: 40vh;
     z-index: -1;
   }
 
-  .landingpage__image {
-    display: none;
-  }
-
   .landingpage__logo {
-    display: none;
+    position: absolute;
+    height: 25%;
+    top: 7%;
+    right: 8%;
   }
 
-  .landingpage__intro {
-    text-align: center;
-    padding: 0;
+  .landingpage__image {
+    height: 100%;
+    z-index: -1;
   }
 
   .landingpage__socials {
-    justify-content: center;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap-reverse;
+    padding: var(--spacing-padding) 0;
   }
 
-.landingpage__link {
-  height: 6vh;
-  margin-left: 0.2rem;
-  position: relative;
-  z-index: 10;
-}
+  .landingpage__link {
+    height: 6vh;
+    margin-left: var(--spacing-padding);
+    position: relative;
+    z-index: 10;
+  }
 
-  /* 2.3 Mobile increments */
+  .landingpage__link-icon {
+    height: 100%;
+    z-index: 10;
+  }
+
+  .landingpage__link:hover {
+    border: var(--increment-style);
+    border-radius: 15%;
+    transition: 0.1s;
+  }
+
+  /* 1.3 Increments */
+
   .landingpage__increments {
-    width: 90vw;
+    width: 85vw;
+    height: 0px;
+    margin-bottom: 5vh;
+  }
+
+  .landingpage__increment--small {
+    width: var(--increment-small);
+    border-top: var(--increment-style);
+  }
+
+  .landingpage__increment--medium {
+    width: var(--increment-medium);
+    border-top: var(--increment-style);
+  }
+
+  .landingpage__increment--long {
+    width: var(--increment-large);
+    border-top: var(--increment-style);
+  }
+
+  .landingpage__increment-info {
+    color: var(--highlight-color);
+    font-size: var(--font-size-data);
+  }
+
+  .landingpage__data {
+    display: flex;
+    justify-content: space-between;
   }
 
   .landingpage__data-content {
-    display: none;
+    color: var(--highlight-color);
+    font-size: var(--font-size-data);
+    font-style: italic;
+    text-align: end;
   }
 
-  .landingpage__name {
-    font-size: 3rem;
-    transform: translateY(-9.2rem);
+  /* 1.4 Decoration increments */
+
+  .decoration__object {
+    border-top: var(--increment-style);
   }
 
-  /* 2.4 Mobile decorations */
-
-    .decoration__object--1 {
-    width: 2.5vw;
+  .decoration__object--1 {
+    width: 0.6rem;
   }
 
   .decoration__object--2 {
-    width: 4vw;
+    width: 0.8rem;
   }
 
   .decoration__object--3 {
-    width: 7vw;
+    width: 1.4rem;
   }
 
   .decoration__object--4 {
-    width: 10vw;
+    width: 2.2rem;
   }
 
   .decoration__object--5 {
-    width: 15vw;
+    width: 4rem;
   }
 
   .decoration__object--6 {
-    width: 22vw;
+    width: 6rem;
   }
 
   .decoration__object--7 {
-    width: 35vw;
+    width: 10rem;
   }
 
   .decoration__object--8 {
-    width: 50vw;
+    width: 14rem;
   }
 
   .decoration__object--9 {
-    width: 70vw;
+    width: 19rem;
   }
 
-  .decoration__buffer {
-    width: 7vw;
+  /* Mobile */
+  @media screen and (max-device-width: 767px) { 
+    .landingpage__ruler {
+      padding: 0vw 5vw;
+      margin: 0;
+    }
+
+    /* 2.1 Mobile Header */
+    .landingpage__header {
+      padding: 0;
+    }
+
+    .landingpage__header--upper {
+      font-size: 10vh;
+      text-align: center;
+    }
+
+    .landingpage__header--lower {
+      font-size: 10vh;
+      text-align: center;
+    }
+
+    /* 2.2 Mobile about */
+    .landingpage__about {
+      padding: 0;
+      width: 100%;
+    }
+
+    .landingpage__imageframe {
+      position: relative;
+      height: 25vh;
+      z-index: -1;
+    }
+
+    .landingpage__image {
+      display: none;
+    }
+
+    .landingpage__logo {
+      display: none;
+    }
+
+    .landingpage__intro {
+      text-align: center;
+      padding: 0;
+    }
+
+    .landingpage__socials {
+      justify-content: center;
+    }
+
+  .landingpage__link {
+    height: 6vh;
+    margin-left: 0.2rem;
+    position: relative;
+    z-index: 10;
   }
-}
+
+    /* 2.3 Mobile increments */
+    .landingpage__increments {
+      width: 90vw;
+    }
+
+    .landingpage__data-content {
+      display: none;
+    }
+
+    .landingpage__name {
+      font-size: 3rem;
+      transform: translateY(-9.2rem);
+    }
+
+    /* 2.4 Mobile decorations */
+
+      .decoration__object--1 {
+      width: 2.5vw;
+    }
+
+    .decoration__object--2 {
+      width: 4vw;
+    }
+
+    .decoration__object--3 {
+      width: 7vw;
+    }
+
+    .decoration__object--4 {
+      width: 10vw;
+    }
+
+    .decoration__object--5 {
+      width: 15vw;
+    }
+
+    .decoration__object--6 {
+      width: 22vw;
+    }
+
+    .decoration__object--7 {
+      width: 35vw;
+    }
+
+    .decoration__object--8 {
+      width: 50vw;
+    }
+
+    .decoration__object--9 {
+      width: 70vw;
+    }
+
+    .decoration__buffer {
+      width: 7vw;
+    }
+  }
 </style>

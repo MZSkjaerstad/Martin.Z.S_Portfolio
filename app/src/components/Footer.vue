@@ -35,8 +35,6 @@
   </footer>
 </template>
 
-<script></script>
-
 <style>
 .footer {
   padding: 0% 7%;
