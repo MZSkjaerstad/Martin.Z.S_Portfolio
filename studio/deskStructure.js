@@ -6,6 +6,13 @@ export default () =>
       .items(
          [
             S.listItem()
+               .title('Settings')
+               .child(
+                  S.document()
+                     .schemaType('settings')
+                     .documentId('settings')
+               ),
+            S.listItem()
                .title('About me')
                .child(
                   S.document()
@@ -13,6 +20,6 @@ export default () =>
                      .documentId('aboutMe')
                ),
             S.divider(),
-            ...S.documentTypeListItems().filter(item => !['aboutMe'].includes(item.getId()))
+            ...S.documentTypeListItems().filter(item => !['aboutMe', 'settings'].includes(item.getId())),
          ]
       )
