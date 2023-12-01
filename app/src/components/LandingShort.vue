@@ -208,7 +208,7 @@ export default {
   }
 
   .landingpage__increment-info {
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
   }
 
@@ -218,7 +218,7 @@ export default {
   }
 
   .landingpage__data-content {
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
     font-style: italic;
     text-align: end;

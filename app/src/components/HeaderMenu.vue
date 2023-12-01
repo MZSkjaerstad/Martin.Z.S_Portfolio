@@ -147,11 +147,11 @@ export default {
   }
 
   .header__x-button rect {
-    fill: var(--highlight-color);
+    fill: var(--secondary-color);
   }
 
   .header__x-button:hover rect {
-    fill: var(--secondary-color);
+    fill: var(--highlight-color);
     transition: 0.2s;
   }
 
@@ -171,7 +171,7 @@ export default {
   }
 
   .header__title {
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
     font-style: italic;
     padding-top: 1rem;
@@ -198,13 +198,13 @@ export default {
   }
 
   .header__item-number {
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
     margin-right: 2rem;
   }
 
   .header__item:hover .header__item-link {
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     -webkit-text-stroke: none;
     transform: translateX(1rem);
     transition: 0.2s;

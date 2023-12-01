@@ -96,14 +96,14 @@ export default {
   width: auto;
   background: none;
   border: none;
-  color: var(--highlight-color);
+  color: var(--secondary-color);
   font-size: var(--font-size-data);
   font-style: italic;
   text-decoration: none;
 }
 
 .header__toolbutton:hover {
-  color: var(--secondary-color);
+  color: var(--highlight-color);
   transition: 0.2s;
 }
 
@@ -141,11 +141,11 @@ export default {
 }
 
 .header__burger-button rect {
-  fill: var(--highlight-color);
+  fill: var(--secondary-color);
 }
 
 .header__burger-button:hover rect {
-  fill: var(--secondary-color);
+  fill: var(--highlight-color);
   transition: 0.2s;
 }
 

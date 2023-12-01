@@ -227,7 +227,7 @@
   }
 
   .introduction__increment--data {
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
     margin-right: 0.8rem;
     transform: translateY(-0.5rem);
@@ -274,7 +274,7 @@
   .introduction__tags {
     width: auto;
     display: inline-block;
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
     border: var(--increment-style);
     border-radius: 15px;
@@ -295,7 +295,7 @@
   .introduction__contributors--defined {
     width: 100%;
     height: 50%;
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
     font-style: italic;
     padding: 0rem 2rem;
@@ -308,7 +308,7 @@
   }
 
   .introduction__assets--defined {
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
     font-style: italic;
     padding: 0rem 2rem;

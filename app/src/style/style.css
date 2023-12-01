@@ -41,7 +41,7 @@ h3 {
 }
 
 ::-webkit-scrollbar-thumb {
-   background: var(--highlight-color);
+   background: var(--secondary-color);
    border-radius: 10px;
 }
 

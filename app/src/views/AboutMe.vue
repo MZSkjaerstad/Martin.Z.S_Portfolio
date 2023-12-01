@@ -100,11 +100,11 @@
       height: auto;
       padding: 0 7% var(--spacing-large) 7%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
    }
 
    .about__category {
-      color: var(--highlight-color);
+      color: var(--secondary-color);
       font-size: var(--font-size-data);
       font-style: italic;
       padding-bottom: var(--spacing-small);
@@ -132,7 +132,7 @@
    .about__title {
       font-size: var(--font-size-intro);
       font-style: italic;
-      color: var(--highlight-color);
+      color: var(--secondary-color);
    }
 
    .about__figure {
@@ -220,14 +220,14 @@
    }
 
    .about__email-link {
-      color: var(--highlight-color);
-      text-decoration: none;
+      color: var(--secondary-color);
+      text-decoration: underline;
       transition: 0.2s;
    }
 
    .about__email-link:hover {
-      color: var(--secondary-color);
-      text-decoration: underline;
+      color: var(--highlight-color);
+      text-decoration: none;
       transition: 0.2s;
    }
    

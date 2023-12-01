@@ -87,7 +87,7 @@ export default {
 }
 
 .process__section-title {
-  color: var(--highlight-color);
+  color: var(--secondary-color);
   font-size: var(--font-size-data);
   font-style: italic;
   padding-bottom: var(--spacing-small);
