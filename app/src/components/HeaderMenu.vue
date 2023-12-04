@@ -125,12 +125,13 @@ export default {
     width: 25rem;
     height: 100vh;
     position: fixed;
-    background: var(--primary-color);
+    backdrop-filter: blur(10px);
     border-left: var(--increment-style);
     padding: var(--spacing-small) 3.2rem 1rem 0rem;
     top: 0;
     right: 0;
     z-index: 26;
+    mix-blend-mode: difference;
   }
 
   /* X button */
@@ -163,6 +164,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    mix-blend-mode: difference;
   }
 
   .header__divider {
@@ -191,7 +193,7 @@ export default {
     font-weight: bold;
     font-style: italic;
     text-transform: uppercase;
-    color: var(--primary-color);
+    color: var(--primary-color-tr);
     -webkit-text-stroke: var(--title-style);
     padding: 0.1rem 0.9rem;
     transition: 0.2s;

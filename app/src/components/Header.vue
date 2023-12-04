@@ -73,6 +73,7 @@ export default {
 <style>
 .header {
   padding: var(--spacing-small) 3.3% 0.1rem 3.3%;
+  mix-blend-mode: difference;
 }
 
 /* nav tool */

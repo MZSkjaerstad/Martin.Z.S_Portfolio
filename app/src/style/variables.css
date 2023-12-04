@@ -1,7 +1,7 @@
 :root {
    /* 1.1 Colour palette*/
    --primary-color: white;
-   --secondary-color: black;
+   --secondary-color: White;
    --highlight-color: #21D19F;
 
    /* 1.2 Colour palette invisible*/
@@ -34,7 +34,7 @@
    --spacing-large: 5em;
 
    /* 4.1 Ruler styles */
-   --increment-style: solid var(--secondary-color) 1.6px;
+   --increment-style: solid var(--secondary-color) 1.8px;
 
    --increment-small: 0.6rem;
    --increment-medium: 2rem;

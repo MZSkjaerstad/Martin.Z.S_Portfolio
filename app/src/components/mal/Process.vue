@@ -66,6 +66,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  mix-blend-mode: difference;
 }
 
 .process__intro {
@@ -73,11 +74,13 @@ export default {
   font-size: var(--font-size-intro);
   font-style: italic;
   padding: var(--spacing-medium) 0;
+  mix-blend-mode: difference;
 }
 
 .process__divider {
   width: 100%;
   border-top: var(--increment-style);
+  mix-blend-mode: difference;
 }
 
 /**** 4.0 Sections ****/
@@ -91,11 +94,13 @@ export default {
   font-size: var(--font-size-data);
   font-style: italic;
   padding-bottom: var(--spacing-small);
+  mix-blend-mode: difference;
 }
 
 .process__section-content {
   max-width: 60ch;
   line-height: 150%;
+  mix-blend-mode: difference;
 }
 
 .process__image-file {

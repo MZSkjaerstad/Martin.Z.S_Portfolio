@@ -161,6 +161,7 @@
     padding: 0 7%;
     bottom: 42%;
     left: 30%;
+    mix-blend-mode: difference;
   }
 
   /***** 2.0 Content *****/
@@ -169,6 +170,7 @@
     width: 100%;
     height: 35vh;
     display: flex;
+    mix-blend-mode: difference;
   }
 
   /* 2.1 Ruler */
@@ -176,6 +178,7 @@
   .introduction__ruler {
     width: 33%;
     height: 100%;
+    mix-blend-mode: difference;
   }
 
   .introduction__increment {
@@ -263,7 +266,7 @@
     font-weight: bold;
     font-style: italic;
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--primary-color-tr);
     -webkit-text-stroke: var(--title-style);
   }
 
@@ -393,6 +396,7 @@
     height: auto;
     border-right: none;
     justify-content: flex-start;
+    mix-blend-mode: difference;
   }
 
   .introduction__text {

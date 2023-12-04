@@ -100,6 +100,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    mix-blend-mode: difference;
   }
 
   .landingpage__landing {
@@ -127,6 +128,7 @@ export default {
     font-weight: 600;
     font-style: italic;
     text-transform: uppercase;
+    mix-blend-mode: difference;
   }
 
   /* 1.2 About */
@@ -157,6 +159,7 @@ export default {
   .landingpage__image {
     height: 100%;
     z-index: -1;
+    mix-blend-mode: none;
   }
 
   .landingpage__socials {

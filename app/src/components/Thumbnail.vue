@@ -104,6 +104,7 @@ export default {
   /* 3.5 Content */
   .thumbnail__content {
     display: flex;
+    mix-blend-mode: difference;
   }
 
   /* 3.6 Info */
@@ -123,7 +124,7 @@ export default {
     font-style: italic;
     text-decoration: none;
     transform: translateY(-0.7rem);
-    color: var(--primary-color);
+    color: var(--primary-color-tr);
     -webkit-text-stroke: var(--title-style);
     transition: 0.4s;
   }
@@ -228,6 +229,7 @@ export default {
   .thumbnail__increment {
     display: flex;
     position: relative;
+    mix-blend-mode: difference;
   }
 
   .thumbnail__increment-position--1 {
@@ -268,6 +270,7 @@ export default {
   .thumbnail__ruler-increment {
     height: 0px;
     margin-bottom: 5vh;
+    mix-blend-mode: difference;
   }
 
   .thumbnail__ruler-object--small {

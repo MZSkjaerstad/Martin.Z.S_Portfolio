@@ -121,6 +121,7 @@
 
    .about__name {
       padding-bottom: var(--spacing-medium);
+      mix-blend-mode: difference;
    }
 
    .about__fullname {
@@ -148,6 +149,7 @@
 
    .about__socials {
       padding: var(--spacing-medium) 0 0 0;
+      mix-blend-mode: difference;
    }
 
    .about__link-container {
@@ -182,6 +184,7 @@
       justify-content: space-between;
       white-space: nowrap;
       padding-top: var(--spacing-medium);
+      mix-blend-mode: difference;
    }
 
    .about__adobe {
@@ -196,6 +199,7 @@
 
    .about__article {
       padding: var(--spacing-large) var(--spacing-medium) 0 0;
+      mix-blend-mode: difference;
    }
 
    .about__background {

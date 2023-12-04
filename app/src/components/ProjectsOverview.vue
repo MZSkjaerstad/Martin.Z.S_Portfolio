@@ -122,6 +122,7 @@ export default {
 
   .projects__decoration {
     position: relative;
+    mix-blend-mode: difference;
   }
 
   .decoration__increment {
