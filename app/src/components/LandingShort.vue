@@ -21,7 +21,7 @@
 
                <div class="landingpage__about">
                   <div class="landingpage__imageframe">
-                    <img class="landingpage__logo" src="/visual_identity/vector/logo.svg" alt="MartinZ.S. logo.">
+                    <img class="landingpage__logo" src="/visual_identity/vector/logo_black.svg" alt="MartinZ.S. logo.">
 
                     <img class="landingpage__image" src="/visual_identity/image/landing_banner.png" alt="">
                   </div>

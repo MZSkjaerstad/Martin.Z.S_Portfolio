@@ -122,7 +122,7 @@ export default {
 
 <style>
   .header__menu {
-    width: 25rem;
+    width: 35rem;
     height: 100vh;
     position: fixed;
     backdrop-filter: blur(10px);
@@ -232,6 +232,7 @@ export default {
       width: 100vw;
       border: none;
       padding: 8rem 0rem 20rem 0rem;
+      backdrop-filter: blur(20px);
     }
 
     .header__x-button {

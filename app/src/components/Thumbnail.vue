@@ -219,7 +219,7 @@ export default {
   }
 
   .thumbnail__display:hover .thumbnail__image {
-    opacity: 70%;
+    opacity: 100%;
     width: 55vw;
     height: 70vh;
     transition: 1s;

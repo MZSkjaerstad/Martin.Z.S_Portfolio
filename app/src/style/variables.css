@@ -81,6 +81,6 @@
       --spacing-small: 40px;
 
       /* Thumbnail title style mobile */
-      --title-style: 3px var(--secondary-color);
+      --title-style: 3.4px var(--secondary-color);
    }
 }

@@ -159,7 +159,7 @@
     height: auto;
     position: absolute;
     padding: 0 7%;
-    bottom: 42%;
+    bottom: 45%;
     left: 30%;
     mix-blend-mode: difference;
   }
