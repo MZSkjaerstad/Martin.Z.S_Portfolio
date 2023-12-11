@@ -100,11 +100,11 @@
       height: auto;
       padding: 0 7% var(--spacing-large) 7%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
    }
 
    .about__category {
-      color: var(--highlight-color);
+      color: var(--secondary-color);
       font-size: var(--font-size-data);
       font-style: italic;
       padding-bottom: var(--spacing-small);
@@ -121,6 +121,7 @@
 
    .about__name {
       padding-bottom: var(--spacing-medium);
+      mix-blend-mode: difference;
    }
 
    .about__fullname {
@@ -132,7 +133,7 @@
    .about__title {
       font-size: var(--font-size-intro);
       font-style: italic;
-      color: var(--highlight-color);
+      color: var(--secondary-color);
    }
 
    .about__figure {
@@ -148,6 +149,7 @@
 
    .about__socials {
       padding: var(--spacing-medium) 0 0 0;
+      mix-blend-mode: difference;
    }
 
    .about__link-container {
@@ -182,6 +184,7 @@
       justify-content: space-between;
       white-space: nowrap;
       padding-top: var(--spacing-medium);
+      mix-blend-mode: difference;
    }
 
    .about__adobe {
@@ -196,6 +199,7 @@
 
    .about__article {
       padding: var(--spacing-large) var(--spacing-medium) 0 0;
+      mix-blend-mode: difference;
    }
 
    .about__background {
@@ -220,14 +224,14 @@
    }
 
    .about__email-link {
-      color: var(--highlight-color);
-      text-decoration: none;
+      color: var(--secondary-color);
+      text-decoration: underline;
       transition: 0.2s;
    }
 
    .about__email-link:hover {
-      color: var(--secondary-color);
-      text-decoration: underline;
+      color: var(--highlight-color);
+      text-decoration: none;
       transition: 0.2s;
    }
    

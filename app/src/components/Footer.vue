@@ -38,6 +38,7 @@
 <style>
 .footer {
   padding: 0% 7%;
+  mix-blend-mode: difference;
 }
 
 .footer__content {

@@ -21,7 +21,7 @@
 
                <div class="landingpage__about">
                   <div class="landingpage__imageframe">
-                    <img class="landingpage__logo" src="/visual_identity/vector/logo.svg" alt="MartinZ.S. logo.">
+                    <img class="landingpage__logo" src="/visual_identity/vector/logo_black.svg" alt="MartinZ.S. logo.">
 
                     <img class="landingpage__image" src="/visual_identity/image/landing_banner.png" alt="">
                   </div>
@@ -100,6 +100,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    mix-blend-mode: difference;
   }
 
   .landingpage__landing {
@@ -127,6 +128,7 @@ export default {
     font-weight: 600;
     font-style: italic;
     text-transform: uppercase;
+    mix-blend-mode: difference;
   }
 
   /* 1.2 About */
@@ -157,6 +159,7 @@ export default {
   .landingpage__image {
     height: 100%;
     z-index: -1;
+    mix-blend-mode: none;
   }
 
   .landingpage__socials {
@@ -208,7 +211,7 @@ export default {
   }
 
   .landingpage__increment-info {
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
   }
 
@@ -218,7 +221,7 @@ export default {
   }
 
   .landingpage__data-content {
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
     font-style: italic;
     text-align: end;
