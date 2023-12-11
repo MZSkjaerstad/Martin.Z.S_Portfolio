@@ -1,35 +1,38 @@
+import {CogIcon} from '@sanity/icons'
+
 export default {
-    title: 'Settings',
-    name: 'settings',
-    type: 'document',
+    title: "Settings",
+    name: "settings",
+    type: "document",
+    icon: CogIcon,
     groups: [
       {
-         title: 'Visual Profile',
-         name: 'visualProfile'
-      }
-   ],
+         title: "Design",
+         name: "design"
+      },
+    ],
     fields: [
       {
-         title: 'Colour palette',
+         title: 'Colour Pallette',
          name: 'colourPalette',
-         group: 'visualProfile',
+         group: 'design',
          type: 'object',
          fields: [
             {
-               title: 'Primary',
-               name: 'primary',
-               type: 'text'
+               name: 'Primary',
+               title: 'primaryColor',
+               type: 'color',
             },
             {
-               title: 'Secondary',
-               name: 'secondary',
-               type: 'text'
+               name: 'Secondary',
+               title: 'secondaryColor',
+               type: 'color',
             },
             {
-               title: 'Highlight',
-               name: 'highlight',
-               type: 'text'
-            }
+               name: 'Highlight',
+               title: 'highligtColor',
+               type: 'color',
+            },
          ]
       },
     ]
