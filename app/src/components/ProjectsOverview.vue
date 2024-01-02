@@ -74,14 +74,6 @@
 
       <div class="decoration__increment decoration__logo-container">
         <div class="decoration__object decoration__object--3"></div>
-
-        <img
-          class="decoration__logo"
-          src="/visual_identity/vector/logo_white.svg"
-          alt="Martin.Z.S logo"
-        />
-
-        <div class="decoration__buffer" />
       </div>
 
       <div class="decoration__increment">
