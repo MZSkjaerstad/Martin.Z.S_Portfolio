@@ -205,6 +205,12 @@
 
 .footer__link-button:hover .footer__link-underline {
   width: 100%;
+  border-bottom: var(--increment-style-hover);
+  transition: ease-in-out 0.4s;
+}
+
+.footer__link-button:hover {
+  color: var(--hightlight-color);
   transition: ease-in-out 0.4s;
 }
 
