@@ -218,7 +218,8 @@
   }
 
   .footer__link-wrapper {
-  margin-top: var(--spacing-small);
+    width: 100%;
+    margin-top: var(--spacing-small);
   }
 
   .footer__link-button {
