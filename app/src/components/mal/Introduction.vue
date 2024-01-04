@@ -159,8 +159,9 @@
     height: auto;
     position: absolute;
     padding: 0 7%;
-    bottom: 42%;
+    bottom: 45%;
     left: 30%;
+    mix-blend-mode: difference;
   }
 
   /***** 2.0 Content *****/
@@ -169,6 +170,7 @@
     width: 100%;
     height: 35vh;
     display: flex;
+    mix-blend-mode: difference;
   }
 
   /* 2.1 Ruler */
@@ -176,6 +178,7 @@
   .introduction__ruler {
     width: 33%;
     height: 100%;
+    mix-blend-mode: difference;
   }
 
   .introduction__increment {
@@ -227,7 +230,7 @@
   }
 
   .introduction__increment--data {
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
     margin-right: 0.8rem;
     transform: translateY(-0.5rem);
@@ -263,7 +266,7 @@
     font-weight: bold;
     font-style: italic;
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--primary-color-tr);
     -webkit-text-stroke: var(--title-style);
   }
 
@@ -274,7 +277,7 @@
   .introduction__tags {
     width: auto;
     display: inline-block;
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
     border: var(--increment-style);
     border-radius: 15px;
@@ -295,7 +298,7 @@
   .introduction__contributors--defined {
     width: 100%;
     height: 50%;
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
     font-style: italic;
     padding: 0rem 2rem;
@@ -308,7 +311,7 @@
   }
 
   .introduction__assets--defined {
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     font-size: var(--font-size-data);
     font-style: italic;
     padding: 0rem 2rem;
@@ -393,6 +396,7 @@
     height: auto;
     border-right: none;
     justify-content: flex-start;
+    mix-blend-mode: difference;
   }
 
   .introduction__text {

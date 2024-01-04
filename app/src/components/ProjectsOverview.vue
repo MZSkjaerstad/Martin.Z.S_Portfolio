@@ -74,14 +74,6 @@
 
       <div class="decoration__increment decoration__logo-container">
         <div class="decoration__object decoration__object--3"></div>
-
-        <img
-          class="decoration__logo"
-          src="/visual_identity/vector/logo_w_text.svg"
-          alt="Martin.Z.S logo"
-        />
-
-        <div class="decoration__buffer" />
       </div>
 
       <div class="decoration__increment">
@@ -122,6 +114,7 @@ export default {
 
   .projects__decoration {
     position: relative;
+    mix-blend-mode: difference;
   }
 
   .decoration__increment {
@@ -177,8 +170,9 @@ export default {
 
   .decoration__logo {
     padding-top: 1vh;
-    height: 10vh;
+    height: 9vh;
     width: auto;
+    mix-blend-mode: difference;
   }
 
   @media screen and (max-device-width: 767px) {
