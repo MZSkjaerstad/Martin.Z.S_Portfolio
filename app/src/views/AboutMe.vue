@@ -5,16 +5,30 @@
 
    <main class="about" v-else>
       <section class="about__essentials">
-         <div class="about__name">
-            <h3 class="about__fullname"> {{ content.fullName }} </h3>
+         <div class="about__essentials-wrapper">
+            <div class="about__name">
+               <h3 class="about__fullname"> {{ content.fullName }} </h3>
 
-            <p class="about__title">{{ content.workingTitle }}</p>
+               <p class="about__title">{{ content.workingTitle }}</p>
+            </div>
+
+            <figure class="about__figure">
+               <img class="about__image" :src="content.profilePicture" alt="">
+            </figure>
+
+            <div class="about__socials">
+               <p class="about__category">Social links:</p>
+
+               <div class="about__link-container">
+                  <a class="about__link" v-for="link in content.socials" :href="link.url" target="_blank">
+                     <img class="about__link-icon" :src="link.icon" alt="">
+                  </a>
+               </div>
+            </div>
          </div>
+      </section>
 
-         <figure class="about__figure">
-            <img class="about__image" :src="content.profilePicture" alt="">
-         </figure>
-
+      <section class="about__article">
          <div class="about__skills">
             <div class="about__adobe">
                <p class="about__category">Adobe softwares:</p>
@@ -41,25 +55,15 @@
             </div>
          </div>
 
-         <div class="about__socials">
-            <p class="about__category">Social links:</p>
+         <div class="about__divider"></div>
 
-            <div class="about__link-container">
-               <a class="about__link" v-for="link in content.socials" :href="link.url" target="_blank">
-                  <img class="about__link-icon" :src="link.icon" alt="">
-               </a>
-            </div>
-         </div>
-
-      
-      </section>
-
-      <section class="about__article">
          <div class="about__background">
             <p class="about__category">Background:</p>
             
             <p class="about__section" v-for="section in content.background"> {{ section.section }} </p>
          </div>
+
+         <div class="about__divider"></div>
 
          <div class="about__strengths">
             <p class="about__category">Strengths:</p>
@@ -68,6 +72,8 @@
                {{ section.section }}
             </p>
          </div>
+
+         <div class="about__divider"></div>
 
          <div class="about__email">
             <p>Work with me? <br> Send me an <a class="about__email-link" href="mailto:martskjae@hotmail.no">email!</a></p>
@@ -98,25 +104,38 @@
    .about {
       width: 100%;
       height: auto;
-      padding: 0 7% var(--spacing-large) 7%;
+      padding: 0 7% var(--spacing-small) 7%;
       display: flex;
-      justify-content: space-between;
    }
 
    .about__category {
-      color: var(--highlight-color);
+      color: var(--secondary-color);
       font-size: var(--font-size-data);
       font-style: italic;
       padding-bottom: var(--spacing-small);
    }
 
+   .about__divider {
+      width: var(--increment-medium);
+      border-top: var(--increment-style);
+      mix-blend-mode: difference;
+      padding-top: var(--spacing-medium);
+   }
+
    /* Essentials */
 
    .about__essentials {
-      width: 40%;
-      min-width: 25rem;
+      width: 45%;
+      min-width: 30rem;
       max-width: 36rem;
-      padding: var(--spacing-small) var(--spacing-medium) 0 var(--spacing-padding);
+      padding: var(--spacing-small) var(--spacing-large) 0 var(--spacing-padding);
+   }
+
+   .about__essentials-wrapper {
+      position: sticky;
+      height: 100vh;
+      top: var(--spacing-medium);
+      mix-blend-mode: difference;
    }
 
    .about__name {
@@ -127,17 +146,19 @@
       font-size: 2.2rem;
       padding-bottom: 0.6rem;
       white-space: nowrap;
+      mix-blend-mode: difference;
    }
 
    .about__title {
       font-size: var(--font-size-intro);
       font-style: italic;
-      color: var(--highlight-color);
+      color: var(--secondary-color);
+      mix-blend-mode: difference;
    }
 
    .about__figure {
       width: 100%;
-      height: 50vh;
+      height: 58%;
    }
 
    .about__image {
@@ -160,19 +181,22 @@
       width: 3rem;
       height: 3rem;
       margin-right: 1rem;
-      transition: 0.1s;
+      transition: 0.3s;
+      border: var(--increment-style);
+      border-radius: 15%;
    }
 
    .about__link:hover {
-      border: var(--increment-style);
-      border-radius: 15%;
-      transition: 0.1s;
+      background-color: var(--secondary-color);
+      transition: 0.3s;
+      padding: 0.2rem;
    }
 
    .about__link-icon {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      mix-blend-mode: difference;
    }
 
    .about__skills {
@@ -181,7 +205,8 @@
       display: flex;
       justify-content: space-between;
       white-space: nowrap;
-      padding-top: var(--spacing-medium);
+      padding-bottom: var(--spacing-medium);
+      mix-blend-mode: difference;
    }
 
    .about__adobe {
@@ -195,7 +220,8 @@
    /* Article */
 
    .about__article {
-      padding: var(--spacing-large) var(--spacing-medium) 0 0;
+      padding: var(--spacing-small) var(--spacing-medium) 0 0;
+      mix-blend-mode: difference;
    }
 
    .about__background {
@@ -207,7 +233,7 @@
    }
 
    .about__section {
-      max-width: 60ch;
+      max-width: 80ch;
       line-height: 150%;
       padding-bottom: var(--spacing-small);
    }
@@ -220,14 +246,14 @@
    }
 
    .about__email-link {
-      color: var(--highlight-color);
-      text-decoration: none;
+      color: var(--secondary-color);
+      text-decoration: underline;
       transition: 0.2s;
    }
 
    .about__email-link:hover {
-      color: var(--secondary-color);
-      text-decoration: underline;
+      color: var(--highlight-color);
+      text-decoration: none;
       transition: 0.2s;
    }
    
@@ -249,7 +275,7 @@
       }
 
       .about__figure {
-         height: 35vh;
+         height: 60%;
       }
 
       .about__skills {
@@ -264,6 +290,10 @@
       .about__article {
          padding: var(--spacing-medium) 0 0 0;
       }      
+
+      .about__email {
+         text-align: center;
+      }
    }
 
 
