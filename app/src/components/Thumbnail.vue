@@ -55,6 +55,8 @@
                 {{ tag }}
               </p>
             </div>
+
+            <button class="thumbnail__mobile-button">View Project</button>
           </div>
           
 
@@ -144,6 +146,10 @@ export default {
     padding: 0.09rem 0.4rem 0.1rem 0.4rem;
     margin: 0.2em;
     transition: 0.4s;
+  }
+
+  .thumbnail__mobile-button {
+    display: none;
   }
 
   /* Hook */
@@ -340,17 +346,27 @@ export default {
     }
 
     .thumbnail__tags-container {
-      height: 8.5rem;
-      padding-left: 2rem;
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-      flex-wrap: wrap-reverse;
+      display: none;
     }
 
     .thumbnail__tags {
       border: solid var(--secondary-color) 3px;
       transform: translateY(0.6rem);
+    }
+
+    .thumbnail__mobile-button {
+      display: inline-block;
+      width: 15rem;
+      background: none;
+      color: var(--secondary-color);
+      font-size: var(--font-size-data);
+      font-family: var(--font-family);
+      font-style: italic;
+      text-decoration: none;
+      border: var(--increment-style);
+      border-radius: 15px;
+      padding: var(--spacing-padding);
+      mix-blend-mode: difference;
     }
 
     .thumbnail__description {

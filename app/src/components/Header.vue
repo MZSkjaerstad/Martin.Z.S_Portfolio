@@ -6,7 +6,9 @@
 
         <div class="header__tooldivider"></div>
 
-        <router-link class="header__toolbutton" :to="`/`"> Home</router-link>
+        <router-link :to="`/`">
+          <button class="header__toolbutton"> home</button>
+        </router-link>
       </div>
     </div>
 
@@ -74,6 +76,7 @@ export default {
 .header {
   padding: var(--spacing-small) 3.3% 0.1rem 3.3%;
   mix-blend-mode: difference;
+  z-index: 10000;
 }
 
 /* nav tool */
@@ -82,12 +85,13 @@ export default {
   width: 7%;
   position: fixed;
   left: 0;
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
 }
 
 .header__toolwrapper {
+  min-width: 80px;
   transform: rotate(-90deg);
   text-align: end;
   white-space: nowrap;
@@ -101,14 +105,17 @@ export default {
   font-size: var(--font-size-data);
   font-style: italic;
   text-decoration: none;
+  transition: 0.3s ease-in-out;
 }
 
 .header__toolbutton:hover {
-  color: var(--highlight-color);
-  transition: 0.2s;
+  font-weight: 600;
+  transform: translateX(-0.6rem);
+  transition: 0.3s ease-in-out;
 }
 
 .header__tooldivider {
+  width: 100%;
   border-top: var(--increment-style);
   margin: 0.3rem 0 0.15rem 0;
 }
