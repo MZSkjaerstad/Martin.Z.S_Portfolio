@@ -106,7 +106,6 @@ export default {
   /* 3.5 Content */
   .thumbnail__content {
     display: flex;
-    mix-blend-mode: difference;
   }
 
   /* 3.6 Info */
@@ -126,7 +125,7 @@ export default {
     font-style: italic;
     text-decoration: none;
     transform: translateY(-0.7rem);
-    color: var(--primary-color-tr);
+    color: var(--primary-color);
     -webkit-text-stroke: var(--title-style);
     transition: 0.4s;
   }
@@ -139,7 +138,7 @@ export default {
   .thumbnail__tags {
     width: auto;
     display: inline-block;
-    color: var(--secondary-color);
+    color: var(--highlight-color);
     font-size: var(--font-size-data);
     border: var(--increment-style);
     border-radius: 15px;
@@ -191,8 +190,8 @@ export default {
   .thumbnail__image {
     position: fixed;
     opacity: 0%;
-    width: 53vw;
-    height: 68vh;
+    width: 55vw;
+    height: 70vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -219,15 +218,13 @@ export default {
   }
 
   .thumbnail__display:hover .thumbnail__title {
-    color: var(--secondary-color);
+    color: var(--highlight-color);
     -webkit-text-stroke: 0px;
     transition: 0.8s;
   }
 
   .thumbnail__display:hover .thumbnail__image {
-    opacity: 100%;
-    width: 55vw;
-    height: 70vh;
+    opacity: 50%;
     transition: 1s;
   }
 
@@ -235,7 +232,6 @@ export default {
   .thumbnail__increment {
     display: flex;
     position: relative;
-    mix-blend-mode: difference;
   }
 
   .thumbnail__increment-position--1 {
@@ -264,7 +260,7 @@ export default {
   }
 
   .thumbnail__counter {
-    color: var(--secondary-color);
+    color: var(--highlight-color);
     font-size: var(--font-size-data);
     transform: translateY(-50%);
     left: 100%;
@@ -276,7 +272,6 @@ export default {
   .thumbnail__ruler-increment {
     height: 0px;
     margin-bottom: 5vh;
-    mix-blend-mode: difference;
   }
 
   .thumbnail__ruler-object--small {
@@ -342,7 +337,7 @@ export default {
       display: flex;
       align-items: flex-end;
       transform: translateY(1rem);
-      -webkit-text-stroke: var(--secondary-color) 3px;
+      -webkit-text-stroke: var(--highlight-color) 3px;
     }
 
     .thumbnail__tags-container {
@@ -350,7 +345,7 @@ export default {
     }
 
     .thumbnail__tags {
-      border: solid var(--secondary-color) 3px;
+      border: solid var(--highlight-color) 3px;
       transform: translateY(0.6rem);
     }
 

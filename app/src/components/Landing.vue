@@ -243,7 +243,7 @@
   }
 
   .ruler__increment-info {
-    color: var(--secondary-color);
+    color: var(--highlight-color);
     font-size: var(--font-size-data);
   }
 
@@ -253,14 +253,14 @@
   }
 
   .ruler__data-content {
-    color: var(--secondary-color);
+    color: var(--highlight-color);
     font-size: var(--font-size-data);
     font-style: italic;
     text-align: end;
   }
 
   .ruler__name {
-    color: var(--secondary-color);
+    color: var(--highlight-color);
     font-size: 1.3em;
     font-style: italic;
     text-align: end;
