@@ -73,7 +73,6 @@ export default {
 <style>
 .header {
   padding: var(--spacing-small) 3.3% 0.1rem 3.3%;
-  mix-blend-mode: difference;
 }
 
 /* nav tool */
@@ -97,14 +96,14 @@ export default {
   width: auto;
   background: none;
   border: none;
-  color: var(--secondary-color);
+  color: var(--highlight-color);
   font-size: var(--font-size-data);
   font-style: italic;
   text-decoration: none;
 }
 
 .header__toolbutton:hover {
-  color: var(--highlight-color);
+  color: var(--secondary-color);
   transition: 0.2s;
 }
 
@@ -142,11 +141,11 @@ export default {
 }
 
 .header__burger-button rect {
-  fill: var(--secondary-color);
+  fill: var(--highlight-color);
 }
 
 .header__burger-button:hover rect {
-  fill: var(--highlight-color);
+  fill: var(--secondary-color);
   transition: 0.2s;
 }
 

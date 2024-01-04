@@ -1,8 +1,8 @@
 :root {
    /* 1.1 Colour palette*/
-   --primary-color: white;
-   --secondary-color: White;
-   --highlight-color: Gray;
+   --primary-color: #0a1425;
+   --secondary-color: white;
+   --highlight-color: #ff5922;
 
    /* 1.2 Colour palette invisible*/
    --primary-color-tr: #0e1a2f00;
@@ -23,10 +23,9 @@
 
    --font-size-subtitle: 1.6em;
    --font-size-title-small: 8vh;
-   --font-size-title-medium: 5em;
    --font-size-title-large: 12vh;
 
-   --title-style: 1.6px var(--secondary-color);
+   --title-style: 1.6px var(--highlight-color);
 
    /* 3.1  Spacing styles */
    --spacing-padding: 0.5em;
@@ -35,8 +34,7 @@
    --spacing-large: 5em;
 
    /* 4.1 Ruler styles */
-   --increment-style: solid var(--secondary-color) 1.8px;
-   --increment-style-hover: solid var(--highlight-color) 1.8px;
+   --increment-style: solid var(--highlight-color) 1.6px;
 
    --increment-small: 0.6rem;
    --increment-medium: 2rem;
@@ -60,10 +58,10 @@
       --spacing-small: 30px;
 
       /* Ruler styles big desktop */
-      --increment-style: solid var(--secondary-color) 2.6px;
+      --increment-style: solid var(--highlight-color) 2.6px;
 
       /* Thumbnail title big desktop */
-      --title-style: 2.6px var(--secondary-color);
+      --title-style: 2.6px var(--highlight-color);
    }
 }
 
@@ -72,10 +70,9 @@
    :root {
       /* Font styles mobile */
       --font-size-body: 30pt;
-      --font-size-title-medium: 3em;
 
       /* Ruler styles mobile */
-      --increment-style: solid var(--secondary-color) 3px;
+      --increment-style: solid var(--highlight-color) 3px;
 
       --increment-small: 1.2rem;
       --increment-medium: 4rem;
@@ -84,6 +81,6 @@
       --spacing-small: 40px;
 
       /* Thumbnail title style mobile */
-      --title-style: 3.4px var(--secondary-color);
+      --title-style: 3px var(--highlight-color);
    }
 }

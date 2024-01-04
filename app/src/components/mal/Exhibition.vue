@@ -45,8 +45,8 @@ export default {
 /* 1.2 Transition */
 
 .exhibition__transition {
-  height: 40rem;
-  background: linear-gradient(0deg, black 5%, var(--primary-color) 95%);
+  height: 15rem;
+  background: linear-gradient(0deg, black 0%, var(--primary-color) 95%);
   display: flex;
   justify-content: center;
   align-items: center;

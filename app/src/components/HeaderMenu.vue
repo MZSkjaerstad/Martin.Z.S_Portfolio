@@ -122,16 +122,15 @@ export default {
 
 <style>
   .header__menu {
-    width: 35rem;
+    width: 25rem;
     height: 100vh;
     position: fixed;
-    backdrop-filter: blur(10px);
+    background: var(--primary-color);
     border-left: var(--increment-style);
     padding: var(--spacing-small) 3.2rem 1rem 0rem;
     top: 0;
     right: 0;
     z-index: 26;
-    mix-blend-mode: difference;
   }
 
   /* X button */
@@ -148,11 +147,11 @@ export default {
   }
 
   .header__x-button rect {
-    fill: var(--secondary-color);
+    fill: var(--highlight-color);
   }
 
   .header__x-button:hover rect {
-    fill: var(--highlight-color);
+    fill: var(--secondary-color);
     transition: 0.2s;
   }
 
@@ -164,7 +163,6 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    mix-blend-mode: difference;
   }
 
   .header__divider {
@@ -173,7 +171,7 @@ export default {
   }
 
   .header__title {
-    color: var(--secondary-color);
+    color: var(--highlight-color);
     font-size: var(--font-size-data);
     font-style: italic;
     padding-top: 1rem;
@@ -193,20 +191,20 @@ export default {
     font-weight: bold;
     font-style: italic;
     text-transform: uppercase;
-    color: var(--primary-color-tr);
+    color: var(--primary-color);
     -webkit-text-stroke: var(--title-style);
     padding: 0.1rem 0.9rem;
     transition: 0.2s;
   }
 
   .header__item-number {
-    color: var(--secondary-color);
+    color: var(--highlight-color);
     font-size: var(--font-size-data);
     margin-right: 2rem;
   }
 
   .header__item:hover .header__item-link {
-    color: var(--secondary-color);
+    color: var(--highlight-color);
     -webkit-text-stroke: none;
     transform: translateX(1rem);
     transition: 0.2s;
@@ -232,7 +230,6 @@ export default {
       width: 100vw;
       border: none;
       padding: 8rem 0rem 20rem 0rem;
-      backdrop-filter: blur(20px);
     }
 
     .header__x-button {
