@@ -186,7 +186,8 @@ export default {
   position: sticky;
   display: flex;
   justify-content: center;
-  top: 10%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .process__sidebar-link {

@@ -5,6 +5,16 @@
     <div class="exhibition__content">
       <div class="exhibition__section" v-for="section in exhibitionData.exhibitionSections">
         <ImageFsSection :sectionData="section" v-if="section.sectionType === 'imageFsSection'"/>
+
+        <ImagePxSection :sectionData="section" v-if="section.sectionType === 'imagePxSection'"/>
+
+        <DesktopFsSection :sectionData="section" v-if="section.sectionType === 'DesktopFsSection'"/>
+
+        <MacbookFsSection :sectionData="section" v-if="section.sectionType === 'macbookFsSection'"/>
+
+        <MobileFsSection :sectionData="section" v-if="section.sectionType === 'mobileFsSection'"/>
+
+        <VideoFsSection :sectionData="section" v-if="section.sectionType === 'videoFsSection'"/>
       </div>
     </div>
   </section>
