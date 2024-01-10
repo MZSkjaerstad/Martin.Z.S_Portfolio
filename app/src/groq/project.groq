@@ -23,6 +23,13 @@
         "caption": caption,
         "imageFile": imageFile.asset->.url,
         "videoUrl": videoUrl,
+        "assetTitle": SectionTitle,
+         "assetLinks": links[]{
+            "icon": linkType->.linkIcons.asset->.url,
+            "linktype": linkType->.linkName,
+            url,
+         disclaimer,
+         },
       },
       "slug": slug.current,
    },

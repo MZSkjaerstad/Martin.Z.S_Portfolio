@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header__nav-tool">
       <div class="header__toolwrapper">
-        <button class="header__toolbutton" @click="toTop">Back to top</button>
+        <button class="header__toolbutton" @click="toTop">back to top</button>
 
         <div class="header__tooldivider"></div>
 

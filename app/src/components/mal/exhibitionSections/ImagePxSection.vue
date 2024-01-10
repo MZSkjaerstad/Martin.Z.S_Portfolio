@@ -68,6 +68,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: var(--spacing-large) 0;
 }
 
 .image-px-section__content {
@@ -102,6 +103,7 @@ export default {
 @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
   .image-px-section {
     height: 35vh; /* Adjusted height for mobile */
+    margin: var(--spacing-medium) 0;
   }
 
   .image-px-section__content {

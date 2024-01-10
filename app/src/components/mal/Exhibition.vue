@@ -10,11 +10,13 @@
 
         <DesktopFsSection :sectionData="section" v-if="section.sectionType === 'DesktopFsSection'"/>
 
-        <MacbookFsSection :sectionData="section" v-if="section.sectionType === 'macbookFsSection'"/>
+        <MacbookFsSection :sectionData="section" v-if="section.sectionType === 'macFsSection'"/>
 
         <MobileFsSection :sectionData="section" v-if="section.sectionType === 'mobileFsSection'"/>
 
         <VideoFsSection :sectionData="section" v-if="section.sectionType === 'videoFsSection'"/>
+
+        <AssetCtaSection :sectionData="section" v-if="section.sectionType === 'assetCtaSection'" />
       </div>
     </div>
   </section>
@@ -28,7 +30,7 @@ import DesktopFsSection from './exhibitionSections/DesktopFsSection.vue'
 import MacbookFsSection from './exhibitionSections/MacbookFsSection.vue'
 import MobileFsSection from './exhibitionSections/MobileFsSection.vue'
 import VideoFsSection from './exhibitionSections/VideoFsSection.vue'
-
+import AssetCtaSection from './exhibitionSections/AssetCtaSection.vue'
 
 
 export default {
@@ -40,6 +42,7 @@ export default {
       MacbookFsSection,
       MobileFsSection,
       VideoFsSection,
+      AssetCtaSection,
    },
 
   props: {
@@ -54,7 +57,7 @@ export default {
 /* 1.1 Exhibition */
 .exhibition {
   background: black;
-  padding-bottom: var(--spacing-small)
+  padding-bottom: var(--spacing-large);
 }
 
 /* 1.2 Transition */
@@ -65,6 +68,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.exhibition__content {
+  padding-top: var(--spacing-large);
 }
 
 .exhibition__title {
