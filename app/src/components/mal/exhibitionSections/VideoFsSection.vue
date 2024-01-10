@@ -21,6 +21,7 @@ export default {
   @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
     .video-fs-section {
         padding: 0;
+        margin: var(--spacing-medium) 0;
     }
   }
 

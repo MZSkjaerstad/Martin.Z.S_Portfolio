@@ -1,9 +1,9 @@
 <template>
-  <main class="macbook-fs-section">
+  <section class="macbook-fs-section">
     <img class="macbook-fs-section__mockup" src="/exhibition_assets/macbook-mockup.png" alt="Macbook_mockup">
 
     <img class="macbook-fs-section__content" :src="sectionData.imageFile" :alt="sectionData.caption">
-  </main>
+  </section>
 </template>
 
 <script>
@@ -40,5 +40,11 @@
     padding: 4% 15% 0 15%;
     top: 0;
   }
+
+     @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+      .macbook-fs-section {
+        margin: var(--spacing-large) 0;
+      }
+   }
 
 </style>

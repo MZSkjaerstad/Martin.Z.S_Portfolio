@@ -3,28 +3,46 @@
     <div class="exhibition__transition" />
 
     <div class="exhibition__content">
-      <Hardcore v-if="projectName === 'hardcore-animation-m-video'" :hardcore="exhibitionData.exhibitionAssets"/>
-      <Hallingdal v-if="projectName === 'hallingdal-kraftnett-energi'" :hallingdal="exhibitionData.exhibitionAssets"/>
-      <Alan v-if="projectName === 'alan-webstore-analytics'" :alan="exhibitionData.exhibitionAssets"/>
-      <SoleSolution v-if="projectName === 'sole-solution-webstore'" :soleSolution="exhibitionData.exhibitionAssets"/>
+      <div class="exhibition__section" v-for="section in exhibitionData.exhibitionSections">
+        <ImageFsSection :sectionData="section" v-if="section.sectionType === 'imageFsSection'"/>
+
+        <ImagePxSection :sectionData="section" v-if="section.sectionType === 'imagePxSection'"/>
+
+        <DesktopFsSection :sectionData="section" v-if="section.sectionType === 'DesktopFsSection'"/>
+
+        <MacbookFsSection :sectionData="section" v-if="section.sectionType === 'macFsSection'"/>
+
+        <MobileFsSection :sectionData="section" v-if="section.sectionType === 'mobileFsSection'"/>
+
+        <VideoFsSection :sectionData="section" v-if="section.sectionType === 'videoFsSection'"/>
+
+        <AssetCtaSection :sectionData="section" v-if="section.sectionType === 'assetCtaSection'" />
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-import NoFiles from "../NoFiles.vue"
-import Hardcore from "../exhibitions/Hardcore.vue";
-import Hallingdal from "../exhibitions/Hallingdal.vue";
-import Alan from "../exhibitions/Alan.vue";
-import SoleSolution from "../exhibitions/SoleSolution.vue";
+import NoFiles from '../NoFiles.vue'
+import ImageFsSection from './exhibitionSections/ImageFsSection.vue'
+import ImagePxSection from './exhibitionSections/ImagePxSection.vue'
+import DesktopFsSection from './exhibitionSections/DesktopFsSection.vue'
+import MacbookFsSection from './exhibitionSections/MacbookFsSection.vue'
+import MobileFsSection from './exhibitionSections/MobileFsSection.vue'
+import VideoFsSection from './exhibitionSections/VideoFsSection.vue'
+import AssetCtaSection from './exhibitionSections/AssetCtaSection.vue'
+
 
 export default {
    components: {
       NoFiles,
-      Hardcore,
-      Hallingdal,
-      Alan,
-      SoleSolution,
+      ImageFsSection,
+      ImagePxSection,
+      DesktopFsSection,
+      MacbookFsSection,
+      MobileFsSection,
+      VideoFsSection,
+      AssetCtaSection,
    },
 
   props: {
@@ -39,7 +57,7 @@ export default {
 /* 1.1 Exhibition */
 .exhibition {
   background: black;
-  padding-bottom: var(--spacing-small)
+  padding-bottom: var(--spacing-large);
 }
 
 /* 1.2 Transition */
@@ -50,6 +68,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.exhibition__content {
+  padding-top: var(--spacing-large);
 }
 
 .exhibition__title {

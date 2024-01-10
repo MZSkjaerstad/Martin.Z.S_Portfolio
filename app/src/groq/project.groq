@@ -18,13 +18,20 @@
    },
 
    "exhibition": *[slug.current == $projectSlug && published == true][0] {
-      exhibitionAssets[]{
-        "imageCaption": imageCaption,
+      exhibitionSections[]{
+        "sectionType": _type,
+        "caption": caption,
         "imageFile": imageFile.asset->.url,
         "videoUrl": videoUrl,
-        "videoCaption": videoCaption
+        "assetTitle": SectionTitle,
+         "assetLinks": links[]{
+            "icon": linkType->.linkIcons.asset->.url,
+            "linktype": linkType->.linkName,
+            url,
+         disclaimer,
+         },
       },
-      "slug": slug.current
+      "slug": slug.current,
    },
 
    "process": *[slug.current == $projectSlug && published == true][0] {

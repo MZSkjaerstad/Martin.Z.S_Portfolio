@@ -141,15 +141,15 @@ export default {
          ]
       },
       {
-         title: "Exhibition assets",
-         name: "exhibitionAssets",
+         title: "Exhibition Sections",
+         name: "exhibitionSections",
          group: "exhibition",
          description: "Add all image assets to use in the exhibition.",
          type: "array",
          of: [
             {
-               title: "Image asset",
-               name: "imageAsset",
+               title: "Fullscreen Image Section",
+               name: "imageFsSection",
                type: "object",
                fields: [
                   {
@@ -159,13 +159,81 @@ export default {
                   },
                   {
                      title: "Image caption",
-                     name: "imageCaption",
+                     name: "caption",
                      type: "string"
                   }
                ]
             },
             {
-               title: " Video asset",
+               title: "Fullscreen Desktop Section",
+               name: "DesktopPxSection",
+               type: "object",
+               fields: [
+                  {
+                     title: "Image file",
+                     name: "imageFile",
+                     type: "image"
+                  },
+                  {
+                     title: "Image caption",
+                     name: "caption",
+                     type: "string"
+                  }
+               ]
+            },
+            {
+               title: "FullScreen Macbook Section",
+               name: "macFsSection",
+               type: "object",
+               fields: [
+                  {
+                     title: "Image file",
+                     name: "imageFile",
+                     type: "image"
+                  },
+                  {
+                     title: "Image caption",
+                     name: "caption",
+                     type: "string"
+                  }
+               ]
+            },
+            {
+               title: "Fullscreen Mobile Section",
+               name: "mobileFsSection",
+               type: "object",
+               fields: [
+                  {
+                     title: "Image file",
+                     name: "imageFile",
+                     type: "image"
+                  },
+                  {
+                     title: "Image caption",
+                     name: "caption",
+                     type: "string"
+                  }
+               ]
+            },
+            {
+               title: "Paralax Image Section",
+               name: "imagePxSection",
+               type: "object",
+               fields: [
+                  {
+                     title: "Image file",
+                     name: "imageFile",
+                     type: "image"
+                  },
+                  {
+                     title: "Image caption",
+                     name: "caption",
+                     type: "string"
+                  }
+               ]
+            },
+            {
+               title: " Fullscreen Video Section",
                name: "videoAsset",
                type: "object",
                fields: [
@@ -177,11 +245,11 @@ export default {
                   },
                   {
                      title: "Video caption",
-                     name: "videoCaption",
+                     name: "caption",
                      type: "string"
                   }
                ]
-            }
+            },
          ]
       },
       {
