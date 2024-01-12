@@ -151,7 +151,7 @@ export default {
     }
 
     .asset-cta-section__title {
-      margin-bottom: var(--spacing-medium);
+      margin-bottom: var(--spacing-large);
     }
 
     .asset-cta-section__content {
@@ -166,7 +166,7 @@ export default {
     }
 
     .asset-cta-section__type-icon {
-      height: 8rem;
+      height: 14rem;
       margin-bottom: var(--spacing-medium);
     }
 
