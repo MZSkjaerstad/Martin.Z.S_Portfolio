@@ -153,6 +153,7 @@ export default {
   border: none;
   cursor: pointer;
   z-index: 26;
+  z-index: 10001;
 }
 
 .header__burger-button svg {
