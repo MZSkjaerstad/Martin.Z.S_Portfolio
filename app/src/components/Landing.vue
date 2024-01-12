@@ -47,6 +47,24 @@
             <div class="landingpage__increment--small"></div>
          </div> 
 
+         <div class="landingpage__mobile-increment-extension">
+            <div class="landingpage__increments">
+                <div class="landingpage__increment--small"></div>
+            </div> 
+
+            <div class="landingpage__increments">
+                <div class="landingpage__increment--small"></div>
+            </div> 
+
+            <div class="landingpage__increments">
+                <div class="landingpage__increment--small"></div>
+            </div> 
+
+            <div class="landingpage__increments">
+                <div class="landingpage__increment--small"></div>
+            </div> 
+         </div>
+
          <div class="landingpage__increments">
             <div class="decoration__object decoration__object--1"></div>
          </div>
@@ -231,6 +249,10 @@ export default {
     text-align: end;
   }
 
+  .landingpage__mobile-increment-extension {
+    display: none;
+  }
+
   /* 1.4 Decoration increments */
 
   .decoration__object {
@@ -344,6 +366,10 @@ export default {
     .landingpage__name {
       font-size: 3rem;
       transform: translateY(-9.2rem);
+    }
+
+    .landingpage__mobile-increment-extension {
+      display: block;
     }
 
     /* 2.4 Mobile decorations */
