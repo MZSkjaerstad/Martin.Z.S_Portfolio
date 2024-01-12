@@ -322,14 +322,15 @@ export default {
 
     .landingpage__socials {
       justify-content: center;
+      margin-top: var(--spacing-padding);
     }
 
-  .landingpage__link {
-    height: 6vh;
-    margin-left: 0.2rem;
-    position: relative;
-    z-index: 10;
-  }
+    .landingpage__link {
+      height: 6vh;
+      margin: 0 0.6rem;
+      position: relative;
+      z-index: 10;
+    }
 
     /* 2.3 Mobile increments */
     .landingpage__increments {
