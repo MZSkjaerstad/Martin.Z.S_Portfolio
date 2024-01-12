@@ -166,7 +166,7 @@ export default {
             },
             {
                title: "Fullscreen Desktop Section",
-               name: "DesktopPxSection",
+               name: "DesktopFsSection",
                type: "object",
                fields: [
                   {
@@ -216,7 +216,7 @@ export default {
                ]
             },
             {
-               title: "Paralax Image Section",
+               title: "Parallax Image Section",
                name: "imagePxSection",
                type: "object",
                fields: [
@@ -234,7 +234,7 @@ export default {
             },
             {
                title: " Fullscreen Video Section",
-               name: "videoAsset",
+               name: "videoFsSection",
                type: "object",
                fields: [
                   {
@@ -247,6 +247,51 @@ export default {
                      title: "Video caption",
                      name: "caption",
                      type: "string"
+                  }
+               ]
+            },
+            {
+               title: "Assets Highlight Section",
+               name: "assetCtaSection",
+               type: "object",
+               fields: [
+                  {
+                     title: "Section Title",
+                     name: "SectionTitle",
+                     description: "Write a title for te section",
+                     type: "string"
+                  },
+                  {
+                     title: "Links",
+                     name: "links",
+                     description: "Highlight links to project resources.",
+                     type: "array",
+                     of: [
+                        {
+                           title: "Link",
+                           name: "link",
+                           type: "object",
+                           fields: [
+                              {
+                                 title: "Link type",
+                                 name: "linkType",
+                                 type: "reference",
+                                 to: [{type: "linkAssets"}]
+                              },
+                              {
+                                 title: "Url",
+                                 name: "url",
+                                 type: "string"
+                              },
+                              {
+                                 title: "Disclaimer",
+                                 name: "disclaimer",
+                                 description: "Optional.",
+                                 type: "string"
+                              },
+                           ]
+                        }
+                     ]
                   }
                ]
             },

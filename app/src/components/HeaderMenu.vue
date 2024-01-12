@@ -131,6 +131,7 @@ export default {
     top: 0;
     right: 0;
     z-index: 26;
+    mix-blend-mode: difference;
   }
 
   /* X button */
@@ -242,6 +243,7 @@ export default {
       padding: 8rem 0rem 8rem 0rem;
       backdrop-filter: none;
       background-color: var(--primary-color);
+      mix-blend-mode: normal;
     }
 
     .header__x-button {
