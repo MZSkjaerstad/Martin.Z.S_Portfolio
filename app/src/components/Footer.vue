@@ -184,6 +184,7 @@
   justify-content: space-evenly;
   align-items: flex-start;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .footer__link {
@@ -193,6 +194,7 @@
   text-decoration: none;
   letter-spacing: 0.05rem;
   transition: ease-in-out 0.4s;
+  cursor: pointer;
   
 }
 
@@ -200,6 +202,7 @@
   font-weight: bold;
   transform: translateX(0.6rem);
   transition: ease-in-out 0.2s;
+  cursor: pointer;
 }
 
 @media screen and (max-device-width: 767px) {

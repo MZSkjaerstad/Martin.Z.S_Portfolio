@@ -1,4 +1,8 @@
 <template>
+  <div class="intro__image-mobile">
+    <img :src="introductionData.thumbnail" :alt="introductionData.projectName">
+  </div>
+
   <section class="intro">
     <div class="intro__cover">
       <div class="intro__image">
@@ -14,6 +18,7 @@
           <div class="intro__corner--top-right" />
         </div>
 
+        <!--  INCREMENTS
         <div class="intro__middle">
           <div class="intro__middle--increment" />
         </div>
@@ -33,6 +38,7 @@
         <div class="intro__middle">
           <div class="intro__middle--increment" />
         </div>
+        -->
 
         <div class="intro__corner--bottom">
           <div class="intro__corner--bottom-left" />
@@ -124,6 +130,10 @@
     width: 100vw;
     height: auto;
     padding: 0rem 7% 2% 7%;
+  }
+
+  .intro__image-mobile {
+    display: none;
   }
 
   /* Cover image */
@@ -360,11 +370,20 @@
 @media screen and (max-device-width: 767px) {
   
   /* Cover */
+  .intro__image-mobile {
+    display: inline-block;
+    height: 40vh;
+    width: 100vw;
+    overflow: hidden;
+  }
 
-  .intro__image{
-  position: relative;
-  height: 30vh;
-  z-index: -10;
+  .intro__image-mobile img {
+    object-fit: cover;
+    height: 110%;
+  }
+
+  .intro__image {
+    display: none;
   }
 
   .intro__title {
@@ -381,13 +400,13 @@
   /* Content */
 
   .content__info {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
     justify-content: space-evenly;
   }
 
   .intro__tagscontainer {
-    margin-bottom: var(--spacing-small);
+    margin-top: var(--spacing-small);
     font-size: 3rem;
   }
 

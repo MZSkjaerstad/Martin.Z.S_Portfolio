@@ -197,6 +197,7 @@ export default {
   transition: ease-in-out 0.2s;
   color: var(--highlight-color);
   display: flex;
+  cursor: pointer;
 }
 
 .process__sidebar-link:hover {

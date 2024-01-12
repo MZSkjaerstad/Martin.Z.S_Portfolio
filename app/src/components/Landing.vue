@@ -174,17 +174,21 @@ export default {
     margin-left: var(--spacing-padding);
     position: relative;
     z-index: 10;
+    border: var(--increment-style);
+    border-radius: 15%;
+    transition: 0.3s;
   }
 
   .landingpage__link-icon {
     height: 100%;
     z-index: 10;
+    mix-blend-mode: difference;
   }
 
   .landingpage__link:hover {
-    border: var(--increment-style);
-    border-radius: 15%;
-    transition: 0.1s;
+    background-color: var(--secondary-color);
+    transition: 0.3s;
+    padding: 0.2rem;
   }
 
   /* 1.3 Increments */

@@ -127,11 +127,10 @@ export default {
     position: fixed;
     backdrop-filter: blur(10px);
     border-left: var(--increment-style);
-    padding: var(--spacing-small) 3.2rem 1rem 0rem;
+    padding: var(--spacing-small) 0rem 1rem 0rem;
     top: 0;
     right: 0;
     z-index: 26;
-    mix-blend-mode: difference;
   }
 
   /* X button */
@@ -139,22 +138,31 @@ export default {
   .header__x-button {
     position: absolute;
     right: 0;
-    padding-right: 3.25vw;
+    top: 0;
+    width: 7vw;
+    padding: var(--spacing-small) 0;
     background: none;
     border: none;
     cursor: pointer;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    z-index: 100;
+    mix-blend-mode: difference;
+  }
+
+  .header__x-button svg {
+    width: 100%;
+    transition: 0.3s ease-in-out;
   }
 
   .header__x-button rect {
     fill: var(--secondary-color);
   }
 
-  .header__x-button:hover rect {
-    fill: var(--highlight-color);
-    transition: 0.2s;
-  }
+  .header__x-button:hover svg {
+    transform: rotate(90deg);
+    transition: 0.3s ease-in-out;
+}
 
   /* Content */
 
@@ -231,12 +239,14 @@ export default {
     .header__menu {
       width: 100vw;
       border: none;
-      padding: 8rem 0rem 20rem 0rem;
-      backdrop-filter: blur(20px);
+      padding: 8rem 0rem 8rem 0rem;
+      backdrop-filter: none;
+      background-color: var(--primary-color);
     }
 
     .header__x-button {
       top: 4.8vh;
+      width: 20%;
     }
 
     .header__x-button svg {
@@ -245,17 +255,15 @@ export default {
     }
 
     .header__content {
-      align-items: center;
-      padding: 0;
+      width: 100%;
+      height: 100%;
+      padding: var(--spacing-medium);
+      align-items: space-evenly;
     }
 
     .header__divider {
-      width: 75%;
+      width: 65%;
       border-top: var(--increment-style);
-    }
-
-    .header__title {
-      text-align: center;
     }
 
     .header__item-link {

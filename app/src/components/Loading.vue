@@ -34,4 +34,12 @@ export default {
     width: 15%;
     height: auto;
   }
+
+    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+    .loading__animation {
+        width: 50%;
+    }
+  }
+
+
 </style>

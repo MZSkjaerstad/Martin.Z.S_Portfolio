@@ -68,7 +68,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: var(--spacing-large) 0;
+  margin: var(--Spacing-Section) 0;
 }
 
 .image-px-section__content {

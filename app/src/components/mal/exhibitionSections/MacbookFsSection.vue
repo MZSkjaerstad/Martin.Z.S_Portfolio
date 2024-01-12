@@ -18,7 +18,7 @@
   .macbook-fs-section {
     position: relative;
     width: 100%;
-    margin: var(--spacing-large) 0;
+    margin: var(--Spacing-Section) 0;
     display: flex;
     flex-direction: column;
     align-items: center;

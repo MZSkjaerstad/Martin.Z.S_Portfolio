@@ -85,7 +85,8 @@ export default {
   width: 7%;
   position: fixed;
   left: 0;
-  margin-top: 2rem;
+  margin-top: var(--spacing-small);
+  padding-top: var(--spacing-padding);
   display: flex;
   justify-content: center;
 }
@@ -106,12 +107,14 @@ export default {
   font-style: italic;
   text-decoration: none;
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .header__toolbutton:hover {
   font-weight: 600;
   transform: translateX(-0.6rem);
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .header__tooldivider {
@@ -130,17 +133,21 @@ export default {
   text-transform: uppercase;
   background: var(--primary-color);
   border: none;
+  cursor: pointer;
 }
 
 .header__button:hover {
   color: var(--highlight-color);
+  cursor: pointer;
 }
 
 /* burger burron */
 
 .header__burger-button {
   right: 0;
-  margin-right: 3.25vw;
+  top: 0;
+  width: 7%;
+  padding: var(--spacing-small) 0;
   position: fixed;
   background: none;
   border: none;
@@ -148,13 +155,20 @@ export default {
   z-index: 26;
 }
 
-.header__burger-button rect {
-  fill: var(--secondary-color);
+.header__burger-button svg {
+    width: 100%;
+    transition: 0.3s ease-in-out;
 }
 
-.header__burger-button:hover rect {
-  fill: var(--highlight-color);
-  transition: 0.2s;
+.header__burger-button rect {
+  fill: var(--secondary-color);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.header__burger-button:hover svg {
+    transform: rotate(90deg);
+    transition: 0.3s ease-in-out;
 }
 
 @media screen and (min-width: 1900px) {
@@ -175,6 +189,7 @@ export default {
 
   .header__burger-button {
     top: 4.8vh;
+    width: 20%;
   }
 
   .header__burger-button svg {
