@@ -18,7 +18,7 @@ export default {
   .mobile-fs-section {
     position: relative;
     width: 100%;
-    margin: var(--Spacing-Section) 0;
+    margin: var(--spacing-section) 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,7 +44,7 @@ export default {
 
      @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
       .mobile-fs-section {
-        margin: var(--spacing-large) 0;
+        margin: var(--spacing-section) 0;
       }
 
       .mobile-fs-section__mockup {
