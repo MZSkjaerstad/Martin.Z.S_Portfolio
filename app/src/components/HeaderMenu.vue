@@ -240,7 +240,7 @@ export default {
     .header__menu {
       width: 100vw;
       border: none;
-      padding: 8rem 0rem 8rem 0rem;
+      padding: 8rem 0rem 16rem 0rem;
       backdrop-filter: none;
       background-color: var(--primary-color);
       mix-blend-mode: normal;
