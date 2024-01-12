@@ -9,18 +9,18 @@
             </div>
          </div>
 
+         <div class="landingpage__mobile-increment-extension">
+            <div class="landingpage__increments">
+                <div class="landingpage__increment--small"></div>
+            </div> 
+
+            <div class="landingpage__increments">
+                <div class="landingpage__increment--small"></div>
+            </div>
+         </div>
+
          <div class="landingpage__increments">
             <div class="landingpage__increment--small"></div>
-
-            <div class="landingpage__mobile-increment-extension">
-              <div class="landingpage__increments">
-                  <div class="landingpage__increment--small"></div>
-              </div> 
-
-              <div class="landingpage__increments">
-                  <div class="landingpage__increment--small"></div>
-              </div> 
-            </div>
 
             <div class="landingpage__landing">
                <div class="landingpage__header">
@@ -53,10 +53,6 @@
             <div class="landingpage__increment--small"></div>
          </div>
 
-         <div class="landingpage__increments">
-            <div class="landingpage__increment--small"></div>
-         </div> 
-
          <div class="landingpage__mobile-increment-extension">
             <div class="landingpage__increments">
                 <div class="landingpage__increment--small"></div>
@@ -64,8 +60,12 @@
 
             <div class="landingpage__increments">
                 <div class="landingpage__increment--small"></div>
-            </div> 
+            </div>
          </div>
+
+         <div class="landingpage__increments">
+            <div class="landingpage__increment--small"></div>
+         </div> 
 
          <div class="landingpage__increments">
             <div class="decoration__object decoration__object--1"></div>
