@@ -161,11 +161,13 @@
   }
 
    .intro__title {
-    z-index: 10;
+    z-index: 100;
     color: var(--secondary-color-tr);
-    display: table-caption;
+    -webkit-text-stroke: var(--title-style);
     margin: 0 0 var(--spacing-padding) var(--spacing-padding);
+    -webkit-text-stroke: var(--title-style);
     transform: translateY(1rem);
+    mix-blend-mode: difference;
   }
 
   /* Cover increments */
@@ -397,7 +399,7 @@
   /* Cover increments */
 
   .intro__cover-increments {
-  display: none;
+    display: none;
   }
 
   /* Content */
