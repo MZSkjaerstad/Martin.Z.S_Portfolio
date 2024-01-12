@@ -393,7 +393,9 @@
 
   .intro__title {
     font-size: 10rem;
+    -webkit-text-stroke: var(--title-style);
     margin: 6rem 0 0 0;
+    mix-blend-mode: difference;
   }
 
   /* Cover increments */
