@@ -162,10 +162,11 @@
 
    .intro__title {
     z-index: 10;
+    color: var(--secondary-color);
     display: table-caption;
-    mix-blend-mode: difference;
     margin: 0 0 var(--spacing-padding) var(--spacing-padding);
     transform: translateY(1rem);
+    mix-blend-mode: difference;
   }
 
   /* Cover increments */
@@ -375,6 +376,9 @@
     height: 40vh;
     width: 100vw;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .intro__image-mobile img {
@@ -387,8 +391,8 @@
   }
 
   .intro__title {
-  font-size: 14vw;
-  margin: 6rem 0 0 0;
+    font-size: 14vw;
+    margin: 6rem 0 0 0;
   }
 
   /* Cover increments */
