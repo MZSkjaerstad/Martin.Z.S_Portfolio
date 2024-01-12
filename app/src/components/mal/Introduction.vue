@@ -389,7 +389,7 @@
   }
 
   .intro__title {
-    font-size: 10rem;
+    font-size: 9rem;
     -webkit-text-stroke: 3.6px black;
     mix-blend-mode: normal;
     margin: 6rem 0 0 0;
