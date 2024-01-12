@@ -389,7 +389,7 @@
   }
 
   .intro__title {
-    font-size: 9rem;
+    font-size: 8rem;
     -webkit-text-stroke: 3.6px black;
     mix-blend-mode: normal;
     margin: 6rem 0 0 0;
@@ -419,7 +419,7 @@
   }
 
   .intro__year {
-    font-size: 8rem;
+    font-size: 6rem;
   }
 
   .intro__description {
