@@ -162,10 +162,7 @@
 
    .intro__title {
     z-index: 100;
-    color: var(--secondary-color-tr);
-    -webkit-text-stroke: var(--title-style);
     margin: 0 0 var(--spacing-padding) var(--spacing-padding);
-    -webkit-text-stroke: var(--title-style);
     transform: translateY(1rem);
     mix-blend-mode: difference;
   }
@@ -393,9 +390,9 @@
 
   .intro__title {
     font-size: 10rem;
-    -webkit-text-stroke: var(--title-style);
+    -webkit-text-stroke: 3.6px black;
+    mix-blend-mode: normal;
     margin: 6rem 0 0 0;
-    mix-blend-mode: difference;
   }
 
   /* Cover increments */
