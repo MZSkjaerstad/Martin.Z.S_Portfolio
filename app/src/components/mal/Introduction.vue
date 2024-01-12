@@ -162,11 +162,10 @@
 
    .intro__title {
     z-index: 10;
-    color: var(--secondary-color);
+    color: var(--secondary-color-tr);
     display: table-caption;
     margin: 0 0 var(--spacing-padding) var(--spacing-padding);
     transform: translateY(1rem);
-    mix-blend-mode: difference;
   }
 
   /* Cover increments */
@@ -391,7 +390,7 @@
   }
 
   .intro__title {
-    font-size: 14vw;
+    font-size: 10rem;
     margin: 6rem 0 0 0;
   }
 
@@ -412,6 +411,10 @@
   .intro__tagscontainer {
     margin-top: var(--spacing-small);
     font-size: 3rem;
+  }
+
+  .intro__tags {
+    margin: 0.1em 0em 0.5em 0.5em;
   }
 
   .intro__year {

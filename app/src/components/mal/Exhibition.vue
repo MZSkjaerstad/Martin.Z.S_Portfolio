@@ -1,6 +1,6 @@
 <template>
   <section class="exhibition">
-    <div class="exhibition__transition" />
+    <div class="exhibition__transition-top" />
 
     <div class="exhibition__content">
       <div class="exhibition__section" v-for="section in exhibitionData.exhibitionSections">
@@ -19,6 +19,8 @@
         <AssetCtaSection :sectionData="section" v-if="section.sectionType === 'assetCtaSection'" />
       </div>
     </div>
+
+    <div class="exhibition__transition-bottom" />
   </section>
 </template>
 
@@ -53,25 +55,21 @@ export default {
 </script>
 
 <style>
-
-/* 1.1 Exhibition */
-.exhibition {
-  background: black;
-  padding-bottom: var(--spacing-large);
-}
-
 /* 1.2 Transition */
 
-.exhibition__transition {
+.exhibition__transition-top {
   height: 20rem;
   background: linear-gradient(0deg, black 5%, var(--primary-color) 95%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.exhibition__transition-bottom {
+  height: 20rem;
+  background: linear-gradient(0deg, var(--primary-color) 5%, black 95%);
 }
 
 .exhibition__content {
-  padding-top: var(--spacing-large);
+  padding: var(--spacing-large) 0;
+  background: black;
 }
 
 .exhibition__title {

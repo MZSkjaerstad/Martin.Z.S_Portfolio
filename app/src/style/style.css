@@ -16,6 +16,7 @@ h1 {
    text-transform: uppercase;
    -webkit-text-stroke: var(--title-style);
    font-size: var(--font-size-title-large);
+   mix-blend-mode: difference;
 }
 
 h2 {
