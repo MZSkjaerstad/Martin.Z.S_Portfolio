@@ -16,13 +16,13 @@ export default {
     .image-fs-section {
       width: 100%;
       padding: 0 7%;
-      margin: var(--Spacing-Section) 0;
+      margin: var(--spacing-section) 0;
     }
 
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
       .image-fs-section {
          padding: 0 5%;
-         margin: var(--spacing-medium) 0;
+         margin: var(--spacing-section) 0;
       }
    }
 
