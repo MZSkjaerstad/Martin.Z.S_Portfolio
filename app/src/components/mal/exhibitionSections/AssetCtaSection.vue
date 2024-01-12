@@ -38,7 +38,7 @@ export default {
     width: 100%;
     height: 80vh;
     padding: 0 7%;
-    margin: var(--spacing-large) 0;
+    margin: var(--Spacing-Section) 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,6 +104,7 @@ export default {
     color: var(--secondary-color);
     mix-blend-mode: difference;
     width: 100%;
+    cursor: pointer;
   }
 
   .asset-cta-section__disclaimer {
@@ -122,6 +123,7 @@ export default {
     padding: var(--spacing-padding);
     mix-blend-mode: difference;
     transition: 0.3s ease-in-out;
+    cursor: pointer;
   }
 
   .asset-cta-section__button p {

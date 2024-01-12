@@ -33,6 +33,7 @@
    --spacing-small: 20px;
    --spacing-medium: 2.5em;
    --spacing-large: 5em;
+   --Spacing-Section: 10em;
 
    /* 4.1 Ruler styles */
    --increment-style: solid var(--secondary-color) 1.8px;

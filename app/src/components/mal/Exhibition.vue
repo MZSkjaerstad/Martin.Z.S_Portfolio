@@ -63,7 +63,7 @@ export default {
 /* 1.2 Transition */
 
 .exhibition__transition {
-  height: 40rem;
+  height: 20rem;
   background: linear-gradient(0deg, black 5%, var(--primary-color) 95%);
   display: flex;
   justify-content: center;

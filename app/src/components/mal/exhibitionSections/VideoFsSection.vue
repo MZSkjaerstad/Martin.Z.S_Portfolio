@@ -15,12 +15,13 @@ export default {
     width: 100%;
     height: 90vh;
     padding: 0 7%;
-    margin: var(--spacing-large) 0;
+    margin: var(--Spacing-Section) 0;
   }
 
   @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
     .video-fs-section {
         padding: 0;
+        height: 40vh;
         margin: var(--spacing-medium) 0;
     }
   }
