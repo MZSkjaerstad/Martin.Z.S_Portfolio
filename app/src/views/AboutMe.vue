@@ -29,6 +29,10 @@
       </section>
 
       <section class="about__article">
+         <h3 class="about__header">About me</h3>
+
+         <div class="about__divider-top"></div>
+
          <div class="about__skills">
             <div class="about__adobe">
                <p class="about__category">Adobe softwares:</p>
@@ -120,6 +124,13 @@
       border-top: var(--increment-style);
       mix-blend-mode: difference;
       padding-top: var(--spacing-medium);
+   }
+
+   .about__divider-top {
+      width: var(--increment-medium);
+      border-top: var(--increment-style);
+      mix-blend-mode: difference;
+      margin: var(--spacing-medium) 0;
    }
 
    /* Essentials */
@@ -219,6 +230,12 @@
 
    /* Article */
 
+   .about__header {
+      font-size: 2.2rem;
+      white-space: nowrap;
+      mix-blend-mode: difference;
+   }
+
    .about__article {
       padding: var(--spacing-small) var(--spacing-medium) 0 0;
       mix-blend-mode: difference;
@@ -285,6 +302,14 @@
       .about__link {
          width: 6rem;
          height: 6rem;
+      }
+
+      .about__header {
+         display: none;
+      }
+
+      .about__divider-top {
+         margin: 0 0 var(--spacing-medium) 0;
       }
 
       .about__article {
