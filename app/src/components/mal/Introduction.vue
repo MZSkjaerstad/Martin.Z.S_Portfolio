@@ -11,6 +11,8 @@
 
       <h1 class="intro__title"> {{introductionData.projectName}} </h1>
 
+      <div class="intro__title-spacer" />
+
       <div class="intro__cover-increments">
         <div class="intro__corner--top">
           <div class="intro__corner--top-left" />
@@ -139,9 +141,10 @@
   /* Cover image */
 
   .intro__cover {
+    display: block;
     width: 100%;
     height: auto;
-    position: relative
+    position: relative;
   }
 
   .intro__image {
@@ -160,11 +163,16 @@
     height: 110%;
   }
 
-   .intro__title {
+  .intro__title {
     z-index: 100;
-    margin: 0 0 var(--spacing-padding) var(--spacing-padding);
-    transform: translateY(1rem);
+    position: relative;
+    margin-left: var(--spacing-padding);
     mix-blend-mode: difference;
+    transform: translateY(1rem);
+  }
+
+  .intro__title-spacer {
+    height: var(--spacing-medium);
   }
 
   /* Cover increments */
@@ -395,6 +403,10 @@
     margin: 6rem 0 0 0;
   }
 
+  .intro__title-spacer {
+    display: none;
+  }
+
   /* Cover increments */
 
   .intro__cover-increments {
@@ -477,7 +489,5 @@
     align-items: center;
     padding: var(--spacing-medium) 0 0 0;
   }
-
 }
-
 </style>

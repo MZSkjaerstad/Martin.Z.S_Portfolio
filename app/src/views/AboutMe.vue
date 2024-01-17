@@ -170,6 +170,7 @@
    .about__figure {
       width: 100%;
       height: 58%;
+      background-color: var(--highlight-color);
    }
 
    .about__image {
@@ -320,6 +321,4 @@
          text-align: center;
       }
    }
-
-
 </style>
