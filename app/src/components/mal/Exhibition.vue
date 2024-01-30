@@ -59,12 +59,12 @@ export default {
 
 .exhibition__transition-top {
   height: 20rem;
-  background: linear-gradient(0deg, black 5%, var(--primary-color) 95%);
+  background: linear-gradient(0deg, black 5%, var(--primary-color-tr) 95%);
 }
 
 .exhibition__transition-bottom {
   height: 20rem;
-  background: linear-gradient(0deg, var(--primary-color) 5%, black 95%);
+  background: linear-gradient(0deg, var(--primary-color-tr) 5%, black 95%);
 }
 
 .exhibition__content {
