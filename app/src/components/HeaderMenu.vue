@@ -122,6 +122,7 @@ export default {
 
 <style>
   .header__menu {
+    position: relative;
     width: 35rem;
     height: 100vh;
     position: fixed;
@@ -130,7 +131,7 @@ export default {
     padding: var(--spacing-small) 0rem 1rem 0rem;
     top: 0;
     right: 0;
-    z-index: 26;
+    z-index: 30;
     mix-blend-mode: difference;
   }
 

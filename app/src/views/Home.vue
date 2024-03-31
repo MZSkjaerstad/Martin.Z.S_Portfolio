@@ -36,6 +36,7 @@
 
 <style>
    .homepage {
+      position: relative;
       width: 100vw;
       height: auto;
       padding: 0rem 7% 0rem 7%;
