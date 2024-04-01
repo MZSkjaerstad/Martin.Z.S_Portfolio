@@ -74,9 +74,10 @@ export default {
 
 <style>
 .header {
+  position: relative;
   padding: var(--spacing-small) 3.3% 0.1rem 3.3%;
   mix-blend-mode: difference;
-  z-index: 10000;
+  z-index: 10000 !important;
 }
 
 /* nav tool */
@@ -153,7 +154,6 @@ export default {
   border: none;
   cursor: pointer;
   z-index: 26;
-  z-index: 10001;
 }
 
 .header__burger-button svg {
@@ -182,6 +182,7 @@ export default {
 @media screen and (max-device-width: 767px ) {
   .header {
     padding: 2rem;
+    z-index: 100000;
   }
 
   .header__nav-tool {
@@ -191,6 +192,7 @@ export default {
   .header__burger-button {
     top: 4.8vh;
     width: 20%;
+    z-index: 100000 !important;
   }
 
   .header__burger-button svg {

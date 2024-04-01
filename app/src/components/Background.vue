@@ -42,7 +42,7 @@ export default {
   width: 100vw;
   height: 0;
   top: 0;
-  z-index: -1000;
+  z-index: -100000;
   opacity: 0.9;
   overflow: visible;
 }

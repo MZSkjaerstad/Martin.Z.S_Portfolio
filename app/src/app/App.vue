@@ -1,6 +1,6 @@
 <template>
     <Background />
-    <Header :headerData="headerData" />
+    <Header :headerData="headerData"/>
     <RouterView />
     <Footer />
 </template>

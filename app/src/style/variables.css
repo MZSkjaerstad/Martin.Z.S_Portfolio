@@ -80,6 +80,7 @@
 
       --increment-small: 1.2rem;
       --increment-medium: 4rem;
+      --increment-large: 90vw;
 
       /* Spacing styles mobile */
       --spacing-small: 40px;

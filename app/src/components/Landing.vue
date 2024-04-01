@@ -1,5 +1,5 @@
 <template>
-   <section>
+   <section class="landingpage">
       <div class="landingpage__ruler">
          <div class="landingpage__increments ruler__data">
             <div>
@@ -115,6 +115,7 @@ export default {
 </script>
 
 <style>
+
   .landingpage__ruler {
     z-index: 13;
     display: flex;
