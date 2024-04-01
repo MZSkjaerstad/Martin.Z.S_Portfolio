@@ -40,7 +40,7 @@ export default {
 .background {
   position: fixed;
   width: 100vw;
-  height: 0;
+  height: 100vh;
   top: 0;
   opacity: 0.9;
   z-index: -2;
