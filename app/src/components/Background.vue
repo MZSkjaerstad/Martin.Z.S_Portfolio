@@ -38,12 +38,12 @@ export default {
 
 <style>
 .background {
-  position: sticky;
+  position: fixed;
   width: 100vw;
   height: 0;
   top: 0;
-  z-index: -1000000;
   opacity: 0.9;
+  z-index: -2;
   overflow: visible;
   background-color: var(--primary-color);
 }
