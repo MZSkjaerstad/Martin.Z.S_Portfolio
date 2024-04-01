@@ -116,12 +116,15 @@ export default {
 
 <style>
 
+  .landingpage {
+    mix-blend-mode: difference;
+  }
+
   .landingpage__ruler {
     z-index: 13;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    mix-blend-mode: difference;
   }
 
   .landingpage__landing {
