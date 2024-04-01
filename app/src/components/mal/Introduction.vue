@@ -164,7 +164,7 @@
   }
 
   .intro__title {
-    z-index: 100;
+    z-index: 2;
     position: relative;
     margin-left: var(--spacing-padding);
     mix-blend-mode: difference;

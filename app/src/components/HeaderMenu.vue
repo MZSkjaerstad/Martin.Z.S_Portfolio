@@ -127,6 +127,7 @@ export default {
     height: 100vh;
     position: fixed;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-left: var(--increment-style);
     padding: var(--spacing-small) 0rem 1rem 0rem;
     top: 0;
