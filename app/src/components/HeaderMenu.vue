@@ -126,14 +126,12 @@ export default {
     width: 35rem;
     height: 100vh;
     position: fixed;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-left: var(--increment-style);
+    background-color: var(--primary-color);
     padding: var(--spacing-small) 0rem 1rem 0rem;
     top: 0;
     right: 0;
     z-index: 30;
-    mix-blend-mode: difference;
+    border-left: solid black 1.8px;
   }
 
   /* X button */
@@ -241,6 +239,7 @@ export default {
   @media screen and (max-device-width: 767px) {
     .header__menu {
       width: 100vw;
+      height: 100vh;
       border: none;
       padding: 8rem 0rem 16rem 0rem;
       backdrop-filter: none;
