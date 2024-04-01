@@ -149,7 +149,6 @@ export default {
     font-weight: 600;
     font-style: italic;
     text-transform: uppercase;
-    mix-blend-mode: difference;
   }
 
   /* 1.2 About */
@@ -203,7 +202,6 @@ export default {
   .landingpage__link-icon {
     height: 100%;
     z-index: 10;
-    mix-blend-mode: difference;
   }
 
   .landingpage__link:hover {
