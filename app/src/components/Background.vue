@@ -38,20 +38,20 @@ export default {
 
 <style>
 .background {
-  position: fixed;
+  position: sticky;
   width: 100vw;
-  height: 100vh;
+  height: 0;
   top: 0;
   opacity: 0.9;
   z-index: -2;
   overflow: visible;
-  background-color: var(--primary-color);
 }
 
 .background__container {
   height: 100vh;
   position: relative;
   object-fit: cover;
+  background-color: var(--primary-color);
 }
 
 #lottie-container svg {
