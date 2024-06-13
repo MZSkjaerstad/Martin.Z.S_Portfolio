@@ -6,6 +6,14 @@
       <div class="exhibition__section" v-for="section in exhibitionData.exhibitionSections">
         <ImageFsSection :sectionData="section" v-if="section.sectionType === 'imageFsSection'"/>
 
+        <ImageLsSection :sectionData="section" v-if="section.sectionType === 'imageLsSection'"/>
+
+        <ImageRsSection :sectionData="section" v-if="section.sectionType === 'imageRsSection'"/>
+
+        <ImageDbSection :sectionData="section" v-if="section.sectionType === 'imageDbSection'"/>
+
+        <ImageTpSection :sectionData="section" v-if="section.sectionType === 'imageTpSection'"/>
+
         <ImagePxSection :sectionData="section" v-if="section.sectionType === 'imagePxSection'"/>
 
         <DesktopFsSection :sectionData="section" v-if="section.sectionType === 'DesktopFsSection'"/>
@@ -27,6 +35,10 @@
 <script>
 import NoFiles from '../NoFiles.vue'
 import ImageFsSection from './exhibitionSections/ImageFsSection.vue'
+import ImageLsSection from './exhibitionSections/ImageLsSection.vue'
+import ImageRsSection from './exhibitionSections/ImageRsSection.vue'
+import ImageDbSection from './exhibitionSections/ImageDbSection.vue'
+import ImageTpSection from './exhibitionSections/ImageTpSection.vue'
 import ImagePxSection from './exhibitionSections/ImagePxSection.vue'
 import DesktopFsSection from './exhibitionSections/DesktopFsSection.vue'
 import MacbookFsSection from './exhibitionSections/MacbookFsSection.vue'
@@ -39,6 +51,10 @@ export default {
    components: {
       NoFiles,
       ImageFsSection,
+      ImageLsSection,
+      ImageRsSection,
+      ImageDbSection,
+      ImageTpSection,
       ImagePxSection,
       DesktopFsSection,
       MacbookFsSection,

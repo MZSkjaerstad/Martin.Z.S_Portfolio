@@ -108,6 +108,23 @@
             {{ contributor.name }}
           </p>
         </div>
+      
+
+        <div
+          class="intro__customers--undefined"
+          v-if="introductionData.customers === null"
+        ></div>
+
+        <div class="intro__customers--defined" v-else>
+          <p class="intro__customers-title">Customers:</p>
+
+          <p
+            class="intro__contributor"
+            v-for="customer in introductionData.customers"
+          >
+            {{ customer.name }}
+          </p>
+        </div>
       </div>
 
       <div class="intro__divider"></div>
@@ -300,6 +317,26 @@
 }
 
 .intro__contributor {
+  font-size: var(--font-size-body);
+  padding: 0 0 0,4rem 0;
+  font-style: normal;
+}
+
+/* Customers */
+
+.intro__customers--defined {
+
+  color: var(--secondary-color);
+  font-size: var(--font-size-data);
+  font-style: italic;
+  padding-right: var(--spacing-large);
+}
+
+.intro__customers-title{
+  margin-bottom: 1rem;
+}
+
+.intro__customers {
   font-size: var(--font-size-body);
   padding: 0 0 0,4rem 0;
   font-style: normal;

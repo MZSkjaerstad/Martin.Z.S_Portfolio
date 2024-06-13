@@ -14,16 +14,25 @@
       "contributors":contributors[]{
          name,
          title
-      }
+      },
+      "customers":customers[]{
+         name
+      },
    },
 
    "exhibition": *[slug.current == $projectSlug && published == true][0] {
       exhibitionSections[]{
-        "sectionType": _type,
-        "caption": caption,
-        "imageFile": imageFile.asset->.url,
-        "videoUrl": videoUrl,
-        "assetTitle": SectionTitle,
+         "sectionType": _type,
+         "caption": caption,
+         "imageFile": imageFile.asset->.url,
+         "firstImageFile": firstImage.firstImageFile.asset->.url,
+         "firstImageCaption": firstImage.firstCaption,
+         "secondImageFile": secondImage.secondImageFile.asset->.url,
+         "secondImageCaption": secondImage.secondCaption,
+         "thirdImageFile": thirdImage.thirdImageFile.asset->.url,
+         "thirdImageCaption": thirdImage.thirdCaption,
+         "videoUrl": videoUrl,
+         "assetTitle": SectionTitle,
          "assetLinks": links[]{
             "icon": linkType->.linkIcons.asset->.url,
             "linktype": linkType->.linkName,
