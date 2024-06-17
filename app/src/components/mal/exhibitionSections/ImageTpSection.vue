@@ -21,7 +21,7 @@ export default {
    /* Change block name to the same as component */
     .image-tp-section {
       width: 100%;
-      height: 45vh;
+      height: 35vh;
       padding: var(--spacing-small) 7% 0 7%;
       margin: var(--spacing-section) 0;
       overflow: hidden;
