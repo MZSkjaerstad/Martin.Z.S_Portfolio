@@ -1,5 +1,5 @@
 <template>
-   <iframe class="video-fs-section" :src="sectionData.videoUrl" frameborder="0"></iframe>
+   <iframe class="video-fs-section" :src="sectionData.videoUrl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </template>
 
 <script>

@@ -59,13 +59,6 @@ export default {
          }
       },
       {
-         title: "Subtitle",
-         name: "subtitle",
-         group: "introduction",
-         description: "Add a subtitle to the introduction.",
-         type: "string"
-      },
-      {
          title: "Description",
          name: "description",
          group: "introduction",
@@ -141,6 +134,27 @@ export default {
          ]
       },
       {
+         title: "Customers",
+         name: "customers",
+         group: "introduction",
+         description: "Add additional customers to the project",
+         type: "array",
+         of: [
+            {
+               title: "customer",
+               name: "contributor",
+               type: "object",
+               fields: [
+                  {
+                     title: "Name",
+                     name: "name",
+                     type: "string"
+                  }
+               ]
+            }
+         ]
+      },
+      {
          title: "Exhibition Sections",
          name: "exhibitionSections",
          group: "exhibition",
@@ -161,6 +175,139 @@ export default {
                      title: "Image caption",
                      name: "caption",
                      type: "string"
+                  }
+               ]
+            },
+            {
+               title: "Leftscreen Image Section",
+               name: "imageLsSection",
+               type: "object",
+               fields: [
+                  {
+                     title: "Image file",
+                     name: "imageFile",
+                     type: "image"
+                  },
+                  {
+                     title: "Image caption",
+                     name: "caption",
+                     type: "string"
+                  }
+               ]
+            },
+            {
+               title: "Rightscreen Image Section",
+               name: "imageRsSection",
+               type: "object",
+               fields: [
+                  {
+                     title: "Image file",
+                     name: "imageFile",
+                     type: "image"
+                  },
+                  {
+                     title: "Image caption",
+                     name: "caption",
+                     type: "string"
+                  }
+               ]
+            },
+            {
+               title: "Double Image Section",
+               name: "imageDbSection",
+               type: "object",
+               fields: [
+                  {
+                     title: "Left Image",
+                     name: "firstImage",
+                     type: "object",
+                     fields: [
+                        {
+                           title: "Image file",
+                           name: "firstImageFile",
+                           type: "image"
+                        },
+                        {
+                           title: "Image caption",
+                           name: "firstCaption",
+                           type: "string"
+                        }
+                     ]
+                  },
+                  {
+                     title: "Right Image",
+                     name: "secondImage",
+                     type: "object",
+                     fields: [
+                        {
+                           title: "Image file",
+                           name: "secondImageFile",
+                           type: "image"
+                        },
+                        {
+                           title: "Image caption",
+                           name: "secondCaption",
+                           type: "string"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               title: "Triple Image Section",
+               name: "imageTpSection",
+               type: "object",
+               fields: [
+                  {
+                     title: "Left Image",
+                     name: "firstImage",
+                     type: "object",
+                     fields: [
+                        {
+                           title: "Image file",
+                           name: "firstImageFile",
+                           type: "image"
+                        },
+                        {
+                           title: "Image caption",
+                           name: "firstCaption",
+                           type: "string"
+                        }
+                     ]
+                  },
+                  {
+                     title: "Middle Image",
+                     name: "secondImage",
+                     type: "object",
+                     fields: [
+                        {
+                           title: "Image file",
+                           name: "secondImageFile",
+                           type: "image"
+                        },
+                        {
+                           title: "Image caption",
+                           name: "secondCaption",
+                           type: "string"
+                        }
+                     ]
+                  },
+                  {
+                     title: "Right Image",
+                     name: "thirdImage",
+                     type: "object",
+                     fields: [
+                        {
+                           title: "Image file",
+                           name: "thirdImageFile",
+                           type: "image"
+                        },
+                        {
+                           title: "Image caption",
+                           name: "thirdCaption",
+                           type: "string"
+                        }
+                     ]
                   }
                ]
             },
