@@ -21,9 +21,9 @@ export default {
    /* Change block name to the same as component */
     .image-tp-section {
       width: 100%;
-      height: 35vh;
-      padding: var(--spacing-small) 7% 0 7%;
-      margin: var(--spacing-section) 0;
+      height: 40vh;
+      padding: 0 7%;
+      margin: var(--spacing-section) 0 0 0;
       overflow: hidden;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -41,9 +41,14 @@ export default {
    @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
       .image-tp-section {
          height: auto;
-         padding: var(--spacing-small) 5% 0 5%;
-         margin: var(--spacing-section) 0;
+         padding: 0 5%;
          grid-template-columns: repeat(1, 1fr);
+         column-gap: var(--spacing-section);
+         row-gap: var(--spacing-section);
+      }
+
+      .image-tp-file {
+         grid-column: 1 / span 3;
       }
    }
 

@@ -38,7 +38,7 @@ export default {
     width: 100%;
     height: 80vh;
     padding: 0 7%;
-    margin: var(--spacing-section) 0;
+    margin: var(--spacing-section) 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -148,7 +148,6 @@ export default {
     .asset-cta-section {
       padding: 0;
       height: auto;
-      margin: var(--spacing-section) 0;
     }
 
     .asset-cta-section__title {
