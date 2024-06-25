@@ -58,37 +58,38 @@ export default {
     };
   },
   methods: {
-    scrollToSection(index) {
-      if (this.$refs.processContainer) {
-        const sections = this.$refs.processContainer.querySelectorAll('.process__section');
-        if (sections.length > 0) {
-          const sectionElement = sections[index];
-          if (sectionElement) {
-            const offsetTop = sectionElement.offsetTop;
-            window.scrollTo({
-              top: offsetTop,
-              behavior: 'smooth',
-            });
-            this.activeSection = index;
-          }
+  scrollToSection(index) {
+    if (this.$refs.processContainer) {
+      const sections = this.$refs.processContainer.querySelectorAll('.process__section');
+      if (sections.length > 0) {
+        const sectionElement = sections[index];
+        if (sectionElement) {
+          const sectionRect = sectionElement.getBoundingClientRect();
+          const offsetTop = window.scrollY + sectionRect.top - (window.innerHeight / 2) + (sectionRect.height / 2);
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth',
+          });
+          this.activeSection = index;
         }
       }
-    },
-
-    updateActiveSection() {
-      const sections = this.$refs.processContainer.querySelectorAll('.process__section');
-      let currentSectionIndex = null; // Changed from 0 to null
-
-      sections.forEach((section, index) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= 0) {
-          currentSectionIndex = index;
-        }
-      });
-
-      this.activeSection = currentSectionIndex;
-    },
+    }
   },
+
+  updateActiveSection() {
+    const sections = this.$refs.processContainer.querySelectorAll('.process__section');
+    let currentSectionIndex = null;
+
+    sections.forEach((section, index) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= 0) {
+        currentSectionIndex = index;
+      }
+    });
+
+    this.activeSection = currentSectionIndex;
+  },
+},
 
   mounted() {
     window.addEventListener('scroll', this.updateActiveSection);
@@ -207,7 +208,6 @@ export default {
 .process__sidebar-link.active {
   font-weight: bold;
   color: var(--tetriary-color);
-  transform: translateX(-1rem);
   transition: ease-in-out 0.4s;
 }
 
