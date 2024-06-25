@@ -1,7 +1,7 @@
 <template>
   <main class="background">
     <div class="background__container">
-      <video class="background__video" autoplay muted loop>
+      <video class="background__video" autoplay muted loop playsinline>
         <source src="/visual_identity/video/particle_background.mp4" type="video/mp4">
       </video>
     </div>
