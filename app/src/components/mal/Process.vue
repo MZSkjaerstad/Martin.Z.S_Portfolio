@@ -2,13 +2,14 @@
   <section class="process" ref="processContainer">
     <div class="process__initials">
       <h2 class="process__subtitle">{{ processData.subtitle }}</h2>
-      <p maxlength="60" class="process__intro">{{ processData.intro }}</p>
     </div>
-
-    <div class="process__divider"></div>
 
     <div class="process__article">
       <div class="process__content">
+        <p maxlength="60" class="process__intro">{{ processData.intro }}</p>
+
+        <div class="process__divider"></div>
+
         <div class="process__section" v-for="(section, index) in processData.sections" :key="index">
           <div v-if="section._type === 'sectionText'" class="process__section--text">
             <p class="process__section-title">00{{ index + 1 }} - {{ section.sectionTitle }}</p>
@@ -53,7 +54,7 @@ export default {
   },
   data() {
     return {
-      activeSection: 0,
+      activeSection: null,
     };
   },
   methods: {
@@ -76,7 +77,7 @@ export default {
 
     updateActiveSection() {
       const sections = this.$refs.processContainer.querySelectorAll('.process__section');
-      let currentSectionIndex = 0;
+      let currentSectionIndex = null; // Changed from 0 to null
 
       sections.forEach((section, index) => {
         const rect = section.getBoundingClientRect();
@@ -103,7 +104,8 @@ export default {
 .process {
   width: 100%;
   height: auto;
-  padding: 0 7% 3rem 7%;
+  padding: 0 0 3rem 7%;
+  color: var(--tetriary-color)
 }
 
 /**** 3.0 Content ****/
@@ -120,25 +122,24 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  mix-blend-mode: difference;
 }
 
 .process__subtitle {
   font-size: var(--font-size-title-medium);
   padding: 5rem 0;
+  -webkit-text-stroke: 1.6px var(--tetriary-color);
 }
 
 .process__intro {
   max-width: 75ch;
   font-size: var(--font-size-intro);
   font-style: italic;
-  mix-blend-mode: difference;
 }
 
 .process__divider {
   width: var(--increment-medium);
   border-bottom: var(--increment-style);
-  mix-blend-mode: difference;
+  border-color: var(--tetriary-color);
   padding-top: var(--spacing-medium);
 }
 
@@ -157,17 +158,15 @@ export default {
 }
 
 .process__section-title {
-  color: var(--secondary-color);
+  color: var(--tetriary-color);
   font-size: var(--font-size-data);
   font-style: italic;
   padding-bottom: var(--spacing-small);
-  mix-blend-mode: difference;
 }
 
 .process__section-content {
   max-width: 90ch;
   line-height: 150%;
-  mix-blend-mode: difference;
 }
 
 .process__image-file {
@@ -178,8 +177,7 @@ export default {
 
 .process__overview {
   width: 25%;
-  margin-top: 4.5em;
-  mix-blend-mode: difference;
+  margin-top: var(--spacing-medium);
 }
 
 .process__sidebar {
@@ -203,12 +201,12 @@ export default {
 .process__sidebar-link:hover {
   font-weight: 600;
   transition: ease-in-out 0.2s;
-  color: var(--secondary-color);
+  color: var(--tetriary-color);
 }
 
 .process__sidebar-link.active {
   font-weight: bold;
-  color: var(--secondary-color);
+  color: var(--tetriary-color);
   transform: translateX(-1rem);
   transition: ease-in-out 0.4s;
 }

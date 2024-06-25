@@ -149,6 +149,7 @@
     width: 100vw;
     height: auto;
     padding: 0rem 7% 2% 7%;
+    color: var(--tetriary-color);
   }
 
   .intro__image-mobile {
@@ -184,7 +185,6 @@
     z-index: 2;
     position: relative;
     margin-left: var(--spacing-padding);
-    mix-blend-mode: difference;
     transform: translateY(1rem);
   }
 
@@ -202,7 +202,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    mix-blend-mode: difference;
   }
 
   .intro__middle {
@@ -214,7 +213,6 @@
   .intro__middle--increment {
     width: var(--increment-small);
     border-top: var(--increment-style);
-    mix-blend-mode: difference;
   }
 
   .intro__corner--top{
@@ -264,7 +262,6 @@
   /* Content */
 
   .intro__content {
-    mix-blend-mode: difference;
     width: 100%;
     padding: 0 0 var(--spacing-medium) 0;
   }
@@ -276,6 +273,10 @@
     margin: var(--spacing-medium) 0;
   }
 
+  .intro__description {
+    color: var(--tetriary-color);
+  }
+
   .intro__tagscontainer {
     width: 80%;
   }
@@ -283,9 +284,10 @@
   .intro__tags {
   width: auto;
   display: inline-block;
-  color: var(--secondary-color);
+  color: var(--tetriary-color);
   font-size: var(--font-size-data);
   border: var(--increment-style);
+  border-color: var(--tetriary-color);
   border-radius: 15px;
   padding: 0.09rem 0.4rem 0.1rem 0.4rem;
   margin: 0.1em 0em 0.5em 0.1em;
@@ -294,7 +296,7 @@
  .intro__divider {
   width: var(--increment-medium);
   border-bottom: var(--increment-style);
-  mix-blend-mode: difference;
+  border-color: var(--tetriary-color);
   margin: var(--spacing-medium) 0;
 }
 
@@ -306,7 +308,7 @@
 
 .intro__contributors--defined {
 
-  color: var(--secondary-color);
+  color: var(--tetriary-color);
   font-size: var(--font-size-data);
   font-style: italic;
   padding-right: var(--spacing-large);
@@ -326,7 +328,7 @@
 
 .intro__customers--defined {
 
-  color: var(--secondary-color);
+  color: var(--tetriary-color);
   font-size: var(--font-size-data);
   font-style: italic;
   padding-right: var(--spacing-large);
@@ -345,6 +347,7 @@
 /* Assets */
 
 .intro__assets--defined {
+  mix-blend-mode: difference;
   color: var(--secondary-color);
   font-size: var(--font-size-data);
   font-style: italic;
