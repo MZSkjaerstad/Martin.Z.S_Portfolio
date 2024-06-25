@@ -2,6 +2,7 @@
    /* 1.1 Colour palette*/
    --primary-color: white;
    --secondary-color: White;
+   --tetriary-color: black;
    --highlight-color: Gray;
 
    /* 1.2 Colour palette invisible*/
@@ -33,7 +34,7 @@
    --spacing-small: 20px;
    --spacing-medium: 2.5em;
    --spacing-large: 5em;
-   --Spacing-Section: 10em;
+   --spacing-section: 20px;
 
    /* 4.1 Ruler styles */
    --increment-style: solid var(--secondary-color) 1.8px;
@@ -84,6 +85,7 @@
 
       /* Spacing styles mobile */
       --spacing-small: 40px;
+      --spacing-section: 40px;
 
       /* Thumbnail title style mobile */
       --title-style: 3.4px var(--secondary-color);
