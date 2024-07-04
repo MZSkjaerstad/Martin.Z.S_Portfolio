@@ -18,13 +18,17 @@
                </div>
 
                <div class="about__figure-markers">
-                  <div class="about__figure-marker--upper-left"></div>
+                  <div class="about__figure-marker--upper">
+                     <div class="about__figure-marker  about__figure-marker--upper-left"></div>
 
-                  <div class="about__figure-marker--upper-right"></div>
+                     <div class="about__figure-marker about__figure-marker--upper-right"></div>
+                  </div>
 
-                  <div class="about__figure-marker--lower-left"></div>
+                  <div class="about__figure-marker--lower">
+                     <div class="about__figure-marker about__figure-marker--lower-left"></div>
 
-                  <div class="about__figure-marker--lower-right"></div>
+                     <div class="about__figure-marker about__figure-marker--lower-right"></div>
+                  </div>
                </div>
 
                <img class="about__image" :src="content.profilePicture" alt="">
@@ -188,6 +192,8 @@
       color: var(--tetriary-color);
    }
 
+   /* Figure */
+
    .about__figure {
       width: 100%;
       height: 58%;
@@ -203,6 +209,56 @@
       align-items: center;
    }
 
+   .about__figure-markers {
+      position: absolute;
+      width: 100%;
+      height: 58%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+
+   .about__figure-marker {
+      height: 1rem;
+      width: 1rem;
+   }
+
+   .about__figure-marker--upper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+   }
+
+   .about__figure-marker--lower {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+   }
+
+   .about__figure-marker--upper-left {
+      border-top: var(--increment-style);
+      border-left: var(--increment-style);
+      border-color: var(--tetriary-color);
+   }
+
+   .about__figure-marker--upper-right {
+      border-top: var(--increment-style);
+      border-right: var(--increment-style);
+      border-color: var(--tetriary-color);
+   }
+
+   .about__figure-marker--lower-left {
+      border-bottom: var(--increment-style);
+      border-left: var(--increment-style);
+      border-color: var(--tetriary-color);
+   }
+
+   .about__figure-marker--lower-right {
+      border-bottom: var(--increment-style);
+      border-right: var(--increment-style);
+      border-color: var(--tetriary-color);
+   }
+
    .about__loading-icon {
       width: 60%;
       height: auto;
@@ -215,6 +271,8 @@
       object-fit: cover;
       z-index: 2;
    }
+
+   /* Socials */
 
    .about__socials {
       padding: var(--spacing-medium) 0 0 0;
