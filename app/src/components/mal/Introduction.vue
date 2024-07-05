@@ -148,7 +148,7 @@
   .intro {
     width: 100vw;
     height: auto;
-    padding: 0rem 7% 2% 7%;
+    padding: var(--spacing-small) 7% 2% 7%;
     color: var(--tetriary-color);
   }
 

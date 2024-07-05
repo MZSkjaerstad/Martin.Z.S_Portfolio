@@ -75,7 +75,6 @@ export default {
 <style>
 .header {
   position: relative;
-  padding: var(--spacing-small) 3.3% 0.1rem 3.3%;
   mix-blend-mode: difference;
   z-index: 10000 !important;
 }
@@ -93,6 +92,7 @@ export default {
 }
 
 .header__toolwrapper {
+  padding: var(--spacing-medium) 0;
   min-width: 80px;
   transform: rotate(-90deg);
   text-align: end;
@@ -148,7 +148,7 @@ export default {
   right: 0;
   top: 0;
   width: 7%;
-  padding: var(--spacing-small) 0;
+  padding: var(--spacing-medium) 0;
   position: fixed;
   background: none;
   border: none;
@@ -190,7 +190,7 @@ export default {
   }
 
   .header__burger-button {
-    top: 4.8vh;
+    top: 4%;
     width: 20%;
     z-index: 100000 !important;
   }

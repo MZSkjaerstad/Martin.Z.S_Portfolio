@@ -148,7 +148,6 @@
 <style>
 .footer {
   padding: 0% 7% 0% 7%;
-  mix-blend-mode: difference;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -161,7 +160,7 @@
 }
 
 .st0 {
-  fill: white;
+  fill: black;
   stroke-width: 2.8px;
 }
 
@@ -189,7 +188,7 @@
 
 .footer__link {
   width: fit-content;
-  color: var(--secondary-color);
+  color: var(--tetriary-color);
   font-size: var(--font-size-data);
   text-decoration: none;
   letter-spacing: 0.05rem;

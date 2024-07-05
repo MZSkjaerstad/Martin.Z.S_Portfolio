@@ -134,7 +134,7 @@
    .about {
       width: 100%;
       height: auto;
-      padding: 0 7% var(--spacing-small) 7%;
+      padding: var(--spacing-small) 7%;
       display: flex;
       color: var(--tetriary-color);
    }
