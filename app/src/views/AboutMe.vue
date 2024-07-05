@@ -6,7 +6,7 @@
    <main class="about" v-else>
       <section class="about__essentials">
          <div class="about__essentials-wrapper">
-            <div class="about__name">
+            <div class="about__name about__name--desktop">
                <h3 class="about__fullname"> {{ content.fullName }} </h3>
 
                <p class="about__title">{{ content.workingTitle }}</p>
@@ -33,6 +33,12 @@
 
                <img class="about__image" :src="content.profilePicture" alt="">
             </figure>
+
+            <div class="about__name about__name--mobile">
+               <h3 class="about__fullname"> {{ content.fullName }} </h3>
+
+               <p class="about__title">{{ content.workingTitle }}</p>
+            </div>
 
             <div class="about__socials">
                <p class="about__category">Social links:</p>
@@ -177,6 +183,10 @@
 
    .about__name {
       padding-bottom: var(--spacing-medium);
+   }
+
+   .about__name--mobile {
+      display: none;
    }
 
    .about__fullname {
@@ -383,13 +393,23 @@
    @media screen and (max-device-width: 767px) {
       .about {
          flex-direction: column;
+         padding-top: var(--spacing-small)
       }
 
       .about__essentials {
          width: 100%;
          min-width: none;
          max-width: none;
-         padding: var(--spacing-medium) 0 0 0;
+         padding: 0;
+      }
+
+      .about__name--desktop {
+         display: none;
+      }
+
+      .about__name--mobile {
+         display: block;
+         padding-top: var(--spacing-medium)
       }
 
       .about__fullname {
@@ -399,6 +419,10 @@
 
       .about__figure {
          height: 60%;
+      }
+
+      .about__socials {
+         padding: 0 0 0 0;
       }
 
       .about__skills {

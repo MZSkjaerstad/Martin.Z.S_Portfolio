@@ -181,7 +181,6 @@ export default {
 
 @media screen and (max-device-width: 767px ) {
   .header {
-    padding: 2rem;
     z-index: 100000;
   }
 
