@@ -162,7 +162,7 @@
    .about__divider-top {
       width: var(--increment-medium);
       border-top: var(--increment-style);
-      mix-blend-mode: difference;
+      border-color: var(--tetriary-color);
       margin: var(--spacing-medium) 0;
    }
 
@@ -403,10 +403,6 @@
          min-width: none;
          max-width: none;
          padding: 0;
-      }
-
-      .about__essentials-wrapper {
-         height: auto;
       }
 
       .about__name--desktop {
