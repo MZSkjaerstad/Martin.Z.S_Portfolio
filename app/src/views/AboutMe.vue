@@ -279,6 +279,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: top;
       z-index: 2;
    }
 
@@ -394,6 +395,7 @@
       .about {
          flex-direction: column;
          padding-top: var(--spacing-small)
+
       }
 
       .about__essentials {
@@ -401,6 +403,10 @@
          min-width: none;
          max-width: none;
          padding: 0;
+      }
+
+      .about__essentials-wrapper {
+         height: auto;
       }
 
       .about__name--desktop {
@@ -422,7 +428,7 @@
       }
 
       .about__socials {
-         padding: 0 0 0 0;
+         padding: 0;
       }
 
       .about__skills {
