@@ -123,15 +123,27 @@ export default {
 <style>
   .header__menu {
     position: relative;
-    width: 35rem;
+    width: 100vw;
     height: 100vh;
     position: fixed;
     background-color: var(--primary-color);
-    padding: var(--spacing-small) 0rem 1rem 0rem;
+    padding: 2vh 0rem;
     top: 0;
     right: 0;
-    z-index: 30;
+    z-index: 100000;
     border-left: solid black 1.8px;
+    animation: fadeInAnimation ease 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fadeInAnimation {
+      0% {
+          opacity: 0;
+      }
+      100% {
+          opacity: 1;
+      }
   }
 
   /* X button */
@@ -148,7 +160,6 @@ export default {
     display: flex;
     justify-content: center;
     z-index: 100;
-    mix-blend-mode: difference;
   }
 
   .header__x-button svg {
@@ -157,7 +168,7 @@ export default {
   }
 
   .header__x-button rect {
-    fill: var(--secondary-color);
+    fill: var(--tetriary-color);
   }
 
   .header__x-button:hover svg {
@@ -169,20 +180,20 @@ export default {
 
   .header__content {
     height: 100%;
-    padding: 3rem 0rem 3rem 3rem;
+    padding: 3vh 7% 3vh 7%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    mix-blend-mode: difference;
   }
 
   .header__divider {
     width: 5rem;
     border-top: var(--increment-style);
+    border-color: var(--tetriary-color)
   }
 
   .header__title {
-    color: var(--secondary-color);
+    color: var(--tetriary-color);
     font-size: var(--font-size-data);
     font-style: italic;
     padding-top: 1rem;
@@ -203,19 +214,19 @@ export default {
     font-style: italic;
     text-transform: uppercase;
     color: var(--primary-color-tr);
-    -webkit-text-stroke: var(--title-style);
+    -webkit-text-stroke: var(--title-style-no-dif);
     padding: 0.1rem 0.9rem;
     transition: 0.2s;
   }
 
   .header__item-number {
-    color: var(--secondary-color);
+    color: var(--tetriary-color);
     font-size: var(--font-size-data);
     margin-right: 2rem;
   }
 
   .header__item:hover .header__item-link {
-    color: var(--secondary-color);
+    color: var(--tetriary-color);
     -webkit-text-stroke: none;
     transform: translateX(1rem);
     transition: 0.2s;
@@ -241,7 +252,7 @@ export default {
       width: 100vw;
       height: 100vh;
       border: none;
-      padding: 8rem 0rem 16rem 0rem;
+      padding: 0rem 0rem 8rem 0rem;
       backdrop-filter: none;
       background-color: var(--primary-color);
       mix-blend-mode: normal;
@@ -270,12 +281,12 @@ export default {
     }
 
     .header__item-link {
-      font-size: 6.5rem;
+      font-size: 6rem;
     }
 
     .header__item:hover .header__item-link {
       color: var(--highlight-color);
-      font-size: 6.5rem;
+      font-size: 6rem;
       -webkit-text-stroke: none;
       transition: 0.2s;
     }

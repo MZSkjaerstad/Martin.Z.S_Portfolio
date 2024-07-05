@@ -28,6 +28,7 @@
    --font-size-title-large: 12vh;
 
    --title-style: 1.6px var(--secondary-color);
+   --title-style-no-dif: 1.6px #000000;
 
    /* 3.1  Spacing styles */
    --spacing-padding: 0.5em;
@@ -89,5 +90,6 @@
 
       /* Thumbnail title style mobile */
       --title-style: 3.4px var(--secondary-color);
+      --title-style-no-dif: 3.4px #000000;
    }
 }
