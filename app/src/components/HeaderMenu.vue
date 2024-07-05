@@ -153,7 +153,7 @@ export default {
     right: 0;
     top: 0;
     width: 7vw;
-    padding: var(--spacing-small) 0;
+    padding: var(--spacing-medium) 0;
     background: none;
     border: none;
     cursor: pointer;
@@ -252,14 +252,14 @@ export default {
       width: 100vw;
       height: 100vh;
       border: none;
-      padding: 0rem 0rem 8rem 0rem;
+      padding: 0rem 0rem 14rem 0rem;
       backdrop-filter: none;
       background-color: var(--primary-color);
       mix-blend-mode: normal;
     }
 
     .header__x-button {
-      top: 4.8vh;
+      top: 4%;
       width: 20%;
     }
 
