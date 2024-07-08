@@ -13,6 +13,12 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
 
 export default {
+  data() {
+    return {
+      mouseX: 0, // Default value for mouseX
+      mouseY: 0, // Default value for mouseY
+    };
+  },
   mounted() {
     // Initialize WebGL renderer with alpha and antialias
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -98,14 +104,14 @@ export default {
     animate() {
       requestAnimationFrame(this.animate);
 
-      // Rotate the model based on mouse position
+      // Rotate the model based on mouse position (or default values if undefined)
       if (this.model) {
-        this.model.rotation.y = this.mouseX * 0.5;
-        this.model.rotation.x = -this.mouseY * 0.5; // Invert rotation along y-axis
+        this.model.rotation.y = this.mouseX * 0.5 || 0; // Use default 0 if undefined
+        this.model.rotation.x = -(this.mouseY * 0.5 || 0); // Use default 0 if undefined
 
-        // Move the camera based on mouse position
-        this.camera.position.x = this.mouseX * 0.3;
-        this.camera.position.y = this.mouseY * 0.3; // Invert movement along y-axis
+        // Move the camera based on mouse position (or default values if undefined)
+        this.camera.position.x = this.mouseX * 0.4 || 0; // Use default 0 if undefined
+        this.camera.position.y = this.mouseY * 0.4 || 0; // Use default 0 if undefined
       }
 
       this.composer.render();
