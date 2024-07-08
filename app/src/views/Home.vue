@@ -2,7 +2,9 @@
    <main v-if="loading === true"> <Loading /> </main>
    <main v-else class="homepage">
       <section class="homepage__landing-mount">
-         <Hero3D :socials="content.socials"/>
+         <Hero3D class="herothreed" :socials="content.socials"/>
+
+         <HeroMobile class="heromobile" :socials="content.socials"/>
       </section>
 
       <section class="homepage__projects-mount">
@@ -13,6 +15,7 @@
 
 <script>
    import Hero3D from '../components/Hero3D.vue'
+   import HeroMobile from '../components/Hero3D.vue'
    import Loading from '../components/Loading.vue'
    import ProjectsOverview from '../components/ProjectsOverview.vue'
    import viewMixin from '../mixins/viewMixin.js'
@@ -21,6 +24,7 @@
    export default {
       components: {
          Hero3D,
+         HeroMobile,
          Loading,
          ProjectsOverview,
       },
@@ -41,6 +45,14 @@
       padding: 0rem 7% 0rem 7%;
    }
 
+   .herothreed {
+      display: block;
+   }
+
+   .heromobile {
+      display: none;
+   }
+
    /******* 5.1 MEDIA QUERIES *******/
 
    /* 5.5 Mobile standing */
@@ -48,6 +60,14 @@
    @media screen and (max-device-width: 767px) {
       .homepage {
          padding: 0rem 0% 2rem 0%;
+      }
+
+      .heromobile {
+         display: block !important;
+      }
+
+      .herothreed {
+         display: none !important;
       }
    }
 </style>
