@@ -29,7 +29,7 @@ export default {
          animationData: this.backgroundJSON,
          rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice',
-  },
+            },
       });
     },
   },

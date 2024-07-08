@@ -60,11 +60,11 @@
     </svg>
 
     <div class="footer__content">
-      <div class="footer__link-wrapper">
+      <div class="footer__link-wrapper--first">
         <Router-link :to="'/about-me'" class="footer__link-button">
           <p
             class="footer__link"
-            >Martin Z.S. Design
+            >©2024 Martin Zupfer Skjærstad
           </p>
 
           <div class="footer__link-underline" />
@@ -175,6 +175,10 @@
   width: 20%;
 }
 
+.footer__link-wrapper--first {
+  width: 30%;
+}
+
 .footer__link-button {
   width: auto;
   height: var(--spacing-small);
@@ -220,6 +224,11 @@
   }
 
   .footer__link-wrapper {
+    width: 100%;
+    margin-top: var(--spacing-small);
+  }
+
+  .footer__link-wrapper--first {
     width: 100%;
     margin-top: var(--spacing-small);
   }

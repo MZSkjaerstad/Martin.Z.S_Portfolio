@@ -2,7 +2,7 @@
    <main v-if="loading === true"> <Loading /> </main>
    <main v-else class="homepage">
       <section class="homepage__landing-mount">
-         <Landing :socials="content.socials"/>
+         <Hero3D :socials="content.socials"/>
       </section>
 
       <section class="homepage__projects-mount">
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-   import Landing from '../components/Landing.vue'
+   import Hero3D from '../components/Hero3D.vue'
    import Loading from '../components/Loading.vue'
    import ProjectsOverview from '../components/ProjectsOverview.vue'
    import viewMixin from '../mixins/viewMixin.js'
@@ -20,7 +20,7 @@
 
    export default {
       components: {
-         Landing,
+         Hero3D,
          Loading,
          ProjectsOverview,
       },

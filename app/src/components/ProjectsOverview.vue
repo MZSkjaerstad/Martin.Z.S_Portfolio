@@ -1,6 +1,5 @@
 <template>
   <section class="projects">
-    <!-- ** Removed for LandingShort.vue component **
     <div class="projects__decoration">
       <div class="decoration__increment">
         <div class="decoration__object decoration__object--1"></div>
@@ -37,7 +36,7 @@
       <div class="decoration__increment">
         <div class="decoration__object decoration__object--9"></div>
       </div>
-    </div> -->
+    </div>
 
     <div class="projects__thumbnails">
       <Thumbnail

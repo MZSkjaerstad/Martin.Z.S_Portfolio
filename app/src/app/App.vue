@@ -8,7 +8,6 @@
 <script>
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
-import Background from '../components/Background.vue'
 import BackgroundVideo from '../components/BackgroundVideo.vue'
 import appMixin from '../mixins/appMixin.js'
 import query from '../groq/header.groq?raw'
@@ -17,7 +16,6 @@ export default {
     components: {
         Header,
         Footer,
-        Background,
         BackgroundVideo
     },
     
