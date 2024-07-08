@@ -2,9 +2,9 @@
    <main v-if="loading === true"> <Loading /> </main>
    <main v-else class="homepage">
       <section class="homepage__landing-mount">
-         <Hero3D class="herothreed" :socials="content.socials"/>
+         <Hero3D :socials="content.socials"/>
 
-         <HeroMobile class="heromobile" :socials="content.socials"/>
+         <HeroMobile :socials="content.socials"/>
       </section>
 
       <section class="homepage__projects-mount">
@@ -15,7 +15,7 @@
 
 <script>
    import Hero3D from '../components/Hero3D.vue'
-   import HeroMobile from '../components/Hero3D.vue'
+   import HeroMobile from '../components/HeroMobile.vue'
    import Loading from '../components/Loading.vue'
    import ProjectsOverview from '../components/ProjectsOverview.vue'
    import viewMixin from '../mixins/viewMixin.js'

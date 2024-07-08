@@ -150,4 +150,10 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-device-width: 767px) { 
+  .hero {
+    display: none;
+  }
+}
 </style>

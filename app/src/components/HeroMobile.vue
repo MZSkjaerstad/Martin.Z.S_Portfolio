@@ -117,6 +117,7 @@ export default {
 <style>
 
   .landingpage {
+    display: none;
     mix-blend-mode: difference;
   }
 
@@ -301,6 +302,10 @@ export default {
 
   /* Mobile */
   @media screen and (max-device-width: 767px) { 
+    .landingpage {
+      display: block;
+    }
+
     .landingpage__ruler {
       padding: 0vw 5vw;
       margin: 0;
