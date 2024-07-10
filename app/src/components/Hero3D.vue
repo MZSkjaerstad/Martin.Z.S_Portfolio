@@ -108,12 +108,12 @@ export default {
         // Rotate based on input type
         if (this.deviceOrientationAvailable) {
           // Adjust rotation based on device orientation with initial rotation for natural phone holding
-          this.model.rotation.y = -(this.mouseX * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.gamma));
+          this.model.rotation.y = THREE.MathUtils.degToRad(this.deviceOrientation.gamma) - Math.PI / 2; // Rotate back 90 degrees clockwise on y-axis
           this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4); // Invert x-axis rotation
-          this.model.rotation.z = -THREE.MathUtils.degToRad(this.deviceOrientation.alpha) + Math.PI / 2; // Adjust for device orientation
+          this.model.rotation.z = THREE.MathUtils.degToRad(this.deviceOrientation.alpha); // Adjust for device orientation
         } else {
           // Rotate based on cursor position for desktop
-          this.model.rotation.y = this.mouseX * 0.5;
+          this.model.rotation.y = this.mouseX * 0.5 - Math.PI / 2; // Rotate back 90 degrees clockwise on y-axis
           this.model.rotation.x = -(this.mouseY * 0.5);
         }
       }
@@ -269,9 +269,9 @@ export default {
   cursor: pointer;
 }
 
-@media screen and (max-device-width: 767px) {
+@media screen and (min-width: 768px) {
   .hero-mobile {
-    display: block;
+    display: none;
   }
 }
 </style>
