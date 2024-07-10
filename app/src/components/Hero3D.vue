@@ -108,8 +108,8 @@ export default {
       if (this.model) {
         // Rotate based on input type
         if (this.deviceOrientationAvailable) {
-          // Adjust rotation based on device orientation with initial rotation for natural phone holding
-          this.model.rotation.y = THREE.MathUtils.degToRad(this.deviceOrientation.gamma);
+          // Adjust rotation based on device orientation
+          this.model.rotation.y = -THREE.MathUtils.degToRad(this.deviceOrientation.gamma); // Invert rotation against device movement
           this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4); // Adjust for 45-degree holding
         } else {
           // Rotate based on cursor position for desktop
@@ -125,6 +125,7 @@ export default {
         this.renderer.render(this.scene, this.camera);
       }
     },
+
     handleWindowResize() {
       this.renderer.setSize(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight);
       this.camera.aspect = this.containerAspectRatio();
