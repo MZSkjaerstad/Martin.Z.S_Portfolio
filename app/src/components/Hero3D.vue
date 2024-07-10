@@ -4,6 +4,10 @@
       <div v-if="showFallback" class="fallback-content">
         <p>3D model is not available on this device.</p>
       </div>
+      <div v-if="!gyroscopePermissionRequested && !showFallback" class="prompt-container">
+        <p class="prompt-text">Please allow access to gyroscope.</p>
+        <button class="prompt-button" @click="requestGyroscopePermission">Allow</button>
+      </div>
     </div>
   </section>
 </template>
@@ -18,6 +22,7 @@ export default {
       mouseX: 0,
       mouseY: 0,
       showFallback: false,
+      gyroscopePermissionRequested: false,
     };
   },
   mounted() {
@@ -115,6 +120,23 @@ export default {
     handleDeviceOrientation(event) {
       this.deviceOrientation = event;
     },
+    requestGyroscopePermission() {
+      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        DeviceOrientationEvent.requestPermission()
+          .then(permissionState => {
+            if (permissionState === 'granted') {
+              this.gyroscopePermissionRequested = true;
+            } else {
+              console.warn('Permission to access gyroscope sensor was denied.');
+              this.showFallback = true;
+            }
+          })
+          .catch(console.error);
+      } else {
+        console.warn('DeviceOrientationEvent.requestPermission() is not supported.');
+        this.showFallback = true;
+      }
+    },
     cleanUp() {
       if (this.renderer) {
         this.renderer.dispose();
@@ -149,19 +171,56 @@ export default {
   overflow: hidden;
   display: flex;
   justify-content: center;
-}
-
-.hero-mobile__threeDContainer {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
   align-items: center;
 }
 
+.hero-mobile__threeDContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .fallback-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   text-align: center;
   color: #333;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.prompt-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.prompt-text {
+  margin-bottom: 10px;
+}
+
+.prompt-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.prompt-button:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-device-width: 767px) {
+  .hero-mobile {
+    display: block;
+  }
 }
 </style>
