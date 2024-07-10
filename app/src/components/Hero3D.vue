@@ -1,6 +1,6 @@
 <template>
   <section class="hero-mobile">
-    <div ref="container" class="hero-mobile__threeDContainer" @mousemove="onMouseMove">
+    <div ref="container" class="hero-mobile__threeDContainer">
       <div v-if="showFallback" class="fallback-content">
         <p>3D model is not available on this device.</p>
       </div>
@@ -22,11 +22,13 @@ export default {
   },
   mounted() {
     this.initThree();
+    this.initDeviceOrientation();
     window.addEventListener('resize', this.handleWindowResize);
   },
   beforeDestroy() {
     this.cleanUp();
     window.removeEventListener('resize', this.handleWindowResize);
+    window.removeEventListener('deviceorientation', this.handleDeviceOrientation);
   },
   methods: {
     initThree() {
@@ -80,8 +82,15 @@ export default {
       requestAnimationFrame(this.animate);
 
       if (this.model) {
+        // Rotate based on mouse position
         this.model.rotation.y = this.mouseX * 0.5;
         this.model.rotation.x = -(this.mouseY * 0.5);
+
+        // Adjust rotation based on device orientation
+        if (this.deviceOrientationAvailable) {
+          this.model.rotation.y += THREE.MathUtils.degToRad(this.deviceOrientation.gamma);
+          this.model.rotation.x -= THREE.MathUtils.degToRad(this.deviceOrientation.beta);
+        }
       }
 
       this.renderer.render(this.scene, this.camera);
@@ -94,9 +103,17 @@ export default {
     containerAspectRatio() {
       return this.$refs.container.offsetWidth / this.$refs.container.offsetHeight;
     },
-    onMouseMove(event) {
-      this.mouseX = (event.offsetX / this.$refs.container.offsetWidth) * 2 - 1;
-      this.mouseY = -(event.offsetY / this.$refs.container.offsetHeight) * 2 + 1;
+    initDeviceOrientation() {
+      if (window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', this.handleDeviceOrientation);
+        this.deviceOrientationAvailable = true;
+      } else {
+        console.warn('Device orientation not supported on this device.');
+        this.deviceOrientationAvailable = false;
+      }
+    },
+    handleDeviceOrientation(event) {
+      this.deviceOrientation = event;
     },
     cleanUp() {
       if (this.renderer) {
