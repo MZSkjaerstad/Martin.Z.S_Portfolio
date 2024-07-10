@@ -1,6 +1,11 @@
 <template>
-  <section class="hero">
-    <div ref="container" class="hero__threeDContainer" @mousemove="onMouseMove">
+  <section class="hero-mobile">
+    <div ref="container" class="hero-mobile__threeDContainer" @mousemove="onMouseMove">
+      <button v-if="!permissionGranted" @click="requestDeviceOrientationPermission">Enable Gyroscope</button>
+      <div v-else-if="permissionDenied" class="fallback-content">
+        <!-- Your fallback content goes here -->
+        <p>3D model is not available on this device.</p>
+      </div>
     </div>
   </section>
 </template>
@@ -15,10 +20,12 @@ import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
 export default {
   data() {
     return {
-      mouseX: 0, // Default value for mouseX
-      mouseY: 0, // Default value for mouseY
-      gamma: 0, // Default value for gamma (rotation around z axis)
-      beta: 0,  // Default value for beta (rotation around x axis)
+      mouseX: 0,
+      mouseY: 0,
+      gamma: 0,
+      beta: 0,
+      permissionGranted: false,
+      permissionDenied: false
     };
   },
   mounted() {
@@ -97,22 +104,6 @@ export default {
 
     // Listen to window resize events
     window.addEventListener('resize', this.handleWindowResize);
-
-    // Listen to device orientation events if supported
-    if (window.DeviceOrientationEvent) {
-      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-        DeviceOrientationEvent.requestPermission()
-          .then(permissionState => {
-            if (permissionState === 'granted') {
-              window.addEventListener('deviceorientation', this.handleDeviceOrientation);
-            }
-          })
-          .catch(console.error);
-      } else {
-        // handle non-iOS 13+ devices
-        window.addEventListener('deviceorientation', this.handleDeviceOrientation);
-      }
-    }
   },
   beforeDestroy() {
     // Clean up event listener on component destruction
@@ -127,7 +118,7 @@ export default {
 
       // Rotate the model based on mouse or gyroscope position
       if (this.model) {
-        if (this.isMobileDevice()) {
+        if (this.isMobileDevice() && this.permissionGranted) {
           this.model.rotation.y = this.gamma * 0.005; // Adjust the sensitivity as needed
           this.model.rotation.x = this.beta * 0.005;  // Adjust the sensitivity as needed
         } else {
@@ -163,6 +154,27 @@ export default {
       this.gamma = event.gamma; // Rotation around z axis
       this.beta = event.beta;   // Rotation around x axis
     },
+    requestDeviceOrientationPermission() {
+      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        DeviceOrientationEvent.requestPermission()
+          .then(permissionState => {
+            if (permissionState === 'granted') {
+              window.addEventListener('deviceorientation', this.handleDeviceOrientation);
+              this.permissionGranted = true;
+            } else {
+              this.permissionDenied = true;
+            }
+          })
+          .catch(error => {
+            console.error('Error requesting device orientation permission:', error);
+            this.permissionDenied = true;
+          });
+      } else {
+        // For non-iOS 13+ devices
+        window.addEventListener('deviceorientation', this.handleDeviceOrientation);
+        this.permissionGranted = true;
+      }
+    },
     isMobileDevice() {
       return /Mobi|Android/i.test(navigator.userAgent);
     }
@@ -171,18 +183,29 @@ export default {
 </script>
 
 <style>
-.hero {
+.hero-mobile {
   width: 100%;
   height: 100vh;
   overflow: hidden;
 }
 
-.hero__threeDContainer {
+.hero-mobile__threeDContainer {
   width: 100%;
   height: 100%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.fallback-content {
+  text-align: center;
+  color: #333;
+}
+
+@media screen and (max-device-width: 767px) { 
+  .hero-mobile {
+    display: block;
+  }
 }
 </style>
