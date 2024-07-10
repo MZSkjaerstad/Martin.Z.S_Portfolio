@@ -23,6 +23,12 @@ export default {
       mouseY: 0,
       showFallback: false,
       gyroscopePermissionRequested: false,
+      deviceOrientationAvailable: false,
+      deviceOrientation: {
+        alpha: 0,
+        beta: 0,
+        gamma: 0
+      },
     };
   },
   mounted() {
@@ -91,7 +97,7 @@ export default {
         this.model.rotation.y = this.mouseX * 0.5;
         this.model.rotation.x = -(this.mouseY * 0.5);
 
-        // Adjust rotation based on device orientation
+        // Adjust rotation based on device orientation if available
         if (this.deviceOrientationAvailable) {
           this.model.rotation.y += THREE.MathUtils.degToRad(this.deviceOrientation.gamma);
           this.model.rotation.x -= THREE.MathUtils.degToRad(this.deviceOrientation.beta);
@@ -131,7 +137,10 @@ export default {
               this.showFallback = true;
             }
           })
-          .catch(console.error);
+          .catch(error => {
+            console.error('Error requesting gyroscope permission:', error);
+            this.showFallback = true;
+          });
       } else {
         console.warn('DeviceOrientationEvent.requestPermission() is not supported.');
         this.showFallback = true;
