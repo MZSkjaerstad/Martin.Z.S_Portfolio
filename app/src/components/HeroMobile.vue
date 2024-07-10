@@ -1,426 +1,184 @@
 <template>
-   <section class="landingpage">
-      <div class="landingpage__ruler">
-         <div class="landingpage__increments ruler__data">
-            <div>
-               <div class="landingpage__increment--long"></div>
-
-               <div class="landingpage__increment-info">000</div>
-            </div>
-         </div>
-
-         <div class="landingpage__mobile-increment-extension">
-            <div class="landingpage__increments">
-                <div class="landingpage__increment--small"></div>
-            </div> 
-
-            <div class="landingpage__increments">
-                <div class="landingpage__increment--small"></div>
-            </div>
-         </div>
-
-         <div class="landingpage__increments">
-            <div class="landingpage__increment--small"></div>
-
-            <div class="landingpage__landing">
-               <div class="landingpage__header">
-                 <h1 class="landingpage__header--upper">Digital</h1>
-
-                 <h1 class="landingpage__header--lower">Designer</h1>
-               </div>
-
-               <div class="landingpage__about">
-                  <div class="landingpage__imageframe">
-                    <img class="landingpage__logo" src="/visual_identity/vector/logo_black.svg" alt="MartinZ.S. logo.">
-
-                    <img class="landingpage__image" src="/visual_identity/image/landing_banner.png" alt="">
-                  </div>
-
-                  <div class="landingpage__intro">
-                    Martin Zupfer Skjærstad
-                  </div>
-
-                  <div class="landingpage__socials">
-                    <a class="landingpage__link" v-for="link in socials" :href="link.url" target="_blank" :aria-label="`Open ${link.linktype}`">
-                      <img class="landingpage__link-icon" :src="link.icon" alt="">
-                    </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         <div class="landingpage__increments">
-            <div class="landingpage__increment--small"></div>
-         </div>
-
-         <div class="landingpage__mobile-increment-extension">
-            <div class="landingpage__increments">
-                <div class="landingpage__increment--small"></div>
-            </div> 
-
-            <div class="landingpage__increments">
-                <div class="landingpage__increment--small"></div>
-            </div>
-         </div>
-
-         <div class="landingpage__increments">
-            <div class="landingpage__increment--small"></div>
-         </div> 
-
-         <div class="landingpage__increments">
-            <div class="decoration__object decoration__object--1"></div>
-         </div>
-
-         <div class="landingpage__increments">
-            <div class="decoration__object decoration__object--2"></div>
-         </div>
-
-         <div class="landingpage__increments">
-            <div class="decoration__object decoration__object--3"></div>
-         </div>
-
-         <div class="landingpage__increments">
-            <div class="decoration__object decoration__object--4"></div>
-         </div>
-
-         <div class="landingpage__increments">
-            <div class="decoration__object decoration__object--5"></div>
-         </div>
-
-         <div class="landingpage__increments">
-            <div class="decoration__object decoration__object--6"></div>
-         </div>
-
-         <div class="landingpage__increments">
-            <div class="decoration__object decoration__object--7"></div>
-         </div>
-
-         <div class="landingpage__increments">
-            <div class="decoration__object decoration__object--8"></div>
-         </div>
-
-         <div class="landingpage__increments">
-            <div class="decoration__object decoration__object--9"></div>
-         </div>
-      </div>
-   </section>
+  <section class="hero-mobile">
+    <div ref="container" class="hero-mobile__threeDContainer" @mousemove="onMouseMove">
+    </div>
+  </section>
 </template>
 
 <script>
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
+
 export default {
-  props: {
-    socials: Array,
-  }
-}
+  data() {
+    return {
+      mouseX: 0, // Default value for mouseX
+      mouseY: 0, // Default value for mouseY
+      gamma: 0, // Default value for gamma (rotation around z axis)
+      beta: 0,  // Default value for beta (rotation around x axis)
+    };
+  },
+  mounted() {
+    // Initialize WebGL renderer with alpha and antialias
+    this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    this.renderer.setSize(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight);
+    this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.$refs.container.appendChild(this.renderer.domElement);
+
+    // Initialize scene
+    this.scene = new THREE.Scene();
+
+    // Add ambient light to the scene
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
+    this.scene.add(ambientLight);
+
+    // Add directional light to the scene
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+    dirLight.position.set(0, 1, 0); // Adjust position as needed
+    this.scene.add(dirLight);
+
+    // Initialize camera
+    this.camera = new THREE.PerspectiveCamera(75, this.containerAspectRatio(), 0.1, 1000);
+    this.camera.position.z = 5;
+
+    // Load the model
+    const loader = new GLTFLoader();
+    loader.load('/visual_identity/3D/logoOutline.glb', (gltf) => {
+      if (!gltf.scene) {
+        console.error('Error: GLTF scene is undefined.');
+        return;
+      }
+
+      gltf.scene.traverse((child) => {
+        if (child.isMesh) {
+          // Create material for the mesh
+          const material = new THREE.MeshBasicMaterial({
+            color: 0xffffff,
+            vertexColors: true // Enable vertex colors
+          });
+
+          // Apply material to the mesh
+          child.material = material;
+
+          // Add the loaded scene to the Three.js scene
+          this.scene.add(gltf.scene);
+
+          // Assign model to a component property for manipulation
+          this.model = gltf.scene;
+        }
+      });
+
+      // Add outline pass for the loaded model
+      this.outlinePass.selectedObjects = [gltf.scene];
+    }, undefined, (error) => {
+      console.error('Error loading GLTF model:', error);
+    });
+
+    // Set up postprocessing
+    this.composer = new EffectComposer(this.renderer);
+    const renderPass = new RenderPass(this.scene, this.camera);
+    this.composer.addPass(renderPass);
+
+    // Set up outline pass
+    this.outlinePass = new OutlinePass(new THREE.Vector2(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight), this.scene, this.camera);
+    this.outlinePass.edgeStrength = 10.0; // Adjust edge strength for outline thickness
+    this.outlinePass.edgeGlow = 0.0;
+    this.outlinePass.edgeThickness = 3.0; // Adjust edge thickness for outline thickness
+    this.outlinePass.pulsePeriod = 0;
+    this.outlinePass.visibleEdgeColor.set('#000000'); // Outline color
+    this.outlinePass.hiddenEdgeColor.set('#000000'); // Hidden outline color
+    this.composer.addPass(this.outlinePass);
+
+    // Start rendering loop
+    this.animate();
+
+    // Listen to window resize events
+    window.addEventListener('resize', this.handleWindowResize);
+
+    // Listen to device orientation events if supported
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', this.handleDeviceOrientation);
+    }
+  },
+  beforeDestroy() {
+    // Clean up event listener on component destruction
+    window.removeEventListener('resize', this.handleWindowResize);
+    if (window.DeviceOrientationEvent) {
+      window.removeEventListener('deviceorientation', this.handleDeviceOrientation);
+    }
+  },
+  methods: {
+    animate() {
+      requestAnimationFrame(this.animate);
+
+      // Rotate the model based on mouse or gyroscope position
+      if (this.model) {
+        if (this.isMobileDevice()) {
+          this.model.rotation.y = this.gamma * 0.005; // Adjust the sensitivity as needed
+          this.model.rotation.x = this.beta * 0.005;  // Adjust the sensitivity as needed
+        } else {
+          this.model.rotation.y = this.mouseX * 0.5 || 0; // Use default 0 if undefined
+          this.model.rotation.x = -(this.mouseY * 0.5 || 0); // Use default 0 if undefined
+        }
+
+        // Move the camera based on mouse position (or default values if undefined)
+        this.camera.position.x = this.mouseX * 0.4 || 0; // Use default 0 if undefined
+        this.camera.position.y = this.mouseY * 0.4 || 0; // Use default 0 if undefined
+      }
+
+      this.composer.render();
+    },
+    handleWindowResize() {
+      // Update renderer and camera aspect ratio on window resize
+      this.renderer.setSize(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight);
+      this.camera.aspect = this.containerAspectRatio();
+      this.camera.updateProjectionMatrix();
+      this.composer.setSize(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight);
+    },
+    containerAspectRatio() {
+      return this.$refs.container.offsetWidth / this.$refs.container.offsetHeight;
+    },
+    onMouseMove(event) {
+      if (!this.isMobileDevice()) {
+        // Calculate normalized mouse position within the container (-1 to 1)
+        this.mouseX = (event.offsetX / this.$refs.container.offsetWidth) * 2 - 1;
+        this.mouseY = -(event.offsetY / this.$refs.container.offsetHeight) * 2 + 1;
+      }
+    },
+    handleDeviceOrientation(event) {
+      this.gamma = event.gamma; // Rotation around z axis
+      this.beta = event.beta;   // Rotation around x axis
+    },
+    isMobileDevice() {
+      return /Mobi|Android/i.test(navigator.userAgent);
+    }
+  },
+};
 </script>
 
 <style>
+.hero-mobile {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 
-  .landingpage {
-    display: none;
-    mix-blend-mode: difference;
+.hero-mobile__threeDContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-device-width: 767px) { 
+  .hero-mobile {
+    display: block;
   }
-
-  .landingpage__ruler {
-    z-index: 13;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .landingpage__landing {
-    position: relative;
-  }
-
-  /* 1.1 Header */
-
-  .landingpage__header {
-    padding-left: 10vw;
-  }
-
-  .landingpage__header--upper {
-    z-index: 20;
-  }
-
-  .laningpage__header--lower {
-    z-index: 20;
-  }
-
-  .landingpage__intro {
-    text-align: end;
-    padding: 2vh 0 0 30%;
-    font-size: 3.21vh;
-    font-weight: 600;
-    font-style: italic;
-    text-transform: uppercase;
-  }
-
-  /* 1.2 About */
-
-  .landingpage__about {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    padding-right: 2vw;
-    height: 60vh;
-  }
-
-  .landingpage__imageframe {
-    position: relative;
-    height: 40vh;
-    z-index: -1;
-  }
-
-  .landingpage__logo {
-    position: absolute;
-    height: 25%;
-    top: 7%;
-    right: 8%;
-  }
-
-  .landingpage__image {
-    height: 100%;
-    z-index: -1;
-    mix-blend-mode: none;
-  }
-
-  .landingpage__socials {
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap-reverse;
-    padding: var(--spacing-padding) 0;
-  }
-
-  .landingpage__link {
-    height: 6vh;
-    margin-left: var(--spacing-padding);
-    position: relative;
-    z-index: 10;
-    border: var(--increment-style);
-    border-radius: 15%;
-    transition: 0.3s;
-  }
-
-  .landingpage__link-icon {
-    height: 100%;
-    z-index: 10;
-  }
-
-  .landingpage__link:hover {
-    background-color: var(--secondary-color);
-    transition: 0.3s;
-    padding: 0.2rem;
-  }
-
-  /* 1.3 Increments */
-
-  .landingpage__increments {
-    width: 85vw;
-    height: 0px;
-    margin-bottom: 5vh;
-  }
-
-  .landingpage__increment--small {
-    width: var(--increment-small);
-    border-top: var(--increment-style);
-  }
-
-  .landingpage__increment--medium {
-    width: var(--increment-medium);
-    border-top: var(--increment-style);
-  }
-
-  .landingpage__increment--long {
-    width: var(--increment-large);
-    border-top: var(--increment-style);
-  }
-
-  .landingpage__increment-info {
-    color: var(--secondary-color);
-    font-size: var(--font-size-data);
-  }
-
-  .landingpage__data {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .landingpage__data-content {
-    color: var(--secondary-color);
-    font-size: var(--font-size-data);
-    font-style: italic;
-    text-align: end;
-  }
-
-  .landingpage__mobile-increment-extension {
-    display: none;
-  }
-
-  /* 1.4 Decoration increments */
-
-  .decoration__object {
-    border-top: var(--increment-style);
-  }
-
-  .decoration__object--1 {
-    width: 0.6rem;
-  }
-
-  .decoration__object--2 {
-    width: 0.8rem;
-  }
-
-  .decoration__object--3 {
-    width: 1.4rem;
-  }
-
-  .decoration__object--4 {
-    width: 2.2rem;
-  }
-
-  .decoration__object--5 {
-    width: 4rem;
-  }
-
-  .decoration__object--6 {
-    width: 6rem;
-  }
-
-  .decoration__object--7 {
-    width: 10rem;
-  }
-
-  .decoration__object--8 {
-    width: 14rem;
-  }
-
-  .decoration__object--9 {
-    width: 19rem;
-  }
-
-  /* Mobile */
-  @media screen and (max-device-width: 767px) { 
-    .landingpage {
-      display: block;
-    }
-
-    .landingpage__ruler {
-      padding: 0vw 5vw;
-      margin: 0;
-    }
-
-    /* 2.1 Mobile Header */
-    .landingpage__header {
-      padding: 0;
-    }
-
-    .landingpage__header--upper {
-      font-size: 10vh;
-      text-align: center;
-    }
-
-    .landingpage__header--lower {
-      font-size: 10vh;
-      text-align: center;
-    }
-
-    /* 2.2 Mobile about */
-    .landingpage__about {
-      padding: 0;
-      width: 100%;
-    }
-
-    .landingpage__imageframe {
-      position: relative;
-      height: 25vh;
-      z-index: -1;
-    }
-
-    .landingpage__image {
-      display: none;
-    }
-
-    .landingpage__logo {
-      display: none;
-    }
-
-    .landingpage__intro {
-      text-align: center;
-      padding: 0;
-    }
-
-    .landingpage__socials {
-      justify-content: center;
-      margin-top: var(--spacing-padding);
-    }
-
-    .landingpage__link {
-      height: 6vh;
-      margin: 0 0.6rem;
-      position: relative;
-      z-index: 10;
-    }
-
-    /* 2.3 Mobile increments */
-    .landingpage__increments {
-      width: 90vw;
-    }
-
-    .landingpage__data-content {
-      display: none;
-    }
-
-    .landingpage__name {
-      font-size: 3rem;
-      transform: translateY(-9.2rem);
-    }
-
-    .landingpage__mobile-increment-extension {
-      display: block;
-    }
-
-    /* 2.4 Mobile decorations */
-
-      .decoration__object--1 {
-      width: 2.5vw;
-    }
-
-    .decoration__object--2 {
-      width: 4vw;
-    }
-
-    .decoration__object--3 {
-      width: 7vw;
-    }
-
-    .decoration__object--4 {
-      width: 10vw;
-    }
-
-    .decoration__object--5 {
-      width: 15vw;
-    }
-
-    .decoration__object--6 {
-      width: 22vw;
-    }
-
-    .decoration__object--7 {
-      width: 35vw;
-    }
-
-    .decoration__object--8 {
-      width: 50vw;
-    }
-
-    .decoration__object--9 {
-      width: 70vw;
-    }
-
-    .decoration__buffer {
-      width: 7vw;
-    }
-  }
+}
 </style>
