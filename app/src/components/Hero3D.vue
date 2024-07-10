@@ -4,9 +4,8 @@
       <div v-if="showFallback" class="fallback-content">
         <p>3D model is not available on this device.</p>
       </div>
-      <div v-if="!gyroscopePermissionRequested && !showFallback" class="prompt-container">
-        <p class="prompt-text">Please allow access to gyroscope.</p>
-        <button class="prompt-button" @click="requestGyroscopePermission">Allow</button>
+      <div v-else>
+        <!-- Render 3D model -->
       </div>
     </div>
   </section>
@@ -35,11 +34,13 @@ export default {
     this.initThree();
     this.initDeviceOrientation();
     window.addEventListener('resize', this.handleWindowResize);
+    window.addEventListener('mousemove', this.onMouseMove);
   },
   beforeDestroy() {
     this.cleanUp();
     window.removeEventListener('resize', this.handleWindowResize);
     window.removeEventListener('deviceorientation', this.handleDeviceOrientation);
+    window.removeEventListener('mousemove', this.onMouseMove);
   },
   methods: {
     initThree() {
@@ -93,14 +94,15 @@ export default {
       requestAnimationFrame(this.animate);
 
       if (this.model) {
-        // Rotate based on mouse position
-        this.model.rotation.y = this.mouseX * 0.5;
-        this.model.rotation.x = -(this.mouseY * 0.5);
-
-        // Adjust rotation based on device orientation if available
+        // Rotate based on input type
         if (this.deviceOrientationAvailable) {
-          this.model.rotation.y += THREE.MathUtils.degToRad(this.deviceOrientation.gamma);
-          this.model.rotation.x -= THREE.MathUtils.degToRad(this.deviceOrientation.beta);
+          // Adjust rotation based on device orientation
+          this.model.rotation.y = this.mouseX * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.gamma);
+          this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta));
+        } else {
+          // Rotate based on cursor position for desktop
+          this.model.rotation.y = this.mouseX * 0.5;
+          this.model.rotation.x = -(this.mouseY * 0.5);
         }
       }
 
@@ -126,25 +128,10 @@ export default {
     handleDeviceOrientation(event) {
       this.deviceOrientation = event;
     },
-    requestGyroscopePermission() {
-      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-        DeviceOrientationEvent.requestPermission()
-          .then(permissionState => {
-            if (permissionState === 'granted') {
-              this.gyroscopePermissionRequested = true;
-            } else {
-              console.warn('Permission to access gyroscope sensor was denied.');
-              this.showFallback = true;
-            }
-          })
-          .catch(error => {
-            console.error('Error requesting gyroscope permission:', error);
-            this.showFallback = true;
-          });
-      } else {
-        console.warn('DeviceOrientationEvent.requestPermission() is not supported.');
-        this.showFallback = true;
-      }
+    onMouseMove(event) {
+      // Update mouseX and mouseY based on cursor position
+      this.mouseX = (event.offsetX / this.$refs.container.offsetWidth) * 2 - 1;
+      this.mouseY = -(event.offsetY / this.$refs.container.offsetHeight) * 2 + 1;
     },
     cleanUp() {
       if (this.renderer) {
@@ -198,33 +185,6 @@ export default {
   background: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 8px;
-}
-
-.prompt-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.prompt-text {
-  margin-bottom: 10px;
-}
-
-.prompt-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
-}
-
-.prompt-button:hover {
-  background-color: #0056b3;
 }
 
 @media screen and (max-device-width: 767px) {
