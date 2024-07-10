@@ -110,6 +110,7 @@ export default {
           // Adjust rotation based on device orientation with initial rotation for natural phone holding
           this.model.rotation.y = this.mouseX * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.gamma);
           this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4); // Adjust for 45-degree holding
+          this.model.rotation.z = -THREE.MathUtils.degToRad(this.deviceOrientation.alpha); // Adjust for device orientation
         } else {
           // Rotate based on cursor position for desktop
           this.model.rotation.y = this.mouseX * 0.5;
