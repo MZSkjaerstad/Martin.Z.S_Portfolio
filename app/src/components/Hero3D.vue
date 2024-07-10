@@ -166,8 +166,8 @@ export default {
         this.outlinePass.edgeGlow = 0.0;
         this.outlinePass.edgeThickness = 1.0;
         this.outlinePass.pulsePeriod = 0;
-        this.outlinePass.visibleEdgeColor.set('#000000');
-        this.outlinePass.hiddenEdgeColor.set('#000000');
+        this.outlinePass.visibleEdgeColor.set('#000000'); // Black outline color
+        this.outlinePass.hiddenEdgeColor.set('#000000'); // Black hidden outline color
         this.composer.addPass(this.outlinePass);
 
         this.useOutlinePass = true;
