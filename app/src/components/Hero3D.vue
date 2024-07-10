@@ -107,8 +107,8 @@ export default {
       if (this.model) {
         // Rotate based on input type
         if (this.deviceOrientationAvailable) {
-          // Adjust rotation based on device orientation with initial rotation for natural phone holding
-          this.model.rotation.y = THREE.MathUtils.degToRad(this.deviceOrientation.gamma) - Math.PI / 2; // Rotate back 90 degrees clockwise on y-axis
+          // Adjust rotation based on device orientation with initial rotation for flat table orientation
+          this.model.rotation.y = THREE.MathUtils.degToRad(this.deviceOrientation.gamma - 90); // Rotate 90 degrees counterclockwise on y-axis
           this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4); // Invert x-axis rotation
           this.model.rotation.z = THREE.MathUtils.degToRad(this.deviceOrientation.alpha); // Adjust for device orientation
         } else {
