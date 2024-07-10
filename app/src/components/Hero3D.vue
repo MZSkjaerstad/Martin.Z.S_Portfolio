@@ -106,14 +106,26 @@ export default {
       requestAnimationFrame(this.animate);
 
       if (this.model) {
-        // Rotate based on cursor position for desktop
-        this.model.rotation.y = this.mouseX * 0.5;
-        this.model.rotation.x = -(this.mouseY * 0.5);
+        // Rotate based on input type
+        if (this.deviceOrientationAvailable && this.isMobile()) {
+          // Adjust rotation based on device orientation for mobile
+          this.model.rotation.y = -THREE.MathUtils.degToRad(this.deviceOrientation.gamma); // Invert rotation against device movement
+          this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4); // Adjust for 45-degree holding
 
-        // Move model based on cursor position for desktop
-        const moveSpeed = 0.02; // Adjust movement speed for cursor movement
-        this.model.position.x += (this.mouseX - this.model.position.x) * moveSpeed;
-        this.model.position.y += (-this.mouseY - this.model.position.y) * moveSpeed;
+          // Move model based on device orientation for mobile
+          const movementSpeed = 0.01; // Adjust movement speed as needed
+          this.model.position.x += this.deviceOrientation.alpha * movementSpeed;
+          this.model.position.z -= this.deviceOrientation.beta * movementSpeed;
+        } else {
+          // Rotate based on cursor position for desktop
+          this.model.rotation.y = this.mouseX * 0.5;
+          this.model.rotation.x = -(this.mouseY * 0.5);
+
+          // Move model based on cursor position for desktop
+          const moveSpeed = 0.02; // Adjust movement speed for cursor movement
+          this.model.position.x += (this.mouseX - this.model.position.x) * moveSpeed;
+          this.model.position.y += (-this.mouseY - this.model.position.y) * moveSpeed;
+        }
 
         // Render with outline pass if enabled
         if (this.useOutlinePass && this.composer) {
@@ -226,6 +238,7 @@ export default {
   },
 };
 </script>
+
 
 <style>
 .hero-mobile {
