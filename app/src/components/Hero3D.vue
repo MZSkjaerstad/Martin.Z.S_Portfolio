@@ -14,6 +14,9 @@
 <script>
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
 
 export default {
   data() {
@@ -28,6 +31,7 @@ export default {
         beta: 0,
         gamma: 0
       },
+      useOutlinePass: false, // Flag to control whether to use OutlinePass
     };
   },
   mounted() {
@@ -79,6 +83,11 @@ export default {
           this.scene.add(gltf.scene);
           this.model = gltf.scene;
 
+          // Enable outline pass only if not on mobile
+          if (!this.isMobile()) {
+            this.setupOutlinePass();
+          }
+
           // Start rendering loop
           this.animate();
         }, undefined, (error) => {
@@ -106,12 +115,20 @@ export default {
         }
       }
 
-      this.renderer.render(this.scene, this.camera);
+      // Render with outline pass if enabled
+      if (this.useOutlinePass && this.composer) {
+        this.composer.render();
+      } else {
+        this.renderer.render(this.scene, this.camera);
+      }
     },
     handleWindowResize() {
       this.renderer.setSize(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight);
       this.camera.aspect = this.containerAspectRatio();
       this.camera.updateProjectionMatrix();
+      if (this.composer) {
+        this.composer.setSize(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight);
+      }
     },
     containerAspectRatio() {
       return this.$refs.container.offsetWidth / this.$refs.container.offsetHeight;
@@ -132,6 +149,32 @@ export default {
       // Update mouseX and mouseY based on cursor position
       this.mouseX = (event.offsetX / this.$refs.container.offsetWidth) * 2 - 1;
       this.mouseY = -(event.offsetY / this.$refs.container.offsetHeight) * 2 + 1;
+    },
+    isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    },
+    setupOutlinePass() {
+      try {
+        // Set up postprocessing only if not on mobile
+        this.composer = new EffectComposer(this.renderer);
+        const renderPass = new RenderPass(this.scene, this.camera);
+        this.composer.addPass(renderPass);
+
+        // Set up outline pass
+        this.outlinePass = new OutlinePass(new THREE.Vector2(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight), this.scene, this.camera);
+        this.outlinePass.edgeStrength = 3.0;
+        this.outlinePass.edgeGlow = 0.0;
+        this.outlinePass.edgeThickness = 1.0;
+        this.outlinePass.pulsePeriod = 0;
+        this.outlinePass.visibleEdgeColor.set('#000000');
+        this.outlinePass.hiddenEdgeColor.set('#000000');
+        this.composer.addPass(this.outlinePass);
+
+        this.useOutlinePass = true;
+      } catch (error) {
+        console.error('Error setting up outline pass:', error);
+        this.useOutlinePass = false;
+      }
     },
     cleanUp() {
       if (this.renderer) {
@@ -154,6 +197,10 @@ export default {
 
       if (this.model) {
         this.model = null;
+      }
+
+      if (this.composer) {
+        this.composer = null;
       }
     },
   },
