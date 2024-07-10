@@ -32,8 +32,8 @@ export default {
         beta: 0,
         gamma: 0
       },
-      useOutlinePass: false, // Flag to control whether to use OutlinePass
-      showRequestButton: false // Flag to control display of the request button
+      useOutlinePass: false,
+      showRequestButton: false
     };
   },
   mounted() {
@@ -108,9 +108,9 @@ export default {
         // Rotate based on input type
         if (this.deviceOrientationAvailable) {
           // Adjust rotation based on device orientation with initial rotation for natural phone holding
-          this.model.rotation.y = this.mouseX * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.gamma);
-          this.model.rotation.x = -(-(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4)); // Invert x-axis rotation
-          this.model.rotation.z = -THREE.MathUtils.degToRad(this.deviceOrientation.alpha); // Adjust for device orientation
+          this.model.rotation.y = -(this.mouseX * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.gamma));
+          this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4); // Invert x-axis rotation
+          this.model.rotation.z = -THREE.MathUtils.degToRad(this.deviceOrientation.alpha) + Math.PI / 2; // Adjust for device orientation
         } else {
           // Rotate based on cursor position for desktop
           this.model.rotation.y = this.mouseX * 0.5;
