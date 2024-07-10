@@ -91,11 +91,6 @@ export default {
             this.setupOutlinePass();
           }
 
-          // Set initial model position for mobile
-          if (this.isMobile()) {
-            this.model.position.set(0, 0, -2); // Adjust as needed for mobile
-          }
-
           // Start rendering loop
           this.animate();
         }, undefined, (error) => {
@@ -111,45 +106,21 @@ export default {
       requestAnimationFrame(this.animate);
 
       if (this.model) {
-        // Rotate based on input type
-        if (this.deviceOrientationAvailable && this.isMobile()) {
-          // Adjust rotation based on device orientation for mobile
-          this.model.rotation.y = -THREE.MathUtils.degToRad(this.deviceOrientation.gamma); // Invert rotation against device movement
-          this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4); // Adjust for 45-degree holding
+        // Rotate based on cursor position for desktop
+        this.model.rotation.y = this.mouseX * 0.5;
+        this.model.rotation.x = -(this.mouseY * 0.5);
 
-          // Move model based on device orientation for mobile
-          const movementSpeed = 0.002; // Adjust movement speed for device orientation
-          this.model.position.x += this.deviceOrientation.alpha * movementSpeed;
-          this.model.position.y -= this.deviceOrientation.beta * movementSpeed;
-          this.model.position.z += this.deviceOrientation.gamma * movementSpeed;
-        } else if (!this.isMobile()) {
-          // Rotate based on cursor position for desktop
-          this.model.rotation.y = this.mouseX * 0.5;
-          this.model.rotation.x = -(this.mouseY * 0.5);
+        // Move model based on cursor position for desktop
+        const moveSpeed = 0.02; // Adjust movement speed for cursor movement
+        this.model.position.x += (this.mouseX - this.model.position.x) * moveSpeed;
+        this.model.position.y += (-this.mouseY - this.model.position.y) * moveSpeed;
 
-          // Move model based on cursor position for desktop
-          const moveSpeed = 0.02; // Adjust movement speed for cursor movement
-          this.model.position.x += (this.mouseX - this.model.position.x) * moveSpeed;
-          this.model.position.y += (-this.mouseY - this.model.position.y) * moveSpeed;
+        // Render with outline pass if enabled
+        if (this.useOutlinePass && this.composer) {
+          this.composer.render();
+        } else {
+          this.renderer.render(this.scene, this.camera);
         }
-
-        // Limit model movement within viewport bounds
-        if (this.isMobile()) {
-          const maxX = this.$refs.container.offsetWidth / 2;
-          const maxY = this.$refs.container.offsetHeight / 2;
-          const maxZ = 2; // Adjust as needed for mobile
-
-          this.model.position.x = Math.max(-maxX, Math.min(maxX, this.model.position.x));
-          this.model.position.y = Math.max(-maxY, Math.min(maxY, this.model.position.y));
-          this.model.position.z = Math.max(-maxZ, Math.min(maxZ, this.model.position.z));
-        }
-      }
-
-      // Render with outline pass if enabled
-      if (this.useOutlinePass && this.composer) {
-        this.composer.render();
-      } else {
-        this.renderer.render(this.scene, this.camera);
       }
     },
     handleWindowResize() {
@@ -255,8 +226,6 @@ export default {
   },
 };
 </script>
-
-
 
 <style>
 .hero-mobile {
