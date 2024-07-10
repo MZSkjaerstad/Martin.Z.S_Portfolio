@@ -17,6 +17,8 @@ export default {
     return {
       mouseX: 0, // Default value for mouseX
       mouseY: 0, // Default value for mouseY
+      gamma: 0, // Default value for gamma (rotation around z axis)
+      beta: 0,  // Default value for beta (rotation around x axis)
     };
   },
   mounted() {
@@ -95,19 +97,43 @@ export default {
 
     // Listen to window resize events
     window.addEventListener('resize', this.handleWindowResize);
+
+    // Listen to device orientation events if supported
+    if (window.DeviceOrientationEvent) {
+      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        DeviceOrientationEvent.requestPermission()
+          .then(permissionState => {
+            if (permissionState === 'granted') {
+              window.addEventListener('deviceorientation', this.handleDeviceOrientation);
+            }
+          })
+          .catch(console.error);
+      } else {
+        // handle non-iOS 13+ devices
+        window.addEventListener('deviceorientation', this.handleDeviceOrientation);
+      }
+    }
   },
   beforeDestroy() {
     // Clean up event listener on component destruction
     window.removeEventListener('resize', this.handleWindowResize);
+    if (window.DeviceOrientationEvent) {
+      window.removeEventListener('deviceorientation', this.handleDeviceOrientation);
+    }
   },
   methods: {
     animate() {
       requestAnimationFrame(this.animate);
 
-      // Rotate the model based on mouse position (or default values if undefined)
+      // Rotate the model based on mouse or gyroscope position
       if (this.model) {
-        this.model.rotation.y = this.mouseX * 0.5 || 0; // Use default 0 if undefined
-        this.model.rotation.x = -(this.mouseY * 0.5 || 0); // Use default 0 if undefined
+        if (this.isMobileDevice()) {
+          this.model.rotation.y = this.gamma * 0.005; // Adjust the sensitivity as needed
+          this.model.rotation.x = this.beta * 0.005;  // Adjust the sensitivity as needed
+        } else {
+          this.model.rotation.y = this.mouseX * 0.5 || 0; // Use default 0 if undefined
+          this.model.rotation.x = -(this.mouseY * 0.5 || 0); // Use default 0 if undefined
+        }
 
         // Move the camera based on mouse position (or default values if undefined)
         this.camera.position.x = this.mouseX * 0.4 || 0; // Use default 0 if undefined
@@ -127,9 +153,18 @@ export default {
       return this.$refs.container.offsetWidth / this.$refs.container.offsetHeight;
     },
     onMouseMove(event) {
-      // Calculate normalized mouse position within the container (-1 to 1)
-      this.mouseX = (event.offsetX / this.$refs.container.offsetWidth) * 2 - 1;
-      this.mouseY = -(event.offsetY / this.$refs.container.offsetHeight) * 2 + 1;
+      if (!this.isMobileDevice()) {
+        // Calculate normalized mouse position within the container (-1 to 1)
+        this.mouseX = (event.offsetX / this.$refs.container.offsetWidth) * 2 - 1;
+        this.mouseY = -(event.offsetY / this.$refs.container.offsetHeight) * 2 + 1;
+      }
+    },
+    handleDeviceOrientation(event) {
+      this.gamma = event.gamma; // Rotation around z axis
+      this.beta = event.beta;   // Rotation around x axis
+    },
+    isMobileDevice() {
+      return /Mobi|Android/i.test(navigator.userAgent);
     }
   },
 };
@@ -149,11 +184,5 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-@media screen and (max-device-width: 767px) { 
-  .hero {
-    display: none;
-  }
 }
 </style>

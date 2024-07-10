@@ -84,9 +84,9 @@ export default {
 
     // Set up outline pass
     this.outlinePass = new OutlinePass(new THREE.Vector2(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight), this.scene, this.camera);
-    this.outlinePass.edgeStrength = 10.0; // Adjust edge strength for outline thickness
+    this.outlinePass.edgeStrength = 3.0; // Adjust edge strength for outline thickness
     this.outlinePass.edgeGlow = 0.0;
-    this.outlinePass.edgeThickness = 3.0; // Adjust edge thickness for outline thickness
+    this.outlinePass.edgeThickness = 1.0; // Adjust edge thickness for outline thickness
     this.outlinePass.pulsePeriod = 0;
     this.outlinePass.visibleEdgeColor.set('#000000'); // Outline color
     this.outlinePass.hiddenEdgeColor.set('#000000'); // Hidden outline color
@@ -100,7 +100,18 @@ export default {
 
     // Listen to device orientation events if supported
     if (window.DeviceOrientationEvent) {
-      window.addEventListener('deviceorientation', this.handleDeviceOrientation);
+      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        DeviceOrientationEvent.requestPermission()
+          .then(permissionState => {
+            if (permissionState === 'granted') {
+              window.addEventListener('deviceorientation', this.handleDeviceOrientation);
+            }
+          })
+          .catch(console.error);
+      } else {
+        // handle non-iOS 13+ devices
+        window.addEventListener('deviceorientation', this.handleDeviceOrientation);
+      }
     }
   },
   beforeDestroy() {
@@ -161,7 +172,6 @@ export default {
 
 <style>
 .hero-mobile {
-  display: none;
   width: 100%;
   height: 100vh;
   overflow: hidden;
