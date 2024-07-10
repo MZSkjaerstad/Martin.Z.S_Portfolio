@@ -5,6 +5,7 @@
         <p>3D model is not available on this device.</p>
       </div>
       <div v-else>
+        <button v-if="showRequestButton" class="request-button" @click="requestDeviceOrientationPermission">Enable Device Orientation</button>
         <!-- Render 3D model -->
       </div>
     </div>
@@ -32,6 +33,7 @@ export default {
         gamma: 0
       },
       useOutlinePass: false, // Flag to control whether to use OutlinePass
+      showRequestButton: false // Flag to control display of the request button
     };
   },
   mounted() {
@@ -135,11 +137,30 @@ export default {
     },
     initDeviceOrientation() {
       if (window.DeviceOrientationEvent) {
-        window.addEventListener('deviceorientation', this.handleDeviceOrientation);
-        this.deviceOrientationAvailable = true;
+        // Show request button on mobile devices
+        this.showRequestButton = true;
       } else {
         console.warn('Device orientation not supported on this device.');
         this.deviceOrientationAvailable = false;
+        this.showFallback = true;
+      }
+    },
+    requestDeviceOrientationPermission() {
+      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        DeviceOrientationEvent.requestPermission().then((permissionState) => {
+          if (permissionState === 'granted') {
+            this.deviceOrientationAvailable = true;
+            window.addEventListener('deviceorientation', this.handleDeviceOrientation);
+            this.showRequestButton = false;
+          } else {
+            this.showFallback = true;
+          }
+        }).catch(console.error);
+      } else {
+        // Handle browsers that do not require permission
+        window.addEventListener('deviceorientation', this.handleDeviceOrientation);
+        this.deviceOrientationAvailable = true;
+        this.showRequestButton = false;
       }
     },
     handleDeviceOrientation(event) {
@@ -215,6 +236,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .hero-mobile__threeDContainer {
@@ -223,15 +245,24 @@ export default {
   height: 100%;
 }
 
-.fallback-content {
+.fallback-content, .request-button {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   color: #333;
   background: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 8px;
+}
+
+.request-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 @media screen and (max-device-width: 767px) {
