@@ -1,10 +1,11 @@
 <template>
   <section class="hero-mobile">
     <div ref="container" class="hero-mobile__threeDContainer">
-      <div v-if="showFallback" class="fallback-content">
+      <div v-if="showFallback && isMobile()" class="fallback-content">
         <p>3D model is not available on this device.</p>
       </div>
       <div v-else>
+        <!-- Only show request button on mobile -->
         <button v-if="showRequestButton" class="request-button" @click="requestDeviceOrientationPermission">Enable Device Orientation</button>
         <!-- Render 3D model -->
       </div>
@@ -32,8 +33,8 @@ export default {
         beta: 0,
         gamma: 0
       },
-      useOutlinePass: false,
-      showRequestButton: false
+      useOutlinePass: false, // Flag to control whether to use OutlinePass
+      showRequestButton: false // Flag to control display of the request button
     };
   },
   mounted() {
@@ -106,14 +107,13 @@ export default {
 
       if (this.model) {
         // Rotate based on input type
-        if (this.deviceOrientationAvailable) {
-          // Adjust rotation based on device orientation with initial rotation for flat table orientation
-          this.model.rotation.y = THREE.MathUtils.degToRad(this.deviceOrientation.gamma - 90); // Rotate 90 degrees counterclockwise on y-axis
-          this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4); // Invert x-axis rotation
-          this.model.rotation.z = THREE.MathUtils.degToRad(this.deviceOrientation.alpha); // Adjust for device orientation
+        if (this.deviceOrientationAvailable && this.isMobile()) {
+          // Adjust rotation based on device orientation with initial rotation for natural phone holding
+          this.model.rotation.y = this.mouseX * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.gamma);
+          this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4); // Adjust for 45-degree holding
         } else {
-          // Rotate based on cursor position for desktop
-          this.model.rotation.y = this.mouseX * 0.5 - Math.PI / 2; // Rotate back 90 degrees clockwise on y-axis
+          // Rotate based on cursor position for desktop or non-mobile
+          this.model.rotation.y = this.mouseX * 0.5;
           this.model.rotation.x = -(this.mouseY * 0.5);
         }
       }
@@ -137,11 +137,11 @@ export default {
       return this.$refs.container.offsetWidth / this.$refs.container.offsetHeight;
     },
     initDeviceOrientation() {
-      if (window.DeviceOrientationEvent) {
-        // Show request button on mobile devices
+      if (window.DeviceOrientationEvent && this.isMobile()) {
+        // Show request button only on mobile devices
         this.showRequestButton = true;
       } else {
-        console.warn('Device orientation not supported on this device.');
+        console.warn('Device orientation not supported on this device or not mobile.');
         this.deviceOrientationAvailable = false;
         this.showFallback = true;
       }
@@ -246,7 +246,7 @@ export default {
   height: 100%;
 }
 
-.fallback-content, .request-button {
+.fallback-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -256,14 +256,15 @@ export default {
   background: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .request-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
+  background: #007bff;
+  color: #fff;
   padding: 10px 20px;
+  font-size: 16px;
+  border: none;
   border-radius: 4px;
   cursor: pointer;
 }
