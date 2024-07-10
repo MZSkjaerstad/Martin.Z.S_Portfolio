@@ -147,6 +147,8 @@ export default {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-mobile__threeDContainer {
@@ -161,11 +163,5 @@ export default {
 .fallback-content {
   text-align: center;
   color: #333;
-}
-
-@media screen and (max-device-width: 767px) {
-  .hero-mobile {
-    display: block;
-  }
 }
 </style>
