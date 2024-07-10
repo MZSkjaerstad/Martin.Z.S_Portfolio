@@ -1,12 +1,12 @@
 <template>
   <section class="hero-mobile">
     <div ref="container" class="hero-mobile__threeDContainer">
-      <div v-if="showFallback && isMobile()" class="fallback-content">
+      <div v-if="showFallback && isMobile()" class="hero-mobile__fallback-content">
         <p>3D model is not available on this device.</p>
       </div>
       <div v-else>
         <!-- Only show request button on mobile -->
-        <button v-if="showRequestButton" class="request-button" @click="requestDeviceOrientationPermission">Enable Device Orientation</button>
+        <button v-if="showRequestButton" class="hero-mobile__request-button" @click="requestDeviceOrientationPermission">Enable Device Orientation</button>
         <!-- Render 3D model -->
       </div>
     </div>
@@ -111,10 +111,20 @@ export default {
           // Adjust rotation based on device orientation
           this.model.rotation.y = -THREE.MathUtils.degToRad(this.deviceOrientation.gamma); // Invert rotation against device movement
           this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4); // Adjust for 45-degree holding
+
+          // Move model based on device orientation
+          const movementSpeed = 0.01; // Adjust movement speed as needed
+          this.model.position.x += this.deviceOrientation.alpha * movementSpeed;
+          this.model.position.z -= this.deviceOrientation.beta * movementSpeed;
         } else {
           // Rotate based on cursor position for desktop
           this.model.rotation.y = this.mouseX * 0.5;
           this.model.rotation.x = -(this.mouseY * 0.5);
+
+          // Move model based on cursor position
+          const moveSpeed = 0.1; // Adjust movement speed as needed
+          this.model.position.x += (this.mouseX - this.model.position.x) * moveSpeed;
+          this.model.position.y += (-this.mouseY - this.model.position.y) * moveSpeed;
         }
       }
 
@@ -125,6 +135,8 @@ export default {
         this.renderer.render(this.scene, this.camera);
       }
     },
+
+
 
     handleWindowResize() {
       this.renderer.setSize(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight);
@@ -247,7 +259,7 @@ export default {
   height: 100%;
 }
 
-.fallback-content {
+.hero-mobile__fallback-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -260,7 +272,7 @@ export default {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.request-button {
+.hero-mobile__request-button {
   position: absolute;
   top: 50%;
   left: 50%;
