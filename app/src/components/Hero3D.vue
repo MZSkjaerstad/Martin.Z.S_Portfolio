@@ -1,6 +1,6 @@
 <template>
   <section class="hero-mobile">
-    <div ref="container" class="hero-mobile__threeDContainer">
+    <div ref="container" class="hero-mobile__threeDContainer" @mousemove="onMouseMove">
       <div v-if="showFallback" class="fallback-content">
         <p>3D model is not available on this device.</p>
       </div>
@@ -15,6 +15,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 export default {
   data() {
     return {
+      mouseX: 0,
+      mouseY: 0,
       showFallback: false,
     };
   },
@@ -78,7 +80,8 @@ export default {
       requestAnimationFrame(this.animate);
 
       if (this.model) {
-        this.model.rotation.y += 0.01;
+        this.model.rotation.y = this.mouseX * 0.5;
+        this.model.rotation.x = -(this.mouseY * 0.5);
       }
 
       this.renderer.render(this.scene, this.camera);
@@ -90,6 +93,10 @@ export default {
     },
     containerAspectRatio() {
       return this.$refs.container.offsetWidth / this.$refs.container.offsetHeight;
+    },
+    onMouseMove(event) {
+      this.mouseX = (event.offsetX / this.$refs.container.offsetWidth) * 2 - 1;
+      this.mouseY = -(event.offsetY / this.$refs.container.offsetHeight) * 2 + 1;
     },
     cleanUp() {
       if (this.renderer) {
