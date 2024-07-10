@@ -107,9 +107,9 @@ export default {
       if (this.model) {
         // Rotate based on input type
         if (this.deviceOrientationAvailable) {
-          // Adjust rotation based on device orientation
+          // Adjust rotation based on device orientation with initial rotation for natural phone holding
           this.model.rotation.y = this.mouseX * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.gamma);
-          this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta));
+          this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4); // Adjust for 45-degree holding
         } else {
           // Rotate based on cursor position for desktop
           this.model.rotation.y = this.mouseX * 0.5;
@@ -255,9 +255,12 @@ export default {
   background: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .request-button {
+  background: #007bff;
+  color: #fff;
   padding: 10px 20px;
   font-size: 16px;
   border: none;
