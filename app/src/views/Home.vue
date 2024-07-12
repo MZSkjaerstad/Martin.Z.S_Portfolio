@@ -13,7 +13,6 @@
 
 <script>
    import Hero3D from '../components/Hero3D.vue'
-   import HeroMobile from '../components/HeroMobile.vue'
    import Loading from '../components/Loading.vue'
    import ProjectsOverview from '../components/ProjectsOverview.vue'
    import viewMixin from '../mixins/viewMixin.js'
@@ -22,7 +21,6 @@
    export default {
       components: {
          Hero3D,
-         HeroMobile,
          Loading,
          ProjectsOverview,
       },
