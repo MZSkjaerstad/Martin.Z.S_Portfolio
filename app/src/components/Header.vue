@@ -198,5 +198,10 @@ export default {
     width: 4rem;
     height: 4rem;
   }
+
+  .header__burger-button:hover svg {
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out;
+}
 }
 </style>
