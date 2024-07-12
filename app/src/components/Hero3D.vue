@@ -115,6 +115,12 @@ export default {
   },
   methods: {
     initThree() {
+      if (!this.$refs.container) {
+        console.error('Error: Container reference is not defined.');
+        this.showFallback = true;
+        return;
+      }
+
       try {
         // Initialize WebGL renderer with alpha and antialias
         this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -167,6 +173,7 @@ export default {
       }
     },
     animate() {
+      if (!this.renderer || !this.scene || !this.camera) return;
       requestAnimationFrame(this.animate);
 
       if (this.model) {
@@ -191,6 +198,7 @@ export default {
     },
 
     handleWindowResize() {
+      if (!this.$refs.container) return;
       this.renderer.setSize(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight);
       this.camera.aspect = this.containerAspectRatio();
       this.camera.updateProjectionMatrix();
@@ -199,6 +207,7 @@ export default {
       }
     },
     containerAspectRatio() {
+      if (!this.$refs.container) return 1;
       return this.$refs.container.offsetWidth / this.$refs.container.offsetHeight;
     },
     initDeviceOrientation() {
@@ -233,6 +242,7 @@ export default {
       this.deviceOrientation = event;
     },
     onMouseMove(event) {
+      if (!this.$refs.container) return;
       // Update mouseX and mouseY based on cursor position
       this.mouseX = (event.offsetX / this.$refs.container.offsetWidth) * 2 - 1;
       this.mouseY = -(event.offsetY / this.$refs.container.offsetHeight) * 2 + 1;
@@ -241,6 +251,7 @@ export default {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     },
     setupOutlinePass() {
+      if (!this.$refs.container) return;
       try {
         // Set up postprocessing only if not on mobile
         this.composer = new EffectComposer(this.renderer);
