@@ -178,6 +178,10 @@ export default {
           this.scene.add(gltf.scene);
           this.model = gltf.scene;
 
+          if (this.isMobile()) {
+            this.model.position.y = 0.6; // Adjust this value as needed for mobile
+          }
+
           // Enable outline pass only if not on mobile
           if (!this.isMobile()) {
             this.setupOutlinePass();
@@ -348,7 +352,7 @@ export default {
 
 .hero__fallback-content {
   position: absolute;
-  top: 50%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -361,7 +365,7 @@ export default {
 
 .hero__request-button {
   position: absolute;
-  top: 50%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: var(--primary-color-tr-semi);
@@ -435,7 +439,6 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: var(--spacing-medium);
 }
 
 .hero__display--mobile .hero__portfolio-hook  {
