@@ -277,6 +277,11 @@
     color: var(--tetriary-color);
   }
 
+  .intro__year {
+    color: var(--secondary-color);
+    -webkit-text-stroke: 1.6px var(--tetriary-color);
+  }
+
   .intro__tagscontainer {
     width: 80%;
   }
@@ -467,11 +472,13 @@
   }
 
   .intro__tags {
-    margin: 0.1em 0em 0.5em 0.5em;
+    margin: 0.1em 0.5em 0.5em 0em;
   }
 
   .intro__year {
     font-size: 6rem;
+    color: var(--secondary-color);
+    -webkit-text-stroke: 3.6px var(--tetriary-color);
   }
 
   .intro__description {
@@ -490,7 +497,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: var(--spacing-medium) 0 0 0;
+    padding: 0 0 0 0;
   }
 
   .intro__contributors-title {
