@@ -183,7 +183,7 @@ export default {
           this.model = gltf.scene;
 
           if (this.isMobile()) {
-            this.model.position.y = 0.6; // Adjust this value as needed for mobile
+            this.model.position.y = 0.9; // Adjust this value as needed for mobile
           }
 
           // Enable outline pass only if not on mobile
@@ -390,7 +390,7 @@ export default {
 
 .hero__request-button {
   position: absolute;
-  top: 42%;
+  top: 38%;
   left: 50%;
   opacity: 0;
   transform: translate(-50%, -50%);

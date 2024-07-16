@@ -45,4 +45,10 @@
   width: 100%;
   object-fit: cover;
 }
+
+@media screen and (max-device-width: 767px) {
+  .background__container {
+    height: 90vh;
+  }
+}
 </style>
