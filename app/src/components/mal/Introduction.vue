@@ -65,6 +65,7 @@
         </p>
       </div>
 
+      <div class="intro__divider--mobile"></div>
 
       <h3 class="intro__description"> {{introductionData.description}} </h3>
 
