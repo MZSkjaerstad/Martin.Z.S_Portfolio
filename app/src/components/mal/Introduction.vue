@@ -51,6 +51,8 @@
     </div>
 
     <div class="intro__content">
+      <div class="intro__divider--mobile"></div>
+
       <div class="content__info">
         <div class="intro__tagscontainer">
               <p class="intro__tags" v-for="tag in introductionData.tags">
@@ -266,6 +268,10 @@
     padding: 0 0 var(--spacing-medium) 0;
   }
 
+  .intro__divider--mobile {
+    display: none;
+  }
+
   .content__info {
     display: flex;
     justify-content: space-between;
@@ -445,7 +451,7 @@
     font-size: 8rem;
     -webkit-text-stroke: 3.6px black;
     mix-blend-mode: normal;
-    margin: 6rem 0 0 0;
+    margin: 2rem 0 0 0;
   }
 
   .intro__title-spacer {
@@ -466,6 +472,14 @@
     justify-content: space-evenly;
   }
 
+  .intro__divider--mobile {
+    display: block;
+    width: var(--increment-medium);
+    border-bottom: var(--increment-style);
+    border-color: var(--tetriary-color);
+    margin: var(--spacing-medium) 0;
+  }
+
   .intro__tagscontainer {
     margin-top: var(--spacing-small);
     font-size: 3rem;
@@ -477,6 +491,8 @@
 
   .intro__year {
     font-size: 6rem;
+    padding: 0;
+    line-height: 6rem;
     color: var(--secondary-color);
     -webkit-text-stroke: 3.6px var(--tetriary-color);
   }
