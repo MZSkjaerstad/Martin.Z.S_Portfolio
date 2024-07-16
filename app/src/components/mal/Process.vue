@@ -166,6 +166,7 @@ export default {
 }
 
 .process__section-content {
+  font-size: var(--font-size-body);
   max-width: 90ch;
   line-height: 150%;
 }
@@ -222,7 +223,9 @@ export default {
   }
 
   .process__intro {
-    font-size: var(--font-size-body)
+    font-size: var(--font-size-body);
+    max-width: 90ch;
+    line-height: 150%;
   }
 
   .process__initials{
