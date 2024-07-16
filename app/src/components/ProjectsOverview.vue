@@ -1,6 +1,7 @@
 <template>
   <section class="projects">
     <div class="projects__decoration">
+
       <div class="decoration__increment">
         <div class="decoration__object decoration__object--1"></div>
       </div>

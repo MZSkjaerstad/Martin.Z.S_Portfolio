@@ -17,6 +17,19 @@
   opacity: 0.9;
   z-index: -2;
   overflow: visible;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .background__container {

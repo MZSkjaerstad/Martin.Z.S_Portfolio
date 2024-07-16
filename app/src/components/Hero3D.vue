@@ -85,15 +85,19 @@
           <div class="hero__bottom-controllers">
             <p class="hero__portfolio-hook">Projects below</p>
 
-            <router-link :to="'/about-me'">
-              <button class="hero__mobile-button"> About me</button>
-            </router-link>
+            <div class="hero__increment">
+              <div class="hero__object hero__object--1"></div>
+            </div>
+
+            <div class="hero__increment">
+              <div class="hero__object hero__object--2"></div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="hero__display--desktop" v-else>
-        <p>About me</p>
+        <p>Desktop version</p>
       </div>
     </div>
   </section>
@@ -350,6 +354,27 @@ export default {
   height: 100%;
 }
 
+.hero__threeDContainer canvas {
+  animation: fadeInLogo ease 0.8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  transform-origin: center;
+}
+
+@keyframes fadeInLogo {
+    0% {
+        opacity: 0;
+        transform: scale(0.95)
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1)
+
+    }
+}
+
+
+
 .hero__fallback-content {
   position: absolute;
   top: 42%;
@@ -367,6 +392,7 @@ export default {
   position: absolute;
   top: 42%;
   left: 50%;
+  opacity: 0;
   transform: translate(-50%, -50%);
   background: var(--primary-color-tr-semi);
   color: var(--tetriary-color);
@@ -375,6 +401,21 @@ export default {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  animation: fadeInButton ease-in-out 0.6s;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  transform-origin: center;
+  z-index: 30;
+}
+
+@keyframes fadeInButton {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
 }
 
 /* Display */
@@ -396,7 +437,7 @@ export default {
 .hero__display--mobile {
   height: 100%;
   width: 100%;
-  padding: var(--spacing-medium) 5%;
+  padding: var(--spacing-medium) 5% 0 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -437,13 +478,13 @@ export default {
 
 .hero__bottom-controllers {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 
 .hero__display--mobile .hero__portfolio-hook  {
   font-size: var(--font-size-data);
   font-style: italic;
+  margin-bottom: 5vh;
 }
 
 .hero__display--mobile .hero__mobile-button {
@@ -460,4 +501,29 @@ export default {
   padding: var(--spacing-padding);
   mix-blend-mode: difference;
 }
+
+/* Increments */
+
+.hero__increment {
+    width: 100%;
+    height: 0px;
+    margin-bottom: 5vh;
+  }
+
+  .hero__object {
+    border-top: var(--increment-style);
+    border-color: var(--tetriary-color)
+  }
+
+  .hero__object--1 {
+    width: 0.6rem;
+  }
+
+  .hero__object--2 {
+    width: 0.8rem;
+  }
+
+  .hero__object--3 {
+    width: 1.4rem;
+  }
 </style>
