@@ -498,19 +498,21 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 0 0 0 0;
+    margin-bottom: var(--spacing-medium);
   }
 
   .intro__contributors-title {
-    font-size: 3rem;
+    font-size: var(--font-size-data);
     margin-bottom: var(--spacing-small);
   }
 
   .intro__assets--defined {
     padding: 0 0 0 0;
+    margin-bottom: var(--spacing-medium);
   }
 
   .intro__asset-title {
-    font-size: 3rem;
+    font-size: var(--font-size-data);
     margin-bottom: var(--spacing-small);
   }
 
@@ -522,6 +524,11 @@
     width: 10rem;
     height: 10rem;
     margin: 0 1.5rem;
+  }
+
+  .intro__customers-title {
+    font-size: var(--font-size-data);
+    margin-bottom: var(--spacing-small);
   }
 
   .intro__link-icon {
