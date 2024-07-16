@@ -216,8 +216,13 @@ export default {
     width: 100%;
   }
 
-  .process__subtitle{
+  .process__subtitle {
     font-size: var(--font-size-title-medium);
+    -webkit-text-stroke: 3.6px black;
+  }
+
+  .process__intro {
+    font-size: var(--font-size-body)
   }
 
   .process__initials{
