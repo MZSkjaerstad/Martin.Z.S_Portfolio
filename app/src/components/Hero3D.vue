@@ -71,34 +71,9 @@
     </div>
 
     <div class="hero__display">
-      <div class="hero__display--mobile" v-if="isMobile()">
-        <div class="hero__top"></div>
+      <HeroDisplayMobile v-if="isMobile()" />
 
-
-        <div class="hero__bottom">
-          <div class="hero__full-name">
-            <h3 class="hero__name">Martin Z. Skjærstad</h3>
-
-            <div class="hero__title">Graphic Designer &amp; Frontend Developer</div>
-          </div>
-
-          <div class="hero__bottom-controllers">
-            <p class="hero__portfolio-hook">Projects below</p>
-
-            <div class="hero__increment">
-              <div class="hero__object hero__object--1"></div>
-            </div>
-
-            <div class="hero__increment">
-              <div class="hero__object hero__object--2"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__display--desktop" v-else>
-        <p>Desktop version</p>
-      </div>
+      <HeroDisplayDesktop :socials="socials" v-else @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" />
     </div>
   </section>
 </template>
@@ -106,9 +81,9 @@
 <script>
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
+import HeroDisplayMobile from './HeroDisplayMobile.vue';
+import HeroDisplayDesktop from './HeroDisplayDesktop.vue';
+import TWEEN, { Tween, Easing } from '@tweenjs/tween.js';
 
 export default {
   data() {
@@ -123,21 +98,23 @@ export default {
         beta: 0,
         gamma: 0
       },
-      useOutlinePass: false, // Flag to control whether to use OutlinePass
-      showRequestButton: false // Flag to control display of the request button
+      showRequestButton: false,
+      originalColor: new THREE.Color(0xffffff),
+      hoverColor: new THREE.Color(0x0a0a0a),
+      model: null // Reference to the loaded 3D model
     };
   },
   mounted() {
     this.initThree();
     this.initDeviceOrientation();
     window.addEventListener('resize', this.handleWindowResize);
-    window.addEventListener('mousemove', this.onMouseMove);
+    document.addEventListener('mousemove', this.onMouseMove);
   },
   beforeDestroy() {
     this.cleanUp();
     window.removeEventListener('resize', this.handleWindowResize);
     window.removeEventListener('deviceorientation', this.handleDeviceOrientation);
-    window.removeEventListener('mousemove', this.onMouseMove);
+    document.removeEventListener('mousemove', this.onMouseMove);
   },
   methods: {
     initThree() {
@@ -148,29 +125,23 @@ export default {
       }
 
       try {
-        // Initialize WebGL renderer with alpha and antialias
         this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
         this.renderer.setSize(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight);
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.$refs.container.appendChild(this.renderer.domElement);
 
-        // Initialize scene
         this.scene = new THREE.Scene();
 
-        // Add ambient light to the scene
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         this.scene.add(ambientLight);
 
-        // Add directional light to the scene
         const dirLight = new THREE.DirectionalLight(0xffffff, 1);
         dirLight.position.set(0, 1, 0);
         this.scene.add(dirLight);
 
-        // Initialize camera
         this.camera = new THREE.PerspectiveCamera(75, this.containerAspectRatio(), 0.1, 1000);
         this.camera.position.z = 5;
 
-        // Load the model
         const loader = new GLTFLoader();
         loader.load('/visual_identity/3D/logoOutline.glb', (gltf) => {
           if (!gltf.scene) {
@@ -183,15 +154,16 @@ export default {
           this.model = gltf.scene;
 
           if (this.isMobile()) {
-            this.model.position.y = 0.9; // Adjust this value as needed for mobile
+            this.model.position.y = 0.9;
           }
 
-          // Enable outline pass only if not on mobile
-          if (!this.isMobile()) {
-            this.setupOutlinePass();
-          }
+          // Save the original color
+          this.model.traverse((child) => {
+            if (child.isMesh) {
+              child.material.originalColor = child.material.color.clone();
+            }
+          });
 
-          // Start rendering loop
           this.animate();
         }, undefined, (error) => {
           console.error('Error loading GLTF model:', error);
@@ -207,24 +179,29 @@ export default {
       requestAnimationFrame(this.animate);
 
       if (this.model) {
-        // Rotate based on input type
+        if (!this.isMobile()) {
+          // Inverted movement based on mouseX and mouseY for desktop with easing
+          const targetX = -this.mouseX * 0.3;
+          const targetY = -this.mouseY * 0.3;
+
+          // Use tween.js for easing
+          new TWEEN.Tween(this.model.position)
+            .to({ x: targetX, y: targetY }, 500)  // Adjust duration as needed (500ms in this case)
+            .easing(TWEEN.Easing.Quadratic.Out)   // Use Quadratic easing for smooth transition
+            .start();
+        }
+
         if (this.deviceOrientationAvailable) {
-          // Adjust rotation based on device orientation
-          this.model.rotation.y = -THREE.MathUtils.degToRad(this.deviceOrientation.gamma); // Invert rotation against device movement
-          this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4); // Adjust for 45-degree holding
+          this.model.rotation.y = -THREE.MathUtils.degToRad(this.deviceOrientation.gamma);
+          this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4);
         } else {
-          // Rotate based on cursor position for desktop
           this.model.rotation.y = this.mouseX * 0.5;
           this.model.rotation.x = -(this.mouseY * 0.5);
         }
       }
 
-      // Render with outline pass if enabled
-      if (this.useOutlinePass && this.composer) {
-        this.composer.render();
-      } else {
-        this.renderer.render(this.scene, this.camera);
-      }
+      TWEEN.update();
+      this.renderer.render(this.scene, this.camera);
     },
 
     handleWindowResize() {
@@ -232,9 +209,6 @@ export default {
       this.renderer.setSize(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight);
       this.camera.aspect = this.containerAspectRatio();
       this.camera.updateProjectionMatrix();
-      if (this.composer) {
-        this.composer.setSize(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight);
-      }
     },
     containerAspectRatio() {
       if (!this.$refs.container) return 1;
@@ -242,7 +216,6 @@ export default {
     },
     initDeviceOrientation() {
       if (window.DeviceOrientationEvent && this.isMobile()) {
-        // Show request button only on mobile devices
         this.showRequestButton = true;
       } else {
         console.warn('Device orientation not supported on this device or not mobile.');
@@ -262,7 +235,6 @@ export default {
           }
         }).catch(console.error);
       } else {
-        // Handle browsers that do not require permission
         window.addEventListener('deviceorientation', this.handleDeviceOrientation);
         this.deviceOrientationAvailable = true;
         this.showRequestButton = false;
@@ -273,36 +245,35 @@ export default {
     },
     onMouseMove(event) {
       if (!this.$refs.container) return;
-      // Update mouseX and mouseY based on cursor position
-      this.mouseX = (event.offsetX / this.$refs.container.offsetWidth) * 2 - 1;
-      this.mouseY = -(event.offsetY / this.$refs.container.offsetHeight) * 2 + 1;
+      this.mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      this.mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    },
+    onMouseEnter() {
+      this.tweenModelColor(this.hoverColor);
+    },
+    onMouseLeave() {
+      this.tweenModelColor(this.originalColor);
+    },
+    onHoverStart() {
+      this.tweenModelColor(this.hoverColor);
+    },
+    onHoverEnd() {
+      this.tweenModelColor(this.originalColor);
+    },
+    tweenModelColor(color) {
+      if (this.model) {
+        this.model.traverse((child) => {
+          if (child.isMesh) {
+            new Tween(child.material.color)
+              .to({ r: color.r, g: color.g, b: color.b }, 500)
+              .easing(Easing.Quadratic.InOut)
+              .start();
+          }
+        });
+      }
     },
     isMobile() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    },
-    setupOutlinePass() {
-      if (!this.$refs.container) return;
-      try {
-        // Set up postprocessing only if not on mobile
-        this.composer = new EffectComposer(this.renderer);
-        const renderPass = new RenderPass(this.scene, this.camera);
-        this.composer.addPass(renderPass);
-
-        // Set up outline pass
-        this.outlinePass = new OutlinePass(new THREE.Vector2(this.$refs.container.offsetWidth, this.$refs.container.offsetHeight), this.scene, this.camera);
-        this.outlinePass.edgeStrength = 3.0;
-        this.outlinePass.edgeGlow = 0.0;
-        this.outlinePass.edgeThickness = 1.0;
-        this.outlinePass.pulsePeriod = 0;
-        this.outlinePass.visibleEdgeColor.set('#000000'); // Black outline color
-        this.outlinePass.hiddenEdgeColor.set('#000000'); // Black hidden outline color
-        this.composer.addPass(this.outlinePass);
-
-        this.useOutlinePass = true;
-      } catch (error) {
-        console.error('Error setting up outline pass:', error);
-        this.useOutlinePass = false;
-      }
     },
     cleanUp() {
       if (this.renderer) {
@@ -326,12 +297,15 @@ export default {
       if (this.model) {
         this.model = null;
       }
-
-      if (this.composer) {
-        this.composer = null;
-      }
     },
   },
+  components: {
+    HeroDisplayMobile,
+    HeroDisplayDesktop,
+  },
+  props: {
+    socials: Array,
+  }
 };
 </script>
 
@@ -372,8 +346,6 @@ export default {
 
     }
 }
-
-
 
 .hero__fallback-content {
   position: absolute;
@@ -425,105 +397,4 @@ export default {
   width: 100%;
   color: var(--tetriary-color);
 }
-
-/* Desktop */
-
-.hero__display--desktop {
-  padding: var(--spacing-small) 7% 2% 7%;
-}
-
-/* Mobile */
-
-.hero__display--mobile {
-  height: 100%;
-  width: 100%;
-  padding: var(--spacing-medium) 5% 0 5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.hero__display--mobile .hero__full-name {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: var(--spacing-large);
-}
-
-.hero__display--mobile .hero__name {
-  color: var(--tetriary-color);
-  font-style: italic;
-}
-
-.hero__display--mobile .hero__title {
-  margin-top: var(--spacing-padding);
-  color: var(--tetriary-color);
-  font-style: italic;
-}
-
-.hero__display--mobile .hero__bottom {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.hero__display--mobile .hero__divider {
-  border-bottom: var(--increment-style);
-  border-color: var(--tetriary-color);
-  width: 100%;
-  margin: var(--spacing-large) 0 var(--spacing-medium) 0;
-}
-
-.hero__bottom-controllers {
-  display: flex;
-  flex-direction: column;
-}
-
-.hero__display--mobile .hero__portfolio-hook  {
-  font-size: var(--font-size-data);
-  font-style: italic;
-  margin-bottom: 5vh;
-}
-
-.hero__display--mobile .hero__mobile-button {
-  display: inline-block;
-  width: 15rem;
-  background: none;
-  color: var(--secondary-color);
-  font-size: var(--font-size-data);
-  font-family: var(--font-family);
-  font-style: italic;
-  text-decoration: none;
-  border: var(--increment-style);
-  border-radius: 15px;
-  padding: var(--spacing-padding);
-  mix-blend-mode: difference;
-}
-
-/* Increments */
-
-.hero__increment {
-    width: 100%;
-    height: 0px;
-    margin-bottom: 5vh;
-  }
-
-  .hero__object {
-    border-top: var(--increment-style);
-    border-color: var(--tetriary-color)
-  }
-
-  .hero__object--1 {
-    width: 0.6rem;
-  }
-
-  .hero__object--2 {
-    width: 0.8rem;
-  }
-
-  .hero__object--3 {
-    width: 1.4rem;
-  }
 </style>

@@ -13,6 +13,7 @@
   "dependencies": {
     "@lottiefiles/vue-lottie-player": "^1.1.0",
     "@sanity/client": "^3.3.0",
+    "@tweenjs/tween.js": "^23.1.2",
     "lottie-web": "^5.12.2",
     "three": "^0.166.1",
     "three-gltf-loader": "^1.111.0",

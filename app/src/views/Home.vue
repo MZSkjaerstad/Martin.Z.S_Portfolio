@@ -2,7 +2,7 @@
    <main v-if="loading === true"> <Loading /> </main>
    <main v-else class="homepage">
       <section class="homepage__landing-mount">
-         <Hero3D />
+         <Hero3D :socials="content.socials" />
       </section>
 
       <section class="homepage__projects-mount">
