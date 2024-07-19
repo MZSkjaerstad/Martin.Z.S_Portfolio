@@ -318,7 +318,7 @@ export default {
         this.model.traverse((child) => {
           if (child.isMesh) {
             new Tween(child.material.color)
-              .to({ r: color.r, g: color.g, b: color.b }, 250)
+              .to({ r: color.r, g: color.g, b: color.b }, 150)
               .easing(Easing.Quadratic.InOut)
               .start();
           }
