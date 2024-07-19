@@ -365,7 +365,6 @@ export default {
 
 
 
-
 <style>
 .hero {
   width: 100%;
