@@ -69,7 +69,7 @@ export default {
 .hero__display--desktop {
   width: 100%;
   height: 100%;
-  padding: var(--spacing-small) 0 5vh 0;
+  padding: 5vh 0 5vh 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -96,6 +96,11 @@ export default {
    color: var(--secondary-color);
    transition: ease 0.4s;
    margin: 0 0.5rem;
+}
+
+.hero__display--desktop .hero__middle-date {
+   font-style: italic;
+   font-size: var(--font-size-data);
 }
 
 .hero__display--desktop .hero__letters:hover:first-child {
