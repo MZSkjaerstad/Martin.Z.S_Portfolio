@@ -81,9 +81,10 @@
 <script>
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import TWEEN, { Tween, Easing } from '@tweenjs/tween.js';
 import HeroDisplayMobile from './HeroDisplayMobile.vue';
 import HeroDisplayDesktop from './HeroDisplayDesktop.vue';
-import TWEEN, { Tween, Easing } from '@tweenjs/tween.js';
+import _ from 'lodash'; // Import lodash for throttling
 
 export default {
   data() {
@@ -101,21 +102,35 @@ export default {
       showRequestButton: false,
       originalColor: new THREE.Color(0xffffff),
       hoverColor: new THREE.Color(0x0a0a0a),
-      model: null // Reference to the loaded 3D model
+      model: null,
+      targetXTween: null,
+      targetYTween: null,
+      lastTargetX: null,
+      lastTargetY: null,
+      positionUpdateThreshold: 0.005
     };
   },
+
   mounted() {
+    if (!this.$refs.container) {
+      console.error('Error: Container reference is not defined.');
+      this.showFallback = true;
+      return;
+    }
+
     this.initThree();
     this.initDeviceOrientation();
     window.addEventListener('resize', this.handleWindowResize);
-    document.addEventListener('mousemove', this.onMouseMove);
+    document.addEventListener('mousemove', this.throttledMouseMove);
   },
+
   beforeDestroy() {
     this.cleanUp();
     window.removeEventListener('resize', this.handleWindowResize);
     window.removeEventListener('deviceorientation', this.handleDeviceOrientation);
-    document.removeEventListener('mousemove', this.onMouseMove);
+    document.removeEventListener('mousemove', this.throttledMouseMove);
   },
+
   methods: {
     initThree() {
       if (!this.$refs.container) {
@@ -174,23 +189,45 @@ export default {
         this.showFallback = true;
       }
     },
+
     animate() {
       if (!this.renderer || !this.scene || !this.camera) return;
       requestAnimationFrame(this.animate);
 
-      if (this.model) {
-        if (!this.isMobile()) {
-          // Inverted movement based on mouseX and mouseY for desktop with easing
-          const targetX = -this.mouseX * 0.3;
-          const targetY = -this.mouseY * 0.3;
+      if (this.model && !this.isMobile()) {
+        const targetX = -this.mouseX * 0.3;
+        const targetY = -this.mouseY * 0.3;
 
-          // Use tween.js for easing
-          new TWEEN.Tween(this.model.position)
-            .to({ x: targetX, y: targetY }, 500)  // Adjust duration as needed (500ms in this case)
-            .easing(TWEEN.Easing.Quadratic.Out)   // Use Quadratic easing for smooth transition
+        if (this.lastTargetX === null || this.lastTargetY === null ||
+            Math.abs(targetX - this.lastTargetX) > this.positionUpdateThreshold ||
+            Math.abs(targetY - this.lastTargetY) > this.positionUpdateThreshold) {
+          this.lastTargetX = targetX;
+          this.lastTargetY = targetY;
+
+          if (this.targetXTween) this.targetXTween.stop();
+          if (this.targetYTween) this.targetYTween.stop();
+
+          console.log('Starting new tweens:', { targetX, targetY });
+
+          this.targetXTween = new TWEEN.Tween(this.model.position)
+            .to({ x: targetX }, 800) // Keep duration but ensure smoothness
+            .easing(TWEEN.Easing.Quadratic.Out)
+            .onUpdate(() => {
+              console.log('Tween update - X:', this.model.position.x);
+            })
+            .start();
+
+          this.targetYTween = new TWEEN.Tween(this.model.position)
+            .to({ y: targetY }, 800) // Keep duration but ensure smoothness
+            .easing(TWEEN.Easing.Quadratic.Out)
+            .onUpdate(() => {
+              console.log('Tween update - Y:', this.model.position.y);
+            })
             .start();
         }
+      }
 
+      if (this.model) {
         if (this.deviceOrientationAvailable) {
           this.model.rotation.y = -THREE.MathUtils.degToRad(this.deviceOrientation.gamma);
           this.model.rotation.x = -(this.mouseY * 0.5 + THREE.MathUtils.degToRad(this.deviceOrientation.beta) - Math.PI / 4);
@@ -210,10 +247,12 @@ export default {
       this.camera.aspect = this.containerAspectRatio();
       this.camera.updateProjectionMatrix();
     },
+
     containerAspectRatio() {
       if (!this.$refs.container) return 1;
       return this.$refs.container.offsetWidth / this.$refs.container.offsetHeight;
     },
+
     initDeviceOrientation() {
       if (window.DeviceOrientationEvent && this.isMobile()) {
         this.showRequestButton = true;
@@ -223,6 +262,7 @@ export default {
         this.showFallback = true;
       }
     },
+
     requestDeviceOrientationPermission() {
       if (typeof DeviceOrientationEvent.requestPermission === 'function') {
         DeviceOrientationEvent.requestPermission().then((permissionState) => {
@@ -240,41 +280,56 @@ export default {
         this.showRequestButton = false;
       }
     },
+
     handleDeviceOrientation(event) {
       this.deviceOrientation = event;
     },
+
+    throttledMouseMove: _.throttle(function(event) {
+      this.onMouseMove(event);
+    }, 20), // Adjust throttle duration for performance and smoothness
+
     onMouseMove(event) {
       if (!this.$refs.container) return;
       this.mouseX = (event.clientX / window.innerWidth) * 2 - 1;
       this.mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      console.log('Mouse move:', { mouseX: this.mouseX, mouseY: this.mouseY });
     },
+
     onMouseEnter() {
       this.tweenModelColor(this.hoverColor);
     },
+
     onMouseLeave() {
       this.tweenModelColor(this.originalColor);
     },
+
     onHoverStart() {
       this.tweenModelColor(this.hoverColor);
     },
+
     onHoverEnd() {
       this.tweenModelColor(this.originalColor);
     },
+
     tweenModelColor(color) {
       if (this.model) {
         this.model.traverse((child) => {
           if (child.isMesh) {
             new Tween(child.material.color)
-              .to({ r: color.r, g: color.g, b: color.b }, 500)
+              .to({ r: color.r, g: color.g, b: color.b }, 250)
               .easing(Easing.Quadratic.InOut)
               .start();
           }
         });
       }
     },
+
     isMobile() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     },
+
     cleanUp() {
       if (this.renderer) {
         this.renderer.dispose();
@@ -290,24 +345,26 @@ export default {
         this.scene = null;
       }
 
-      if (this.camera) {
-        this.camera = null;
-      }
-
-      if (this.model) {
-        this.model = null;
-      }
+      this.camera = null;
+      this.model = null;
+      this.targetXTween = null; // Clear tween instances on cleanup
+      this.targetYTween = null;
     },
   },
+
   components: {
     HeroDisplayMobile,
     HeroDisplayDesktop,
   },
+
   props: {
     socials: Array,
-  }
+  },
 };
 </script>
+
+
+
 
 <style>
 .hero {
