@@ -4,7 +4,12 @@ export default {
   plugins: [vue()],
   build: {
     rollupOptions: {
-      external: ['lodash']
+      external: ['lodash'],
+      output: {
+        globals: {
+          lodash: '_'
+        }
+      }
     }
   }
 };
