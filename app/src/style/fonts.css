@@ -1,1 +1,87 @@
 @import url("https://use.typekit.net/brp2mrd.css");
+
+/**** NEUE REGRADE *****/
+
+@font-face {
+   font-family: 'NeueRegrade';
+   src: url('/visual_identity/font/neue_regrade/neue_regrade_light.otf') format('opentype');
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'NeueRegrade';
+   src: url('/visual_identity/font/neue_regrade/neue_regrade_light_italic.otf') format('opentype');
+   font-weight: 300;
+   font-style: italic;
+}
+
+@font-face {
+   font-family: 'NeueRegrade';
+   src: url('/visual_identity/font/neue_regrade/neue_regrade_regular.otf') format('opentype');
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'NeueRegrade';
+   src: url('/visual_identity/font/neue_regrade/neue_regrade_regular_italic.otf') format('opentype');
+   font-weight: 400;
+   font-style: italic;
+}
+
+@font-face {
+   font-family: 'NeueRegrade';
+   src: url('/visual_identity/font/neue_regrade/neue_regrade_medium.otf') format('opentype');
+   font-weight: 500;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'NeueRegrade';
+   src: url('/visual_identity/font/neue_regrade/neue_regrade_medium_italic.otf') format('opentype');
+   font-weight: 500;
+   font-style: italic;
+}
+
+@font-face {
+   font-family: 'NeueRegrade';
+   src: url('/visual_identity/font/neue_regrade/neue_regrade_semibold.otf') format('opentype');
+   font-weight: 600;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'NeueRegrade';
+   src: url('/visual_identity/font/neue_regrade/neue_regrade_semiBold_italic.otf') format('opentype');
+   font-weight: 600;
+   font-style: italic;
+}
+
+@font-face {
+   font-family: 'NeueRegrade';
+   src: url('/visual_identity/font/neue_regrade/neue_regrade_bold.otf') format('opentype');
+   font-weight: 700;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'NeueRegrade';
+   src: url('/visual_identity/font/neue_regrade/neue_regrade_bold_italic.otf') format('opentype');
+   font-weight: 700;
+   font-style: italic;
+}
+
+@font-face {
+   font-family: 'NeueRegrade';
+   src: url('/visual_identity/font/neue_regrade/neue_regrade_extrabold.otf') format('opentype');
+   font-weight: 800;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'NeueRegrade';
+   src: url('/visual_identity/font/neue_regrade/neue_regrade_extrabold_italic.otf') format('opentype');
+   font-weight: 800;
+   font-style: italic;
+}
