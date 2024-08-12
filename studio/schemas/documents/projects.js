@@ -426,14 +426,18 @@ export default {
                                  to: [{type: "linkAssets"}]
                               },
                               {
+                                 title: "Link Thumbnail",
+                                 name: "linkThumbnail",
+                                 type: "image"
+                              },
+                              {
                                  title: "Url",
                                  name: "url",
                                  type: "string"
                               },
                               {
-                                 title: "Disclaimer",
-                                 name: "disclaimer",
-                                 description: "Optional.",
+                                 title: "Link name",
+                                 name: "linkName",
                                  type: "string"
                               },
                            ]

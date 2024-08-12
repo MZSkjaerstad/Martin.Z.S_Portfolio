@@ -1,26 +1,27 @@
 <template>
-   <section class="asset-cta-section">
-    <h3 class="asset-cta-section__title">
+   <section class="cta-section">
+    <h3 class="cta-section__title">
       {{sectionData.assetTitle}}
     </h3>
 
-    <div class="asset-cta-section__content">
-      <div class="asset-cta-section__asset" v-for="asset in sectionData.assetLinks">
-        <div class="asset-cta-section__type">
-          <img class="asset-cta-section__type-icon" :src="asset.icon" alt="icon">
+    <div class="cta-section__content">
+      <p class="cta-section__data">Link assets:</p>
 
-          <h3 class="asset-cta-section__type-name"> {{asset.linktype}} </h3>
+      <div class="cta-section__asset" v-for="asset in sectionData.assetLinks">
+        <div class="cta-section__thumbnail">
+          <img class="cta-section__image" :src="asset.linkThumbnail" alt="Thumbnail">
         </div>
 
-        <div class="asset-cta-section__cta">
-          <p class="asset-cta-section__disclaimer"> {{asset.disclaimer}} </p>
-
-          <a :href="asset.url" target="_blank">
-            <button class="asset-cta-section__button"> <p>View</p> </button>
-          </a>
-        </div>
+        <a :href="asset.url" target="_blank">
+          <button class="cta-section__button">
+            <h2 class="cta-section__linkname">{{asset.linkName}}</h2>
+            <p class="cta-section__linktype">{{asset.linktype}}</p>
+          </button>
+        </a>
       </div>
     </div>
+
+    <p class="cta-section__disclaimer">{{sectionData.disclaimer}}</p>
    </section>
 </template>
 
@@ -34,153 +35,129 @@ export default {
 
 <style>
   /* Change block name to the same as component */
-  .asset-cta-section {
+  .cta-section {
     width: 100%;
-    height: 80vh;
     padding: 0 7%;
-    margin: var(--spacing-section) 0 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .asset-cta-section__content {
-    display: flex;
-  }
-
-  /* Title */
-
-  .asset-cta-section__title {
-    margin-bottom: var(--spacing-medium);
-  }
-
-  /* Assets */
-
-  .asset-cta-section__asset {
+    position: relative;
+    margin: var(--spacing-large) 0;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-width: 15rem;
-    min-height: 20rem;
-    border: var(--increment-style);
-    border-radius: 15px;
-    mix-blend-mode: difference;
-    padding: var(--spacing-medium);
-    margin: var(--spacing-small);
   }
 
-  /* Type */
+  /* Links */
 
-  .asset-cta-section__type {
+  .cta-section__content {
     width: 100%;
-    height: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-medium);
   }
 
-  .asset-cta-section__type-icon {
-    height: 70%;
+  .cta-section__asset a {
+    z-index: 100;
+    text-decoration: none;
+    position: relative;
+    mix-blend-mode: difference;
+  }
+
+  .cta-section__data {
+    font-style: italic;
+    font-size: var(--font-size-data);
     margin-bottom: var(--spacing-small);
   }
 
-  .asset-cta-section__type-name {
-    text-transform: uppercase;
-    font-weight: 600;
+  .cta-section__content .cta-section__asset {
+    margin-top: var(--spacing-padding);
   }
 
-  /* CTA */
-
-  .asset-cta-section__cta {
+  .cta-section__button {
+    font-family: var(--font-family);
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .asset-cta-section__cta a {
-    color: var(--secondary-color);
-    mix-blend-mode: difference;
-    width: 100%;
-    cursor: pointer;
-  }
-
-  .asset-cta-section__disclaimer {
-    font-size: var(--font-size-data);
-    font-style: italic;
-    margin-bottom: var(--spacing-padding);
-    text-decoration: none;
-  }
-
-  .asset-cta-section__button {
-    width: 100%;
-    height: 3rem;
     background: none;
-    border: var(--increment-style);
-    border-radius: 15px;
-    padding: var(--spacing-padding);
-    mix-blend-mode: difference;
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
-  }
-
-  .asset-cta-section__button p {
+    border: none;
     color: var(--secondary-color);
-    font-size: var(--font-size-intro);
-    font-weight: 600;
-    mix-blend-mode: difference;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .asset-cta-section__button:hover {
-    background-color: var(--secondary-color);
-    transition: 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    transition: 0.2s ease-out;
   }
 
-  .asset-cta-section__button:hover p {
-    font-size: var(--font-size-body);
-    transition: 0.3s ease-in-out;
+  .cta-section__linkname {
+    font-size: 6vh;
+    font-family: var(--font-family);
+    color: var(--primary-color-tr);
+    -webkit-text-stroke: var(--title-style);
+    transition: 0.2s ease-out;
+  }
+
+  .cta-section__linktype {
+    margin-left: var(--spacing-small);
+    font-style: italic;
+    text-transform: uppercase;
+  }
+
+  .cta-section__button:hover {
+    padding-left: 3rem;
+    transition: 0.2s ease-out;
+  }
+
+  .cta-section__button:hover .cta-section__linkname {
+    color: var(--secondary-color);
+    transition: 0.2s ease-out;
+  }
+
+  .cta-section__thumbnail {
+    position: absolute;
+    opacity: 0%;
+    max-width: 75%;
+    height: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .cta-section__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .cta-section__asset:hover .cta-section__thumbnail {
+    height: 90%;
+    opacity: 0.8;
   }
 
   @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
-    .asset-cta-section {
-      padding: 0;
-      height: auto;
+    .cta-section {
+      align-items: flex-start;
+      min-height: auto;
     }
 
-    .asset-cta-section__title {
-      margin-bottom: var(--spacing-medium);
-    }
-
-    .asset-cta-section__content {
-      flex-direction: column;
-    }
-
-    .asset-cta-section__asset {
-      min-width: none;
-      min-height: none;
-      border: none;
-      padding: var(--spacing-padding);
-    }
-
-    .asset-cta-section__type-icon {
-      height: 14rem;
-      margin-bottom: var(--spacing-medium);
-    }
-
-    .asset-cta-section__cta {
+    .cta-section__content {
+      align-items: flex-start;
+      margin-bottom: 0;
       margin-top: var(--spacing-medium);
     }
-
-    .asset-cta-section__button {
-      height: auto;
-      padding: var(--spacing-medium);
+    
+    .cta-section__thumbnail {
+      display: none;
     }
 
-    .asset-cta-section__button p {
-      font-size: 3rem;
+    .cta-section__linktype {
+      display: none;
     }
+
+    .cta-section__button:hover {
+    padding-left: 0rem;
+    transition: 0.2s ease-out;
+  }
   }
 </style>
