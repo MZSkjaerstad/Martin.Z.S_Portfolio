@@ -151,6 +151,10 @@ export default {
       display: none;
     }
 
+    .cta-section__linkname {
+      font-size: 3.5vh;
+    }
+
     .cta-section__linktype {
       display: none;
     }
