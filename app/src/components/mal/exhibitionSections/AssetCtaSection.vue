@@ -68,11 +68,10 @@ export default {
   .cta-section__data {
     font-style: italic;
     font-size: var(--font-size-data);
-    margin-bottom: var(--spacing-small);
   }
 
   .cta-section__asset {
-    margin-top: var(--spacing-padding);
+    margin-top: var(--spacing-small);
   }
 
   .cta-section__button {
@@ -160,7 +159,7 @@ export default {
       background: none;
       border: var(--increment-style);
       border-radius: 15px;
-      padding: var(--spacing-padding);
+      padding: var(--spacing-small);
       mix-blend-mode: difference;
       transition: 0.3s ease-in-out;
       cursor: pointer;
