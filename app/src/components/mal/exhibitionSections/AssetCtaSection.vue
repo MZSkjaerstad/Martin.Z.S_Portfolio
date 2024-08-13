@@ -154,17 +154,32 @@ export default {
       display: none;
     }
 
+    .cta-section__button {
+      width: 100%;
+      height: 3rem;
+      background: none;
+      border: var(--increment-style);
+      border-radius: 15px;
+      padding: var(--spacing-padding);
+      mix-blend-mode: difference;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .cta-section__button:hover {
+      padding-left: 0rem;
+      transition: 0.2s ease-out;
+    }
+
     .cta-section__linkname {
-      font-size: 4vh;
+      font-size: 3rem;
+      color: var(--secondary-color);
+      -webkit-text-stroke: 0;
+      font-weight: 600;
     }
 
     .cta-section__linktype {
       display: none;
     }
-
-    .cta-section__button:hover {
-    padding-left: 0rem;
-    transition: 0.2s ease-out;
-  }
   }
 </style>
