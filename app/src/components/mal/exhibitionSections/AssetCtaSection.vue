@@ -8,20 +8,20 @@
       <p class="cta-section__data">Link assets:</p>
 
       <div class="cta-section__asset" v-for="asset in sectionData.assetLinks">
-        <div class="cta-section__thumbnail">
-          <img class="cta-section__image" :src="asset.linkThumbnail" alt="Thumbnail">
-        </div>
-
-        <a :href="asset.url" target="_blank">
+        <a class="cta-section__link" :href="asset.url" target="_blank">
           <button class="cta-section__button">
             <h2 class="cta-section__linkname">{{asset.linkName}}</h2>
             <p class="cta-section__linktype">{{asset.linktype}}</p>
           </button>
         </a>
+
+        <div class="cta-section__thumbnail">
+          <img class="cta-section__image" :src="asset.linkThumbnail" alt="Thumbnail">
+        </div>
       </div>
     </div>
 
-    <p class="cta-section__disclaimer">{{sectionData.disclaimer}}</p>
+    <p class="cta-section__data">{{sectionData.disclaimer}}</p>
    </section>
 </template>
 
@@ -58,8 +58,8 @@ export default {
     margin-bottom: var(--spacing-medium);
   }
 
-  .cta-section__asset a {
-    z-index: 100;
+  .cta-section__link {
+    z-index: 10;
     text-decoration: none;
     position: relative;
     mix-blend-mode: difference;
@@ -71,7 +71,7 @@ export default {
     margin-bottom: var(--spacing-small);
   }
 
-  .cta-section__content .cta-section__asset {
+  .cta-section__asset {
     margin-top: var(--spacing-padding);
   }
 
@@ -100,12 +100,12 @@ export default {
     text-transform: uppercase;
   }
 
-  .cta-section__button:hover {
+  .cta-section__link:hover .cta-section__button {
     padding-left: 3rem;
     transition: 0.2s ease-out;
   }
 
-  .cta-section__button:hover .cta-section__linkname {
+  .cta-section__link:hover .cta-section__linkname {
     color: var(--secondary-color);
     transition: 0.2s ease-out;
   }
@@ -114,7 +114,7 @@ export default {
     position: absolute;
     opacity: 0%;
     max-width: 75%;
-    height: 75%;
+    height: 70%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -131,18 +131,21 @@ export default {
   }
 
   .cta-section__asset:hover .cta-section__thumbnail {
-    height: 90%;
+    height: 75%;
     opacity: 0.8;
   }
 
   @media screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
     .cta-section {
-      align-items: flex-start;
       min-height: auto;
     }
 
+    .cta-section__title {
+      text-align: center;
+    }
+
     .cta-section__content {
-      align-items: flex-start;
+      align-items: center;
       margin-bottom: 0;
       margin-top: var(--spacing-medium);
     }
@@ -152,7 +155,7 @@ export default {
     }
 
     .cta-section__linkname {
-      font-size: 3.5vh;
+      font-size: 4vh;
     }
 
     .cta-section__linktype {
